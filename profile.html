@@ -221,7 +221,7 @@
 
                 const user = await res.json();
 
-                // UI Update (Backend returns 'user' directly or in 'user' object)
+                // UI Update logic
                 const name = user.name || (user.user && user.user.name) || "No Name";
                 const email = user.email || (user.user && user.user.email) || "No Email";
                 const profilePic = user.profilePic || (user.user && user.user.profilePic);
@@ -230,11 +230,18 @@
                 document.getElementById('userEmail').innerText = email;
                 document.getElementById('editName').value = name;
 
-                // UI-Avatar Link Fix
+                // ✅ 🏆 PROFILE IMAGE FIX (Brackets Fixed)
                 const picElement = document.getElementById('profilePic');
-                picElement.src = profilePic
-                    ? window.API_BASE_URL + '/uploads/' + profilePic + '?t=' + Date.now()
-                    : 'https://ui-avatars.com/api/?name=' + encodeURIComponent(name) + '&background=a020f0&color=fff&size=128';
+
+                if (profilePic && typeof profilePic === 'string' && profilePic.length > 5) {
+                    // Sirf file ka asli naam nikalo (extra /uploads/ hatane ke liye)
+                    const fileName = profilePic.split(/[\\/]/).pop();
+                    // Clean URL with Backticks
+                    picElement.src = `${window.API_BASE_URL}/uploads/${fileName}?t=${Date.now()}`;
+                } else {
+                    // Default UI-Avatar
+                    picElement.src = `https://ui-avatars.com{encodeURIComponent(name)}&background=a020f0&color=fff&size=128&bold=true`;
+                }
 
             } catch (err) {
                 console.error("Profile Load Error:", err);
@@ -242,6 +249,7 @@
                 window.location.href = "login.html";
             }
         };
+
 
         // 2. PHOTO UPLOAD LOGIC
         document.getElementById('fileInput').addEventListener('change', async function () {
