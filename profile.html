@@ -198,7 +198,7 @@
         </div>
     </div>
 
-      <script src="config.js"></script>
+    <script src="config.js"></script>
     <script>
         const API_URL = window.API_BASE_URL + '/api/auth';
 
@@ -297,11 +297,12 @@
             if (!newName) return alert("Name cannot be empty!");
 
             try {
-                const res = await fetch(window.API_BASE_URL + '/update-profile', {
+                const res = await fetch(window.API_BASE_URL + '/api/auth/update-profile', {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json',
-                        'x-auth-token': token
+                        // 'Authorization' header use karo kyunki middleware wahi check kar raha hai
+                        'Authorization': 'Bearer ' + token
                     },
                     body: JSON.stringify({ name: newName })
                 });

@@ -199,7 +199,7 @@
         }
 
         // 4. Main Login Logic
-        async function handleLogin(e) {
+             async function handleLogin(e) {
             if (e) e.preventDefault();
 
             const email = document.getElementById('email').value.trim();
@@ -227,18 +227,22 @@
                     // 1. Data Save Karo
                     localStorage.setItem('token', data.token);
                     localStorage.setItem('userData', JSON.stringify(data.user));
-                    localStorage.setItem('role', data.user.role); // Role save karna important hai
+                    localStorage.setItem('role', data.user.role); 
                     localStorage.setItem('username', data.user.name);
 
-                    alert("Login Success! 🚀");
+                    // --- YAHAN ALERT ADD KIYA HAI ---
+                    if (data.user.role === "admin") {
+                        alert("Welcome Admin! 🚀 Dashboard Access Granted.");
+                    } else {
+                        alert("Login Success! 🚀 Redirecting to Home.");
+                    }
+                    // -------------------------------
 
                     // 2. 🔥 Yahan ho rahi hai redirection (Role-based)
                     setTimeout(() => {
                         if (data.user.role === "admin") {
-                            // Agar Admin hai toh Dashboard page par bhejo
                             window.location.href = "dashboard.html";
                         } else {
-                            // Agar Normal user hai toh Home page par bhejo
                             window.location.href = "index.html";
                         }
                     }, 800);
