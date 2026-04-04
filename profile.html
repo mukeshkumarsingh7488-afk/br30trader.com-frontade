@@ -234,12 +234,18 @@
                 const picElement = document.getElementById('profilePic');
 
                 if (profilePic && typeof profilePic === 'string' && profilePic.length > 5) {
-                    // Sirf file ka asli naam nikalo (extra /uploads/ hatane ke liye)
                     const fileName = profilePic.split(/[\\/]/).pop();
-                    // Clean URL with Backticks
-                    picElement.src = `${window.API_BASE_URL}/uploads/${fileName}?t=${Date.now()}`;
+
+                    const imageUrl = `${window.API_BASE_URL}/uploads/${fileName}?t=${Date.now()}`;
+                    console.log("IMAGE URL:", imageUrl); // DEBUG
+
+                    picElement.src = imageUrl;
+
+                    picElement.onerror = () => {
+                        picElement.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=a020f0&color=fff&size=128&bold=true`;
+                    };
+
                 } else {
-                    // Default UI-Avatar
                     picElement.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=a020f0&color=fff&size=128&bold=true`;
                 }
 
@@ -252,7 +258,7 @@
 
 
         // 2. PHOTO UPLOAD LOGIC
-            document.getElementById('fileInput').addEventListener('change', async function () {
+        document.getElementById('fileInput').addEventListener('change', async function () {
             const file = this.files[0];
             if (!file) return;
 
@@ -288,9 +294,9 @@
                 } else {
                     alert(data.msg || "Upload failed!");
                 }
-            } catch (err) { 
+            } catch (err) {
                 console.error(err);
-                alert("Server connection error!"); 
+                alert("Server connection error!");
             }
         });
 
