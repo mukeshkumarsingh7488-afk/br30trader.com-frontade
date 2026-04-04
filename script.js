@@ -1355,7 +1355,7 @@ async function syncLatestPrices() {
     const courses = await res.json();
 
     // 💡 BASE_URL (UPLOADS)
-    const UPLOADS_URL = window.API_BASE_URL + '/uploads/';
+    const UPLOADS_URL = `${window.API_BASE_URL}/uploads/`;
 
     courses.forEach((course) => {
       // 🎯 STEP 1: Specific Card dhoondo
@@ -1371,6 +1371,7 @@ async function syncLatestPrices() {
             ? course.thumbnail
             : UPLOADS_URL + course.thumbnail;
 
+          console.log("Asli Image Link:", fullPath);
           imgTag.src = `${fullPath}?t=${new Date().getTime()}`;
           console.log(`🖼️ Thumbnail Updated for: ${course.title}`);
         }
