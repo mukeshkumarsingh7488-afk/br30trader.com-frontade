@@ -208,7 +208,12 @@ async function loadTopReviews() {
       const userName = r.username || r.userId?.name || "User";
 
       if (rawPath && typeof rawPath === "string" && rawPath.length > 5) {
-        profileImg = rawPath.startsWith("http") ? rawPath : `${BASE_URL}/uploads/${rawPath.split(/[\\/]/).pop()}`;
+      
+        const fileName = rawPath.split(/[\\/]/).pop();
+        
+        profileImg = rawPath.startsWith("http") 
+          ? rawPath 
+          : `${window.API_BASE_URL}/uploads/${fileName}`; // Seedha API_BASE_URL use karo
       } else {
         profileImg = `https://ui-avatars.com/api/?name=${encodeURIComponent(userName)}&background=00ff88&color=000&bold=true&size=128`;
       }
