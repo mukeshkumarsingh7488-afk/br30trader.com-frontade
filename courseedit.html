@@ -291,10 +291,10 @@
                         formData.append('image', formValues.imageFile[0]);
                     }
 
-                    const res = await fetch(window.API_BASE_URL + '/api/courses/update-course/${id}', {
+                    const res = await fetch(`${window.API_BASE_URL}/api/courses/update-course/${id}`, {
                         method: 'PUT',
                         headers: { 'x-auth-token': localStorage.getItem('token') },
-                        body: formData // JSON nahi, pura FormData bhej diya
+                        body: formData
                     });
 
                     const data = await res.json();
@@ -322,7 +322,7 @@
 
             if (check.isConfirmed) {
                 try {
-                    const res = await fetch(window.API_BASE_URL + '/api/courses/delete-course/${id}', {
+                    const res = await fetch(`${window.API_BASE_URL}/api/courses/delete-course/${id}`, {
                         method: 'DELETE',
                         headers: { 'x-auth-token': localStorage.getItem('token') }
                     });
