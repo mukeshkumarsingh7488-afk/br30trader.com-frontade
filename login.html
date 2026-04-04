@@ -6,9 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - BR30TRADER</title>
 
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
     <!-- Google Fonts -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Optional: SweetAlert (login popup ke liye) -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
 
     <style>
         /* =========================================
@@ -199,7 +207,7 @@
         }
 
         // 4. Main Login Logic
-             async function handleLogin(e) {
+        async function handleLogin(e) {
             if (e) e.preventDefault();
 
             const email = document.getElementById('email').value.trim();
@@ -227,7 +235,7 @@
                     // 1. Data Save Karo
                     localStorage.setItem('token', data.token);
                     localStorage.setItem('userData', JSON.stringify(data.user));
-                    localStorage.setItem('role', data.user.role); 
+                    localStorage.setItem('role', data.user.role);
                     localStorage.setItem('username', data.user.name);
 
                     // --- YAHAN ALERT ADD KIYA HAI ---

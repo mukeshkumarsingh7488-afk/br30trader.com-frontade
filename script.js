@@ -149,6 +149,7 @@ navigator.serviceWorker
 document.getElementById("reviewForm").addEventListener("submit", async (e) => {
   e.preventDefault();
 
+  // 1. Latest User Data nikaalo
   const storedData = localStorage.getItem("userData");
   if (!storedData) {
     alert("Please, Login first!");
@@ -157,16 +158,23 @@ document.getElementById("reviewForm").addEventListener("submit", async (e) => {
   }
 
   const user = JSON.parse(storedData);
-  const finalUserId = user._id || user.id || (user.user && user.user.id);
+
+  // 2. Clear IDs nikaalo (Multiple checks for safety)
+  const finalUserId = user._id || user.id || (user.user && (user.user._id || user.user.id));
+
+  // 3. 🚨 PROFILE PIC FIX: Direct Cloudinary URL uthao
+  // Agar profile page par update hua hai, toh wahi url yahan use hoga
+  const latestProfilePic = user.profilePic || (user.user && user.user.profilePic) || "";
 
   const data = {
-    username: document.getElementById("userName").value,
+    username: document.getElementById("userName").value.trim(),
     rating: document.getElementById("userRating").value,
-    comment: document.getElementById("userComment").value,
+    comment: document.getElementById("userComment").value.trim(),
     userId: finalUserId,
-
-    profilePic: user.profilePic || (user.user && user.user.profilePic) || "",
+    profilePic: latestProfilePic, // Ye ab Cloudinary ka direct link (http...) bhejega
   };
+
+  console.log("📝 Posting Review with Data:", data); // Debugging ke liye
 
   try {
     const response = await fetch(window.API_BASE_URL + '/api/reviews/add', {
@@ -180,14 +188,17 @@ document.getElementById("reviewForm").addEventListener("submit", async (e) => {
     if (response.ok) {
       alert("Thanks for your review! ✅");
       document.getElementById("reviewForm").reset();
-      loadTopReviews();
+      // Yahan function ka naam check kar lena (loadTopReviews ya fetchReviews)
+      if (typeof loadTopReviews === 'function') loadTopReviews();
     } else {
-      alert(result.message || "Error!");
+      alert(result.message || "Error while posting review!");
     }
   } catch (err) {
-    alert("Server Error!");
+    console.error("🚨 Review Error:", err);
+    alert("Server Error! Check console for details.");
   }
 });
+
 
 // ✅ 1. Updated loadTopReviews function (Inside logic updated for outside-click)
 async function loadTopReviews() {
@@ -203,18 +214,26 @@ async function loadTopReviews() {
 
     const BASE_URL = window.API_BASE_URL + '/';
     displayArea.innerHTML = reviews.map((r) => {
-      let rawPath = r.userId?.profilePic || r.profilePic || "";
+      // 1. Path nikaalo (Check multiple fields for safety)
+      const userName = (r.userId && r.userId.name) || r.username || "User";
+     let rawPath = (r.userId && r.userId.profilePic) || r.profilePic || "";
       let profileImg;
-      const userName = r.username || r.userId?.name || "User";
 
+      // 2. CHECK LOGIC (Modern & Simple)
       if (rawPath && typeof rawPath === "string" && rawPath.length > 5) {
-      
-        const fileName = rawPath.split(/[\\/]/).pop();
-        
-        profileImg = rawPath.startsWith("http") 
-          ? rawPath 
-          : `${window.API_BASE_URL}/uploads/${fileName}`; // Seedha API_BASE_URL use karo
+
+        if (rawPath.startsWith("http")) {
+          // ✅ Case A: Cloudinary ya external URL (Seedha use karo)
+          profileImg = rawPath;
+        } else {
+          // ✅ Case B: Purana Local Path (e.g., 'uploads/image.jpg')
+          // Isme split logic chalega taaki sirf filename mile
+          const fileName = rawPath.split(/[\\/]/).pop();
+          profileImg = `${window.API_BASE_URL}/uploads/${fileName}`;
+        }
+
       } else {
+        // ❌ Case C: Photo nahi hai
         profileImg = `https://ui-avatars.com/api/?name=${encodeURIComponent(userName)}&background=00ff88&color=000&bold=true&size=128`;
       }
 
@@ -1295,18 +1314,33 @@ function displayNextBatch() {
 
     batch.forEach((trader, index) => {
       const globalIndex = currentIndex + index + 1;
-      let userPic = trader.profilePic
-        ? window.API_BASE_URL + `/uploads/${trader.profilePic.split(/[\\/]/).pop()}`
-        : `https://ui-avatars.com/api/?name=${encodeURIComponent(trader.name)}&background=111&color=00ff88&bold=true`;
+      const rawPath = trader.profilePic || "";
+      let userPic;
+
+      // 1. Check karo ki photo Cloudinary ki hai ya purani local wali
+      if (rawPath && typeof rawPath === "string" && rawPath.length > 5) {
+        if (rawPath.startsWith("http")) {
+          // ✅ Case A: Cloudinary URL (Direct use karo)
+          userPic = rawPath;
+        } else {
+          // ✅ Case B: Purani Local Photo (Uploads folder se uthao)
+          const fileName = rawPath.split(/[\\/]/).pop();
+          userPic = `${window.API_BASE_URL}/uploads/${fileName}`;
+        }
+      } else {
+        // ❌ Case C: Photo nahi hai toh Avatar dikhao
+        userPic = `https://ui-avatars.com/api/?name=${encodeURIComponent(trader.name)}&background=111&color=00ff88&bold=true`;
+      }
 
       const row = `
-                <div class="trader-item" style="animation-delay: ${index * 0.05}s;">
-                    <span class="rank-num">#${globalIndex}</span>
-                    <img src="${userPic}" class="user-avatar" onerror="this.src='https://ui-avatars.com'">
-                    <span class="user-name">${trader.name}</span>
-                    <span class="vip-badge">💎VIP</span>
-                </div>
-            `;
+        <div class="trader-item" style="animation-delay: ${index * 0.05}s;">
+            <span class="rank-num">#${globalIndex}</span>
+            <img src="${userPic}" class="user-avatar" 
+                 onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(trader.name)}&background=111&color=00ff88&bold=true'">
+            <span class="user-name">${trader.name}</span>
+            <span class="vip-badge">💎VIP</span>
+        </div>
+    `;
       listContainer.insertAdjacentHTML("beforeend", row);
     });
 
