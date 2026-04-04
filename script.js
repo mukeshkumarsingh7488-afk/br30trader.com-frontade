@@ -1708,7 +1708,7 @@ async function syncAdminData() {
   }
 }
 
-// WhaatsApp Link Retry Logic (Agar pehle fail hua tha toh)
+/*
 // 🔥 FUTURE FEATURE: Dynamic WhatsApp Link (Currently not in use)
 async function retryWhatsApp() {
   try {
@@ -1729,6 +1729,8 @@ async function retryWhatsApp() {
     alert("Something went wrong");
   }
 }
+  */
+
 //#endregion
 
 
