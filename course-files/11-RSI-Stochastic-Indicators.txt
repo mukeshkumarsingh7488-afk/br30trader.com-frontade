@@ -1,0 +1,50 @@
+✅ RSI & Stochastic Indicators
+
+RSI और Stochastic indicators momentum aur market strength समझने के लिए सबसे popular tools हैं।  
+
+✅ Relative Strength Index (RSI)
+- RSI 0-100 range में होता है  
+- Default period: 14  
+- **Overbought:** RSI > 70 → Sell signal  
+- **Oversold:** RSI < 30 → Buy signal  
+- RSI divergence: Price और RSI अलग direction में → Trend reversal का signal  
+
+✅ Step by Step RSI Trading
+1️⃣ Chart में RSI indicator add करो (Period 14)  
+2️⃣ Overbought/oversold levels observe करो  
+3️⃣ Price divergence और candle pattern confirm करो  
+4️⃣ Entry और exit points decide करो  
+
+✅ Stochastic Oscillator
+- %K और %D lines को track करता है  
+- Scale: 0-100  
+- **Overbought:** > 80 → Sell signal  
+- **Oversold:** < 20 → Buy signal  
+- Crossovers %K और %D में → Entry/Exit signals  
+
+✅ Step by Step Stochastic Trading
+1️⃣ Chart में Stochastic indicator add करो (Default: 14,3,3)  
+2️⃣ Lines (%K & %D) observe करो  
+3️⃣ Crossovers और overbought/oversold confirm करो  
+4️⃣ Entry और exit points decide करो  
+
+✅ Notebook में लिखने के लिए Example Table
+
+| Indicator       | Condition                  | Signal          |
+|-----------------|---------------------------|----------------|
+| RSI             | >70 (Overbought)          | Sell           |
+| RSI             | <30 (Oversold)            | Buy            |
+| RSI Divergence  | Price ↓, RSI ↑ (Bullish) | Buy / Reversal |
+| RSI Divergence  | Price ↑, RSI ↓ (Bearish) | Sell / Reversal|
+| Stochastic      | %K cross above %D         | Buy            |
+| Stochastic      | %K cross below %D         | Sell           |
+| Stochastic      | >80 (Overbought)          | Sell           |
+| Stochastic      | <20 (Oversold)            | Buy            |
+
+✅ Important Notes
+- Momentum indicators हमेशा trend के साथ use करो  
+- RSI और Stochastic को combine करने से false signals कम होते हैं  
+- Candle confirmation और volume analysis साथ में check करो  
+- Multiple timeframe analysis reliable signals देता है  
+
+

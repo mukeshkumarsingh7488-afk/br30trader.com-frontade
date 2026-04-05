@@ -1,0 +1,47 @@
+✅ Options Basics for Beginners
+
+Options financial derivatives हैं जो आपको किसी asset (जैसे stocks, indices, commodities) को future में किसी निश्चित price पर buy या sell करने का अधिकार देते हैं, लेकिन obligation नहीं।  
+
+Options दो types के होते हैं:
+
+1️⃣ **Call Option**  
+- Buyer को right देता है कि वह asset को किसी निश्चित price (strike price) पर future में खरीदे।  
+- अगर price बढ़ता है → Profit potential high।  
+- Example:  
+  Strike Price: ₹500  
+  Premium: ₹20  
+  Current Price: ₹510 → Call option profitable  
+
+2️⃣ **Put Option**  
+- Buyer को right देता है कि वह asset को किसी निश्चित price पर future में बेचे।  
+- अगर price गिरता है → Profit potential high।  
+- Example:  
+  Strike Price: ₹500  
+  Premium: ₹15  
+  Current Price: ₹490 → Put option profitable  
+
+✅ Key Terminology  
+
+| Term            | Meaning |
+|-----------------|---------|
+| Strike Price     | Price जिस पर asset buy/sell हो सकता है |
+| Premium          | Option के लिए pay किया जाने वाला price |
+| Expiry Date      | Option का valid होने की last date |
+| Intrinsic Value  | Option का real value (Profit if exercised now) |
+| Time Value       | Premium का वह हिस्सा जो time और volatility पे depend करता है |
+
+✅ Step by Step Understanding
+
+1️⃣ Market select करो और underlying asset choose करो।  
+2️⃣ Decide करो Call या Put option based on price direction expectation।  
+3️⃣ Select करो Strike Price और Expiry Date।  
+4️⃣ Premium pay करो और option buy करो।  
+5️⃣ Monitor करो price movement और decide करो कब sell/exercise करना है।  
+
+✅ Important Notes
+- Options high risk, high reward instruments हैं।  
+- सिर्फ premium पे focus मत करो, intrinsic value और market trend check करो।  
+- Time decay (theta) को समझो → जितना expiry पास आएगा, premium जल्दी घट सकता है।  
+- Beginners ke liye small positions aur paper trading recommend किया जाता है।  
+- Greeks (Delta, Gamma, Vega, Theta) के basics समझो ताकि risk manage कर सको।  
+

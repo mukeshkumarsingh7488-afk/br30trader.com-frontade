@@ -1,0 +1,60 @@
+✅ Option Selling Guide
+
+Options trading me **Option Selling (Writing Options)** ek advanced strategy hai jisme trader premium earn karta hai market ko trade kar ke. Yeh strategy **time decay aur probability advantage** par based hai.  
+
+✅ Basic Concept
+- Option seller = Premium receive karta hai by selling Call ya Put  
+- Obligation hoti hai underlying ko buy/sell karne ki, agar option exercise ho jaye  
+- Risk theoretically unlimited (Call) ya high (Put)  
+- Profit limited to premium received  
+
+✅ Step by Step Option Selling
+
+1️⃣ **Select the Option Type**
+- Bullish market → Sell Put Option  
+- Bearish market → Sell Call Option  
+- Neutral market → Sell ATM/OTM option for premium  
+
+2️⃣ **Select Strike Price**
+- OTM (Out of the Money) preferred → High probability expire worthless  
+- Avoid deep ITM → Risk high, reward limited  
+
+3️⃣ **Select Expiry**
+- Short-term → High theta decay, premium earn fast  
+- Medium-term → Balance between decay and risk  
+
+4️⃣ **Check Greeks**
+- Theta → Seller ke liye biggest advantage (time decay)  
+- Delta → Price sensitivity, ideally low delta sell karo  
+- Vega → Volatility increase risk ho sakta hai  
+
+5️⃣ **Entry & Exit**
+- Entry → Market trend + range-bound + premium attractive  
+- Exit → Profit target reached, or underlying moves against  
+
+✅ Notebook Example Table
+
+| Option Type | Strike Type | Expiry     | Entry Condition                       | Exit Condition                     |
+|------------|-------------|------------|--------------------------------------|-----------------------------------|
+| Call Sell  | OTM         | 1-5 days   | Price below resistance, range bound  | Premium target hit or stop loss    |
+| Put Sell   | OTM         | 1-5 days   | Price above support, range bound     | Premium target hit or stop loss    |
+| Call Sell  | ATM/OTM     | 3-10 days  | Volatility high, premium attractive  | Stop loss if price breakout       |
+| Put Sell   | ATM/OTM     | 3-10 days  | Volatility high, premium attractive  | Stop loss if price breakdown      |
+
+✅ Important Notes
+- Option selling me **risk high** hota hai → proper stop loss set karo  
+- Always monitor Greeks, specially **theta** aur **vega**  
+- Use only small portion of capital per trade  
+- Avoid selling naked options if beginner  
+- Profitable strategy over long-term, discipline aur consistency se  
+
+
+
+
+
+ 
+
+
+
+
+

@@ -1,0 +1,36 @@
+✅ Support & Resistance Levels
+
+Support और Resistance market के सबसे important levels हैं, जहाँ price अक्सर रुकता या पलटता है।  
+
+✅ Basic Concept
+- **Support:** वह level जहाँ price नीचे जाने पर bounce करता है → Buyers strong होते हैं  
+- **Resistance:** वह level जहाँ price ऊपर जाने पर reverse होता है → Sellers strong होते हैं  
+- **Breakout:** Price support या resistance को तोड़ दे → New trend start हो सकता है  
+
+✅ Step by Step Identify करना
+1️⃣ Chart select करो और timeframe choose करो (15min, 1H, Daily)  
+2️⃣ Historical price data observe करो → बार-बार touch हुए highs और lows mark करो  
+3️⃣ Horizontal lines draw करो → Key Support और Resistance identify हो जाएंगे  
+4️⃣ Trend lines और moving averages भी level confirmation में मदद करते हैं  
+
+✅ Example Table (Notebook के लिए)
+
+| Level Type       | Price Behavior                  | Signal                  |
+|-----------------|---------------------------------|------------------------|
+| Support         | Price bounce करता है           | Buy opportunity        |
+| Resistance      | Price reverse करता है          | Sell opportunity       |
+| Breakout Support | Price नीचे तोड़ता है           | Sell / Short Signal    |
+| Breakout Resistance | Price ऊपर तोड़ता है         | Buy / Long Signal      |
+
+✅ Trading Tips
+- Multiple timeframe analysis करो → Higher timeframe levels ज्यादा strong होते हैं  
+- Volume confirm करो → Breakout real या fake पता चलेगा  
+- Stop Loss हमेशा set करो → Risk management के लिए  
+- Support और resistance हमेशा dynamic रहते हैं → Update chart regularly  
+
+✅ Important Notes
+- Psychological levels जैसे 100, 500, 1000 भी अक्सर support/resistance बन जाते हैं  
+- Previous swing highs/lows ज्यादा reliable होते हैं  
+- Trend follow करते हुए entry करो → Counter-trend trading risky है  
+- Combine करो candlestick patterns और indicators के साथ better decision लेने के लिए  
+

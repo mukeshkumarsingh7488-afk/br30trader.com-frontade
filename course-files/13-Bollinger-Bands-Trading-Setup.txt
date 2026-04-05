@@ -1,0 +1,56 @@
+✅ Bollinger Bands Trading Setup
+
+Bollinger Bands price volatility aur trend identify करने के लिए सबसे popular technical tool है।  
+
+✅ Basic Concept
+- Bollinger Bands में 3 lines होती हैं:
+  1️⃣ **Middle Band (SMA 20)** – Trend का center  
+  2️⃣ **Upper Band** – Middle Band + 2 standard deviation  
+  3️⃣ **Lower Band** – Middle Band – 2 standard deviation  
+- Bands price volatility के हिसाब से widen या narrow होते हैं  
+
+✅ Bollinger Bands Signals
+
+1️⃣ **Band Squeeze (Narrow Bands)**
+- Price bands के बीच squeeze होता है → Low volatility  
+- Implication: आने वाले समय में breakout हो सकता है  
+
+2️⃣ **Price Touch Upper Band**
+- Price upper band को touch या cross करे → Overbought  
+- Action: Sell या Short consider करें  
+
+3️⃣ **Price Touch Lower Band**
+- Price lower band को touch या cross करे → Oversold  
+- Action: Buy या Long consider करें  
+
+4️⃣ **Price Bounce from Middle Band**
+- Middle band act करता है support/resistance की तरह  
+- Bounce होने पर trend continuation या reversal का signal  
+
+✅ Step by Step Trading Setup
+1️⃣ Chart में Bollinger Bands add करो (Default: 20 period, 2 SD)  
+2️⃣ Trend और price position observe करो  
+3️⃣ Band squeeze या expansion detect करो  
+4️⃣ Price upper/lower band touch → Entry/Exit decision  
+5️⃣ Confirmation के लिए candle pattern और volume check करो  
+6️⃣ Stop loss और target set करो  
+
+✅ Notebook Example Table
+
+| Signal Type         | Condition                            | Action          |
+|--------------------|--------------------------------------|----------------|
+| Band Squeeze       | Narrow Bands                           | Prepare for Breakout |
+| Upper Band Touch   | Price touch/cross upper band           | Sell / Short   |
+| Lower Band Touch   | Price touch/cross lower band           | Buy / Long     |
+| Middle Band Bounce | Price bounce from middle band          | Trend Continuation / Entry |
+
+✅ Important Notes
+- Bollinger Bands हमेशा trend के साथ use करें  
+- Band width observe करें → Volatility signal मिलता है  
+- Higher timeframe signals ज्यादा reliable होते हैं  
+- Candle confirmation और volume साथ में check करें  
+- Stop loss और risk management follow करना जरूरी है  
+
+
+
+

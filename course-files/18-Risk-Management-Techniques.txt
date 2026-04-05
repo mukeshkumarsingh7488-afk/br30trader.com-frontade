@@ -1,0 +1,62 @@
+✅ Risk Management Techniques
+
+Trading me risk management सबसे important skill है। सही risk management से capital सुरक्षित रहता है और trading consistently profitable बनती है।  
+
+✅ Basic Concept
+- Risk management मतलब potential losses को control करना  
+- Proper risk-reward और position sizing follow करना जरूरी है  
+- Losses small रखना aur profits maximize करना  
+
+✅ Key Risk Management Techniques
+
+1️⃣ **Position Sizing**
+- Decide करो कितना capital एक trade में risk करोगे  
+- Rule of thumb: 1-2% capital per trade risk करो  
+- Formula: Risk Amount = Total Capital × %Risk  
+
+2️⃣ **Stop Loss**
+- हर trade में predefined stop loss set करो  
+- Support/resistance, swing high/low, ATR या candle structure के हिसाब से set करें  
+- Stop loss follow करना mandatory है  
+
+3️⃣ **Risk-Reward Ratio**
+- Risk-Reward minimum 1:2 या 1:3 set करें  
+- Example: Risk ₹500 → Target ₹1000 या ₹1500  
+
+4️⃣ **Diversification**
+- Capital को multiple trades में distribute करें  
+- Single trade पर ज्यादा risk मत डालो  
+
+5️⃣ **Avoid Overtrading**
+- Emotional या impulsive trades मत करो  
+- Plan follow करो, market condition analyze करो  
+
+6️⃣ **Daily/Weekly Loss Limit**
+- Predefined maximum loss limit set करो  
+- Limit cross होने पर trade रोक दो  
+
+✅ Notebook Example Table
+
+| Technique               | Description                                      | Example                        |
+|-------------------------|-------------------------------------------------|--------------------------------|
+| Position Sizing         | Capital per trade decide करो                     | 1% of ₹1,00,000 → ₹1,000 risk |
+| Stop Loss               | Loss limit define करो                            | ATR/Support/Resistance         |
+| Risk-Reward Ratio       | Profit target define करो                         | 1:2 or 1:3                     |
+| Diversification         | Multiple trades with small portion               | 5 trades × 2% capital each     |
+| Avoid Overtrading       | Only plan-based trades                           | Follow setup, skip noise       |
+| Daily/Weekly Loss Limit | Maximum loss stop                                | ₹5,000 daily stop               |
+
+✅ Important Notes
+- Risk management सबसे बड़ा factor है long-term trading success में  
+- Discipline और consistency follow करें  
+- Emotional trading और impulsive entries avoid करें  
+- Trading journal maintain करें → Mistakes और improvements track हो जाए  
+
+
+
+ 
+
+
+
+
+

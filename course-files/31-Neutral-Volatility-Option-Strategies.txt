@@ -1,0 +1,91 @@
+✅ Neutral / Volatility Option Strategies
+
+Market me jab direction uncertain ho ya price range me rahe, tab ye strategies use hoti hain. Ye strategies mostly **premium decay** aur **volatility ka fayda** uthane ke liye design ki gayi hain.
+
+✅ **Common Neutral / Volatility Strategies**
+
+1️⃣ **Short Straddle**
+
+* Sell 1 ATM Call + Sell 1 ATM Put at same strike
+* Maximum profit agar price expiry me strike ke paas ho
+* Loss unlimited agar price strongly upar ya neeche move kare
+* Premium upfront milta hai
+
+2️⃣ **Iron Butterfly**
+
+* Sell 1 ATM Call + Sell 1 ATM Put + Buy 1 OTM Call + Buy 1 OTM Put
+* Risk limited, reward limited
+* Profit maximum agar price strike ke paas expire ho
+* Volatility decay ka fayda
+
+3️⃣ **Short Strangle**
+
+* Sell 1 OTM Call + Sell 1 OTM Put
+* Maximum profit agar price strikes ke beech rahe
+* Loss unlimited agar price bahut move kare
+* Premium collected upfront
+
+4️⃣ **Short Iron Condor**
+
+* Sell 1 OTM Put + Buy lower strike Put + Sell 1 OTM Call + Buy higher strike Call
+* Risk limited
+* Profit maximum agar price expected range me rahe
+* Ideal for low volatility market
+
+5️⃣ **Batman**
+
+* Sell 1 ATM Put + Buy lower strike Put + Sell 1 ATM Call + Buy 2 higher strike Calls
+* Risk limited, reward asymmetric
+* Profit tab maximum jab price ATM ke paas ho
+* Payoff shape kaafi unique, isliye “Batman”
+
+6️⃣ **Double Plateau**
+
+* Combination of double short strangle with protective wings
+* Profit tab maximum in a specific price plateau
+* Risk limited
+* Works best in range-bound markets
+
+7️⃣ **Jade Lizard**
+
+* Sell 1 OTM Put + Sell 1 OTM Call + Buy higher strike Call
+* No risk on upside (limited loss)
+* Maximum profit from premium collected
+* Neutral to slightly bullish strategy
+
+8️⃣ **Reverse Jade Lizard**
+
+* Sell 1 OTM Call + Sell 1 OTM Put + Buy lower strike Put
+* No risk on downside
+* Maximum profit from premium collected
+* Neutral to slightly bearish strategy
+
+✅ **Notes for Traders**
+
+* Risk management zaruri hai
+* Position sizing capital ke hisaab se adjust karein
+* Entry/exit me technical indicators aur IV analysis ka use karein
+* Har strategy ka max loss aur max profit samajhna zaruri hai
+
+
+  
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+

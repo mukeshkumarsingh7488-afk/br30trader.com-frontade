@@ -1,0 +1,87 @@
+✅ Other Option Strategies
+
+Market me jab direction uncertain ho ya price range me rahe, tab ye strategies use hoti hain. Ye strategies mostly **premium decay** aur **volatility ka fayda** uthane ke liye design ki gayi hain.
+
+✅ **Common Neutral / Volatility Strategies**
+
+1️⃣ **Call Ratio Spread**
+
+* Buy 1 Call + Sell 2 Calls at higher strikes
+* Limited risk, reward asymmetric
+* Maximum profit if price modestly rises
+* Works in moderately bullish scenarios
+
+2️⃣ **Put Ratio Spread**
+
+* Buy 1 Put + Sell 2 Puts at lower strikes
+* Limited risk, reward asymmetric
+* Maximum profit if price modestly falls
+* Works in moderately bearish scenarios
+
+3️⃣ **Long Straddle**
+
+* Buy 1 ATM Call + Buy 1 ATM Put
+* Profit if price makes large move in either direction
+* Loss limited to total premium paid
+* High IV markets can make this strategy expensive
+
+4️⃣ **Long Iron Butterfly**
+
+* Buy 1 ATM Call + Buy 1 ATM Put + Sell 1 OTM Call + Sell 1 OTM Put
+* Limited risk, reward limited
+* Profit maximum if price strike ke paas expire ho
+* Best in low volatility markets anticipating spike
+
+5️⃣ **Long Strangle**
+
+* Buy 1 OTM Call + Buy 1 OTM Put
+* Profit if price makes big move up ya down
+* Loss limited to premiums paid
+* Cheaper than straddle for high movement expectation
+
+6️⃣ **Long Iron Condor**
+
+* Buy 1 lower strike Put + Buy 1 higher strike Call + Sell 1 OTM Put + Sell 1 OTM Call
+* Risk limited, reward limited
+* Maximum profit if price stays in middle range
+* Ideal for low volatility, range-bound markets
+
+7️⃣ **Strip**
+
+* Buy 1 ATM Call + Buy 2 ATM Puts
+* Slightly bearish bias
+* Profit high if price drops sharply
+* Loss limited to total premium paid
+
+8️⃣ **Strap**
+
+* Buy 2 ATM Calls + Buy 1 ATM Put
+* Slightly bullish bias
+* Profit high if price rises sharply
+* Loss limited to total premium paid
+
+✅ **Notes for Traders**
+
+* Risk management zaruri hai
+* Position sizing capital ke hisaab se adjust karein
+* Entry/exit me technical indicators aur IV analysis ka use karein
+* Har strategy ka max loss aur max profit samajhna zaruri hai
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+

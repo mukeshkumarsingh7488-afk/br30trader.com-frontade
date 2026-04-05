@@ -1,0 +1,57 @@
+✅ Fair Value Gap (FVG) Trading
+
+Fair Value Gap (FVG) ek **price imbalance area** hota hai jahan market me strong move ke baad candle gap ban jata hai. Ye gap future me **price ka reversal ya pullback zone** provide karta hai.  
+
+✅ Basic Concept
+- FVG identify karo using **3-candle pattern**  
+- Gap ke andar price enter kar sakta hai → opportunity  
+- Mostly used in **smart money concepts aur supply-demand trading**  
+
+✅ Step by Step FVG Trading
+
+1️⃣ **Identify FVG**
+- 3 consecutive candles dekho  
+- Middle candle ke high-low area aur surrounding candles ka comparison  
+- Gap area = Middle candle body gap between high-low  
+
+2️⃣ **Trade Entry**
+- Price gap ke andar pullback hone par enter karo  
+- Buy → Gap support par  
+- Sell → Gap resistance par  
+
+3️⃣ **Confirmation Tools**
+- Volume spike at FVG → strong move  
+- RSI / MACD divergence → confirm reversal  
+- Trendline / Support-Resistance confluence → strong setup  
+
+4️⃣ **Stop Loss & Target**
+- Stop loss: Gap ke bahar slightly  
+- Target: Next swing high/low ya major level  
+
+✅ Notebook Example Table
+
+| FVG Type       | Entry Condition                        | Exit Condition         | Tools/Indicators              |
+|----------------|----------------------------------------|----------------------|-------------------------------|
+| Bullish FVG    | Price pulls back to gap support         | Next swing high       | RSI, MACD, Volume, Trendline |
+| Bearish FVG    | Price rallies to gap resistance         | Next swing low        | RSI, MACD, Volume, Trendline |
+
+✅ Important Notes
+- FVG ka use **trend aur volume context me karo**  
+- Avoid trading isolated gaps without confirmation  
+- Risk management aur stop loss mandatory hai  
+- High timeframe (15 min, 1H) me zyada reliable signals  
+- Combine with other technical tools → better probability  
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+

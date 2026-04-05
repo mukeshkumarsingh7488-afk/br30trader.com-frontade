@@ -1,0 +1,70 @@
+✅ Intraday Trading Techniques
+
+Intraday trading me **same-day trades** hoti hain jisme positions market close hone se pehle close karni hoti hain. Ye fast-paced aur high-risk hota hai, lekin proper techniques se profitable ban sakta hai.  
+
+✅ Basic Concept
+- Trading ka objective: Short-term price movements ka profit lena  
+- Positions open aur close same day  
+- High liquidity aur volatility preferred  
+
+✅ Key Intraday Techniques
+
+1️⃣ **Trend Following**
+- Market trend ke direction me trade karo  
+- Tools: Moving Averages (MA), EMA, Supertrend  
+- Example: Price above 20 EMA → Buy trend  
+
+2️⃣ **Breakout Trading**
+- Strong support/resistance cross hone par entry  
+- Volume aur candle confirmation essential  
+- Example: Resistance 18,000 cross → Long position  
+
+3️⃣ **Pullback Strategy**
+- Trend ke opposite temporary move par entry  
+- Support/resistance aur Fibonacci retracement use karo  
+- Example: Uptrend me minor dip → Buy  
+
+4️⃣ **Scalping**
+- Multiple small trades with quick entry/exit  
+- Focus: 1-2% profit per trade  
+- Requires fast execution and low spread  
+
+5️⃣ **Momentum Trading**
+- Stocks with high momentum aur news-based move  
+- Entry: Strong price movement aur volume spike  
+- Exit: Price slowdown ya target hit  
+
+6️⃣ **Gap & Go Strategy**
+- Pre-market price gap use karke trade  
+- Entry: Open ke few minutes me momentum follow karo  
+- Exit: Target/Stop loss based  
+
+✅ Notebook Example Table
+
+| Strategy           | Entry Condition                        | Exit Condition           | Tools/Indicators                 |
+|-------------------|----------------------------------------|-------------------------|---------------------------------|
+| Trend Following    | Price above/below EMA                  | Trend reversal/Target   | EMA, MA, Supertrend             |
+| Breakout Trading   | Strong support/resistance cross        | Target/Stop loss        | Volume, Candle patterns         |
+| Pullback Strategy  | Minor retracement in trend direction   | Next high/low           | Fibonacci, Support/Resistance  |
+| Scalping           | Quick small price movements             | 1-2% Profit per trade   | Tick charts, 1-min candles     |
+| Momentum Trading   | High volume + price movement            | Target/Price slowdown   | RSI, Volume, News feeds        |
+| Gap & Go           | Pre-market gap + momentum               | Target/Stop loss        | Pre-market data, Volume        |
+
+✅ Important Notes
+- Intraday trading requires **discipline & quick decisions**  
+- Always follow **stop loss and risk management**  
+- Avoid overtrading aur emotional trading  
+- Focus on liquid stocks/indices for smooth execution  
+- Trading journal maintain karo → Mistakes aur learning track hota hai  
+ 
+
+
+
+
+
+ 
+
+
+
+
+

@@ -1,0 +1,73 @@
+✅ Advanced Options Strategies
+
+Advanced Options Strategies un traders ke liye hain jo basic buying/selling se aage badh kar **multi-leg strategies** use karte hain taaki risk control aur profit maximize ho sake.  
+
+✅ Basic Concept
+- Multi-leg options ka use karna  
+- Objective: Limited risk, defined reward, ya income generation  
+- Instruments: Calls, Puts, Combinations  
+
+✅ Common Advanced Strategies
+
+1️⃣ **Iron Condor**
+- Sell OTM Call + Buy further OTM Call  
+- Sell OTM Put + Buy further OTM Put  
+- Objective: Range-bound profit  
+- Limited risk + limited reward  
+
+2️⃣ **Butterfly Spread**
+- Buy 1 ITM Call, Sell 2 ATM Calls, Buy 1 OTM Call  
+- Same for Put  
+- Objective: Profit near middle strike  
+- Low cost, defined risk  
+
+3️⃣ **Strangle**
+- Buy OTM Call + Buy OTM Put (different strikes)  
+- Objective: Profit from large move in either direction  
+- Risk limited to premium paid  
+
+4️⃣ **Straddle**
+- Buy ATM Call + Buy ATM Put  
+- Objective: Profit from volatility in either direction  
+- Higher premium but unlimited profit potential  
+
+5️⃣ **Calendar Spread**
+- Sell short-term option + Buy long-term option (same strike)  
+- Objective: Time decay exploitation  
+- Directional risk limited  
+
+✅ Notebook Example Table
+
+| Strategy             | Type            | Objective                     | Key Notes                                  |
+|---------------------|----------------|--------------------------------|-------------------------------------------|
+| Iron Condor          | Multi-leg       | Range-bound profit             | Limited risk & reward                      |
+| Butterfly Spread     | Multi-leg       | Profit near middle strike      | Low cost, defined risk                     |
+| Strangle             | Long Option     | Profit from big move           | Risk = Premium paid                        |
+| Straddle             | Long Option     | Profit from volatility         | High premium, unlimited potential          |
+| Calendar Spread      | Multi-leg       | Exploit time decay             | Directional risk limited                   |
+
+✅ Important Notes
+- Multi-leg strategies ke liye **margin aur capital** manage karo  
+- Premium, theta decay, implied volatility samajhna zaruri hai  
+- Stop loss aur exit plan predefine karo  
+- Market conditions aur timeframe ke hisaab se choose karo  
+- Demo practice aur chart analysis mandatory hai  
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+

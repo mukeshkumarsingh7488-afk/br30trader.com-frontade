@@ -1,0 +1,69 @@
+✅ Option Hedging Strategies
+
+Option Hedging ka maksad **existing positions ka risk kam karna** aur market ke adverse moves se protection lena hai. Ye professional traders aur institutions me commonly use hota hai.  
+
+✅ Basic Concept
+- Hedging = Risk management technique  
+- Objective: Profit ko protect karna ya loss ko minimize karna  
+- Instruments: Options (Calls, Puts), Futures  
+
+✅ Common Hedging Techniques
+
+1️⃣ **Protective Put**
+- Hold underlying stock / asset  
+- Buy put option → downside protection  
+- Loss limited to premium paid for put  
+
+2️⃣ **Covered Call**
+- Hold underlying stock  
+- Sell call option → extra premium income  
+- Upside capped, downside unhedged  
+
+3️⃣ **Collar Strategy**
+- Hold stock  
+- Buy protective put + Sell call  
+- Loss limited + Premium partially offsets put cost  
+
+4️⃣ **Straddle Hedge**
+- Buy call & put at same strike (long straddle)  
+- Hedge against volatility in either direction  
+- Best for uncertain market events  
+
+5️⃣ **Spread Strategies**
+- Bull Call Spread → Buy lower strike call, sell higher strike call  
+- Bear Put Spread → Buy higher strike put, sell lower strike put  
+- Limited risk + limited reward  
+
+✅ Notebook Example Table
+
+| Hedging Strategy      | Position Type          | Objective                       | Key Notes                          |
+|----------------------|---------------------|--------------------------------|-----------------------------------|
+| Protective Put       | Long Stock + Long Put | Downside protection             | Loss limited, premium paid         |
+| Covered Call         | Long Stock + Short Call| Generate income, limited upside | Upside capped, risk remains        |
+| Collar               | Long Stock + Put + Call | Limited risk + offset cost     | Requires premium management       |
+| Long Straddle        | Call + Put           | Hedge against volatility        | Costly, use near major events     |
+| Bull/Bear Spreads    | Call/Put Spread     | Limited risk + limited reward  | Defined risk & reward structure   |
+
+✅ Important Notes
+- Hedging me **premium cost** aur **expiry date** consider karo  
+- Volatility ka impact samajhna zaruri hai  
+- Hedging se profit limit ho sakta hai, lekin risk majorly reduce hota hai  
+- Multiple legs ko samajh kar hi trade karo  
+- Hamesha market conditions aur trend check karo before hedging  
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+

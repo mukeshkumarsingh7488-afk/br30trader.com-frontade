@@ -1,0 +1,43 @@
+✅ Fibonacci Retracement Strategy
+
+Fibonacci retracement एक powerful tool है जो price pullbacks और reversal points identify करने में मदद करता है।  
+
+✅ Basic Concept
+- Price trend में pullback या correction पर key levels mark करने के लिए use किया जाता है  
+- Popular retracement levels: 23.6%, 38.2%, 50%, 61.8%, 78.6%  
+- Trend continuation या reversal detect करने के लिए support/resistance के रूप में काम करता है  
+
+✅ Step by Step Trading
+1️⃣ Trend identify करो (Uptrend या Downtrend)  
+2️⃣ Swing High और Swing Low select करो  
+   - Uptrend: Low → High  
+   - Downtrend: High → Low  
+3️⃣ Fibonacci tool chart में apply करो → Retracement levels दिखाई देंगे  
+4️⃣ Price इन levels तक आता है → Entry points consider करो  
+5️⃣ Stop Loss retracement के ऊपर/नीचे set करो  
+6️⃣ Target next retracement level या trend continuation पर रखो  
+
+✅ Example Table (Notebook के लिए)
+
+| Level       | Price Behavior                   | Action                 |
+|------------|---------------------------------|-----------------------|
+| 23.6%      | Minor pullback                  | Entry/Partial Entry   |
+| 38.2%      | Moderate pullback               | Entry/Trend Continuation |
+| 50%        | Half retracement                | Strong Support/Resistance |
+| 61.8%      | Golden ratio level              | High probability entry/exit |
+| 78.6%      | Deep retracement                | Trend reversal alert  |
+
+✅ Trading Tips
+- Trend के direction के अनुसार ही trade करो  
+- Candle confirmation और volume analysis साथ में use करो  
+- Higher timeframe retracements ज्यादा reliable होते हैं  
+- Multiple indicators जैसे MA या RSI के साथ combine करो → Signal strong होता है  
+
+✅ Important Notes
+- Fibonacci levels absolute नहीं होते → Flexible रहें  
+- Psychological levels के पास price reaction observe करो  
+- Stop loss हमेशा use करो → Risk management के लिए  
+- Pullback complete होने पर trend continuation का इंतजार करो  
+
+
+

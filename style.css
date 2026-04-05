@@ -2068,6 +2068,29 @@ select {
   }
 }
 
+
+/*-- PDF Hub --*/
+.pdf-list.scrollable {
+  max-height: 400px; /* Section height */
+  overflow-y: auto;   /* Vertical scroll */
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 10px;
+  border-radius: 8px;
+  background: #111;
+}
+
+/* Scrollbar styling */
+.pdf-list.scrollable::-webkit-scrollbar {
+  width: 8px;
+}
+.pdf-list.scrollable::-webkit-scrollbar-thumb {
+  background-color: #a020f0;
+  border-radius: 4px;
+}
+.pdf-list.scrollable::-webkit-scrollbar-track {
+  background: #222;
+}
+
 .pdf-hub-section {
   padding: 60px 20px;
 }

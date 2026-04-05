@@ -1,0 +1,84 @@
+✅ Bearish Option Strategies
+
+Bearish market me option strategies tab use hoti hain jab underlying asset ka price neeche jaane ki expectation ho. Ye strategies profit generate karne ke liye design ki gayi hain.  
+
+✅ Common Bearish Strategies
+
+1️⃣ **Buy Put**
+- Simple bearish strategy  
+- Buy a put option at strike price  
+- Profit increases as price goes down  
+- Max loss: Premium paid  
+
+2️⃣ **Sell Call**
+- Sell a call option to earn premium  
+- Obligation to sell if strike hit  
+- Profit limited to premium collected  
+
+3️⃣ **Bear Call Spread**
+- Sell lower strike call + Buy higher strike call  
+- Risk limited  
+- Profit limited to net premium collected  
+
+4️⃣ **Bear Put Spread**
+- Buy higher strike put + Sell lower strike put  
+- Risk limited  
+- Profit limited to difference in strikes - net premium  
+
+5️⃣ **Put Ratio Back Spread**
+- Sell 1 put + Buy 2 lower strike puts  
+- Profit rises sharply if price falls  
+- Loss limited if price moves slightly down  
+
+6️⃣ **Long Calendar with Puts**
+- Buy longer expiry put + Sell shorter expiry put at same strike  
+- Profit if price stays around strike at short expiry  
+- Risk limited to net premium  
+
+7️⃣ **Bear Condor**
+- Combination of put spreads to create range  
+- Profit maximum if price within middle strikes  
+- Limited risk and reward  
+
+8️⃣ **Bear Butterfly**
+- Buy 1 put high strike + Sell 2 puts middle strike + Buy 1 put low strike  
+- Profit maximum at middle strike  
+- Limited loss  
+
+9️⃣ **Range Forward**
+- Construct bearish forward range positions  
+- Profits if price moves in expected downward range  
+
+🔟 **Synthetic Short Future**
+- Sell call + Buy put at same strike  
+- Mimics shorting the underlying asset  
+- Unlimited profit if price falls  
+
+✅ Notes for Traders
+- Risk management is essential  
+- Position sizing aligned with capital  
+- Combine with technical indicators for entry/exit  
+- Know max loss and max profit for each strategy  
+
+
+  
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+

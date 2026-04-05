@@ -1,0 +1,66 @@
+✅ Option Selling with Hedging Strategy
+
+Option selling profitable ho sakta hai agar **risk manage kiya jaye**. Hedging se loss ka exposure control hota hai aur profit potential optimized rehta hai.  
+
+✅ Basic Concept
+- Sell options to collect premium  
+- Hedge position to limit losses  
+- Objective: Risk-controlled premium collection  
+
+✅ Step by Step Setup
+
+1️⃣ **Identify Trend**
+- Trend analysis using Moving Averages, Support/Resistance  
+- Decide bullish/bearish bias  
+
+2️⃣ **Option Selling Rules**
+- Sell Call Option (Bearish view)  
+- Sell Put Option (Bullish view)  
+- Strike selection: ATM ya slightly OTM for maximum premium  
+
+3️⃣ **Hedging Techniques**
+- Buy a far OTM option in opposite direction  
+- Example:  
+  - Sell 100 CE, Buy 110 CE → Risk limited  
+  - Sell 100 PE, Buy 90 PE → Risk limited  
+
+4️⃣ **Profit & Loss Management**
+- Max Profit: Collected premium  
+- Max Loss: Difference between strikes - premium collected (if hedged)  
+- Always maintain favorable Risk/Reward  
+
+✅ Notebook Example Table
+
+| Market View     | Sell Option | Hedge Option | Premium Collected | Risk Limited Notes       |
+|-----------------|------------|--------------|-----------------|-------------------------|
+| Bullish         | Put OTM    | Lower PE OTM | ₹X              | Loss limited with hedge |
+| Bearish         | Call OTM   | Higher CE OTM| ₹X              | Loss limited with hedge |
+
+✅ Important Notes
+- Always hedge when selling options to prevent unlimited losses  
+- Short-term time decay (Theta) works in favor of seller  
+- Monitor IV: High IV → better premium, Low IV → low premium  
+- Position sizing crucial to protect capital  
+
+
+  
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+

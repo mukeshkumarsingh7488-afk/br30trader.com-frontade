@@ -1,0 +1,71 @@
+✅ Scalping Techniques
+
+Scalping trading ka maksad **short-term me chhoti profits frequent trades se earn karna** hai. Ye high-speed trading strategy hai aur zyada concentration aur discipline maangti hai.  
+
+✅ Basic Concept
+- Scalping = Very short-term trading  
+- Objective: Small price movements ka fayda uthana  
+- Timeframe: 1 min, 5 min charts commonly use hote hain  
+
+✅ Scalping Strategies
+
+1️⃣ **Trend Scalping**
+- Trend ko follow karo  
+- Uptrend → Buy on pullbacks  
+- Downtrend → Sell on rallies  
+- Target: Few points per trade  
+
+2️⃣ **Breakout Scalping**
+- Support / Resistance break hone par enter  
+- Volume confirmation zaruri  
+- Stop loss tight rakho  
+
+3️⃣ **Range Trading / Channel Scalping**
+- Price range me oscillate kare  
+- Buy near support, sell near resistance  
+- Use oscillators like RSI / Stochastic  
+
+4️⃣ **Momentum Scalping**
+- High volume aur strong directional candle ke saath trade  
+- Indicator: EMA crossover, MACD, Momentum  
+- Exit: Jab momentum weaken ho  
+
+5️⃣ **News Based Scalping**
+- Market moving news par quick trades  
+- Risk high → very tight stop loss  
+- Use only major events  
+
+✅ Notebook Example Table
+
+| Scalping Technique       | Market Condition      | Entry Condition                 | Exit/Target               | Tools/Indicators                 |
+|--------------------------|---------------------|---------------------------------|---------------------------|---------------------------------|
+| Trend Scalping           | Trending Market      | Pullback in trend               | Few points                | EMA, Trendlines                  |
+| Breakout Scalping        | Strong Support/Resistance | Price breaks level          | Quick profit              | Volume, Candlestick              |
+| Range Trading / Channel  | Sideways Market      | Price near support/resistance   | Reversal within range     | RSI, Stochastic                  |
+| Momentum Scalping        | Trending / Volatile  | Strong directional candle       | Momentum fade             | EMA, MACD, Momentum              |
+| News Based Scalping      | Event Driven         | Market reacts to news           | Very short term           | News feed, Volume spikes         |
+
+✅ Important Notes
+- Scalping requires **fast execution** aur **strict discipline**  
+- Stop loss aur risk management mandatory hai  
+- Overtrading se bacho → patience maintain karo  
+- High volatility aur liquidity instruments choose karo  
+- Demo practice zaruri hai before live scalping  
+
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+

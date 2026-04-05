@@ -1,0 +1,72 @@
+✅ Option Greeks Mastery
+
+Option Greeks trading ka backbone hain. Ye measure karte hain **option price ka sensitivity** underlying asset ke movement, time decay aur volatility ke respect me.  
+
+✅ Key Greeks
+
+1️⃣ **Delta (Δ)**
+- Price sensitivity measure  
+- 1 point move in underlying ka option price par impact  
+- Call Delta: 0 to +1  
+- Put Delta: 0 to -1  
+- Example: Delta 0.6 ka matlab, 1 point price move → option price 0.6 point move karega  
+
+2️⃣ **Gamma (Γ)**
+- Delta ka rate of change measure  
+- Price movement ke saath delta ka kitna change hoga  
+- High Gamma → option price ka rapid change  
+
+3️⃣ **Theta (Θ)**
+- Time decay measure  
+- 1 din ke liye option ka value kitna ghat raha hai  
+- Long Call/Put: Negative Theta  
+- Short Call/Put: Positive Theta  
+
+4️⃣ **Vega (ν)**
+- Volatility sensitivity measure  
+- 1% change in IV → option price par impact  
+- High Vega → option expensive/inexpensive with IV change  
+
+5️⃣ **Rho (ρ)**
+- Interest rate sensitivity measure  
+- Rarely daily trading me use hota hai  
+- Long Call: Positive Rho  
+- Long Put: Negative Rho  
+
+✅ Notebook Example Table
+
+| Greek   | Measures                   | Call Behavior | Put Behavior | Notes                          |
+|--------|----------------------------|---------------|--------------|-------------------------------|
+| Delta  | Price sensitivity          | +0 to +1      | 0 to -1      | ITM → Delta high               |
+| Gamma  | Delta change rate          | Positive      | Positive     | ATM options high Gamma         |
+| Theta  | Time decay                 | Negative      | Negative     | Short options positive Theta   |
+| Vega   | Volatility sensitivity     | Positive      | Positive     | Long options high Vega         |
+| Rho    | Interest rate sensitivity  | Positive      | Negative     | Rarely daily trading use       |
+
+✅ Important Notes
+- Greeks ka combination samajhna zaruri hai: Delta + Gamma + Theta + Vega  
+- High Theta → beware of time decay  
+- High Vega → watch IV before buying options  
+- Use Greeks for **risk management, hedging, aur position sizing**  
+
+  
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+

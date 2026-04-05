@@ -1,0 +1,65 @@
+✅ 9 EMA + 15 EMA + FVG (Option Selling) Strategy
+
+Ye strategy **short-term option selling ke liye EMA cross aur Fair Value Gap (FVG) ka combination** use karti hai.  
+
+✅ Basic Concept
+- EMA = Exponential Moving Average  
+- FVG = Fair Value Gap → Price imbalance ka zone  
+- Objective: Trend-following + High probability short trades  
+
+✅ Step by Step Setup
+
+1️⃣ **Chart Setup**
+- Timeframe: 5-min / 15-min charts  
+- Indicators: 9 EMA (Fast), 15 EMA (Slow)  
+- Identify FVG: Last candle ka gap/jump jo price skip karta hai  
+
+2️⃣ **Entry Rules (Option Selling)**
+- Bearish Entry (Sell Call/Buy Put):  
+  - 9 EMA crosses below 15 EMA  
+  - Price retraces to FVG resistance  
+  - Sell Call Option near strike close to current price  
+
+- Bullish Entry (Sell Put/Buy Call):  
+  - 9 EMA crosses above 15 EMA  
+  - Price retraces to FVG support  
+  - Sell Put Option near strike close to current price  
+
+3️⃣ **Exit Rules**
+- Target: Next significant swing high/low  
+- Stop Loss: Beyond FVG zone (for protection)  
+- Risk management: Max 1-2% of capital per trade  
+
+✅ Notebook Example Table
+
+| Condition        | EMA Setup                  | FVG Location          | Option Type      | Notes                    |
+|-----------------|----------------------------|---------------------|----------------|-------------------------|
+| Bearish Trend    | 9 EMA < 15 EMA             | FVG resistance zone  | Sell Call / Buy Put  | Entry on pullback       |
+| Bullish Trend    | 9 EMA > 15 EMA             | FVG support zone     | Sell Put / Buy Call  | Entry on pullback       |
+
+✅ Important Notes
+- Confirm trend before entry using volume and candle pattern  
+- EMA cross ke saath FVG zone ka confluence entry high probability banata hai  
+- Risk/reward ka dhyan rakho, stop loss hamesha set kare  
+- Multiple timeframes check karo (1H, 15-min) for confirmation  
+  
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+

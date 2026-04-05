@@ -1,0 +1,63 @@
+✅ RSI Divergence Full Guide
+
+RSI Divergence trading me ek powerful signal hai jo **trend reversal ya weakness** identify karta hai.  
+
+✅ Basic Concept
+- RSI = Relative Strength Index (momentum indicator)  
+- Divergence = Price aur RSI opposite direction me move karte hain  
+- Objective: Trend reversal, trade timing improvement  
+
+✅ Types of RSI Divergence
+
+1️⃣ **Bullish Divergence (Buy Signal)**
+- Price: Lower Low  
+- RSI: Higher Low  
+👉 Matlab: Price neeche ja raha hai, lekin momentum strength dikha raha hai → reversal ka signal  
+
+2️⃣ **Bearish Divergence (Sell Signal)**
+- Price: Higher High  
+- RSI: Lower High  
+👉 Matlab: Price upar ja raha hai, lekin momentum weak → potential downtrend  
+
+✅ Step by Step Identification
+1. Chart me RSI indicator lagaye (Default: 14-period)  
+2. Price ka High/Low aur RSI ka High/Low dekho  
+3. Opposite movement → divergence signal  
+4. Support/Resistance ke paas divergence → strong signal  
+
+✅ Notebook Example Table
+
+| Type             | Price Movement | RSI Movement  | Signal         |
+|-----------------|----------------|---------------|----------------|
+| Bullish Divergence | Lower Low      | Higher Low    | Buy / Reversal |
+| Bearish Divergence | Higher High    | Lower High    | Sell / Reversal |
+
+✅ Important Notes
+- RSI Divergence ko standalone signal mat lo  
+- Candle confirmation, volume confirmation bhi check karo  
+- Higher timeframe (15-min, 1H) me signal zyada reliable  
+- Stop Loss & Risk Management hamesha set karo  
+
+
+
+  
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+

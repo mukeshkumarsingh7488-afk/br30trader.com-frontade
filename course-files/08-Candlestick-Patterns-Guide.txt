@@ -1,0 +1,61 @@
+✅ Candlestick Patterns Guide
+
+Candlestick patterns market में price behavior समझने का आसान तरीका हैं।  
+हर candle open, high, low, और close price दिखाती है।  
+
+✅ Basic Candlestick Structure
+- **Body:** Open aur Close price ke beech ka range  
+- **Wicks/Shadows:** High aur Low price indicate करते हैं  
+- **Color:**  
+  - Green / White → Close > Open (Bullish)  
+  - Red / Black → Close < Open (Bearish)  
+
+✅ Important Patterns
+
+1️⃣ **Doji**
+- Open और Close price almost same  
+- Signal: Market indecision / reversal potential  
+- Types: Long-legged Doji, Dragonfly Doji, Gravestone Doji  
+
+2️⃣ **Hammer & Hanging Man**
+- Small body, long lower wick  
+- Hammer → Bullish reversal (downtrend में)  
+- Hanging Man → Bearish reversal (uptrend में)  
+
+3️⃣ **Engulfing Pattern**
+- Bullish Engulfing: Green candle fully engulfs previous red → Buy signal  
+- Bearish Engulfing: Red candle fully engulfs previous green → Sell signal  
+
+4️⃣ **Morning Star & Evening Star**
+- Morning Star → Bullish reversal (downtrend में)  
+- Evening Star → Bearish reversal (uptrend में)  
+
+5️⃣ **Shooting Star**
+- Small body, long upper wick  
+- Uptrend में appear → Potential reversal (Sell Signal)  
+
+✅ Step by Step Trading Setup
+1️⃣ Chart select करो aur candlestick view on करो  
+2️⃣ Trend और key support/resistance identify करो  
+3️⃣ Candlestick patterns observe करो (Reversal / Continuation)  
+4️⃣ Confirmation के लिए volume aur other indicators check करो  
+5️⃣ Entry और exit points decide करो  
+
+✅ Notebook में लिखने के लिए Example Table
+
+| Pattern Name       | Trend Context      | Signal      |
+|-------------------|------------------|------------|
+| Doji              | Any               | Caution/Indecision |
+| Hammer            | Downtrend         | Buy/Reversal |
+| Hanging Man       | Uptrend           | Sell/Reversal |
+| Bullish Engulfing | Downtrend         | Buy        |
+| Bearish Engulfing | Uptrend           | Sell       |
+| Morning Star      | Downtrend         | Buy        |
+| Evening Star      | Uptrend           | Sell       |
+| Shooting Star     | Uptrend           | Sell       |
+
+✅ Important Notes
+- Patterns ko standalone mat use karo, trend aur volume check करना जरूरी है  
+- Higher timeframe patterns ज्यादा reliable होते हैं  
+- Risk management hamesha follow karo (Stop Loss / Target)  
+- Practice se pattern recognition fast aur accurate hoti hai  
