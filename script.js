@@ -1057,41 +1057,28 @@ if (
 
 // 1. ✨ DYNAMIC PRICE LOADER: Database se latest price uthane ke liye
 async function loadLatestPrice() {
-  const priceElement = document.getElementById("course-price");
-
   try {
     const res = await fetch(window.API_BASE_URL + '/api/courses');
     const courses = await res.json();
 
-    // Agar array hai toh pehla course uthao
-    const course = Array.isArray(courses) ? courses[0] : courses;
+    const course = courses[0] || courses;
 
     if (course) {
+      const priceElement = document.getElementById("course-price");
       if (priceElement) {
-        // 1. Price update karo
-        priceElement.innerText = `Price: ₹${course.price}`;
-
-        // 2. ID update karo (Jo aapne kaha long number/ID hai)
-        priceElement.setAttribute("data-id", course._id);
-
-        // 3. Skeleton Loading khatam karo
-        priceElement.classList.remove('skeleton-text');
-
-        console.log("✅ Price & ID Updated: ", course._id, " - ₹", course.price);
+        priceElement.innerText = `₹${course.price}`;
+        console.log("✅ Price Updated from DB: ₹", course.price);
       }
 
-      // Buttons par bhi ID update kardo
       document.querySelectorAll(".payBtn").forEach((btn) => {
         btn.setAttribute("data-id", course._id);
         btn.dataset.id = course._id;
       });
     }
   } catch (err) {
-    console.error("❌ Load Error:", err);
-    if (priceElement) priceElement.classList.remove('skeleton-text');
+    console.error("❌ Price Load Error:", err);
   }
 }
-
 
 // 🔥 WhatsApp Retry Function (NEW ADD)
 async function retryWhatsApp(courseId) {
