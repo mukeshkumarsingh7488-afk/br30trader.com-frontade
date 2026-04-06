@@ -1463,18 +1463,37 @@ async function syncLatestPrices() {
 
         // ✅ STEP 2: THUMBNAIL UPDATE (Double Path Fix)
         const imgTag = card.querySelector(".course-img");
-        if (imgTag && course.thumbnail) {
 
-          // 🛠️ Agar database se '/uploads/' pehle se aa raha hai, toh use hata do
-          const cleanThumbnail = course.thumbnail.replace('/uploads/', '');
+        if (imgTag) {
+          if (course.thumbnail && course.thumbnail.trim() !== "") {
 
-          const fullPath = course.thumbnail.startsWith("http")
-            ? course.thumbnail
-            : `${window.API_BASE_URL}/uploads/${cleanThumbnail}`;
+            let fullPath = "";
 
-          console.log("Asli Image Link:", fullPath); // Ab ye single /uploads/ dikhayega
-          imgTag.src = `${fullPath}?t=${new Date().getTime()}`;
-          console.log(`🖼️ Thumbnail Updated for: ${course.title}`);
+            // ✅ Agar already full URL hai
+            if (course.thumbnail.startsWith("http")) {
+              fullPath = course.thumbnail;
+            }
+            // ✅ Agar relative path hai
+            else {
+              const cleanThumbnail = course.thumbnail.replace(/^\/?uploads\//, "");
+              fullPath = `${window.API_BASE_URL}/uploads/${cleanThumbnail}`;
+            }
+
+            console.log("✅ Final Image URL:", fullPath);
+
+            // ✅ Cache busting
+            imgTag.src = `${fullPath}?t=${Date.now()}`;
+
+          } else {
+            console.warn(`⚠️ Thumbnail missing for: ${course.title}`);
+            imgTag.style.display = "none"; // ya placeholder laga sakta hai
+          }
+
+          // ❌ Image load fail ho to handle karo
+          imgTag.onerror = function () {
+            console.error("❌ Image load failed:", imgTag.src);
+            imgTag.style.display = "none";
+          };
         }
 
 
