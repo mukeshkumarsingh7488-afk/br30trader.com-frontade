@@ -1182,6 +1182,7 @@ const checkout = async function (courseId) {
 
     // ❌ REAL BANK FAILURE: (Iska mail bhi jayega)
     rzp.on("payment.failed", function (response) {
+       console.log("❌ PAYMENT FAILED EVENT TRIGGERED");
       sendStatusAlert(
         "FAILED",
         `Actual Bank Failure: ${response.error.description}`,
