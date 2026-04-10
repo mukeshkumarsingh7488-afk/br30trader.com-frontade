@@ -1339,52 +1339,58 @@ function displayNextBatch() {
 
   setTimeout(() => {
     listContainer.innerHTML = "";
-    const batch = allTraders.slice(currentIndex, currentIndex + itemsPerPage);
+
+    // 1. Rank #1 ko hamesha fix rakho (Sabse upar)
+    const fixedTrader = allTraders[0];
+    renderTraderRow(fixedTrader, 1, 0);
+
+    // 2. Baaki ke traders (Index 1 se start) jo har 5 second mein badlenge
+    const slidingTraders = allTraders.slice(1);
+    const batchSize = itemsPerPage - 1; // Yaani 5 log sliding ke liye
+
+    const batch = slidingTraders.slice(currentIndex, currentIndex + batchSize);
 
     batch.forEach((trader, index) => {
-      const globalIndex = currentIndex + index + 1;
-      const rawPath = trader.profilePic || "";
-      let userPic;
-
-      // 1. Check karo ki photo Cloudinary ki hai ya purani local wali
-      if (rawPath && typeof rawPath === "string" && rawPath.length > 5) {
-        if (rawPath.startsWith("http")) {
-          // ✅ Case A: Cloudinary URL (Direct use karo)
-          userPic = rawPath;
-        } else {
-          // ✅ Case B: Purani Local Photo (Uploads folder se uthao)
-          const fileName = rawPath.split(/[\\/]/).pop();
-          userPic = `${window.API_BASE_URL}/uploads/${fileName}`;
-        }
-      } else {
-        // ❌ Case C: Photo nahi hai toh Avatar dikhao
-        userPic = `https://ui-avatars.com/api/?name=${encodeURIComponent(trader.name)}&background=111&color=00ff88&bold=true`;
-      }
-
-      const row = `
-        <div class="trader-item" style="animation-delay: ${index * 0.05}s;">
-            <span class="rank-num">#${globalIndex}</span>
-            <img src="${userPic}" class="user-avatar" 
-                 onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(trader.name)}&background=111&color=00ff88&bold=true'">
-            <span class="user-name">${trader.name}</span>
-            <span class="vip-badge">💎VIP</span>
-        </div>
-    `;
-      listContainer.insertAdjacentHTML("beforeend", row);
+      const globalRank = currentIndex + index + 2; // Rank 2 se start hogi
+      renderTraderRow(trader, globalRank, index + 1);
     });
 
     listContainer.style.opacity = "1";
-    currentIndex =
-      currentIndex + itemsPerPage >= allTraders.length
-        ? 0
-        : currentIndex + itemsPerPage;
+
+    // Index update logic (Total sliding traders ke hisab se)
+    currentIndex = (currentIndex + batchSize >= slidingTraders.length) ? 0 : currentIndex + batchSize;
   }, 500);
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  fetchTraders();
-  setInterval(displayNextBatch, 5000); // 5 सेकंड में स्लाइड बदलेगी
-});
+// Helper function aapka purana logic use karte huye
+function renderTraderRow(trader, rank, delayIndex) {
+  const listContainer = document.getElementById("topTradersList");
+  const rawPath = trader.profilePic || "";
+  let userPic;
+
+  if (rawPath && typeof rawPath === "string" && rawPath.length > 5) {
+    if (rawPath.startsWith("http")) {
+      userPic = rawPath;
+    } else {
+      const fileName = rawPath.split(/[\\/]/).pop();
+      userPic = `${window.API_BASE_URL}/uploads/${fileName}`;
+    }
+  } else {
+    userPic = `https://ui-avatars.com/api/?name=${encodeURIComponent(trader.name)}&background=111&color=00ff88&bold=true`;
+  }
+
+  const row = `
+    <div class="trader-item" style="animation-delay: ${delayIndex * 0.05}s;">
+        <span class="rank-num">#${rank}</span>
+        <img src="${userPic}" class="user-avatar" 
+             onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(trader.name)}&background=111&color=00ff88&bold=true'">
+        <span class="user-name">${trader.name}</span>
+        <span class="vip-badge">💎VIP</span>
+    </div>
+  `;
+  listContainer.insertAdjacentHTML("beforeend", row);
+}
+
 
 // SEND BULK EMAIL VIP, TOTAL USER, NORMAL USER
 async function sendBulkMail() {
