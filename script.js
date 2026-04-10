@@ -1333,34 +1333,51 @@ async function fetchTraders() {
 
 function displayNextBatch() {
   const listContainer = document.getElementById("topTradersList");
-  if (!listContainer || !allTraders || allTraders.length === 0) return;
+  
+  // 1. Safety Check: Agar data nahi aaya abhi tak, toh function roko
+  if (!listContainer || !allTraders || allTraders.length === 0) {
+      console.log("Waiting for data...");
+      return;
+  }
 
   listContainer.style.opacity = "0";
 
   setTimeout(() => {
     listContainer.innerHTML = "";
 
-    // 1. Rank #1 (Hamesha fix rahega)
-    const stickyTrader = allTraders[0];
-    appendTraderHTML(stickyTrader, 1, 0);
+    try {
+        // 2. Rank #1 Fix (Hamesha index 0 wala banda)
+        const stickyTrader = allTraders[0];
+        if (stickyTrader) {
+            appendTraderHTML(stickyTrader, 1, 0);
+        }
 
-    // 2. Sliding Traders (Rank 2 se aage)
-    const slidingList = allTraders.slice(1);
-    const batchSize = itemsPerPage - 1; // 5 log
-    const batch = slidingList.slice(currentIndex, currentIndex + batchSize);
+        // 3. Sliding Traders (Rank 2 se aage)
+        const slidingList = allTraders.slice(1);
+        if (slidingList.length > 0) {
+            const batchSize = itemsPerPage - 1; // 5 users
+            const batch = slidingList.slice(currentIndex, currentIndex + batchSize);
 
-    batch.forEach((trader, index) => {
-      appendTraderHTML(trader, currentIndex + index + 2, index + 1);
-    });
+            batch.forEach((trader, index) => {
+                appendTraderHTML(trader, currentIndex + index + 2, index + 1);
+            });
+
+            // Index update logic
+            currentIndex = (currentIndex + batchSize >= slidingList.length) ? 0 : currentIndex + batchSize;
+        }
+    } catch (err) {
+        console.error("Leaderboard Error:", err);
+    }
 
     listContainer.style.opacity = "1";
-    currentIndex = (currentIndex + batchSize >= slidingList.length) ? 0 : currentIndex + batchSize;
   }, 500);
 }
 
-// Ye helper function displayNextBatch ke neeche hi rehne dena
+// Helper function ko displayNextBatch ke neeche rakho
 function appendTraderHTML(trader, rank, delay) {
   const listContainer = document.getElementById("topTradersList");
+  if (!trader) return;
+
   const rawPath = trader.profilePic || "";
   let userPic = (rawPath && rawPath.startsWith("http")) ? rawPath : 
                 (rawPath ? `${window.API_BASE_URL}/uploads/${rawPath.split(/[\\/]/).pop()}` : 
@@ -1375,7 +1392,6 @@ function appendTraderHTML(trader, rank, delay) {
     </div>`;
   listContainer.insertAdjacentHTML("beforeend", row);
 }
-
 
 
 // SEND BULK EMAIL VIP, TOTAL USER, NORMAL USER
