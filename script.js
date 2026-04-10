@@ -1292,8 +1292,16 @@ let allTraders = [];
 let currentIndex = 0;
 const itemsPerPage = 6;
 
+// 🔥 AUTO CALL (MOST IMPORTANT)
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("🔥 Page Loaded");
+  fetchTraders();
+});
+
 async function fetchTraders() {
   try {
+    console.log("🚀 fetchTraders called");
+
     const token = localStorage.getItem("token");
 
     const res = await fetch(window.API_BASE_URL + '/api/courses/leaderboard', {
@@ -1304,52 +1312,56 @@ async function fetchTraders() {
       }
     });
 
-    let data = await res.json();
+    const data = await res.json();
+    console.log("📊 API DATA:", data);
 
     // normalize data
     allTraders = Array.isArray(data) ? data : (data.data || []);
 
-    if (allTraders.length > 0) {
-
-      // 🔥 VIP USER FIX (MAIN LOGIC)
-      const user = JSON.parse(localStorage.getItem("user"));
-
-      if (user && user.isVip) {
-
-        let myIndex = allTraders.findIndex(
-          t => String(t._id) === String(user._id)
-        );
-
-        let myProfile;
-
-        if (myIndex !== -1) {
-          // remove from list
-          myProfile = allTraders.splice(myIndex, 1)[0];
-        } else {
-          // अगर leaderboard में नहीं है तो manually add
-          myProfile = {
-            _id: user._id,
-            name: user.name,
-            profilePic: user.profilePic,
-            badge: "vip",
-            isVip: true
-          };
-        }
-
-        // 🔥 हमेशा top पे
-        allTraders.unshift(myProfile);
-      }
-
-      // 🔥 duplicate remove safety
-      allTraders = allTraders.filter(
-        (v, i, a) => a.findIndex(t => t._id === v._id) === i
-      );
-
-      displayNextBatch();
+    if (!allTraders || allTraders.length === 0) {
+      console.log("❌ No traders data");
+      return;
     }
 
+    // 🔥 SAFE USER PARSE (CRASH FIX)
+    let user = null;
+    try {
+      user = JSON.parse(localStorage.getItem("user"));
+    } catch {}
+
+    // 🔥 VIP LOGIC (FIXED)
+    if (user && user.isVip) {
+
+      let myIndex = allTraders.findIndex(
+        t => String(t._id) === String(user._id)
+      );
+
+      let myProfile;
+
+      if (myIndex !== -1) {
+        myProfile = allTraders.splice(myIndex, 1)[0];
+      } else {
+        myProfile = {
+          _id: user._id,
+          name: user.name,
+          profilePic: user.profilePic,
+          badge: "vip",
+          isVip: true
+        };
+      }
+
+      allTraders.unshift(myProfile);
+    }
+
+    // 🔥 REMOVE DUPLICATES
+    allTraders = allTraders.filter(
+      (v, i, a) => a.findIndex(t => t._id === v._id) === i
+    );
+
+    displayNextBatch();
+
   } catch (err) {
-    console.error("Fetch Error:", err);
+    console.error("❌ Fetch Error:", err);
   }
 }
 
@@ -1357,9 +1369,13 @@ async function fetchTraders() {
 function displayNextBatch() {
   const listContainer = document.getElementById("topTradersList");
 
-  if (!listContainer || !allTraders || allTraders.length === 0) {
+  // 🔥 CONTAINER CHECK
+  if (!listContainer) {
+    console.log("❌ topTradersList not found");
     return;
   }
+
+  if (!allTraders || allTraders.length === 0) return;
 
   listContainer.style.opacity = "0";
 
@@ -1367,13 +1383,12 @@ function displayNextBatch() {
     listContainer.innerHTML = "";
 
     try {
-      // 🔥 Rank #1 (VIP always top)
+      // 🔥 TOP USER
       const stickyTrader = allTraders[0];
       if (stickyTrader) {
         appendTraderHTML(stickyTrader, 1, 0);
       }
 
-      // बाकी users
       const slidingList = allTraders.slice(1);
 
       if (slidingList.length > 0) {
@@ -1391,7 +1406,7 @@ function displayNextBatch() {
       }
 
     } catch (err) {
-      console.error("Leaderboard Error:", err);
+      console.error("❌ Leaderboard Error:", err);
     }
 
     listContainer.style.opacity = "1";
@@ -1399,7 +1414,7 @@ function displayNextBatch() {
 }
 
 
-// 🔥 HTML render function
+// 🔥 HTML RENDER
 function appendTraderHTML(trader, rank, delay) {
   const listContainer = document.getElementById("topTradersList");
   if (!trader) return;
