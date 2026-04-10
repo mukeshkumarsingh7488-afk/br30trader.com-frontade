@@ -1290,41 +1290,56 @@ if (sendBtn) {
 const API_URL = window.API_BASE_URL + '/';
 let allTraders = [];
 let currentIndex = 0;
-const itemsPerPage = 6; // अब 6 नाम एक साथ दिखेंगे (3 लेफ्ट, 3 राइट)
+const itemsPerPage = 6; // 6 users ek batch me
 
 async function fetchTraders() {
   try {
-    // 1. LocalStorage se token uthao
+    // 1. Token lo (login ke liye)
     const token = localStorage.getItem("token");
 
-    // 2. Fetch request mein Headers add karo
     const res = await fetch(window.API_BASE_URL + '/api/courses/leaderboard', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}` // Token bhejna zaroori hai
+        'Authorization': `Bearer ${token}`
       }
     });
 
     let data = await res.json();
 
-    // Check karo data array hai ya object {data: [...]}
+    // 2. Data normalize karo (array banake)
     allTraders = Array.isArray(data) ? data : (data.data || []);
 
     if (allTraders.length > 0) {
-      // 3. Frontend par bhi Rank 1 check (Security ke liye)
-      // Agar user login hai, toh check karo uska naam list mein kahan hai
-      const user = JSON.parse(localStorage.getItem("user")); // Agar user info store hai
+
+      // 🔥 3. YAHAN SE MAIN LOGIC START (VIP ko top pe lana)
+      const user = JSON.parse(localStorage.getItem("user"));
+
       if (user && user.isVip) {
-        const myIndex = allTraders.findIndex(t => t.name === user.name);
-        if (myIndex > 0) {
+
+        // ❌ Pehle tu name se match kar raha tha (galat ho sakta hai)
+        // ✅ ID se match karo (best practice)
+        const myIndex = allTraders.findIndex(t => t._id === user._id);
+
+        if (myIndex !== -1) {
+          // apna data nikaal
           const myProfile = allTraders.splice(myIndex, 1)[0];
+
+          // top pe daal
           allTraders.unshift(myProfile);
         }
       }
 
+      // 🔥 4. OPTIONAL (rank update karna)
+      allTraders = allTraders.map((user, index) => ({
+        ...user,
+        rank: index + 1
+      }));
+
+      // 5. UI render
       displayNextBatch();
     }
+
   } catch (err) {
     console.error("Fetch Error:", err);
   }
