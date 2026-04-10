@@ -1340,19 +1340,25 @@ function displayNextBatch() {
   setTimeout(() => {
     listContainer.innerHTML = "";
 
-    // 🔥 Rank 1 FIX (first user always same)
+    // ✅ Rank 1 FIX
     const fixedTrader = allTraders[0];
 
-    // 🔁 Remaining users rotate honge (index 1 se start)
+    // ✅ Remaining list (exclude first)
     const rotatingList = allTraders.slice(1);
 
-    const batch = rotatingList.slice(currentIndex, currentIndex + (itemsPerPage - 1));
+    // ✅ Batch (baaki users)
+    const batch = [];
+    for (let i = 0; i < itemsPerPage - 1; i++) {
+      const index = (currentIndex + i) % rotatingList.length;
+      batch.push(rotatingList[index]);
+    }
 
-    // 👉 Final list = [fixed + rotating]
+    // ✅ Final list
     const finalList = [fixedTrader, ...batch];
 
     finalList.forEach((trader, index) => {
-      const globalIndex = index + 1; // always 1 to N (reset every slide)
+      const globalIndex = index + 1;
+
       const rawPath = trader.profilePic || "";
       let userPic;
 
@@ -1369,11 +1375,11 @@ function displayNextBatch() {
 
       const row = `
         <div class="trader-item" style="animation-delay: ${index * 0.05}s;">
-            <span class="rank-num">#${globalIndex}</span>
-            <img src="${userPic}" class="user-avatar"
-                 onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(trader.name)}&background=111&color=00ff88&bold=true'">
-            <span class="user-name">${trader.name}</span>
-            <span class="vip-badge">💎VIP</span>
+          <span class="rank-num">#${globalIndex}</span>
+          <img src="${userPic}" class="user-avatar"
+            onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(trader.name)}&background=111&color=00ff88&bold=true'">
+          <span class="user-name">${trader.name}</span>
+          <span class="vip-badge">💎VIP</span>
         </div>
       `;
 
@@ -1382,13 +1388,10 @@ function displayNextBatch() {
 
     listContainer.style.opacity = "1";
 
-    // 🔁 Rotation sirf baaki users ka hoga
-    currentIndex =
-      currentIndex + (itemsPerPage - 1) >= rotatingList.length
-        ? 0
-        : currentIndex + (itemsPerPage - 1);
+    // ✅ Update index (only rotating users)
+    currentIndex = (currentIndex + (itemsPerPage - 1)) % rotatingList.length;
 
-  }, 500);
+  }, 300);
 }
 
 
