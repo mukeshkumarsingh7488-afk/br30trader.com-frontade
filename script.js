@@ -1333,63 +1333,67 @@ async function fetchTraders() {
 
 function displayNextBatch() {
   const listContainer = document.getElementById("topTradersList");
-  if (!listContainer || allTraders.length === 0) return;
+  
+  // Agar data nahi hai toh wapas jao
+  if (!listContainer || !allTraders || allTraders.length === 0) return;
 
   listContainer.style.opacity = "0";
 
   setTimeout(() => {
     listContainer.innerHTML = "";
 
-    // 1. Rank #1 ko hamesha fix rakho (Sabse upar)
-    const fixedTrader = allTraders[0];
-    renderTraderRow(fixedTrader, 1, 0);
+    // --- NEW LOGIC: RANK 1 STICKY ---
+    // Rank 1 hamesha index 0 wala banda rahega
+    const stickyTrader = allTraders[0]; 
+    renderTraderRow(stickyTrader, 1, 0); 
 
-    // 2. Baaki ke traders (Index 1 se start) jo har 5 second mein badlenge
+    // Baaki ke traders (Index 1 se start) jo slide honge
     const slidingTraders = allTraders.slice(1);
-    const batchSize = itemsPerPage - 1; // Yaani 5 log sliding ke liye
-
+    const batchSize = itemsPerPage - 1; // 5 users
     const batch = slidingTraders.slice(currentIndex, currentIndex + batchSize);
 
     batch.forEach((trader, index) => {
-      const globalRank = currentIndex + index + 2; // Rank 2 se start hogi
+      const globalRank = currentIndex + index + 2; // Rank 2 se start
       renderTraderRow(trader, globalRank, index + 1);
     });
+    // --------------------------------
 
     listContainer.style.opacity = "1";
 
-    // Index update logic (Total sliding traders ke hisab se)
+    // Index update logic
     currentIndex = (currentIndex + batchSize >= slidingTraders.length) ? 0 : currentIndex + batchSize;
   }, 500);
 }
 
-// Helper function aapka purana logic use karte huye
-function renderTraderRow(trader, rank, delayIndex) {
-  const listContainer = document.getElementById("topTradersList");
-  const rawPath = trader.profilePic || "";
-  let userPic;
+// Helper function: Isko displayNextBatch ke niche paste kar dena
+function renderTraderRow(trader, globalIndex, indexDelay) {
+    const listContainer = document.getElementById("topTradersList");
+    const rawPath = trader.profilePic || "";
+    let userPic;
 
-  if (rawPath && typeof rawPath === "string" && rawPath.length > 5) {
-    if (rawPath.startsWith("http")) {
-      userPic = rawPath;
+    if (rawPath && typeof rawPath === "string" && rawPath.length > 5) {
+        if (rawPath.startsWith("http")) {
+            userPic = rawPath;
+        } else {
+            const fileName = rawPath.split(/[\\/]/).pop();
+            userPic = `${window.API_BASE_URL}/uploads/${fileName}`;
+        }
     } else {
-      const fileName = rawPath.split(/[\\/]/).pop();
-      userPic = `${window.API_BASE_URL}/uploads/${fileName}`;
+        userPic = `https://ui-avatars.com{encodeURIComponent(trader.name)}&background=111&color=00ff88&bold=true`;
     }
-  } else {
-    userPic = `https://ui-avatars.com/api/?name=${encodeURIComponent(trader.name)}&background=111&color=00ff88&bold=true`;
-  }
 
-  const row = `
-    <div class="trader-item" style="animation-delay: ${delayIndex * 0.05}s;">
-        <span class="rank-num">#${rank}</span>
-        <img src="${userPic}" class="user-avatar" 
-             onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(trader.name)}&background=111&color=00ff88&bold=true'">
-        <span class="user-name">${trader.name}</span>
-        <span class="vip-badge">💎VIP</span>
-    </div>
-  `;
-  listContainer.insertAdjacentHTML("beforeend", row);
+    const row = `
+        <div class="trader-item" style="animation-delay: ${indexDelay * 0.05}s;">
+            <span class="rank-num">#${globalIndex}</span>
+            <img src="${userPic}" class="user-avatar" 
+                 onerror="this.src='https://ui-avatars.com{encodeURIComponent(trader.name)}&background=111&color=00ff88&bold=true'">
+            <span class="user-name">${trader.name}</span>
+            <span class="vip-badge">💎VIP</span>
+        </div>
+    `;
+    listContainer.insertAdjacentHTML("beforeend", row);
 }
+
 
 
 // SEND BULK EMAIL VIP, TOTAL USER, NORMAL USER
