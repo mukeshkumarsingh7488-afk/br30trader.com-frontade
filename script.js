@@ -1182,7 +1182,7 @@ const checkout = async function (courseId) {
 
     // ❌ REAL BANK FAILURE: (Iska mail bhi jayega)
     rzp.on("payment.failed", function (response) {
-      console.log("❌ PAYMENT FAILED EVENT TRIGGERED");
+       console.log("❌ PAYMENT FAILED EVENT TRIGGERED");
       sendStatusAlert(
         "FAILED",
         `Actual Bank Failure: ${response.error.description}`,
@@ -1290,11 +1290,10 @@ if (sendBtn) {
 const API_URL = window.API_BASE_URL + '/';
 let allTraders = [];
 let currentIndex = 0;
-const itemsPerPage = 6; // 6 users ek batch me
+const itemsPerPage = 6;
 
 async function fetchTraders() {
   try {
-    // 1. Token lo (login ke liye)
     const token = localStorage.getItem("token");
 
     const res = await fetch(window.API_BASE_URL + '/api/courses/leaderboard', {
@@ -1307,36 +1306,45 @@ async function fetchTraders() {
 
     let data = await res.json();
 
-    // 2. Data normalize karo (array banake)
+    // normalize data
     allTraders = Array.isArray(data) ? data : (data.data || []);
 
     if (allTraders.length > 0) {
 
-      // 🔥 3. YAHAN SE MAIN LOGIC START (VIP ko top pe lana)
+      // 🔥 VIP USER FIX (MAIN LOGIC)
       const user = JSON.parse(localStorage.getItem("user"));
 
       if (user && user.isVip) {
 
-        // ❌ Pehle tu name se match kar raha tha (galat ho sakta hai)
-        // ✅ ID se match karo (best practice)
-        const myIndex = allTraders.findIndex(t => t._id === user._id);
+        let myIndex = allTraders.findIndex(
+          t => String(t._id) === String(user._id)
+        );
+
+        let myProfile;
 
         if (myIndex !== -1) {
-          // apna data nikaal
-          const myProfile = allTraders.splice(myIndex, 1)[0];
-
-          // top pe daal
-          allTraders.unshift(myProfile);
+          // remove from list
+          myProfile = allTraders.splice(myIndex, 1)[0];
+        } else {
+          // अगर leaderboard में नहीं है तो manually add
+          myProfile = {
+            _id: user._id,
+            name: user.name,
+            profilePic: user.profilePic,
+            badge: "vip",
+            isVip: true
+          };
         }
+
+        // 🔥 हमेशा top पे
+        allTraders.unshift(myProfile);
       }
 
-      // 🔥 4. OPTIONAL (rank update karna)
-      allTraders = allTraders.map((user, index) => ({
-        ...user,
-        rank: index + 1
-      }));
+      // 🔥 duplicate remove safety
+      allTraders = allTraders.filter(
+        (v, i, a) => a.findIndex(t => t._id === v._id) === i
+      );
 
-      // 5. UI render
       displayNextBatch();
     }
 
@@ -1348,58 +1356,75 @@ async function fetchTraders() {
 
 function displayNextBatch() {
   const listContainer = document.getElementById("topTradersList");
-  if (!listContainer || allTraders.length === 0) return;
+
+  if (!listContainer || !allTraders || allTraders.length === 0) {
+    return;
+  }
 
   listContainer.style.opacity = "0";
 
   setTimeout(() => {
     listContainer.innerHTML = "";
-    const batch = allTraders.slice(currentIndex, currentIndex + itemsPerPage);
 
-    batch.forEach((trader, index) => {
-      const globalIndex = currentIndex + index + 1;
-      const rawPath = trader.profilePic || "";
-      let userPic;
-
-      // 1. Check karo ki photo Cloudinary ki hai ya purani local wali
-      if (rawPath && typeof rawPath === "string" && rawPath.length > 5) {
-        if (rawPath.startsWith("http")) {
-          // ✅ Case A: Cloudinary URL (Direct use karo)
-          userPic = rawPath;
-        } else {
-          // ✅ Case B: Purani Local Photo (Uploads folder se uthao)
-          const fileName = rawPath.split(/[\\/]/).pop();
-          userPic = `${window.API_BASE_URL}/uploads/${fileName}`;
-        }
-      } else {
-        // ❌ Case C: Photo nahi hai toh Avatar dikhao
-        userPic = `https://ui-avatars.com/api/?name=${encodeURIComponent(trader.name)}&background=111&color=00ff88&bold=true`;
+    try {
+      // 🔥 Rank #1 (VIP always top)
+      const stickyTrader = allTraders[0];
+      if (stickyTrader) {
+        appendTraderHTML(stickyTrader, 1, 0);
       }
 
-      const row = `
-        <div class="trader-item" style="animation-delay: ${index * 0.05}s;">
-            <span class="rank-num">#${globalIndex}</span>
-            <img src="${userPic}" class="user-avatar" 
-                 onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(trader.name)}&background=111&color=00ff88&bold=true'">
-            <span class="user-name">${trader.name}</span>
-            <span class="vip-badge">💎VIP</span>
-        </div>
-    `;
-      listContainer.insertAdjacentHTML("beforeend", row);
-    });
+      // बाकी users
+      const slidingList = allTraders.slice(1);
+
+      if (slidingList.length > 0) {
+        const batchSize = itemsPerPage - 1;
+
+        const batch = slidingList.slice(currentIndex, currentIndex + batchSize);
+
+        batch.forEach((trader, index) => {
+          appendTraderHTML(trader, currentIndex + index + 2, index + 1);
+        });
+
+        currentIndex = (currentIndex + batchSize >= slidingList.length)
+          ? 0
+          : currentIndex + batchSize;
+      }
+
+    } catch (err) {
+      console.error("Leaderboard Error:", err);
+    }
 
     listContainer.style.opacity = "1";
-    currentIndex =
-      currentIndex + itemsPerPage >= allTraders.length
-        ? 0
-        : currentIndex + itemsPerPage;
   }, 500);
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  fetchTraders();
-  setInterval(displayNextBatch, 5000); // 5 सेकंड में स्लाइड बदलेगी
-});
+
+// 🔥 HTML render function
+function appendTraderHTML(trader, rank, delay) {
+  const listContainer = document.getElementById("topTradersList");
+  if (!trader) return;
+
+  const rawPath = trader.profilePic || "";
+
+  let userPic = (rawPath && rawPath.startsWith("http"))
+    ? rawPath
+    : (rawPath
+        ? `${window.API_BASE_URL}/uploads/${rawPath.split(/[\\/]/).pop()}`
+        : `https://ui-avatars.com/api/?name=${encodeURIComponent(trader.name)}&background=111&color=00ff88&bold=true`
+      );
+
+  const row = `
+    <div class="trader-item" style="animation-delay: ${delay * 0.05}s;">
+        <span class="rank-num">#${rank}</span>
+        <img src="${userPic}" class="user-avatar"
+             onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(trader.name)}&background=111&color=00ff88&bold=true'">
+        <span class="user-name">${trader.name}</span>
+        <span class="vip-badge">💎VIP</span>
+    </div>
+  `;
+
+  listContainer.insertAdjacentHTML("beforeend", row);
+}
 
 
 // SEND BULK EMAIL VIP, TOTAL USER, NORMAL USER
