@@ -8,6 +8,14 @@ push github cmd     git push origin main --force
 
 Ctrl + Shift + P    Developer: Reload Window
 
+First Time Push (agar repo new hai)
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/USERNAME/REPO_NAME.git
+git push -u origin main
+
 
 frondate push to github   
 # 1. Check current status
@@ -21,3 +29,13 @@ git commit -m "*"
 
 # 4. Push to main branch (ya master, jaisa repo me hai)
 git push origin main
+
+Agar error aaye (common fix)
+git pull origin main --rebase
+git push
+
+Check remote URL
+git remote -v
+
+Fast Shortcut (ek line me)
+git add . && git commit -m "vip leaderboard fix" && git push

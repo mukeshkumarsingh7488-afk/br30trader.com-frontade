@@ -4,7 +4,7 @@
 ========================================= */
 console.log("Bhai, Script Load Ho Gayi! 🔥");
 var typed = new Typed("#element", {
-  strings: ["Web. Developer.", "Trader.", "Investor.", "Content Creator."],
+  strings: ["Web. Developer.", "Trader.", "Investor.", "Graphic Designer."],
   typeSpeed: 80,
   backSpeed: 40,
   loop: true,
