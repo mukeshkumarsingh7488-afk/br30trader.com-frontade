@@ -17,25 +17,7 @@ window.toggleNotifications = function () {
 // Page load hote hi synchronization shuru karo
 document.addEventListener("DOMContentLoaded", syncAdminData);
 
-// मोबाइल मेनू और लिंक्स को सेलेक्ट करें
-const mobileMenu = document.getElementById('mobile-menu');
-const navLinks = document.querySelector('.nav-links'); // अपने मेनू लिस्ट की क्लास यहाँ लिखें
 
-mobileMenu.addEventListener('click', () => {
-  // 1. मेनू बटन को 'X' में बदलें
-  mobileMenu.classList.toggle('active');
-
-  // 2. मेनू लिस्ट को दिखाएं या छुपाएं
-  navLinks.classList.toggle('show');
-});
-
-// अगर किसी लिंक पर क्लिक करें तो मेनू बंद हो जाए (Optional)
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    mobileMenu.classList.remove('active');
-    navLinks.classList.remove('show');
-  });
-});
 
 /* ====================================
    2. Firebess function start 

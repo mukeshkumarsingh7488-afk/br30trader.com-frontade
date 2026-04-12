@@ -182,20 +182,43 @@ p {
 
 /* Desktop Navigation Links */
 /* ================= NAVBAR ================= */
+/* ================= RESET BASIC ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================= NAVBAR WRAPPER ================= */
+nav {
+  width: 100%;
+  padding: 12px 20px;
+  background: #020617;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+/* ================= NAV CONTAINER ================= */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ================= NAV LINKS ================= */
 .nav-links {
   display: flex;
   align-items: center;
   gap: 22px;
 }
 
-/* each item */
+/* ================= NAV ITEM ================= */
 .nav-item {
   position: relative;
 }
 
-/* main links */
+/* ================= MAIN LINKS ================= */
 .nav-item > a {
-  color: var(--text-white);
+  color: #e2e8f0;
   text-decoration: none;
   font-size: 0.95rem;
   font-weight: 500;
@@ -204,15 +227,15 @@ p {
   transition: all 0.25s ease;
 }
 
-/* hover effect */
+/* hover */
 .nav-item > a:hover {
-  color: var(--neon-green);
+  color: #00ffcc;
   text-shadow: 0 0 6px rgba(0,255,200,0.4);
 }
 
 /* ================= DROPDOWN FIX ================= */
 
-/* invisible bridge (MOST IMPORTANT) */
+/* invisible bridge (no disappear issue) */
 .nav-item.dropdown::after {
   content: "";
   position: absolute;
@@ -229,10 +252,10 @@ p {
   left: 0;
   margin-top: 8px;
 
-  background: var(--box-bg);
+  background: #020617;
   min-width: 190px;
 
-  border: 1px solid var(--border-color);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: 12px;
 
   box-shadow: 0 15px 40px rgba(0,0,0,0.6);
@@ -250,41 +273,45 @@ p {
 .nav-dropdown a {
   display: block;
   padding: 11px 15px;
-  color: var(--text-white);
+  color: #e2e8f0;
   text-decoration: none;
   font-size: 0.9rem;
   transition: 0.2s;
 }
 
-/* hover on dropdown items */
+/* hover dropdown links */
 .nav-dropdown a:hover {
   background: #122527;
-  color: var(--neon-green);
+  color: #00ffcc;
 }
 
-/* divider (if needed) */
+/* divider */
 .nav-dropdown hr {
   border: none;
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid rgba(255,255,255,0.08);
   margin: 5px 0;
 }
 
-/* 🔥 SHOW DROPDOWN */
+/* show dropdown */
 .nav-item.dropdown:hover .nav-dropdown {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
 }
 
-/* ================= OPTIONAL: ARROW ROTATE ================= */
-.nav-item.dropdown > a::after {
-  content: " ▼";
-  font-size: 0.7rem;
+/* ================= REMOVE HAMBURGER ================= */
+.menu-icon {
+  display: none !important;
 }
 
-.nav-item.dropdown:hover > a::after {
-  transform: rotate(180deg);
-  display: inline-block;
+/* ================= FORCE NAV SHOW (NO HIDE ISSUE) ================= */
+@media (max-width: 768px) {
+  .nav-links {
+    display: flex !important;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
 }
 
 /* Right Group (AI + Bell) */
