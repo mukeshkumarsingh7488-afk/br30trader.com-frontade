@@ -1,0 +1,216 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      /* Web & Laptop Rendering Fix (Laptop par text saaf dikhne ke liye) */
+      .email-body {
+        background-color: #000000;
+        padding: 40px 20px;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+          Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        margin: 0;
+      }
+      .card {
+        max-width: 500px;
+        margin: auto;
+        background: #0a0a0a;
+        border-radius: 24px;
+        border: 2px solid #ff4d4d;
+        overflow: hidden;
+        box-shadow: 0 0 30px rgba(255, 77, 77, 0.2);
+      }
+      .banner {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-bottom: 2px solid #ff4d4d;
+      }
+
+      /* Content Styling - Force White on Web */
+      .content {
+        padding: 40px 30px;
+        text-align: center;
+        color: #ffffff !important;
+      }
+      .security-txt {
+        color: #ff4d4d !important;
+        font-size: 22px;
+        font-weight: 800;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      /* Mobile OTP Box Fix */
+      .otp-box {
+        background: rgba(255, 77, 77, 0.05);
+        border: 1px dashed #ff4d4d;
+        border-radius: 16px;
+        padding: 25px;
+        margin: 30px 0;
+      }
+      .otp-code {
+        margin: 0;
+        font-size: 35px;
+        letter-spacing: 8px;
+        color: #ff4d4d !important;
+        font-weight: 800;
+        text-shadow: 0 0 15px rgba(255, 77, 77, 0.5);
+        word-break: break-all;
+      }
+
+      .footer {
+        background: #000000;
+        padding: 30px;
+        text-align: center;
+        border-top: 1px solid #1a1a1a;
+      }
+      .security-tag {
+        color: #ff4d4d !important;
+        font-weight: 700;
+        font-size: 14px;
+      }
+      .signature {
+        color: #64748b !important;
+        font-size: 13px;
+        line-height: 1.6;
+      }
+    </style>
+  </head>
+  <body class="email-body">
+    <div class="card">
+      <!-- Security Banner -->
+      <img
+        src="https://i.ibb.co/ns0Ww0gg/red-burner-jpg.jpg"
+        alt="Security Banner"
+        class="banner"
+      />
+
+      <div class="content">
+        <div class="security-txt">Password Reset Request</div>
+
+        <!-- Pro English & Web Clear Text -->
+        <p style="color: #cbd5e1 !important; font-size: 15px; line-height: 1.6">
+          Hi <b>${name}</b>, we received a request to reset your password. Use
+          the secure verification code below to proceed.
+        </p>
+
+        <div class="otp-box">
+          <h1 class="otp-code">${otp}</h1>
+        </div>
+
+        <p
+          style="color: #ff4d4d !important; font-size: 12px; font-weight: bold"
+        >
+          ⚠️ Valid for 5 minutes only.
+        </p>
+      </div>
+
+      <div class="footer">
+        <div class="signature">
+          Regards,<br />
+          <span class="security-tag">BR30 Support Team</span><br />
+          Official Support & Security Division
+        </div>
+
+        <!-- OFFICIAL NO-REPLY NOTE -->
+        <p
+          style="
+            color: #475569 !important;
+            font-size: 10px;
+            margin-top: 20px;
+            font-style: italic;
+            text-align: center;
+          "
+        >
+          🚫 <b>Note:</b> This is an automated security email. Please
+          <b>do not reply</b> to this message.
+        </p>
+
+        <!-- 🚀 Social Links -->
+        <div
+          style="
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #111;
+          "
+        >
+          <p style="color: #00ff88; font-size: 11px; letter-spacing: 2px">
+            JOIN OUR COMMUNITY 🚀
+          </p>
+
+          <!-- YouTube -->
+          <a href="https://www.youtube.com" target="_blank">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"
+              width="22"
+              style="margin: 0 5px"
+            />
+          </a>
+
+          <!-- Instagram -->
+          <a
+            href="https://www.instagram.com/br30traderofficial?igsh=MWN5eHBscWY5bXFvMw=="
+            target="_blank"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
+              width="22"
+              style="margin: 0 5px"
+            />
+          </a>
+
+          <!-- Facebook -->
+          <a href="https://www.facebook.com/share/1DDJYGYYDf/" target="_blank">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
+              width="17"
+              style="
+                background: #1877f2;
+                border-radius: 50%;
+                padding: 3px;
+                margin: 0 5px;
+              "
+            />
+          </a>
+
+          <!-- Telegram -->
+          <a href="https://t.me/+F8mDhdfiGaI1NDY1" target="_blank">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png"
+              width="22"
+              style="margin: 0 5px"
+            />
+          </a>
+
+          <!-- WhatsApp -->
+          <a
+            href="https://chat.whatsapp.com/B4t82SWBcgOIZTeQXp1wDI"
+            target="_blank"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
+              width="22"
+              style="margin: 0 5px"
+            />
+          </a>
+        </div>
+
+        <div
+          style="
+            margin-top: 25px;
+            font-size: 10px;
+            color: #576172;
+            text-align: center;
+          "
+        >
+          © 2026 BR30 Global Service. Secure Access Guaranteed.
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+`;
