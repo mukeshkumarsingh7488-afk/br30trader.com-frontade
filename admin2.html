@@ -425,7 +425,7 @@
         try {
             const token = localStorage.getItem('token');
             // Note: Backend check ke hisab se headers set kiye hain
-            const res = await fetch(window.API_BASE_URL + '/api/auth/all-users', {
+          const res = await fetch(`${window.API_BASE_URL}/api/auth/all-users`, {
                 headers: { "Authorization": `Bearer ${token}` }
             });
             const data = await res.json();
@@ -652,10 +652,13 @@
         }
 
         try {
-            const url = window.API_BASE_URL + '/api/auth/sales-history?startDate=' + startDate + '&endDate=' + endDate;
-            const res = await fetch(url, {
-                headers: { "Authorization": `Bearer ${localStorage.getItem("token")}` }
-            });
+          const url = `${window.API_BASE_URL}/api/auth/sales-history?startDate=${startDate}&endDate=${endDate}`;
+
+const res = await fetch(url, {
+  headers: {
+    "Authorization": `Bearer ${localStorage.getItem("token")}`
+  }
+});
             const data = await res.json();
 
             if (data.success) {

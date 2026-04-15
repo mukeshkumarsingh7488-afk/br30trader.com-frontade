@@ -17,8 +17,6 @@ window.toggleNotifications = function () {
 // Page load hote hi synchronization shuru karo
 document.addEventListener("DOMContentLoaded", syncAdminData);
 
-
-
 /* ====================================
    2. Firebess function start 
   ================================== */
@@ -62,7 +60,7 @@ async function saveTokenToDatabase(token) {
     }
 
     // 3. Backend ko Request
-    const response = await fetch(window.API_BASE_URL + '/api/save-fcm-token', {
+    const response = await fetch(`${window.API_BASE_URL}/api/save-fcm-token`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -142,11 +140,13 @@ document.getElementById("reviewForm").addEventListener("submit", async (e) => {
   const user = JSON.parse(storedData);
 
   // 2. Clear IDs nikaalo (Multiple checks for safety)
-  const finalUserId = user._id || user.id || (user.user && (user.user._id || user.user.id));
+  const finalUserId =
+    user._id || user.id || (user.user && (user.user._id || user.user.id));
 
   // 3. 🚨 PROFILE PIC FIX: Direct Cloudinary URL uthao
   // Agar profile page par update hua hai, toh wahi url yahan use hoga
-  const latestProfilePic = user.profilePic || (user.user && user.user.profilePic) || "";
+  const latestProfilePic =
+    user.profilePic || (user.user && user.user.profilePic) || "";
 
   const data = {
     username: document.getElementById("userName").value.trim(),
@@ -159,7 +159,7 @@ document.getElementById("reviewForm").addEventListener("submit", async (e) => {
   console.log("📝 Posting Review with Data:", data); // Debugging ke liye
 
   try {
-    const response = await fetch(window.API_BASE_URL + '/api/reviews/add', {
+    const response = await fetch(`${window.API_BASE_URL}/api/reviews/add`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
@@ -171,7 +171,7 @@ document.getElementById("reviewForm").addEventListener("submit", async (e) => {
       alert("Thanks for your review! ✅");
       document.getElementById("reviewForm").reset();
       // Yahan function ka naam check kar lena (loadTopReviews ya fetchReviews)
-      if (typeof loadTopReviews === 'function') loadTopReviews();
+      if (typeof loadTopReviews === "function") loadTopReviews();
     } else {
       alert(result.message || "Error while posting review!");
     }
@@ -181,55 +181,56 @@ document.getElementById("reviewForm").addEventListener("submit", async (e) => {
   }
 });
 
-
 // ✅ 1. Updated loadTopReviews function (Inside logic updated for outside-click)
 async function loadTopReviews() {
   try {
-    const response = await fetch(window.API_BASE_URL + '/api/reviews/top10');
+    const response = await fetch(`${window.API_BASE_URL}/api/reviews/top10`);
     const reviews = await response.json();
     const displayArea = document.getElementById("reviewDisplay");
 
     if (!reviews || reviews.length === 0) {
-      displayArea.innerHTML = "<p style='color:gray; font-size:12px;'>No reviews yet.</p>";
+      displayArea.innerHTML =
+        "<p style='color:gray; font-size:12px;'>No reviews yet.</p>";
       return;
     }
 
-    const BASE_URL = window.API_BASE_URL + '/';
-    displayArea.innerHTML = reviews.map((r) => {
-      // 1. Path nikaalo (Check multiple fields for safety)
-      const userName = (r.userId && r.userId.name) || r.username || "User";
-      let rawPath = (r.userId && r.userId.profilePic) || r.profilePic || "";
-      let profileImg;
+    const BASE_URL = `${window.API_BASE_URL}`;
+    displayArea.innerHTML = reviews
+      .map((r) => {
+        // 1. Path nikaalo (Check multiple fields for safety)
+        const userName = (r.userId && r.userId.name) || r.username || "User";
+        let rawPath = (r.userId && r.userId.profilePic) || r.profilePic || "";
+        let profileImg;
 
-      // 2. CHECK LOGIC (Modern & Simple)
-      if (rawPath && typeof rawPath === "string" && rawPath.length > 5) {
-
-        if (rawPath.startsWith("http")) {
-          // ✅ Case A: Cloudinary ya external URL (Seedha use karo)
-          profileImg = rawPath;
+        // 2. CHECK LOGIC (Modern & Simple)
+        if (rawPath && typeof rawPath === "string" && rawPath.length > 5) {
+          if (rawPath.startsWith("http")) {
+            // ✅ Case A: Cloudinary ya external URL (Seedha use karo)
+            profileImg = rawPath;
+          } else {
+            // ✅ Case B: Purana Local Path (e.g., 'uploads/image.jpg')
+            // Isme split logic chalega taaki sirf filename mile
+            const fileName = rawPath.split(/[\\/]/).pop();
+            profileImg = `${window.API_BASE_URL}/uploads/${fileName}`;
+          }
         } else {
-          // ✅ Case B: Purana Local Path (e.g., 'uploads/image.jpg')
-          // Isme split logic chalega taaki sirf filename mile
-          const fileName = rawPath.split(/[\\/]/).pop();
-          profileImg = `${window.API_BASE_URL}/uploads/${fileName}`;
+          // ❌ Case C: Photo nahi hai
+          profileImg = `https://ui-avatars.com/api/?name=${encodeURIComponent(userName)}&background=00ff88&color=000&bold=true&size=128`;
         }
 
-      } else {
-        // ❌ Case C: Photo nahi hai
-        profileImg = `https://ui-avatars.com/api/?name=${encodeURIComponent(userName)}&background=00ff88&color=000&bold=true&size=128`;
-      }
+        // ADMIN REPLY UI LOGIC (Added 'event' in onclick for pro features)
+        const adminReplyBtn = r.adminReply
+          ? `<span onclick="window.toggleReplyBox(event, '${r._id}')" style="color:#00ff88; font-size:10px; cursor:pointer; text-decoration:underline; margin-left:8px; font-weight:normal;">View Reply</span>`
+          : "";
 
-      // ADMIN REPLY UI LOGIC (Added 'event' in onclick for pro features)
-      const adminReplyBtn = r.adminReply ?
-        `<span onclick="window.toggleReplyBox(event, '${r._id}')" style="color:#00ff88; font-size:10px; cursor:pointer; text-decoration:underline; margin-left:8px; font-weight:normal;">View Reply</span>` : '';
-
-      // Added 'reply-box-item' class to identify boxes for closing
-      const adminReplyContent = r.adminReply ?
-        `<div id="reply-box-${r._id}" class="reply-box-item" style="display:none; margin-top:8px; padding:8px; background:rgba(0,255,136,0.1); border-left:2px solid #00ff88; border-radius:4px; font-size:12px; color:#00ff88;">
+        // Added 'reply-box-item' class to identify boxes for closing
+        const adminReplyContent = r.adminReply
+          ? `<div id="reply-box-${r._id}" class="reply-box-item" style="display:none; margin-top:8px; padding:8px; background:rgba(0,255,136,0.1); border-left:2px solid #00ff88; border-radius:4px; font-size:12px; color:#00ff88;">
               <strong style="color:#fff;">Admin:</strong> ${r.adminReply}
-           </div>` : '';
+           </div>`
+          : "";
 
-      return `
+        return `
         <div class="review-card" style="background: rgba(255,255,255,0.05); padding: 15px; margin-bottom: 12px; border-radius: 15px; border-left: 4px solid #00ff88; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
             <div style="display:flex; align-items:center; gap:12px;">
                 <img src="${profileImg}" 
@@ -248,7 +249,8 @@ async function loadTopReviews() {
                 </div>
             </div>
         </div>`;
-    }).join("");
+      })
+      .join("");
   } catch (err) {
     console.error("Error:", err);
   }
@@ -258,20 +260,25 @@ async function loadTopReviews() {
 window.toggleReplyBox = function (event, id) {
   event.stopPropagation(); // Stop click from reaching window listener immediately
   const box = document.getElementById(`reply-box-${id}`);
-  const allBoxes = document.querySelectorAll('.reply-box-item');
+  const allBoxes = document.querySelectorAll(".reply-box-item");
 
   // Close all other open boxes first
-  allBoxes.forEach(b => { if (b.id !== `reply-box-${id}`) b.style.display = "none"; });
+  allBoxes.forEach((b) => {
+    if (b.id !== `reply-box-${id}`) b.style.display = "none";
+  });
 
   if (box) {
-    box.style.display = (box.style.display === "none" || box.style.display === "") ? "block" : "none";
+    box.style.display =
+      box.style.display === "none" || box.style.display === ""
+        ? "block"
+        : "none";
   }
 };
 
 // ✅ 3. Global Click Listener to close box when clicking outside
-window.addEventListener('click', function (event) {
-  const allBoxes = document.querySelectorAll('.reply-box-item');
-  allBoxes.forEach(box => {
+window.addEventListener("click", function (event) {
+  const allBoxes = document.querySelectorAll(".reply-box-item");
+  allBoxes.forEach((box) => {
     // If click is outside the box and not on a 'View Reply' button, close it
     if (box.style.display === "block" && !box.contains(event.target)) {
       box.style.display = "none";
@@ -426,7 +433,7 @@ async function saveTrade() {
   const tradeData = { name, type, status, pnl, note, brokerage: 45 };
 
   try {
-    const response = await fetch(window.API_BASE_URL + '/api/trades/add', {
+    const response = await fetch(`${window.API_BASE_URL}/api/trades/add`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -469,9 +476,12 @@ async function fetchUserTrades() {
   if (!token) return;
 
   try {
-    const response = await fetch(window.API_BASE_URL + '/api/trades/my-trades', {
-      headers: { "x-auth-token": token },
-    });
+    const response = await fetch(
+      `${window.API_BASE_URL}/api/trades/my-trades`,
+      {
+        headers: { "x-auth-token": token },
+      },
+    );
     const trades = await response.json();
 
     if (response.ok) {
@@ -547,7 +557,7 @@ async function deleteTrade(id) {
 
   const token = localStorage.getItem("token");
   try {
-    const response = await fetch(window.API_BASE_URL + '/api/trades/' + id, {
+    const response = await fetch(`${window.API_BASE_URL}/api/trades/${id}`, {
       method: "DELETE",
       headers: { "x-auth-token": token },
     });
@@ -600,9 +610,12 @@ async function filterTradesByDate() {
 
   const token = localStorage.getItem("token");
   try {
-    const response = await fetch(window.API_BASE_URL + '/api/trades/my-trades', {
-      headers: { "x-auth-token": token },
-    });
+    const response = await fetch(
+      `${window.API_BASE_URL}/api/trades/my-trades`,
+      {
+        headers: { "x-auth-token": token },
+      },
+    );
     const allTrades = await response.json();
 
     const filtered = allTrades.filter((t) => {
@@ -758,15 +771,15 @@ async function fetchNotifications() {
 
   try {
     const response = await fetch(
-      window.API_BASE_URL + '/api/notifications/all',
+      `${window.API_BASE_URL}/api/notifications/all`,
       {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
           // 🚨 YE BADLAV ZAROORI HAI: 'x-auth-token' hata kar 'Authorization' dalo
-          "Authorization": "Bearer " + token
+          Authorization: "Bearer " + token,
         },
-      }
+      },
     );
 
     // 2. Error handling
@@ -777,7 +790,6 @@ async function fetchNotifications() {
     }
 
     // ... baaki ka logic (res.json() etc.) iske niche rehne do
-
 
     const notifs = await response.json();
 
@@ -837,7 +849,6 @@ const socket = io(window.API_BASE_URL, {
   timeout: 10000,
 });
 
-
 socket.on("connect", () => {
   console.log("✅ Live connection ban gaya! ID:", socket.id);
 
@@ -886,7 +897,7 @@ async function loadNotifications() {
   const token = localStorage.getItem("token");
 
   try {
-    const res = await fetch(window.API_BASE_URL + '/api/notifications/all', {
+    const res = await fetch(`${window.API_BASE_URL}/api/notifications/all`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -1004,8 +1015,8 @@ if (clearBtn) {
     const token = localStorage.getItem("token");
 
     try {
-      const response = await fetch(
-        window.API_BASE_URL + '/api/notifications/clear-all',
+      const res = await fetch(
+        `${window.API_BASE_URL}/api/notifications/clear-all`,
         {
           method: "DELETE",
           headers: { "x-auth-token": token },
@@ -1040,7 +1051,7 @@ if (
 // 1. ✨ DYNAMIC PRICE LOADER: Database se latest price uthane ke liye
 async function loadLatestPrice() {
   try {
-    const res = await fetch(window.API_BASE_URL + '/api/courses');
+    const res = await fetch(`${window.API_BASE_URL}/api/courses`);
     const courses = await res.json();
 
     // Maan lo pehla course (Option Selling) aapka main course hai
@@ -1079,7 +1090,7 @@ const checkout = async function (courseId) {
   // 🔥 STATUS ALERT: User ne Click kiya, Window band ki, ya Fail hua (Sabka Mail jayega)
   const sendStatusAlert = async (status, reason) => {
     try {
-      await fetch(window.API_BASE_URL + '/api/payment/payment-failed', {
+      await fetch(`${window.API_BASE_URL}/api/payment/payment-failed`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -1105,7 +1116,7 @@ const checkout = async function (courseId) {
 
   try {
     // 🌐 Backend ko sirf ID bhejo, wo DB se naya Price uthayega (100% Dynamic)
-    const res = await fetch(window.API_BASE_URL + '/api/payment/order', {
+    const res = await fetch(`${window.API_BASE_URL}/api/payment/order`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -1127,7 +1138,7 @@ const checkout = async function (courseId) {
       handler: async function (response) {
         // ✅ SUCCESS VERIFICATION
         const verifyRes = await fetch(
-          window.API_BASE_URL + '/api/payment/verify',
+          `${window.API_BASE_URL}/api/payment/verify`,
           {
             method: "POST",
             headers: {
@@ -1164,7 +1175,7 @@ const checkout = async function (courseId) {
 
     // ❌ REAL BANK FAILURE: (Iska mail bhi jayega)
     rzp.on("payment.failed", function (response) {
-       console.log("❌ PAYMENT FAILED EVENT TRIGGERED");
+      console.log("❌ PAYMENT FAILED EVENT TRIGGERED");
       sendStatusAlert(
         "FAILED",
         `Actual Bank Failure: ${response.error.description}`,
@@ -1223,7 +1234,7 @@ const sendMail = async (subject, message) => {
   }
 
   try {
-    const res = await fetch(window.API_BASE_URL + '/api/admin/send-all-email', {
+    const res = await fetch(`${window.API_BASE_URL}/api/admin/send-all-email`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -1269,7 +1280,7 @@ if (sendBtn) {
 /* ============================================
    VIP Trader 
 ============================================ */
-const API_URL = window.API_BASE_URL + '/';
+const API_URL = `${window.API_BASE_URL}`;
 let allTraders = [];
 let currentIndex = 0;
 const itemsPerPage = 6;
@@ -1287,18 +1298,18 @@ async function fetchTraders() {
 
     const token = localStorage.getItem("token");
 
-    const res = await fetch(window.API_BASE_URL + '/api/courses/leaderboard', {
-      method: 'GET',
+    const res = await fetch(`${window.API_BASE_URL}/api/courses/leaderboard`, {
+      method: "GET",
       headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
-      }
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
     });
 
     const data = await res.json();
     console.log("📊 API DATA:", data);
 
-    allTraders = Array.isArray(data) ? data : (data.data || []);
+    allTraders = Array.isArray(data) ? data : data.data || [];
 
     if (!allTraders || allTraders.length === 0) {
       console.log("❌ No traders data");
@@ -1312,7 +1323,7 @@ async function fetchTraders() {
 
     if (user && user.isVip) {
       let myIndex = allTraders.findIndex(
-        t => String(t._id) === String(user._id)
+        (t) => String(t._id) === String(user._id),
       );
 
       let myProfile;
@@ -1325,7 +1336,7 @@ async function fetchTraders() {
           name: user.name,
           profilePic: user.profilePic,
           badge: "vip",
-          isVip: true
+          isVip: true,
         };
       }
 
@@ -1334,7 +1345,7 @@ async function fetchTraders() {
 
     // remove duplicates
     allTraders = allTraders.filter(
-      (v, i, a) => a.findIndex(t => t._id === v._id) === i
+      (v, i, a) => a.findIndex((t) => t._id === v._id) === i,
     );
 
     displayNextBatch();
@@ -1345,12 +1356,10 @@ async function fetchTraders() {
     sliderInterval = setInterval(() => {
       displayNextBatch();
     }, 4000); // 3 sec change
-
   } catch (err) {
     console.error("❌ Fetch Error:", err);
   }
 }
-
 
 function displayNextBatch() {
   const listContainer = document.getElementById("topTradersList");
@@ -1384,11 +1393,11 @@ function displayNextBatch() {
           appendTraderHTML(trader, currentIndex + index + 2, index + 1);
         });
 
-        currentIndex = (currentIndex + batchSize >= slidingList.length)
-          ? 0
-          : currentIndex + batchSize;
+        currentIndex =
+          currentIndex + batchSize >= slidingList.length
+            ? 0
+            : currentIndex + batchSize;
       }
-
     } catch (err) {
       console.error("❌ Leaderboard Error:", err);
     }
@@ -1397,7 +1406,6 @@ function displayNextBatch() {
   }, 500);
 }
 
-
 // HTML render
 function appendTraderHTML(trader, rank, delay) {
   const listContainer = document.getElementById("topTradersList");
@@ -1405,12 +1413,12 @@ function appendTraderHTML(trader, rank, delay) {
 
   const rawPath = trader.profilePic || "";
 
-  let userPic = (rawPath && rawPath.startsWith("http"))
-    ? rawPath
-    : (rawPath
+  let userPic =
+    rawPath && rawPath.startsWith("http")
+      ? rawPath
+      : rawPath
         ? `${window.API_BASE_URL}/uploads/${rawPath.split(/[\\/]/).pop()}`
-        : `https://ui-avatars.com/api/?name=${encodeURIComponent(trader.name)}&background=111&color=00ff88&bold=true`
-      );
+        : `https://ui-avatars.com/api/?name=${encodeURIComponent(trader.name)}&background=111&color=00ff88&bold=true`;
 
   const row = `
     <div class="trader-item" style="animation-delay: ${delay * 0.05}s;">
@@ -1424,7 +1432,6 @@ function appendTraderHTML(trader, rank, delay) {
 
   listContainer.insertAdjacentHTML("beforeend", row);
 }
-
 
 // SEND BULK EMAIL VIP, TOTAL USER, NORMAL USER
 async function sendBulkMail() {
@@ -1467,7 +1474,9 @@ async function syncLatestPrices() {
 
     courses.forEach((course) => {
       // 🎯 STEP 1: Specific Card dhoondo
-      const card = document.querySelector(`.poster-card[data-id="${course._id}"]`);
+      const card = document.querySelector(
+        `.poster-card[data-id="${course._id}"]`,
+      );
 
       if (card) {
         console.log(`Updating Course: ${course.title}`);
@@ -1485,13 +1494,19 @@ async function syncLatestPrices() {
             }
             // ✅ Case 2: Agar purana relative path hai (Old System backup)
             else {
-              const cleanThumbnail = course.thumbnail.replace(/^\/?uploads\//, "");
+              const cleanThumbnail = course.thumbnail.replace(
+                /^\/?uploads\//,
+                "",
+              );
               fullPath = `${window.API_BASE_URL}/uploads/${cleanThumbnail}`;
             }
 
             // 🔥 Optimization: Cloudinary link ko fast load karne ke liye
             if (fullPath.includes("cloudinary")) {
-              fullPath = fullPath.replace("/upload/", "/upload/f_auto,q_auto,w_600/");
+              fullPath = fullPath.replace(
+                "/upload/",
+                "/upload/f_auto,q_auto,w_600/",
+              );
             }
 
             imgTag.src = fullPath; // No need for ?t= anymore as Cloudinary handles it
@@ -1504,7 +1519,6 @@ async function syncLatestPrices() {
             this.src = "https://placeholder.com";
           };
         }
-
 
         // ✅ STEP 3: PRICE UPDATE
         const priceTag = card.querySelector("p.price");
@@ -1536,7 +1550,6 @@ async function syncLatestPrices() {
       grid.style.opacity = "1";
     }
     console.log("✅ Webpage Fully Synced & Smoothly Loaded!");
-
   } catch (err) {
     console.error("❌ Sync Error:", err);
     const grid = document.querySelector(".poster-grid");
@@ -1558,7 +1571,7 @@ async function loadLatestCoupon() {
   console.log("🔍 Checking for Discount...");
   try {
     // Pura URL use karo taaki error na aaye
-    const res = await fetch(window.API_BASE_URL + '/api/auth/latest-coupon');
+    const res = await fetch(`${window.API_BASE_URL}/api/auth/latest-coupon`);
     const data = await res.json();
 
     if (data.success && data.coupon) {
@@ -1663,17 +1676,20 @@ document.addEventListener("DOMContentLoaded", () => {
       target.disabled = true;
 
       try {
-        const res = await fetch(window.API_BASE_URL + '/api/auth/create-order', {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
+        const res = await fetch(
+          `${window.API_BASE_URL}/api/auth/create-order`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify({
+              courseId: courseId,
+              couponCode: couponToSend,
+            }),
           },
-          body: JSON.stringify({
-            courseId: courseId,
-            couponCode: couponToSend,
-          }),
-        });
+        );
 
         const data = await res.json();
         if (data.order) {
@@ -1706,7 +1722,7 @@ document.head.appendChild(styleTag);
 // ⚡ AUTO-SYNC ENGINE: Database se ID aur Price button mein bharna
 async function syncAdminData() {
   try {
-    const res = await fetch(window.API_BASE_URL + '/api/courses');
+    const res = await fetch(`${window.API_BASE_URL}/api/courses`);
     const courses = await res.json();
 
     courses.forEach((c) => {
@@ -1759,5 +1775,3 @@ async function retryWhatsApp() {
   */
 
 //#endregion
-
-

@@ -1,48 +1,44 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- ✅ Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-TT7SLZ4L' + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TT7SLZ4L');
+    </script>
 
-    <!-- Title -->
-    <title>Seller Analytics | BR30 Kart</title>
+    <!-- ✅ Basic -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Private page security -->
-    <meta name="robots" content="noindex, nofollow" />
+    <!-- ✅ Title -->
+    <title>Admin Dashboard | BR30 Trader</title>
 
-    <!-- No cache (important for analytics data) -->
-    <meta
-      http-equiv="Cache-Control"
-      content="no-store, no-cache, must-revalidate"
-    />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
+    <!-- 🔒 Hide from Google -->
+    <meta name="robots" content="noindex, nofollow">
 
-    <!-- Favicon -->
-    <link
-      rel="icon"
-      href="https://i.ibb.co/JRJ2Dv9W/BR30-LOGO.jpg"
-      type="image/png"
-    />
+    <!-- ❌ Extra security (no caching) -->
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
 
-    <!-- Font Awesome (FIXED) -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
+    <!-- ✅ Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-    <!-- Optional Open Graph -->
-    <meta property="og:title" content="Seller Analytics | BR30 Kart" />
-    <meta
-      property="og:description"
-      content="Private seller analytics dashboard for BR30 Kart sellers."
-    />
-    <meta
-      property="og:image"
-      content="https://i.ibb.co/JRJ2Dv9W/BR30-LOGO.jpg"
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="BR30 Kart" />
+    <!-- ✅ Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@300;600&display=swap"
+        rel="stylesheet">
+
+    <!-- ✅ Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
       .side-btn.active {
@@ -458,21 +454,14 @@
         <hr style="border: 0.5px solid #222; margin: 20px 0" />
 
         <!-- 5. Back to Dashboard Button (Yellowish for Focus) -->
-     <button 
-  class="side-btn"
-  style="color:#ffca28; animation:blink 1s infinite;"
-  onclick="window.open('index.html','_blank')"
->
-  <i class="fas fa-arrow-alt-circle-left"></i>
-  Back to Home
-</button>
-
-<style>
-@keyframes blink {
-  0%,100% { opacity:1; }
-  50% { opacity:0.5; }
-}
-</style>
+        <button
+          class="side-btn"
+          style="color: #ffca28"
+          onclick="window.location.href = 'index.html'"
+        >
+          <i class="fas fa-arrow-alt-circle-left"></i>
+          Back to Home
+        </button>
       </nav>
     </div>
 
@@ -580,7 +569,7 @@
                     return;
                 }
 
-const res = await fetch(`${window.API_BASE_URL}/api/auth/user-stats`, {
+              const res = await fetch(`${window.API_BASE_URL}/api/auth/user-stats`, {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
@@ -659,7 +648,7 @@ const res = await fetch(`${window.API_BASE_URL}/api/auth/user-stats`, {
             btn.disabled = true;
 
             try {
-          const res = await fetch(`${window.API_BASE_URL}/api/auth/cancel-coupon`, {
+               const res = await fetch(`${window.API_BASE_URL}/api/auth/cancel-coupon`, {
                     method: "POST",
                     headers: {
                         "Authorization": `Bearer ${localStorage.getItem("token")}`,

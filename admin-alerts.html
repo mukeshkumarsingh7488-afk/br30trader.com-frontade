@@ -139,14 +139,14 @@
             try {
                 // 1. Purana System (Database mein save karne ke liye)
                 // DHAYAN SE DEKHO: Yahan sirf URL hona chahiye
-                await fetch(window.window.API_BASE_URL + '/api/notifications/add', {
+               await fetch(`${window.API_BASE_URL}/api/notifications/add`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ message: msg, senderName: "Admin" })
                 });
 
                 // 2. Naya Firebase Push System (Phone par bhejne ke liye)
-                const pushResponse = await fetch(window.window.API_BASE_URL + '/api/admin/send-all', {
+            const pushResponse = await fetch(`${window.API_BASE_URL}/api/admin/send-all`, { 
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ title: title, message: msg })

