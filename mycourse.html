@@ -238,6 +238,9 @@
       const courseDiv = document.getElementById("courseContent");
       const token = localStorage.getItem("token");
 
+      const baseUrl =
+        window.API_BASE_URL || "https://my-backend-1-avpd.onrender.com";
+
       if (!token) {
         alert("Please login first!");
         window.location.href = "login.html";
@@ -245,9 +248,7 @@
         fetchMyCourses();
       }
 
-      // ✅ Sabse Professional Tarika (script.js ya mycourse.html mein)
       document.addEventListener("DOMContentLoaded", () => {
-        // Ab yahan fetch function ko call karo
         fetchMyCourses();
       });
 
@@ -256,13 +257,10 @@
           courseDiv.innerHTML =
             "<p style='color:#94a3b8;'>Loading your courses...</p>";
 
-          const res = await fetch(
-            `${window.API_BASE_URL}/api/courses/my-courses`,
-            {
-              method: "GET",
-              headers: { "x-auth-token": token },
-            },
-          );
+          const res = await fetch(`${baseUrl}/api/courses/my-courses`, {
+            method: "GET",
+            headers: { "x-auth-token": token },
+          });
 
           const courses = await res.json();
 
@@ -274,34 +272,44 @@
 
           if (!courses || courses.length === 0) {
             courseDiv.innerHTML = `
-                          <h2 style="margin-top:50px;">No Courses Found 🔒</h2>
-                          <p style="color:#94a3b8; margin-bottom:20px;">Aapne abhi tak koi course purchase nahi kiya hai.</p>
-                          <button onclick="window.location.href='index.html#coursesection'">Browse Courses</button>
-                      `;
+          <h2>No Courses Found 🔒</h2>
+          <p style="color:#94a3b8;">Aapne abhi tak koi course purchase nahi kiya hai.</p>
+          <button onclick="window.location.href='index.html#coursesection'">
+            Browse Courses
+          </button>
+        `;
             return;
           }
 
-          let html = `<h2>Welcome Back!</h2><p style="color:#94a3b8; margin-bottom:20px;">Your purchased courses:</p>`;
+          let html = `
+        <h2>Welcome Back!</h2>
+        <p style="color:#94a3b8; margin-bottom:20px;">Your purchased courses:</p>
+      `;
 
           courses.forEach((course) => {
-            // Backup URL add kiya hai
-            const baseUrl =
-              window.API_BASE_URL || "https://my-backend-1-avpd.onrender.com";
-
-            const thumbUrl = (`${baseUrl}/` + course.thumbnail).replace(
-              /([^:]\/)\/+/g,
-              "$1",
-            );
+            // ✅ SAFE THUMBNAIL LOGIC (FINAL FIX)
+            const thumbUrl = course.thumbnail
+              ? course.thumbnail.startsWith("http")
+                ? course.thumbnail
+                : `${baseUrl}/${course.thumbnail}`
+              : "https://via.placeholder.com/300x200?text=No+Image";
 
             html += `
-        <div class="course-card">
-            <img src="${thumbUrl}" alt="${course.title}" onerror="this.src='https://placeholder.com'">
+          <div class="course-card">
+            <img 
+              src="${thumbUrl}" 
+              alt="${course.title}" 
+              onerror="this.src='https://via.placeholder.com/300x200?text=No+Image'"
+            >
             <h3>${course.title}</h3>
             <p>${course.description}</p>
-            <button onclick="watchCourse('${course._id}')">Watch Now</button>
-        </div>
-    `;
+            <button onclick="watchCourse('${course._id}')">
+              Watch Now
+            </button>
+          </div>
+        `;
           });
+
           courseDiv.innerHTML = html;
         } catch (err) {
           console.error("Error:", err);
