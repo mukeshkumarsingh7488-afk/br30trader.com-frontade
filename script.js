@@ -1048,27 +1048,19 @@ if (
    🚀 BR30 TRADER - ULTRA PRO MAX DYNAMIC PAYMENT ENGINE
 ============================================================ */
 
-// 1. ✨ DYNAMIC PRICE LOADER: Database se latest price uthane ke liye
+// 1. ✨ DYNAMIC PRICE LOADER (Same as before)
 async function loadLatestPrice() {
   try {
     const res = await fetch(`${window.API_BASE_URL}/api/courses`);
     const courses = await res.json();
-
-    // Maan lo pehla course (Option Selling) aapka main course hai
-    const course = courses[0] || courses;
+    const course = Array.isArray(courses) ? courses[0] : courses;
 
     if (course) {
-      // ✅ Home Page par Price update karo (Agar element hai toh)
       const priceElement = document.getElementById("course-price");
-      if (priceElement) {
-        priceElement.innerText = `₹${course.price}`;
-        console.log("✅ Price Updated from DB: ₹", course.price);
-      }
+      if (priceElement) priceElement.innerText = `₹${course.price}`;
 
-      // ✅ Sabhi buttons par dynamic ID set karo taaki sahi course khule
       document.querySelectorAll(".payBtn").forEach((btn) => {
         btn.setAttribute("data-id", course._id);
-        btn.dataset.id = course._id;
       });
     }
   } catch (err) {
@@ -1076,10 +1068,14 @@ async function loadLatestPrice() {
   }
 }
 
-// 2. 💳 MAIN CHECKOUT FUNCTION (With Sales Hunter & Mail Logic)
+// 2. 💳 MAIN CHECKOUT FUNCTION (Fixed & Coupon Added)
 const checkout = async function (courseId) {
   console.log("🚀 Checkout Started for ID:", courseId);
   const token = localStorage.getItem("token");
+
+  // 🔥 Coupon code uthao (Input field se ya storage se)
+  const couponInput = document.getElementById("coupon-input");
+  const couponCode = couponInput ? couponInput.value.trim() : "";
 
   if (!token) {
     alert("Bhai, pehle Login toh karo! ✋");
@@ -1087,50 +1083,39 @@ const checkout = async function (courseId) {
     return;
   }
 
-  // 🔥 STATUS ALERT: User ne Click kiya, Window band ki, ya Fail hua (Sabka Mail jayega)
   const sendStatusAlert = async (status, reason) => {
     try {
       await fetch(`${window.API_BASE_URL}/api/payment/payment-failed`, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "x-auth-token": token,
-        },
-        body: JSON.stringify({
-          courseId: courseId,
-          status: status,
-          reason: reason,
-        }),
+        headers: { "Content-Type": "application/json", "x-auth-token": token },
+        body: JSON.stringify({ courseId, status, reason }),
       });
-      console.log(`📡 Alert Sent to Team: ${status}`);
     } catch (err) {
       console.error("❌ Alert Error:", err);
     }
   };
 
-  // 🎯 STEP 1: Click hote hi "INTERESTED" alert bhej do (Paisa khulne se pehle)
-  sendStatusAlert(
-    "INTERESTED",
-    "User ne Buy Now dabaya hai (Checkout Screen Opened).",
-  );
+  sendStatusAlert("INTERESTED", "User ne Checkout Screen kholi.");
 
   try {
-    // 🌐 Backend ko sirf ID bhejo, wo DB se naya Price uthayega (100% Dynamic)
+    // 🌐 STEP 1: Order Create (Coupon ke saath)
     const res = await fetch(`${window.API_BASE_URL}/api/payment/order`, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "x-auth-token": token,
-      },
-      body: JSON.stringify({ courseId: courseId }),
+      headers: { "Content-Type": "application/json", "x-auth-token": token },
+      body: JSON.stringify({
+        courseId: courseId,
+        couponCode: couponCode, // 🔥 YE MISSING THA
+      }),
     });
 
     const data = await res.json();
     if (!res.ok) throw new Error(data.msg || "Order failed!");
 
+    // 🌐 STEP 2: Razorpay Options Setup
     const options = {
-      key: "rzp_test_SMoo8eTbcEjuw",
-      amount: data.order.amount, // ✅ Backend se aane wala Dynamic Price
+      // PRO TIP: Hamesha backend se aayi hui key use karo: data.key ya data.razorpayKey
+      key: data.key,
+      amount: data.order.amount,
       currency: "INR",
       name: "BR30TRADER ACADEMY",
       description: "VIP Enrollment 🏆",
@@ -1150,6 +1135,7 @@ const checkout = async function (courseId) {
               razorpay_payment_id: response.razorpay_payment_id,
               razorpay_signature: response.razorpay_signature,
               courseId: courseId,
+              amount: data.order.amount / 100, // Verification ke liye final price
             }),
           },
         );
@@ -1161,28 +1147,19 @@ const checkout = async function (courseId) {
       },
       modal: {
         ondismiss: function () {
-          // 📧 User ne checkout band kiya (Abandoned) - Iska mail jayega
-          sendStatusAlert(
-            "ABANDONED",
-            "User ne payment window खुद band kar di (No completion).",
-          );
+          sendStatusAlert("ABANDONED", "User ne window close kar di.");
         },
       },
-      theme: { color: "#00ff88" }, // ✨ Elite Neon Green Theme
+      theme: { color: "#00ff88" },
     };
 
     const rzp = new Razorpay(options);
 
-    // ❌ REAL BANK FAILURE: (Iska mail bhi jayega)
     rzp.on("payment.failed", function (response) {
-      console.log("❌ PAYMENT FAILED EVENT TRIGGERED");
-      sendStatusAlert(
-        "FAILED",
-        `Actual Bank Failure: ${response.error.description}`,
-      );
+      sendStatusAlert("FAILED", `Bank Failure: ${response.error.description}`);
     });
 
-    rzp.open();
+    rzp.open(); // 🔥 Ab ye khulega!
   } catch (err) {
     console.error("Error Detail:", err);
     alert("Error: " + err.message);
