@@ -477,7 +477,7 @@
     </div>
 
     <div class="main-content">
-      <div class="header">
+      <div class="header" id="user">
         <h2 style="font-size: 20px; letter-spacing: 0.5px">
          👑 Master Admin Dashboard 
         </h2>
@@ -689,12 +689,15 @@ document.addEventListener("DOMContentLoaded", loadStats);
 
     </script>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const username = localStorage.getItem("username") || "Guest";
-            const userDisplay = document.getElementById("user");
-            userDisplay.innerText = "Welcome, " + username;
-        });
-    </script>
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const username = localStorage.getItem("username") || "Guest";
+    const userDisplay = document.getElementById("user");
+
+    if (!userDisplay) return;
+
+    userDisplay.innerText = `Welcome, ${username}`;
+});
+</script>
   </body>
 </html>
