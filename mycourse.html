@@ -284,18 +284,23 @@
           let html = `<h2>Welcome Back!</h2><p style="color:#94a3b8; margin-bottom:20px;">Your purchased courses:</p>`;
 
           courses.forEach((course) => {
-            const thumbUrl = (
-              `${window.API_BASE_URL}/` + course.thumbnail
-            ).replace(/([^:]\/)\/+/g, "$1");
+            // Backup URL add kiya hai
+            const baseUrl =
+              window.API_BASE_URL || "https://my-backend-1-avpd.onrender.com";
+
+            const thumbUrl = (`${baseUrl}/` + course.thumbnail).replace(
+              /([^:]\/)\/+/g,
+              "$1",
+            );
 
             html += `
-          <div class="course-card">
-              <img src="${thumbUrl}" alt="${course.title}">
-              <h3>${course.title}</h3>
-              <p>${course.description}</p>
-              <button onclick="watchCourse('${course._id}')">Watch Now</button>
-          </div>
-      `;
+        <div class="course-card">
+            <img src="${thumbUrl}" alt="${course.title}" onerror="this.src='https://placeholder.com'">
+            <h3>${course.title}</h3>
+            <p>${course.description}</p>
+            <button onclick="watchCourse('${course._id}')">Watch Now</button>
+        </div>
+    `;
           });
           courseDiv.innerHTML = html;
         } catch (err) {
@@ -309,6 +314,5 @@
         window.location.href = `watch.html?id=${courseId}`;
       }
     </script>
-    <script></script>
   </body>
 </html>
