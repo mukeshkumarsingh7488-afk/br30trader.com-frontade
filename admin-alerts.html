@@ -111,18 +111,26 @@
             style="display:none;visibility:hidden"></iframe>
     </noscript>
     <!-- ✅ GTM noscript end -->
-         <a href="seller-analytics.html" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-xs font-bold transition">BACK TO Dashbord</a>
-    <div class="admin-card">
-        <h2>Post <span>Live Alert</span> 🔔</h2>
-        <!-- Title Input (Firebase के लिए ज़रूरी) -->
-        <input type="text" id="admin-title" placeholder="Alert Title (e.g. MARKET UPDATE)">
-        <textarea id="admin-msg" placeholder="Type Market Alert (e.g. NIFTY Bullish Move!)"></textarea>
+<div class="admin-card">
+    <h2>Post <span>Live Alert</span> 🔔</h2>
 
-        <button id="sendBtn" onclick="sendAlert()">BROADCAST ALERT 🚀</button>
+    <input type="text" id="admin-title" placeholder="Alert Title (e.g. MARKET UPDATE)">
+    <textarea id="admin-msg" placeholder="Type Market Alert (e.g. NIFTY Bullish Move!)"></textarea>
 
-        <p id="status" style="margin-top: 15px; font-size: 0.8rem; color: #22c55e; display: none;">✅ Alert & Push Sent
-            Successfully!</p>
-    </div>
+    <button id="sendBtn" onclick="sendAlert()">BROADCAST ALERT 🚀</button>
+
+    <p id="status" style="margin-top: 15px; font-size: 0.8rem; color: #22c55e; display: none;">
+        ✅ Alert & Push Sent Successfully!
+    </p>
+</div>
+
+<!-- 🔥 OUTSIDE BUTTON (BELOW CARD) -->
+<div style="margin-top:15px;">
+    <a href="dashboard.html"
+       style="display:inline-block; background:#2563eb; color:white; padding:8px 14px; border-radius:8px; font-size:12px; font-weight:bold; text-decoration:none;">
+        BACK TO DASHBOARD
+    </a>
+</div>
 
     <script src="config.js"></script>
     <script>
