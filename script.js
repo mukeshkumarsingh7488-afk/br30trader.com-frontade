@@ -1068,14 +1068,19 @@ async function loadLatestPrice() {
   }
 }
 
-// 2. 💳 MAIN CHECKOUT FUNCTION (Fixed & Coupon Added)
+// 2. 💳 MAIN CHECKOUT FUNCTION (Fixed & Auto-Coupon Sync)
 const checkout = async function (courseId) {
   console.log("🚀 Checkout Started for ID:", courseId);
   const token = localStorage.getItem("token");
 
-  // 🔥 Coupon code uthao (Input field se ya storage se)
-  const couponInput = document.getElementById("coupon-input");
-  const couponCode = couponInput ? couponInput.value.trim() : "";
+  // ✅ FIXED LOGIC: Global variable 'currentCoupon' se code uthao
+  // Agar variable mein coupon hai toh wo lega, warna empty string jayega
+  const couponCode =
+    window.currentCoupon && window.currentCoupon.code
+      ? window.currentCoupon.code
+      : "";
+
+  console.log("🎟️ Final Coupon sending to Backend:", couponCode);
 
   if (!token) {
     alert("Bhai, pehle Login toh karo! ✋");
@@ -1539,8 +1544,6 @@ document.addEventListener("DOMContentLoaded", syncLatestPrices);
 
 // COUPEN OFFER DISCOUNT LOGIC cousrs scetion oneclick coupen apply
 // 1. GLOBAL VARIABLE
-// 1. GLOBAL VARIABLE
-// 1. Global Variable
 let currentCoupon = null;
 
 // 2. ⏳ Load Coupon Function
