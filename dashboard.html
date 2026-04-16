@@ -689,15 +689,6 @@ document.addEventListener("DOMContentLoaded", loadStats);
 
     </script>
 
-  <script>
-document.addEventListener("DOMContentLoaded", () => {
-    const username = localStorage.getItem("username") || "Guest";
-    const userDisplay = document.getElementById("user");
-
-    if (!userDisplay) return;
-
-    userDisplay.innerText = `Welcome, ${username}`;
-});
-</script>
+<script> document.addEventListener("DOMContentLoaded", () => { const username = localStorage.getItem("username") || "Guest"; const userDisplay = document.getElementById("user"); userDisplay.innerText = "Welcome, " + username; }); </script>
   </body>
 </html>
