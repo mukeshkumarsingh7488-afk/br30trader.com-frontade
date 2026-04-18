@@ -195,56 +195,65 @@ async function loadTopReviews() {
     }
 
     const BASE_URL = `${window.API_BASE_URL}`;
+
     displayArea.innerHTML = reviews
       .map((r) => {
-        // 1. Path nikaalo (Check multiple fields for safety)
         const userName = (r.userId && r.userId.name) || r.username || "User";
         let rawPath = (r.userId && r.userId.profilePic) || r.profilePic || "";
         let profileImg;
 
-        // 2. CHECK LOGIC (Modern & Simple)
         if (rawPath && typeof rawPath === "string" && rawPath.length > 5) {
           if (rawPath.startsWith("http")) {
-            // ✅ Case A: Cloudinary ya external URL (Seedha use karo)
             profileImg = rawPath;
           } else {
-            // ✅ Case B: Purana Local Path (e.g., 'uploads/image.jpg')
-            // Isme split logic chalega taaki sirf filename mile
             const fileName = rawPath.split(/[\\/]/).pop();
             profileImg = `${window.API_BASE_URL}/uploads/${fileName}`;
           }
         } else {
-          // ❌ Case C: Photo nahi hai
-          profileImg = `https://ui-avatars.com/api/?name=${encodeURIComponent(userName)}&background=00ff88&color=000&bold=true&size=128`;
+          profileImg = `https://ui-avatars.com/api/?name=${encodeURIComponent(
+            userName,
+          )}&background=00ff88&color=000&bold=true&size=128`;
         }
 
-        // ADMIN REPLY UI LOGIC (Added 'event' in onclick for pro features)
-        const adminReplyBtn = r.adminReply
-          ? `<span onclick="window.toggleReplyBox(event, '${r._id}')" style="color:#00ff88; font-size:10px; cursor:pointer; text-decoration:underline; margin-left:8px; font-weight:normal;">View Reply</span>`
-          : "";
-
-        // Added 'reply-box-item' class to identify boxes for closing
-        const adminReplyContent = r.adminReply
-          ? `<div id="reply-box-${r._id}" class="reply-box-item" style="display:none; margin-top:8px; padding:8px; background:rgba(0,255,136,0.1); border-left:2px solid #00ff88; border-radius:4px; font-size:12px; color:#00ff88;">
-              <strong style="color:#fff;">Admin:</strong> ${r.adminReply}
-           </div>`
-          : "";
+        // 🔥 DIRECT ADMIN REPLY SHOW (NO BUTTON)
+        const adminReplyContent =
+          r.adminReply && r.adminReply.trim() !== ""
+            ? `
+          <div style="
+            margin-top:10px;
+            padding:10px;
+            background:rgba(0,255,136,0.08);
+            border-left:3px solid #00ff88;
+            border-radius:6px;
+            font-size:12px;
+            color:#00ff88;
+          ">
+            💬 <strong style="color:#fff;">Admin Reply:</strong><br/>
+            ${r.adminReply}
+          </div>
+        `
+            : "";
 
         return `
         <div class="review-card" style="background: rgba(255,255,255,0.05); padding: 15px; margin-bottom: 12px; border-radius: 15px; border-left: 4px solid #00ff88; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
             <div style="display:flex; align-items:center; gap:12px;">
                 <img src="${profileImg}" 
-                     onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(userName)}&background=333&color=fff&size=128';"
+                     onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(
+                       userName,
+                     )}&background=333&color=fff&size=128';"
                      style="width:45px; height:45px; border-radius:50%; border:2px solid #00ff88; object-fit:cover; background:#111;">
                 <div style="flex:1;">
                     <div style="display:flex; justify-content:space-between; align-items:center;">
                         <strong style="color: #00ff88; font-size:15px; letter-spacing:0.5px;">${userName}</strong> 
-                        <div style="display:flex; align-items:center;">
-                            <span style="color:gold; font-size:11px;">${"★".repeat(r.rating || 0)}</span>
-                            ${adminReplyBtn}
-                        </div>
+                        <span style="color:gold; font-size:11px;">${"★".repeat(
+                          r.rating || 0,
+                        )}</span>
                     </div>
-                    <p style="margin: 6px 0 0 0; font-size: 13px; color: #e2e8f0; line-height:1.5;">${r.comment}</p>
+
+                    <p style="margin: 6px 0 0 0; font-size: 13px; color: #e2e8f0; line-height:1.5;">
+                      ${r.comment}
+                    </p>
+
                     ${adminReplyContent}
                 </div>
             </div>
