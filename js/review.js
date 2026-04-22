@@ -133,14 +133,29 @@ fetchReviews();
 
 // reset btn
 function resetAllFilters() {
-  const searchInput = document.getElementById("searchUser");
-  if (searchInput) {
-    searchInput.value = "";
-  }
+  try {
+    // 1. सर्च बॉक्स को खाली करो
+    const searchInput = document.getElementById("searchUser");
+    if (searchInput) {
+      searchInput.value = "";
+    }
 
-  if (typeof renderReviews === "function" && allReviews) {
-    renderReviews(allReviews);
-  }
+    const refreshBtn = event.currentTarget;
+    if (refreshBtn) {
+      refreshBtn.style.transform = "rotate(360deg)";
+      refreshBtn.style.transition = "transform 0.5s ease";
+      setTimeout(() => {
+        refreshBtn.style.transform = "rotate(0deg)";
+      }, 500);
+    }
 
-  fetchReviews();
+    if (typeof fetchReviews === "function") {
+      fetchReviews();
+      console.log("Data Reloaded from DB! 🚀");
+    } else if (allReviews) {
+      renderReviews(allReviews);
+    }
+  } catch (error) {
+    console.error("Reset Error:", error);
+  }
 }
