@@ -185,7 +185,18 @@ document.getElementById("reviewForm").addEventListener("submit", async (e) => {
 async function loadTopReviews() {
   try {
     const response = await fetch(`${window.API_BASE_URL}/api/reviews/top10`);
-    const reviews = await response.json();
+    const data = await response.json(); // 1. 'reviews' की जगह 'data' नाम रखा है
+
+    // 2. BACKEND CHANGE: अब डेटा 'data.reviews' के अंदर है
+    const reviews = data.reviews || [];
+    const totalCount = data.totalCount || 0;
+
+    // 🔥 3. UI UPDATE: यहाँ आपका नया काउंट सेट होगा
+    const countElement = document.getElementById("countNumber");
+    if (countElement) {
+      countElement.innerText = totalCount;
+    }
+
     const displayArea = document.getElementById("reviewDisplay");
 
     if (!reviews || reviews.length === 0) {
@@ -197,33 +208,25 @@ async function loadTopReviews() {
     const BASE_URL = `${window.API_BASE_URL}`;
     displayArea.innerHTML = reviews
       .map((r) => {
-        // 1. Path nikaalo (Check multiple fields for safety)
         const userName = (r.userId && r.userId.name) || r.username || "User";
         let rawPath = (r.userId && r.userId.profilePic) || r.profilePic || "";
         let profileImg;
 
-        // 2. CHECK LOGIC (Modern & Simple)
         if (rawPath && typeof rawPath === "string" && rawPath.length > 5) {
           if (rawPath.startsWith("http")) {
-            // ✅ Case A: Cloudinary ya external URL (Seedha use karo)
             profileImg = rawPath;
           } else {
-            // ✅ Case B: Purana Local Path (e.g., 'uploads/image.jpg')
-            // Isme split logic chalega taaki sirf filename mile
             const fileName = rawPath.split(/[\\/]/).pop();
             profileImg = `${window.API_BASE_URL}/uploads/${fileName}`;
           }
         } else {
-          // ❌ Case C: Photo nahi hai
           profileImg = `https://ui-avatars.com/api/?name=${encodeURIComponent(userName)}&background=00ff88&color=000&bold=true&size=128`;
         }
 
-        // ADMIN REPLY UI LOGIC (Added 'event' in onclick for pro features)
         const adminReplyBtn = r.adminReply
           ? `<span onclick="window.toggleReplyBox(event, '${r._id}')" style="color:#00ff88; font-size:10px; cursor:pointer; text-decoration:underline; margin-left:8px; font-weight:normal;">View Reply</span>`
           : "";
 
-        // Added 'reply-box-item' class to identify boxes for closing
         const adminReplyContent = r.adminReply
           ? `<div id="reply-box-${r._id}" class="reply-box-item" style="display:none; margin-top:8px; padding:8px; background:rgba(0,255,136,0.1); border-left:2px solid #00ff88; border-radius:4px; font-size:12px; color:#00ff88;">
               <strong style="color:#fff;">Admin:</strong> ${r.adminReply}
@@ -297,6 +300,45 @@ if (commentBox) {
   });
 }
 loadTopReviews();
+
+// --- Review Count Logic ---
+
+// 1. पेज लोड होते ही डेटाबेस से शुरूआती काउंट लाने के लिए
+async function loadInitialCount() {
+  try {
+    const response = await fetch("/api/reviews/top-reviews"); // अपनी सही API Path चेक कर लेना
+    const data = await response.json();
+
+    if (data.success) {
+      updateCountUI(data.totalCount);
+    }
+  } catch (err) {
+    console.error("Count load karne mein error:", err);
+  }
+}
+
+// 2. सॉकेट के ज़रिए रियल-टाइम अपडेट सुनना
+socket.on("updateTotalReviewCount", (newCount) => {
+  console.log("Naya review aaya! New Count:", newCount);
+  updateCountUI(newCount);
+});
+
+// 3. UI को अपडेट करने वाला फंक्शन (एनीमेशन के साथ)
+function updateCountUI(number) {
+  const countElement = document.getElementById("countNumber");
+  if (countElement) {
+    countElement.innerText = number;
+
+    // एक छोटा सा 'Flash' इफ़ेक्ट ताकि यूजर को पता चले नंबर बदला है
+    countElement.classList.add("count-update-flash");
+    setTimeout(() => {
+      countElement.classList.remove("count-update-flash");
+    }, 1000);
+  }
+}
+
+// फंक्शन कॉल करें
+loadInitialCount();
 
 //Review Logic end..
 

@@ -1307,6 +1307,55 @@ select {
   font-size: 0.9rem;
 }
 
+/* review total count style */
+.review-count-box {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 5px 15px;
+  border-radius: 50px;
+  font-size: 14px;
+  border: 1px solid #444;
+  color: #fff;
+}
+
+#countNumber {
+  font-weight: bold;
+  color: #00ff88; /* हल्का हरा रंग जो डार्क थीम पर अच्छा लगता है */
+  transition: all 0.3s ease;
+}
+
+/* नंबर अपडेट होने पर चमकने वाला इफ़ेक्ट */
+.count-update-flash {
+  text-shadow: 0 0 15px #00ff88;
+  transform: scale(1.2);
+}
+
+/* लाइव जैसा दिखने के लिए एक छोटा सा ब्लिंकिंग डॉट */
+.pulse-icon {
+  height: 8px;
+  width: 8px;
+  background-color: #ff4d6d;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+  box-shadow: 0 0 8px #ff4d6d;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+}
+
 /*-- Trading master --*/
 .trading-network {
   padding: 60px 20px;
