@@ -4,7 +4,7 @@ Disallow: /admin-alerts.html
 Disallow: /admin.html
 Disallow: /admin2.html
 Disallow: /courseedit.html
-Disallow: /dashboard.html
+Disallow: /admin-dashboard.html
 Disallow: /email.html
 Disallow: /login.html
 Disallow: /mycourse.html
