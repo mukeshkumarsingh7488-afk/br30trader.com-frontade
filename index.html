@@ -90,7 +90,7 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
 
   <!-- ✅ CSS -->
-  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../assets/css/style.css">
 
   <!-- ✅ Trustpilot (optional but pro) -->
   <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
@@ -182,20 +182,20 @@
      
 
 <div class="user-dropdown">
-  <button class="dropdown-btn">
+  <button class="dropdown-btn" id="navAccountBtn">
     👤 Account<span class="triangle-icon">▼</span>
   </button>
 
   <div class="dropdown-content">
     <a href="index.html">🏠 Home</a>
-    <a href="login.html">🔐 Login / Register</a>
-    <a href="profile.html">👤 My Profile</a>
-    <a href="mycourse.html">🛍️ My Course</a>
-    <a href="verify.html">📜 Certificate</a>
-    <a href="disclaimer.html">⚠️ Disclaimer</a>
-    <a href="aboutus.html">🏢 About Us</a>
+    <a href="pages/register.html">🔐 Login / Register</a>
+    <a href="pages/profile.html">👤 My Profile</a>
+    <a href="pages/mycourse.html">🛍️ My Course</a>
+    <a href="pages/verify.html">📜 Certificate</a>
+    <a href="pages/disclaimer.html">⚠️ Disclaimer</a>
+    <a href="pages/aboutus.html">🏢 About Us</a>
     <hr>
-    <a href="learn-more.html">🔍 Learn More</a>
+    <a href="pages/learn-more.html">🔍 Learn More</a>
   </div>
 </div>
 </div>
@@ -1425,17 +1425,17 @@
   <!-- ============================
         20. Footer Policy Link
      ========================= -->
-  <div class="footer-policy-links">
-    <div class="policy-wrapper">
-      <a href="aboutus.html">About Us</a>
+  <div class="pages/footer-policy-links">
+    <div class="pages/policy-wrapper">
+      <a href="pages/aboutus.html">About Us</a>
       <span class="divider">|</span>
-      <a href="contact.html">Contact Us</a>
+      <a href="pages/contact.html">Contact Us</a>
       <span class="divider">|</span>
-      <a href="privacy.html">Privacy Policy</a>
+      <a href="pages/privacy.html">Privacy Policy</a>
       <span class="divider">|</span>
-      <a href="terms.html">Terms & Conditions</a>
+      <a href="pages/terms.html">Terms & Conditions</a>
       <span class="divider">|</span>
-      <a href="refund.html">Refund Policy</a>
+      <a href="pages/refund.html">Refund Policy</a>
     </div>
   </div>
 
@@ -1462,16 +1462,25 @@
         <h3>Quick Links</h3>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="strategies.html">Strategies</a></li>
-          <li><a href="service.html">Services</a></li>
-          <li><a href="about.html">About Me</a></li>
+          <li><a href="pages/strategies.html">Strategies</a></li>
+          <li><a href="pages/service.html">Services</a></li>
+          <li><a href="pages/about.html">About Me</a></li>
         </ul>
       </div>
 
       <!-- Contact Info -->
       <div class="footer-contact">
         <h3>Get In Touch</h3>
-        <p>📧 mukeshkumarsingh7488@gmail.com</p>
+      <p>
+        <i class="fas fa-envelope"></i>
+       <a  
+        href="mailto:mukeshkumarsingh7488@gmail.com?subject=Web%20Service%20Inquiry&body=Hello%20Mukesh%2C%0A%0AMujhe%20aapki%20web%20services%20ke%20baare%20mein%20jaankari%20chahiye.%0A%0AKripya%20details%20share%20karein.%0A%0AThanks"
+         target="_blank"
+          class="mail-link"
+          >
+         mukeshkumarsingh7488@gmail.com
+       </a>
+      </p>
         <p>📍 Based in India</p>
         <p class="dev-tag">Built with ❤️ by Mukesh Raj</p>
       </div>
@@ -1595,12 +1604,12 @@
   </script>
 
   <!-- Config -->
-  <script src="js/config.js"></script>
+  <script src="../js/config.js"></script>
 
   <!-- Main Script -->
-<script type="module" src="js/script.js"></script> 
+<script type="module" src="../js/script.js"></script> 
     
-        <script src="js/security.js"></script>
+        <script src="../js/security.js"></script>
   <!-- ==========================================
           Other External Scripts end. avobe
      ======================================== -->

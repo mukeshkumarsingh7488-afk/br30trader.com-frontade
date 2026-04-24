@@ -1,0 +1,213 @@
+/* ============================================================
+           GLOBAL RESET & YOUR BRAND COLORS
+           ============================================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #050505;
+  /* आपका Midnight Blue बॉडी कलर */
+  padding: 20px;
+  color: #ffffff;
+}
+
+/* [CONTAINER] Modern Dark Layout */
+.admin-container {
+  background: #1e293b;
+  /* कार्ड्स के लिए थोड़ा हल्का डार्क */
+  width: 100%;
+  max-width: 900px;
+  /* चौड़ाई थोड़ी बढ़ाई ताकि डेस्कटॉप पर अच्छा दिखे */
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(160, 32, 240, 0.2);
+  /* हल्का पर्पल बॉर्डर */
+}
+
+/* [HEADER] Branding Section */
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 20px;
+}
+
+h1 {
+  color: #ffffff;
+  /* बड़े टेक्स्ट वाइट */
+  font-size: 28px;
+  font-weight: 700;
+}
+
+h1 span {
+  color: #a020f0;
+  /* आपका पर्पल टच */
+}
+
+/* Back Button Style */
+.back-btn {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 10px 20px;
+  border-radius: 50px;
+  background: #a020f0;
+  /* पर्पल बटन */
+  transition: 0.3s ease;
+}
+
+.back-btn:hover {
+  background: #8a1bd0;
+  transform: scale(1.05);
+}
+
+/* ============================================================
+           GRID SYSTEM: Responsive Layout
+           ============================================================ */
+.admin-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+.form-section {
+  text-align: left;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: 0.3s;
+}
+
+/* आपका मांगा हुआ होवर इफ़ेक्ट */
+.form-section:hover {
+  border-color: #a020f0;
+  box-shadow: 0 0 15px rgba(160, 32, 240, 0.2);
+}
+
+h2 {
+  font-size: 20px;
+  color: #a020f0;
+  /* सेक्शन हेडिंग पर्पल */
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ============================================================
+           FORM CONTROLS
+           ============================================================ */
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: #cbd5e1;
+  /* हल्का ग्रे ताकि वाइट टेक्स्ट से अलग दिखे */
+  margin-bottom: 8px;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: #050505;
+  /* इनपुट का बैकग्राउंड डार्क */
+  color: #ffffff;
+  font-size: 14px;
+  transition: 0.3s;
+  box-sizing: border-box;
+  /* मोबाइल फिक्स */
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #a020f0;
+  outline: none;
+  box-shadow: 0 0 8px rgba(160, 32, 240, 0.3);
+}
+
+/* [BUTTONS] Professional Purple Buttons */
+button {
+  width: 100%;
+  background: #a020f0;
+  padding: 14px;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  transition: 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+button:hover {
+  background: #8a1bd0;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(160, 32, 240, 0.4);
+}
+
+/* [ALERTS] Success Message Styling */
+.success-msg {
+  background: rgba(37, 211, 102, 0.1);
+  color: #25d366;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 15px;
+  text-align: center;
+  display: none;
+  border: 1px solid #25d366;
+}
+
+/* ============================================================
+           MOBILE RESPONSIVENESS (No Dimension Break)
+           ============================================================ */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  .admin-container {
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .header-flex {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  .admin-grid {
+    grid-template-columns: 1fr;
+    /* मोबाइल पर एक के नीचे एक */
+  }
+}

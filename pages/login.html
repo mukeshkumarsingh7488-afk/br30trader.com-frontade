@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- ✅ Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=GTM-TT7SLZ4L" + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-TT7SLZ4L");
+    </script>
+
+    <!-- ✅ Basic -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ✅ Title -->
+    <title>Login | BR30 Trader</title>
+
+    <!-- 🔒 Hide from Google -->
+    <meta name="robots" content="noindex, nofollow" />
+
+    <!-- ❌ No Cache (security) -->
+    <meta
+      http-equiv="Cache-Control"
+      content="no-store, no-cache, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <!-- ✅ Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <!-- ✅ Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ✅ Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+<link rel="stylesheet" href="../assets/css/login.css">
+    <!-- ✅ SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+
+
+  </head>
+
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript></noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-TT7SLZ4L"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="container">
+      <h2 class="login-heading">Login</h2>
+
+      <!-- Browser signal ke liye FORM tag add kiya hai -->
+      <form id="loginForm" onsubmit="handleLogin(event)">
+        <!-- Email Input -->
+        <label>Email Address</label>
+        <div class="input-box">
+          <!-- name="email" aur autocomplete zaroori hai -->
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="example@mail.com"
+            autocomplete="username"
+            required
+          />
+        </div>
+
+        <!-- Password Input -->
+        <label>Password</label>
+        <div class="input-box">
+          <!-- name="password" aur autocomplete="current-password" zaroori hai -->
+          <input
+            id="password"
+            name="password"
+            type="password"
+            placeholder="••••••••"
+            autocomplete="current-password"
+            required
+          />
+          <span
+            class="toggle-btn"
+            id="toggleBtn"
+            onclick="togglePassword()"
+            style="cursor: pointer"
+          >
+            👁️
+          </span>
+        </div>
+
+        <!-- Login Action: type="submit" browser ko signal deta hai -->
+        <button type="submit" id="loginBtn">Login to Account</button>
+      </form>
+
+      <!-- Navigation Links -->
+      <div class="links">
+        <a href="forgot.html">Forgot Password?</a>
+        <a href="register.html">Register</a>
+      </div>
+    </div>
+
+    <script src="../js/config.js"></script>
+    <script src="../js/security.js"></script>
+     <script src="../js/login.js"></script>
+  </body>
+</html>

@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- ✅ Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=GTM-TT7SLZ4L" + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-TT7SLZ4L");
+    </script>
+
+    <!-- ✅ Basic -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ❌ Admin page → SEO OFF -->
+    <meta name="robots" content="noindex, nofollow" />
+
+    <title>Admin Dashboard | BR30 Trader</title>
+
+    <!-- ✅ Favicon -->
+    <link rel="icon" href="https://i.ibb.co/JRJ2Dv9W/BR30-LOGO.jpg" />
+
+    <!-- ✅ Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- ✅ Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../assets/css/admin.css">
+
+  </head>
+
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript></noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-TT7SLZ4L"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="admin-container">
+      <!-- HEADER SECTION -->
+      <div class="header-flex">
+        <h1>
+          🚀
+          <span>Admin</span>
+          Panel
+        </h1>
+        <a href="dashboard.html" class="back-btn">← Back to Dashboard</a>
+      </div>
+
+      <div class="admin-grid">
+        <!-- 1. COURSE CREATION CARD -->
+        <div class="form-section">
+          <h2>📚 Create Course</h2>
+          <form id="courseForm">
+            <div class="form-group">
+              <label>Course Title</label>
+              <input
+                type="text"
+                id="title"
+                placeholder="e.g. Master Options Trading"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label>Description</label>
+              <textarea
+                id="description"
+                rows="3"
+                placeholder="Briefly describe the course content..."
+                required
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label>Price (INR)</label>
+              <input type="number" id="price" placeholder="₹999" required />
+            </div>
+            <div class="form-group">
+              <label>Thumbnail Image</label>
+              <input type="file" id="thumbnail" accept="image/*" required />
+            </div>
+            <button type="submit">Publish Course</button>
+            <div id="courseMsg" class="success-msg">
+              Course Created Successfully! 🎉
+            </div>
+          </form>
+        </div>
+
+        <!-- 2. VIDEO UPLOAD CARD -->
+        <div class="form-section">
+          <h2>🎬 Add Course Content</h2>
+          <form id="videoForm">
+            <div class="form-group">
+              <label>Target Course</label>
+              <select id="courseSelect" required>
+                <option value="">Fetching courses...</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Video Title</label>
+              <input
+                type="text"
+                id="videoTitle"
+                placeholder="e.g. Lesson 01: Setup"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label>Video URL (YouTube/Cloud)</label>
+              <input
+                type="text"
+                id="videoUrl"
+                placeholder="https://..."
+                required
+              />
+            </div>
+            <button type="submit">Add to Curriculum</button>
+            <div id="videoMsg" class="success-msg">
+              Video Integrated Successfully! 🎬
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- End Grid -->
+    </div>
+    <script src="../js/config.js"></script>
+      <script src="../js/security.js"></script>
+      <script src="../js/admin.js"></script>
+  </body>
+</html>

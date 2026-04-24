@@ -1,0 +1,186 @@
+/* =========================================
+           1. GLOBAL & WATCH PAGE LAYOUT
+        ========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #050505;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+header {
+  background: #1e293b;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #334155;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  font-size: 18px;
+  color: #ffffff;
+}
+
+header a {
+  color: #a020f0;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.watch-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.video-player {
+  flex: 2;
+  min-width: 300px;
+  background: #000;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid #334155;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* 🔥 YT API ke liye Fixed Height Container */
+.iframe-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #000;
+}
+
+#main-video-iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+#current-video-title {
+  padding: 15px;
+  color: #ffffff;
+  background: #1e293b;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  border-top: 1px solid #334155;
+}
+
+.video-list {
+  flex: 1;
+  min-width: 280px;
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 15px;
+  height: fit-content;
+  border: 1px solid #334155;
+}
+
+.video-list h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #a020f0;
+  border-bottom: 1px solid #334155;
+  padding-bottom: 10px;
+}
+
+#playlist {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.video-item {
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 14px;
+  background: #050505;
+  border: 1px solid #334155;
+  color: #cbd5e1;
+}
+
+.video-item:hover {
+  background: #a020f0;
+  color: #fff;
+  border-color: #a020f0;
+  transform: translateX(5px);
+}
+
+/* 🏆 CERTIFICATE POPUP OVERLAY */
+#cert-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.cert-card {
+  background: #0a0a0a;
+  border: 2px solid #00ff88;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 450px;
+  width: 100%;
+  box-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
+}
+
+.cert-input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  background: #111;
+  border: 1px solid #333;
+  color: white;
+  border-radius: 8px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.claim-btn {
+  background: #00ff88;
+  color: black;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-weight: 900;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 15px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .watch-container {
+    padding: 10px;
+  }
+
+  .video-player,
+  .video-list {
+    flex: 100%;
+  }
+}
