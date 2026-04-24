@@ -61,7 +61,7 @@ async function handleLogin(e) {
       // 2. 🔥 Yahan ho rahi hai redirection (Role-based)
       setTimeout(() => {
         if (data.user.role === "admin") {
-          window.location.href = "dashboard.html";
+          window.location.href = "admin-dashboard.html";
         } else {
           window.location.href = "index.html";
         }
