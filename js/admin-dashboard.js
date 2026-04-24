@@ -3,13 +3,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const role = localStorage.getItem("role");
   const token = localStorage.getItem("token");
   const username = localStorage.getItem("username") || "Admin";
+  const userDisplay = document.getElementById("user");
 
+  // 1. 🛡️ Admin Security Check
   if (!token || role !== "admin") {
     alert("Bhai, ye sirf Admin ke liye hai!");
-    window.location.href = "login.html"; // Wapas bhej do agar admin nahi hai
-  } else {
-    document.getElementById("user").innerText = "Welcome, " + username;
-    loadStats(); // Agar admin hai toh stats load karo
+    window.location.href = "login.html"; // Wapas bhej do
+    return; // Aage ka code mat chalao
+  }
+
+  // 2. ✅ Display Welcome Message (Check if ID exists)
+  if (userDisplay) {
+    userDisplay.innerText = "Welcome, " + username;
+  }
+
+  // 3. 📊 Load Stats
+  if (typeof loadStats === "function") {
+    loadStats();
   }
 });
 
@@ -130,9 +140,3 @@ async function cancelActiveCoupon() {
     btn.disabled = false;
   }
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-  const username = localStorage.getItem("username") || "Guest";
-  const userDisplay = document.getElementById("user");
-  userDisplay.innerText = "Welcome, " + username;
-});
