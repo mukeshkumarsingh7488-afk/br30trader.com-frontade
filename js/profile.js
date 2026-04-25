@@ -29,6 +29,9 @@ window.onload = async function () {
     document.getElementById("userEmail").innerText = email;
     document.getElementById("editName").value = name;
 
+    // 🔥 ✅ VIP & ROLE LOGIC CALL
+    updateUserStatus(user);
+
     const picElement = document.getElementById("profilePic");
 
     if (
@@ -194,4 +197,39 @@ function logout() {
     window.location.href = "login.html";
   }
 }
+
+// region ━━━━━ 💎 DYNAMIC BADGE SYSTEM (DB DRIVEN) ━━━━━
+
+function updateUserStatus(userData) {
+  const badgeContainer = document.getElementById("vipBadgeContainer");
+  if (!badgeContainer) return;
+
+  // DB Fields nikal rahe hain
+  const userRole = userData.role; // "student" ya "admin"
+  const userBadge = userData.badge; // "normal" ya "vip"
+
+  if (userRole === "admin") {
+    // 🛡️ Admin priority par rahega
+    badgeContainer.innerHTML = `
+      <div class="admin-badge">
+          <i class="fas fa-user-shield"></i> SYSTEM ADMIN
+      </div>`;
+  } else if (userBadge === "vip") {
+    // 👑 Agar student hai lekin VIP badge hai
+    badgeContainer.innerHTML = `
+      <div class="vip-badge-gold">
+          <i class="fas fa-crown"></i> VIP GOLDEN PREMIUM
+      </div>`;
+  } else {
+    // ❌ Normal Student ke liye Upgrade lalach
+    badgeContainer.innerHTML = `
+      <div class="standard-badge">
+          <span class="status-label">Standard Member</span>
+          <a href="../pages/pricing.html" class="upgrade-link">Upgrade to VIP <i class="fas fa-arrow-right"></i></a>
+      </div>`;
+  }
+}
+
+// 🏁 --- END OF DB BADGE MODULE ---
+
 //#endregion
