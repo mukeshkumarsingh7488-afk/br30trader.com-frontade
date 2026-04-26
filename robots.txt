@@ -23,15 +23,17 @@ Allow: /basictoadvance.html
 Allow: /contact.html
 Allow: /disclaimer.html
 Allow: /index.html
+Allow: /learn-more.html
 Allow: /lifetimeaccess.html
 Allow: /livemarketanalysis.html
 Allow: /privacy.html
 Allow: /refund.html
 Allow: /riskmanagement.html
 Allow: /service.html
+Allow: /strategies.html
 Allow: /supportcommunity.html
 Allow: /terms.html
 Allow: /verify.html
 
 # Sitemap location
-Sitemap: https://br30trader.com/sitemap.xml
+Sitemap: https://my-frontend-eight-roan.vercel.app/sitemap.xml
