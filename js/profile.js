@@ -147,30 +147,40 @@ document.getElementById("saveBtn").addEventListener("click", async () => {
   const newName = document.getElementById("editName").value.trim();
   const token = localStorage.getItem("token");
 
+  // ✅ Swal Safe Wrapper
+  const showAlert = (options) => {
+    if (typeof Swal !== "undefined") {
+      return Swal.fire(options);
+    } else {
+      alert(options.text || "Something happened!");
+    }
+  };
+
   // 1. Validation Check
   if (!newName) {
-    return Swal.fire({
+    return showAlert({
       icon: "warning",
       title: "Khali Naam?",
-      text: "Bhai, naam likhna toh zaroori hai!",
+      text: "Please enter your name.!",
       background: "#111827",
       color: "#fff",
-      confirmButtonColor: "#a020f0",
     });
   }
 
   try {
-    // 2. Loading Spinner Dikhao
-    Swal.fire({
-      title: "Saving Changes...",
-      text: "Please wait while we update your profile.",
-      allowOutsideClick: false,
-      background: "#111827",
-      color: "#fff",
-      didOpen: () => {
-        Swal.showLoading();
-      },
-    });
+    // 2. Loading Spinner
+    if (typeof Swal !== "undefined") {
+      Swal.fire({
+        title: "Saving Changes...",
+        text: "Please wait while we update your profile.",
+        allowOutsideClick: false,
+        background: "#111827",
+        color: "#fff",
+        didOpen: () => {
+          Swal.showLoading();
+        },
+      });
+    }
 
     const res = await fetch(window.API_BASE_URL + "/api/auth/update-profile", {
       method: "PUT",
@@ -185,44 +195,43 @@ document.getElementById("saveBtn").addEventListener("click", async () => {
     console.log("📥 Server Response:", data);
 
     if (res.ok) {
-      // ✅ Sahi Name Extract karo
       const finalName = data.name || (data.user && data.user.name) || newName;
 
-      // UI Update Logic
+      // UI Update
       document.getElementById("userName").innerText = finalName;
       document.getElementById("userName").style.display = "block";
       document.getElementById("editName").style.display = "none";
       document.getElementById("editBtn").style.display = "inline-block";
       document.getElementById("saveBtn").style.display = "none";
 
-      // 🔄 Sync LocalStorage (Best Practice)
+      // LocalStorage Sync
       let userData = JSON.parse(localStorage.getItem("userData")) || {};
       userData.name = finalName;
       localStorage.setItem("userData", JSON.stringify(userData));
 
-      // 🎉 Success Message
-      Swal.fire({
+      showAlert({
         icon: "success",
         title: "Profile Updated! ✅",
-        text: "Aapka naya naam save ho gaya hai.",
+        text: "Your name has been updated successfully.",
         timer: 2000,
         showConfirmButton: false,
         background: "#111827",
         color: "#fff",
       });
     } else {
-      // ❌ Server Error Handle Karein
-      throw new Error(data.message || data.msg || "Update fail ho gaya bhai!");
+      throw new Error(
+        data.message || data.msg || "Update failed. Please try again.!",
+      );
     }
   } catch (err) {
     console.error("🚨 Update Error:", err);
-    Swal.fire({
+
+    showAlert({
       icon: "error",
       title: "Oops...",
       text: err.message,
       background: "#111827",
       color: "#fff",
-      confirmButtonColor: "#ef4444",
     });
   }
 });
