@@ -1,4 +1,7 @@
 //#region MyCode
+/* =========================rev================
+   1. TYPED.JS ANIMATION (Hero Section)
+========================================= */
 console.log("Bhai, Script Load Ho Gayi! 🔥");
 var typed = new Typed("#element", {
   strings: ["Web. Developer.", "Trader.", "Investor.", "Graphic Designer."],
@@ -7,6 +10,9 @@ var typed = new Typed("#element", {
   loop: true,
 });
 
+/* ============================================
+   Socket.io Connection Setup (admin Alart)
+  ===========================================*/
 const socket = io(window.API_BASE_URL, {
   path: "/socket.io/",
   transports: ["websocket"],
@@ -156,7 +162,9 @@ navigator.serviceWorker
   .then(() => console.log("✅ Service Worker Registered"))
   .catch((err) => console.log("❌ SW Error:", err));
 //#endregion
-
+/* =========================================
+   3.  Review submil & LOADING LOGIC   
+========================================= */
 document.getElementById("reviewForm").addEventListener("submit", async (e) => {
   e.preventDefault();
 
@@ -360,6 +368,9 @@ function updateCountUI(number) {
 // फंक्शन कॉल करें
 loadInitialCount();
 
+/* ============================================
+      scroll bar function 
+  ===========================================*/
 window.onscroll = function () {
   let winScroll = document.documentElement.scrollTop || document.body.scrollTop;
   let height =
@@ -374,6 +385,9 @@ window.onscroll = function () {
   }
 };
 
+/* ============================================
+     Calculatore
+  ===========================================*/
 function calculateRisk() {
   let capital = parseFloat(document.getElementById("capital").value);
   let riskPercent = parseFloat(document.getElementById("risk-percent").value);
@@ -403,6 +417,9 @@ function calculateRisk() {
 window.submitDailyCheck = submitDailyCheck;
 window.calculateRisk = calculateRisk;
 
+/* ============================================
+   disiplean card submit logic
+  ===========================================*/
 function submitDailyCheck() {
   const checkboxes = document.querySelectorAll(
     '.tool-card input[type="checkbox"]',
@@ -439,6 +456,9 @@ function submitDailyCheck() {
 }
 window.submitDailyCheck = submitDailyCheck;
 
+/* ============================================
+   trade jarnel automation
+  ===========================================*/
 function setStatus(status) {
   document.getElementById("trade-status").value = status;
   const pBtn = document.getElementById("btn-prof");
@@ -505,7 +525,7 @@ document.addEventListener("DOMContentLoaded", () => {
 window.setStatus = setStatus;
 window.saveTrade = saveTrade;
 window.filterTradesByDate = filterTradesByDate;
-window.resetHistory = resetHistory;
+window.resetHistory = resetHistory; // seved trade backend fuction end
 
 // --- 3. Fetch User's Trades from Backend ---
 async function fetchUserTrades() {
@@ -675,6 +695,9 @@ function resetHistory() {
   fetchUserTrades();
 } // trade jarnel automation end.
 
+/* ============================================
+         Seasion Clock
+  ===========================================*/
 function updateMarketClocks() {
   const now = new Date();
 
@@ -752,6 +775,9 @@ function updateMarketClocks() {
 setInterval(updateMarketClocks, 1000);
 updateMarketClocks(); // Sesion clock end.
 
+/* ============================================
+          Nav Alert Bell Function (Module Ready)
+  ===========================================*/
 document.addEventListener("DOMContentLoaded", () => {
   const bellBtn = document.querySelector(".bell-icon");
   const dropdown = document.getElementById("notif-dropdown");
@@ -1000,7 +1026,25 @@ if (
   Notification.requestPermission();
 } // socket.io connection (end.)
 
+/* ============================================================
+   🚀 BR30 Trader - ULTRA PRO MAX DYNAMIC PAYMENT ENGINE
+============================================================ */
 //#region
+// 🔥 Razorpay Dynamic Loader
+function loadRazorpay() {
+  return new Promise((resolve) => {
+    if (window.Razorpay) {
+      return resolve(true);
+    }
+
+    const script = document.createElement("script");
+    script.src = "https://checkout.razorpay.com/v1/checkout.js";
+    script.onload = () => resolve(true);
+    script.onerror = () => resolve(false);
+    document.body.appendChild(script);
+  });
+}
+// Page load par Razorpay load karo
 async function loadLatestPrice() {
   try {
     const res = await fetch(`${window.API_BASE_URL}/api/courses`);
@@ -1022,6 +1066,15 @@ async function loadLatestPrice() {
 
 const checkout = async function (courseId) {
   console.log("🚀 Checkout Started for ID:", courseId);
+
+  // 🔥 Razorpay yahi load hoga (IMPORTANT)
+  const razorpayLoaded = await loadRazorpay();
+
+  if (!razorpayLoaded) {
+    alert("Payment system load nahi hua. Try again!");
+    return;
+  }
+
   const token = localStorage.getItem("token");
 
   const couponCode =
@@ -1147,6 +1200,9 @@ window.toggleNotifications = async function () {
   }
 };
 
+/* ============================================
+     Admin Send email Logic 
+============================================ */
 const sendMail = async (subject, message) => {
   const token = localStorage.getItem("token");
 
@@ -1198,6 +1254,9 @@ if (sendBtn) {
   });
 }
 
+/* ============================================
+   VIP Trader 
+============================================ */
 const API_URL = `${window.API_BASE_URL}`;
 let allTraders = [];
 let currentIndex = 0;
@@ -1376,6 +1435,9 @@ async function sendBulkMail() {
   }
 }
 
+/* ========================================================================
+     🚀 PRO LEVEL SYNC: Price, Title & Specific Thumbnail (Auto-Refresh)
+======================================================================== */
 async function syncLatestPrices() {
   try {
     const res = await fetch(window.API_BASE_URL + "/api/courses");
