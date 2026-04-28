@@ -2879,7 +2879,7 @@ p {
 /* ✅ Skip Link - Hidden by default but focusable */
 .skip-link {
   position: absolute;
-  top: -100px;
+  top: -150px;
   left: 50%;
   transform: translateX(-50%);
   background: #00ff88;
@@ -2890,8 +2890,12 @@ p {
   font-weight: bold;
   border-radius: 0 0 10px 10px;
   transition: top 0.3s ease;
+
+  overflow: hidden !important;
+  white-space: nowrap !important;
 }
 
 .skip-link:focus {
   top: 0;
+  outline: 2px solid #00ff88;
 }
