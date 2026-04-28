@@ -1470,20 +1470,31 @@ async function syncLatestPrices() {
             }
 
             if (fullPath.includes("cloudinary")) {
+              const imgWidth = window.innerWidth < 768 ? "w_400" : "w_600";
+
               fullPath = fullPath.replace(
                 "/upload/",
-                "/upload/f_auto,q_auto,w_600/",
+                `/upload/f_auto,q_auto,${imgWidth}/`,
               );
             }
 
             imgTag.src = fullPath;
             imgTag.style.display = "block";
+
+            const courseIndex = courses.indexOf(course);
+            if (courseIndex < 3) {
+              imgTag.setAttribute("fetchpriority", "high");
+
+              imgTag.removeAttribute("loading");
+            } else {
+              imgTag.setAttribute("loading", "lazy");
+            }
           } else {
             imgTag.style.display = "none";
           }
 
           imgTag.onerror = function () {
-            this.src = "https://placeholder.com";
+            this.src = "https://i.ibb.co/KxnQc4gx/BR30-LOGO1.png";
           };
         }
 
