@@ -21,38 +21,46 @@ const socket = io(window.API_BASE_URL, {
   timeout: 10000,
 });
 
-socket.on("connect", () => {
-  console.log("✅ Live connection ban gaya! ID:", socket.id);
+let socket;
+const token = localStorage.getItem("token");
+const userData = JSON.parse(localStorage.getItem("user") || "{}");
 
-  const userId = "69bfdc6e61e19c17bf18d597";
-  socket.emit("join", userId);
-});
+if (token) {
+  socket = io(window.API_BASE_URL, {
+    path: "/socket.io/",
+    transports: ["websocket", "polling"],
+    closeOnBeforeunload: true,
+    reconnectionAttempts: 3,
+    timeout: 10000,
+  });
 
-socket.on("connect_error", (err) => {
-  console.log("❌ Connection Error:", err.message);
-});
+  socket.on("connect", () => {
+    console.log("✅ Live connection ban gaya! ID:", socket.id);
 
-// 🔥 Live Users Count (safe, HTML optional)
-socket.on("live_users_count", (count) => {
-  console.log("🔥 Live Users:", count);
+    const userId = userData._id || "mukeshkumarssingh7488@gmail.com";
+    socket.emit("join", userId);
+  });
 
-  const liveUsersElem = document.getElementById("liveCount");
-  if (liveUsersElem) {
-    liveUsersElem.innerText = count;
-  }
-});
+  socket.on("connect_error", (err) => {
+    console.warn("⚠️ Socket Notice:", err.message);
+  });
 
-// 📩 Notifications
-socket.on("notification", (data) => {
-  console.log("📩 Notification:", data);
+  socket.on("live_users_count", (count) => {
+    const liveUsersElem = document.getElementById("liveCount");
+    if (liveUsersElem) liveUsersElem.innerText = count;
+  });
 
-  if (data && data.message) {
-    alert("New Notification: " + data.message);
-  }
-});
+  socket.on("notification", (data) => {
+    if (data && data.message) {
+      console.log("📩 New Notification:", data.message);
+    }
+  });
+} else {
+  console.log("ℹ️ Guest Mode: Socket connection skipped for performance.");
+}
 
 window.toggleNotifications = function () {
-  console.log("🔔 Notification toggle");
+  console.log("🔔 Notification toggle clicked");
 };
 
 // Page load hote hi synchronization shuru karo
@@ -219,6 +227,7 @@ document.getElementById("reviewForm").addEventListener("submit", async (e) => {
 async function loadTopReviews() {
   try {
     const response = await fetch(`${window.API_BASE_URL}/api/reviews/top10`);
+    if (!response.ok) return;
     const data = await response.json();
     const reviews = data.reviews || [];
     const totalCount = data.totalCount || 0;
@@ -229,7 +238,7 @@ async function loadTopReviews() {
     }
 
     const displayArea = document.getElementById("reviewDisplay");
-
+    if (!displayArea) return;
     if (!reviews || reviews.length === 0) {
       displayArea.innerHTML =
         "<p style='color:gray; font-size:12px;'>No reviews yet.</p>";
@@ -286,7 +295,7 @@ async function loadTopReviews() {
       })
       .join("");
   } catch (err) {
-    console.error("Error:", err);
+    console.warn("Reviews load notice:", err.message);
   }
 }
 
@@ -334,12 +343,17 @@ loadTopReviews();
 async function loadInitialCount() {
   try {
     const response = await fetch(`${window.API_BASE_URL}/api/reviews/top10`);
+    if (!response.ok) {
+      console.warn("Initial count not available right now.");
+      return;
+    }
+
     const data = await response.json();
     if (data.totalCount !== undefined) {
       updateCountUI(data.totalCount);
     }
   } catch (err) {
-    console.error("Count load karne mein error:", err);
+    console.warn("Count sync notice:", err.message);
   }
 }
 
@@ -530,7 +544,10 @@ window.resetHistory = resetHistory; // seved trade backend fuction end
 // --- 3. Fetch User's Trades from Backend ---
 async function fetchUserTrades() {
   const token = localStorage.getItem("token");
-  if (!token) return;
+  if (!token) {
+    alert("Please login first!");
+    return;
+  }
 
   try {
     const response = await fetch(
@@ -611,6 +628,10 @@ async function deleteTrade(id) {
   if (!confirm("⚠️ Conform Delete?")) return;
 
   const token = localStorage.getItem("token");
+  if (!token) {
+    alert("Please login first!");
+    return;
+  }
   try {
     const response = await fetch(`${window.API_BASE_URL}/api/trades/${id}`, {
       method: "DELETE",
@@ -664,6 +685,10 @@ async function filterTradesByDate() {
   if (!searchDate) return;
 
   const token = localStorage.getItem("token");
+  if (!token) {
+    alert("Please login first!");
+    return;
+  }
   try {
     const response = await fetch(
       `${window.API_BASE_URL}/api/trades/my-trades`,
@@ -813,6 +838,10 @@ document.addEventListener("DOMContentLoaded", () => {
 // --- डेटाबेस से असली अलर्ट्स मंगाने के लिए ---
 async function fetchNotifications() {
   const token = localStorage.getItem("token");
+  if (!token) {
+    alert("Please login first!");
+    return;
+  }
 
   try {
     const response = await fetch(
@@ -879,6 +908,11 @@ window.toggleNotifications = toggleNotifications;
 
 // Example: Front-end se backend ko notification bhejna
 function sendTestNotification() {
+  if (typeof socket === "undefined" || !socket) {
+    console.warn("Socket not connected. Please login first.");
+    return;
+  }
+
   const userId = "69bfdc6e61e19c17bf18d597";
   const message = "Hello! This is a test notification!";
 
@@ -889,6 +923,10 @@ function sendTestNotification() {
 // --- 2. Function: Database se purane Alerts load karne ke liye ---
 async function loadNotifications() {
   const token = localStorage.getItem("token");
+  if (!token) {
+    alert("Please login first!");
+    return;
+  }
 
   try {
     const res = await fetch(`${window.API_BASE_URL}/api/notifications/all`, {
@@ -996,6 +1034,11 @@ if (clearBtn) {
   clearBtn.addEventListener("click", async () => {
     if (!confirm("Confirm Clear All?")) return;
     const token = localStorage.getItem("token");
+
+    if (!token) {
+      alert("Please login first!");
+      return;
+    }
 
     try {
       const res = await fetch(
@@ -1275,6 +1318,11 @@ async function fetchTraders() {
 
     const token = localStorage.getItem("token");
 
+    const headers = { "Content-Type": "application/json" };
+    if (token) {
+      headers["Authorization"] = `Bearer ${token}`;
+    }
+
     const res = await fetch(`${window.API_BASE_URL}/api/courses/leaderboard`, {
       method: "GET",
       headers: {
@@ -1282,6 +1330,11 @@ async function fetchTraders() {
         Authorization: `Bearer ${token}`,
       },
     });
+
+    if (res.status === 401) {
+      console.warn("Leaderboard is for logged-in users only.");
+      return;
+    }
 
     const data = await res.json();
     console.log("📊 API DATA:", data);
@@ -1573,8 +1626,8 @@ async function loadLatestCoupon() {
           applyBtn.innerHTML = "✔ APPLIED";
           applyBtn.style.background = "#059669";
           applyBtn.style.color = "white";
-          applyBtn.style.padding = "5px 12px";
-          applyBtn.style.fontSize = "10px";
+          applyBtn.style.padding = "6px 14px";
+          applyBtn.style.fontSize = "12px";
           applyBtn.style.borderRadius = "50px";
           applyBtn.style.border = "none";
           applyBtn.style.fontWeight = "bold";
@@ -1589,7 +1642,8 @@ async function loadLatestCoupon() {
           expiryTag = document.createElement("div");
           expiryTag.className = "expiry-countdown";
           expiryTag.style =
-            "color: #f87171; font-size: 10px; margin-top: 8px; font-weight: 800; text-transform: uppercase; animation: blink-expiry 1.5s infinite;";
+            "color: #ff8e8e; font-size: 12.5px; margin-top: 8px; font-weight: 800; text-transform: uppercase; animation: blink-expiry 1.5s infinite; letter-spacing: 0.5px;";
+
           box.appendChild(expiryTag);
         }
         expiryTag.innerText = `⏳ Only ${data.daysLeft || 7} Days Left!`;
@@ -1734,29 +1788,6 @@ async function syncAdminData() {
     console.error("❌ Sync Logic Fail:", err);
   }
 }
-
-/*
-// 🔥 FUTURE FEATURE: Dynamic WhatsApp Link (Currently not in use)
-async function retryWhatsApp() {
-  try {
-    const user = JSON.parse(localStorage.getItem("user"));
-
-    const response = await axios.post("/api/whatsapp-link", {
-      name: user.name,
-      email: user.email,
-      course: "Trading Course"
-    });
-
-    const url = response.data.url;
-
-    window.open(url, "_blank");
-
-  } catch (error) {
-    console.error("WhatsApp error:", error);
-    alert("Something went wrong");
-  }
-}
-  */
 
 // after login replesh nav (account to user name )
 function updateNavbar() {
