@@ -92,8 +92,14 @@
     />
 
     <!-- ✅ CSS -->
-    <link rel="preload" href="../assets/css/style.css" as="style" />
-    <link rel="stylesheet" href="../assets/css/style.css" media="all" />
+    <link rel="preload" href="assets/css/style.css" as="style" />
+    <link
+      rel="stylesheet"
+      href="assets/css/style.css"
+      media="print"
+      onload="this.media = 'all'"
+    />
+    <noscript><link rel="stylesheet" href="assets/css/style.css" /></noscript>
 
     <!-- ✅ SweetAlert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
@@ -3312,6 +3318,7 @@
           href="https://www.youtube.com/@br30_Trader"
           target="_blank"
           class="s-link yt"
+          aria-label="Subscribe to BR30 Trader on YouTube"
         >
           <svg
             width="24"
@@ -3339,6 +3346,7 @@
           href="https://www.instagram.com/br30Traderofficial?igsh=MWN5eHBscWY5bXFvMw=="
           target="_blank"
           class="s-link ig"
+          aria-label="Visit Mukesh Raj on Instagram"
         >
           <svg
             width="24"
@@ -3362,6 +3370,7 @@
           href="https://www.facebook.com/share/1DDJYGYYDf/"
           target="_blank"
           class="s-link fb"
+          aria-label="Follow BR30 Trader on Facebook"
         >
           <svg
             width="24"
@@ -3385,6 +3394,7 @@
           href="https://t.me/+F8mDhdfiGaI1NDY1"
           target="_blank"
           class="s-link tg"
+          aria-label="Join BR30 Trader Telegram Community"
         >
           <svg
             width="24"
@@ -3407,6 +3417,7 @@
           href="https://chat.whatsapp.com/B4t82SWBcgOIZTeQXp1wD"
           target="_blank"
           class="s-link wa"
+          aria-label="Connect with BR30 Support on WhatsApp"
         >
           <svg
             width="24"
@@ -3430,6 +3441,7 @@
           href="mailto:support.br30Trader@gmail.com"
           target="_blank"
           class="s-link gm"
+          aria-label="Connect with BR30 Support on Gmail"
         >
           <svg
             width="24"
