@@ -1268,7 +1268,7 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log("🔥 Page Loaded");
   fetchTraders();
 });
-
+// lederboard  fact vip trader
 async function fetchTraders() {
   try {
     console.log("🚀 fetchTraders called");
@@ -1335,7 +1335,7 @@ async function fetchTraders() {
     console.error("❌ Fetch Error:", err);
   }
 }
-
+// lederboard display nexxt badge
 function displayNextBatch() {
   const listContainer = document.getElementById("topTradersList");
 
@@ -1399,6 +1399,8 @@ function appendTraderHTML(Trader, rank, delay) {
     <div class="Trader-item" style="animation-delay: ${delay * 0.05}s;">
         <span class="rank-num">#${rank}</span>
         <img src="${userPic}" class="user-avatar"
+        alt="Trader ${Trader.name} Rank ${rank}"  
+     loading="lazy"
              onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(Trader.name)}&background=111&color=00ff88&bold=true'">
         <span class="user-name">${Trader.name}</span>
         <span class="vip-badge">💎VIP</span>
