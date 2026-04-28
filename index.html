@@ -42,20 +42,33 @@
     <!-- ✅ Canonical -->
     <link rel="canonical" href="https://my-frontend-eight-roan.vercel.app" />
 
-    <!-- ✅ Favicon -->
+    <!-- ✅ Optimized Favicon Section -->
+    <!-- स्टैंडर्ड आइकन (ज्यादातर ब्राउज़र्स के लिए) -->
     <link
       rel="icon"
-      type="image/jpeg"
+      type="image/png"
+      href="https://i.ibb.co/KxnQc4gx/BR30-LOGO1.png"
+      sizes="32x32"
+    />
+
+    <!-- गूगल सर्च और मॉडर्न ब्राउज़र्स के लिए (बेस्ट प्रैक्टिस) -->
+    <link
+      rel="icon"
+      href="https://i.ibb.co/KxnQc4gx/BR30-LOGO1.png"
+      sizes="any"
+    />
+
+    <!-- Apple डिवाइसेज के लिए (iPhone/iPad) -->
+    <link
+      rel="apple-touch-icon"
       href="https://i.ibb.co/KxnQc4gx/BR30-LOGO1.png"
     />
+
+    <!-- पुराने Internet Explorer के लिए -->
     <link
       rel="shortcut icon"
       href="https://i.ibb.co/KxnQc4gx/BR30-LOGO1.png"
       type="image/x-icon"
-    />
-    <link
-      rel="apple-touch-icon"
-      href="https://i.ibb.co/KxnQc4gx/BR30-LOGO1.png"
     />
 
     <!-- ✅ Open Graph (WhatsApp/Facebook Preview) -->
@@ -277,7 +290,7 @@
         >
           <img
             src="https://i.ibb.co/KxnQc4gx/BR30-LOGO1.png"
-            alt="logo"
+            alt="BR30 Group Official Logo - Mukesh Raj"
             class="logo"
             style="width: 45px; height: 45px; border-radius: 8px"
           />
@@ -2460,103 +2473,36 @@
     </footer>
     <!-- Main Footer End -->
 
-    <!-- AI Pro Chat Modal (Temprory Coment)
-  <div id="ai-chat-modal" class="ai-modal">
-    <div class="ai-chat-container">
-      <div class="ai-chat-header">
-        <span><i class="fas fa-robot"></i> BR30 AI Pro Mentor</span>
-        <button id="close-chat">&times;</button>
-      </div>
-      <div id="ai-messages" class="ai-messages">
-        <p class="ai-msg">Bhai, main BR30 Mentor hoon. Trading ka kya sawal hai?</p>
-      </div>
-      <div class="ai-chat-input">
-        <input type="text" id="ai-user-input" placeholder="Puchho bhai (Nifty, Options, Strategy)...">
-        <button id="close-chat" onclick="closeAiChat()">&times;</button>
-      </div>
-    </div>
-  </div>
-  <button id="send-ai-btn" onclick="sendAiMessage()">
-    <i class="fas fa-paper-plane"></i>
-  </button> -->
-
-    <!-- ============================================
-          ADD JAVASCRIPT OR OTHER SCRIPTS BELOW
-    =========================================== -->
-    <!-- AI PRO CHAT LOGIC (Direct HTML Script) 
-  <script>
-    window.addEventListener('load', function () {
-      const btn = document.getElementById('ai-pro-btn');
-      const modal = document.getElementById('ai-chat-modal');
-      const sendBtn = document.getElementById('send-ai-btn');
-      const aiInput = document.getElementById('ai-user-input');
-      const msgDiv = document.getElementById('ai-messages');
-
-      // 1. Modal Kholne Ka Function
-      if (btn && modal) {
-        btn.addEventListener('mousedown', function (e) {
-          modal.style.display = "block";
-          modal.style.zIndex = "2147483647";
-        });
-      }
-
-      // 2. Message Bhejne Ka Logic
-      window.sendAiMessage = async function () {
-        const message = aiInput.value.trim();
-        if (!message) return;
-
-        // User Message Dikhao
-        msgDiv.innerHTML += `<div style="text-align:right; margin-bottom:10px;"><span style="background:#a020f0; padding:8px 12px; border-radius:10px; color:white; font-size:13px; display:inline-block;">${message}</span></div>`;
-        aiInput.value = "";
-        msgDiv.scrollTop = msgDiv.scrollHeight;
-
-        try {
-          const res = await fetch(`${window.API_BASE_URL}/api/ai/guide`, {
-
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ message: message })
-          });
-          const data = await res.json();
-
-          // AI Response Dikhao
-          msgDiv.innerHTML += `<div class="ai-msg" style="background:#1e293b; padding:10px; border-radius:8px; margin-bottom:10px; border-left:3px solid #a020f0; color:#ddd;"><b>AI Mentor:</b> ${data.reply}</div>`;
-          msgDiv.scrollTop = msgDiv.scrollHeight;
-        } catch (err) {
-          console.error("AI Error:", err);
-        }
-      };
-
-      // Enter Key Support
-      aiInput?.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') window.sendAiMessage();
-      });
-    });
-
-    // Modal Band Karne Ka Function
-    function closeAiChat() {
-      document.getElementById('ai-chat-modal').style.display = "none";
-    }
-  </script> -->
-
     <!-- =======================================
            16. Other External Scripts belo
      ===================================== -->
     <!-- Typing Animation -->
-    <script src="https://unpkg.com/typed.js@3.0.0/dist/typed.umd.js"></script>
+    <script
+      src="https://unpkg.com/typed.js@3.0.0/dist/typed.umd.js"
+      defer
+    ></script>
 
     <!-- Socket.io -->
-    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js" defer></script>
 
     <!-- Razorpay -->
-    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js" defer></script>
 
     <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-messaging-compat.js"></script>
+    <script
+      src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"
+      defer
+    ></script>
+    <script
+      src="https://www.gstatic.com/firebasejs/9.6.1/firebase-messaging-compat.js"
+      defer
+    ></script>
 
     <!-- Axios (ONLY ONCE) -->
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
+      defer
+    ></script>
 
     <!-- SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
@@ -2567,10 +2513,9 @@
     </script>
 
     <!-- Config -->
-    <script src="../js/config.js"></script>
+    <script src="../js/config.js" defer></script>
 
     <!-- Main Script -->
     <script type="module" src="../js/script.js"></script>
-    <script src="../js/security.js"></script>
   </body>
 </html>
