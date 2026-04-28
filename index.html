@@ -98,17 +98,8 @@
     />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/solid.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/regular.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/brands.min.css"
-    />
-
     <!-- ✅ CSS -->
     <link rel="preload" href="../assets/css/style.css" as="style" />
     <link rel="stylesheet" href="../assets/css/style.css" />
@@ -270,7 +261,11 @@
       <nav class="navbar">
         <div class="nav-container">
           <div class="welcome Trader">
-            <h1 style="margin: 0; font-size: 1.2rem">💫 Welcome 💫</h1>
+            <h1 style="margin: 0; font-size: 1.2rem">
+              <i class="fa-solid fa-sparkles"></i>
+              Welcome
+              <i class="fa-solid fa-sparkles"></i>
+            </h1>
           </div>
           <div class="nav-right">
             <div class="notification-wrapper">
@@ -281,19 +276,53 @@
             </div>
             <div class="user-dropdown">
               <button class="dropdown-btn" id="navAccountBtn">
-                👤 Account
+                <i class="fa-solid fa-user"></i>
+                Account
                 <span class="triangle-icon">▼</span>
               </button>
+
               <div class="dropdown-content">
-                <a href="index.html">🏠 Home</a>
-                <a href="pages/register.html">🔐 Login / Register</a>
-                <a href="pages/profile.html">👤 My Profile</a>
-                <a href="pages/mycourse.html">🛍️ My Course</a>
-                <a href="pages/verify.html">📜 Certificate</a>
-                <a href="pages/disclaimer.html">⚠️ Disclaimer</a>
-                <a href="pages/aboutus.html">🏢 About Us</a>
+                <a href="index.html">
+                  <i class="fa-solid fa-house"></i>
+                  Home
+                </a>
+
+                <a href="pages/register.html">
+                  <i class="fa-solid fa-lock"></i>
+                  Login / Register
+                </a>
+
+                <a href="pages/profile.html">
+                  <i class="fa-solid fa-user"></i>
+                  My Profile
+                </a>
+
+                <a href="pages/mycourse.html">
+                  <i class="fa-solid fa-cart-shopping"></i>
+                  My Course
+                </a>
+
+                <a href="pages/verify.html">
+                  <i class="fa-solid fa-certificate"></i>
+                  Certificate
+                </a>
+
+                <a href="pages/disclaimer.html">
+                  <i class="fa-solid fa-triangle-exclamation"></i>
+                  Disclaimer
+                </a>
+
+                <a href="pages/aboutus.html">
+                  <i class="fa-solid fa-building"></i>
+                  About Us
+                </a>
+
                 <hr />
-                <a href="pages/learn-more.html">🔍 Learn More</a>
+
+                <a href="pages/learn-more.html">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  Learn More
+                </a>
               </div>
             </div>
           </div>
@@ -302,29 +331,38 @@
       <!-- नोटिफिकेशन पैनल (Dropdown) -->
       <div class="notif-dropdown" id="notif-dropdown">
         <div class="notif-header">
-          <h3>Daily Updates ⚡</h3>
-          <span id="clear-all-notifs" style="cursor: pointer">Clear All</span>
+          <h3>
+            Daily Updates
+            <i class="fa-solid fa-bolt"></i>
+          </h3>
+          <span id="clear-all-notifs" style="cursor: pointer">
+            <i class="fa-solid fa-trash"></i>
+            Clear All
+          </span>
         </div>
+
         <div class="notif-list" id="notif-list">
           <div class="notif-item unread">
             <p>
-              🚀
+              <i class="fa-solid fa-rocket"></i>
               <b>NIFTY Alert:</b>
               Strong breakout above 23550. Watch for targets!
             </p>
             <small>2 mins ago</small>
           </div>
+
           <div class="notif-item">
             <p>
-              ⚠️
+              <i class="fa-solid fa-triangle-exclamation"></i>
               <b>BANKNIFTY:</b>
               Approaching resistance at 50500. Trailing SL recommended.
             </p>
             <small>15 mins ago</small>
           </div>
+
           <div class="notif-item">
             <p>
-              📅
+              <i class="fa-solid fa-calendar-days"></i>
               <b>Daily Discipline:</b>
               Did you follow your 1:2 Risk-Reward today?
             </p>
@@ -412,17 +450,30 @@
         <div class="leaderboard-header">
           <h2 class="leaderboard-title">
             Top
-            <span class="highlight-green">👑VIP Traders</span>
+            <span class="highlight-green">
+              <i class="fa-solid fa-crown"></i>
+              VIP Traders
+            </span>
           </h2>
-          <p class="leaderboard-subtitle">In Last One Month</p>
+          <p class="leaderboard-subtitle">
+            <i class="fa-solid fa-calendar-days"></i>
+            In Last One Month
+          </p>
         </div>
+
         <div id="topTradersList" class="Traders-list-container"></div>
+
         <div class="leaderboard-footer">
           <a href="index.html#coursesection" class="vip-btn">
             <span>BROWSE COURSES</span>
-            <span class="btn-icon">🚀</span>
+            <span class="btn-icon">
+              <i class="fa-solid fa-rocket"></i>
+            </span>
           </a>
-          <p class="footer-note">Join VIP to see your name here!</p>
+          <p class="footer-note">
+            <i class="fa-solid fa-star"></i>
+            Join VIP to see your name here!
+          </p>
         </div>
       </div>
     </div>
@@ -432,9 +483,10 @@
     <section class="course-section" id="coursesection">
       <div class="section-header-box">
         <h2>
-          🎓 Our
+          <i class="fa-solid fa-graduation-cap"></i>
+          Our
           <span>Premium Courses</span>
-          🎓
+          <i class="fa-solid fa-graduation-cap"></i>
         </h2>
         <p>Master the Markets with Professional Strategies</p>
       </div>
@@ -467,7 +519,8 @@
                 font-weight: 700;
               "
             >
-              🎁 Exclusive
+              <i class="fa-solid fa-gift"></i>
+              Exclusive
               <span class="discount-val">30</span>
               % OFF Offer
             </p>
@@ -548,7 +601,8 @@
                 font-weight: 700;
               "
             >
-              🎁 Exclusive
+              <i class="fa-solid fa-gift"></i>
+              Exclusive
               <span class="discount-val">30</span>
               % OFF Offer
             </p>
@@ -629,7 +683,8 @@
                 font-weight: 700;
               "
             >
-              🎁 Exclusive
+              <i class="fa-solid fa-gift"></i>
+              Exclusive
               <span class="discount-val">30</span>
               % OFF Offer
             </p>
@@ -710,7 +765,8 @@
                 font-weight: 700;
               "
             >
-              🎁 Exclusive
+              <i class="fa-solid fa-gift"></i>
+              Exclusive
               <span class="discount-val">30</span>
               % OFF Offer
             </p>
@@ -792,7 +848,8 @@
                 font-weight: 700;
               "
             >
-              🎁 Exclusive
+              <i class="fa-solid fa-gift"></i>
+              Exclusive
               <span class="discount-val">30</span>
               % OFF Offer
             </p>
@@ -874,7 +931,8 @@
                 font-weight: 700;
               "
             >
-              🎁 Exclusive
+              <i class="fa-solid fa-gift"></i>
+              Exclusive
               <span class="discount-val">30</span>
               % OFF Offer
             </p>
@@ -938,142 +996,147 @@
       </h2>
       <p class="section-subtitle">Top Strategies & Tools for Success</p>
       <!-- 1. Indicators Section -->
-      <h3 class="category-name">🚀 Top 12 Indicators</h3>
+      <h3 class="category-name">
+        <i class="fa-solid fa-rocket"></i>
+        Top 12 Indicators
+      </h3>
       <div class="grid-container">
         <div class="grid-box">
-          <span>●</span>
+          <i class="fa-solid fa-circle"></i>
           RSI
         </div>
         <div class="grid-box">
-          <span>●</span>
+          <i class="fa-solid fa-circle"></i>
           MACD
         </div>
         <div class="grid-box">
-          <span>●</span>
+          <i class="fa-solid fa-circle"></i>
           Bollinger Bands
         </div>
         <div class="grid-box">
-          <span>●</span>
+          <i class="fa-solid fa-circle"></i>
           Moving Average (EMA/SMA)
         </div>
         <div class="grid-box">
-          <span>●</span>
+          <i class="fa-solid fa-circle"></i>
           VWAP
         </div>
         <div class="grid-box">
-          <span>●</span>
+          <i class="fa-solid fa-circle"></i>
           Supertrend
         </div>
         <div class="grid-box">
-          <span>●</span>
+          <i class="fa-solid fa-circle"></i>
           Fibonacci Retracement
         </div>
         <div class="grid-box">
-          <span>●</span>
+          <i class="fa-solid fa-circle"></i>
           Stochastic Oscillator
         </div>
         <div class="grid-box">
-          <span>●</span>
+          <i class="fa-solid fa-circle"></i>
           ADX
         </div>
         <div class="grid-box">
-          <span>●</span>
+          <i class="fa-solid fa-circle"></i>
           Parabolic SAR
         </div>
         <div class="grid-box">
-          <span>●</span>
+          <i class="fa-solid fa-circle"></i>
           Volume Oscillator
         </div>
         <div class="grid-box">
-          <span>●</span>
+          <i class="fa-solid fa-circle"></i>
           Money Flow Index (MFI)
         </div>
       </div>
       <!-- 2. Candlestick Section -->
-      <h3 class="category-name">🕯️ Top 12 Candlesticks</h3>
+      <i class="fa-solid fa-chart-column"></i>
+      &nbsp; Top 12 Candlesticks
       <div class="grid-container">
         <div class="grid-box">
-          <span>●</span>
+          <i class="fa-solid fa-circle"></i>
           Hammer
         </div>
         <div class="grid-box">
-          <span>●</span>
+          <i class="fa-solid fa-circle"></i>
           Doji
         </div>
         <div class="grid-box">
-          <span>●</span>
+          <i class="fa-solid fa-circle"></i>
           Engulfing (Bull/Bear)
         </div>
         <div class="grid-box">
-          <span>●</span>
+          <i class="fa-solid fa-circle"></i>
           Morning Star
         </div>
         <div class="grid-box">
-          <span>●</span>
+          <i class="fa-solid fa-circle"></i>
           Shooting Star
         </div>
         <div class="grid-box">
-          <span>●</span>
+          <i class="fa-solid fa-circle"></i>
           Hanging Man
         </div>
         <div class="grid-box">
-          <span>●</span>
+          <i class="fa-solid fa-circle"></i>
           Inverted Hammer
         </div>
         <div class="grid-box">
-          <span>●</span>
+          <i class="fa-solid fa-circle"></i>
           Piercing Pattern
         </div>
         <div class="grid-box">
-          <span>●</span>
+          <i class="fa-solid fa-circle"></i>
           Dark Cloud Cover
         </div>
         <div class="grid-box">
-          <span>●</span>
+          <i class="fa-solid fa-circle"></i>
           Tweezer Bottom
         </div>
         <div class="grid-box">
-          <span>●</span>
+          <i class="fa-solid fa-circle"></i>
           Marubozu (Bull/Bear)
         </div>
         <div class="grid-box">
-          <span>●</span>
+          <i class="fa-solid fa-circle"></i>
           Tweezer Top
         </div>
       </div>
       <!-- 3. Price Action Section -->
-      <h3 class="category-name">📈 Price Action Logic</h3>
+      <i class="fa-solid fa-chart-line"></i>
+      &nbsp; Price Action Logic
       <div class="grid-container">
         <div class="grid-box">
-          <span>●</span>
+          <i class="fa-solid fa-circle"></i>
           Support & Resistance
         </div>
         <div class="grid-box">
-          <span>●</span>
+          <i class="fa-solid fa-circle"></i>
           Trendline Breakout
         </div>
         <div class="grid-box">
-          <span>●</span>
+          <i class="fa-solid fa-circle"></i>
           Double Top/Bottom
         </div>
         <div class="grid-box">
-          <span>●</span>
+          <i class="fa-solid fa-circle"></i>
           Head & Shoulders
         </div>
         <div class="grid-box">
-          <span>●</span>
+          <i class="fa-solid fa-circle"></i>
           Supply & Demand Zones
         </div>
         <div class="grid-box">
-          <span>●</span>
+          <i class="fa-solid fa-circle"></i>
           Cup and Handle
         </div>
         <div class="grid-box">
-          <span>●</span>
+          <i class="fa-solid fa-circle"></i>
           Descending Trangle
         </div>
         <div class="grid-box">
-          <span>●</span>
+          <i class="fa-solid fa-circle"></i>
           Triangle
         </div>
       </div>
@@ -1094,7 +1157,10 @@
         <div class="pattern-card">
           <div class="pattern-header">
             <span class="trend-up">Bullish</span>
-            <h3>📉Double Bottom</h3>
+            <h3>
+              <i class="fa-solid fa-chart-line"></i>
+              &nbsp;Double Bottom
+            </h3>
           </div>
           <p class="logic-text">
             <b>Logic:</b>
@@ -1107,7 +1173,10 @@
         <div class="pattern-card">
           <div class="pattern-header">
             <span class="trend-down">Bearish</span>
-            <h3>👤Head & Shoulders</h3>
+            <h3>
+              <i class="fa-solid fa-users"></i>
+              &nbsp;Head & Shoulders
+            </h3>
           </div>
           <p class="logic-text">
             <b>Logic:</b>
@@ -1120,7 +1189,10 @@
         <div class="pattern-card">
           <div class="pattern-header">
             <span class="trend-up">Neutral</span>
-            <h3>📐Symmetrical Triangle</h3>
+            <h3>
+              <i class="fa-solid fa-draw-polygon"></i>
+              &nbsp;Symmetrical Triangle
+            </h3>
           </div>
           <p class="logic-text">
             <b>Logic:</b>
@@ -1138,7 +1210,10 @@
             >
               High Volume
             </span>
-            <h3>🚀Breakout Logic</h3>
+            <h3>
+              <i class="fa-solid fa-arrow-up-right-dots"></i>
+              &nbsp;Breakout Logic
+            </h3>
           </div>
           <p class="logic-text">
             <b>Logic:</b>
@@ -1151,7 +1226,10 @@
         <div class="pattern-card">
           <div class="pattern-header">
             <span class="trend-down">Stoploss Hunt</span>
-            <h3>🎯Fakeout Trap</h3>
+            <h3>
+              <i class="fa-solid fa-bullseye"></i>
+              &nbsp;Fakeout Trap
+            </h3>
           </div>
           <p class="logic-text">
             <b>Logic:</b>
@@ -1169,7 +1247,10 @@
             >
               Multi-Touch
             </span>
-            <h3>📈Trendline Logic</h3>
+            <h3>
+              <i class="fa-solid fa-chart-line"></i>
+              &nbsp;Trendline Logic
+            </h3>
           </div>
           <p class="logic-text">
             <b>Logic:</b>
@@ -1218,7 +1299,8 @@
       <div class="pdf-container">
         <div class="pdf-header">
           <h2>
-            📚 Free
+            <i class="fa-solid fa-book"></i>
+            Free
             <span>Course PDF</span>
             Hub
           </h2>
@@ -1562,7 +1644,9 @@
       <div class="services-grid">
         <!-- Service 1 -->
         <div class="service-card">
-          <div class="icon-box">🌐</div>
+          <div class="icon-box">
+            <i class="fa-solid fa-earth-asia"></i>
+          </div>
           <h3>Custom Web Development</h3>
           <p>
             हम आपके बिजनेस के लिए हाई-स्पीड और रिस्पॉन्सिव वेबसाइट्स बनाते हैं
@@ -1572,7 +1656,9 @@
         </div>
         <!-- Service 2 -->
         <div class="service-card featured">
-          <div class="icon-box">📊</div>
+          <div class="icon-box">
+            <i class="fa-solid fa-chart-simple"></i>
+          </div>
           <h3>Trading Dashboards</h3>
           <p>
             लाइव मार्केट डेटा और कस्टमाइजेबल चार्ट्स के साथ पर्सनल ट्रेडिंग
@@ -1582,7 +1668,9 @@
         </div>
         <!-- Service 3 -->
         <div class="service-card">
-          <div class="icon-box">📱</div>
+          <div class="icon-box">
+            <i class="fa-solid fa-mobile-screen-button"></i>
+          </div>
           <h3>App Development</h3>
           <p>
             एंड्रॉइड और iOS के लिए यूजर-फ्रेंडली मोबाइल एप्लिकेशन जो आपके काम को
@@ -1592,7 +1680,9 @@
         </div>
         <!-- Service 4 -->
         <div class="service-card">
-          <div class="icon-box">⚡</div>
+          <div class="icon-box">
+            <i class="fa-solid fa-bolt"></i>
+          </div>
           <h3>API Integration</h3>
           <p>
             थर्ड-पार्टी टूल्स और पेमेंट गेटवे को आपकी वेबसाइट के साथ आसानी से
@@ -1602,7 +1692,9 @@
         </div>
         <!-- Service 5 -->
         <div class="service-card">
-          <div class="icon-box">🛠️</div>
+          <div class="icon-box">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+          </div>
           <h3>SEO & Performance</h3>
           <p>
             आपकी वेबसाइट को Google पर रैंक कराने और लोडिंग स्पीड को 100% तक
@@ -1612,7 +1704,9 @@
         </div>
         <!-- Service 6 -->
         <div class="service-card">
-          <div class="icon-box">🔐</div>
+          <div class="icon-box">
+            <i class="fa-solid fa-lock"></i>
+          </div>
           <h3>Security Solutions</h3>
           <p>
             डेटा प्रोटेक्शन और सिक्योर सर्वर सेटअप ताकि आपका बिजनेस हमेशा
@@ -1641,15 +1735,15 @@
         </div>
         <!-- Floating Trading Elements -->
         <div class="float-node n1">
-          📈
+          <i class="fa-solid fa-arrow-trend-up"></i>
           <span>BULLISH</span>
         </div>
         <div class="float-node n2">
-          📉
+          <i class="fa-solid fa-arrow-trend-down"></i>
           <span>BEARISH</span>
         </div>
         <div class="float-node n3">
-          ⚡
+          <i class="fa-solid fa-bolt"></i>
           <span>EXECUTION</span>
         </div>
         <div class="candle c1"></div>
@@ -1662,7 +1756,10 @@
           <h1>Master The Market</h1>
           <p>Advanced Algorithmic Ecosystem for Professionals</p>
           <a href="https://t.me/YourTelegramChannel" target="_blank">
-            <button class="pro-btn">Join Our Free Community✅</button>
+            <button class="pro-btn">
+              <i class="fa-solid fa-circle-check"></i>
+              Join Our Free Community
+            </button>
           </a>
         </div>
       </div>
@@ -1680,7 +1777,10 @@
             </div>
           </div>
           <div class="text-content">
-            <h3 class="title-green">🟦 Mindset – 90%</h3>
+            <h3 class="title-green">
+              <i class="fa-solid fa-brain"></i>
+              Mindset – 90%
+            </h3>
             <p>
               <span class="highlight-green">Discipline & Patience:</span>
               Market me loss aur drawdowns aayenge. Agar mindset strong hai, to
@@ -1721,7 +1821,10 @@
             </div>
           </div>
           <div class="text-content">
-            <h3 class="title-yellow">🟦 Strategy – 10%</h3>
+            <h3 class="title-yellow">
+              <i class="fa-solid fa-brain"></i>
+              Strategy – 10%
+            </h3>
             <p>
               <span class="highlight-green">Entry & Exit Rules:</span>
               kab और kaha buy/sell करना है ये strategy decide करती है।
@@ -1737,13 +1840,19 @@
               through होता है।
             </p>
             <p>
-              <span class="highlight-green">💡 Real Life Example1:</span>
+              <span class="highlight-green">
+                <i class="fa-solid fa-lightbulb"></i>
+                Real Life Example1:
+              </span>
               Agar aapke paas perfect strategy hai lekin mindset weak hai →
               overtrade karoge, fear me exit karoge, ya overconfidence me bada
               loss loge.
             </p>
             <p>
-              <span class="highlight-green">💡 Real Life Example2:</span>
+              <span class="highlight-green">
+                <i class="fa-solid fa-lightbulb"></i>
+                Real Life Example2:
+              </span>
               Agar mindset strong hai lekin strategy simple hai → disciplined
               trading se long term me profitable reh sakte ho.
             </p>
@@ -1768,42 +1877,66 @@
           <label class="check-item">
             <input type="checkbox" />
             <span class="custom-check"></span>
-            <p>Followed my Trading Plan? 📋</p>
+            <p>
+              Followed my Trading Plan?
+              <i class="fa-solid fa-clipboard-list"></i>
+            </p>
           </label>
           <label class="check-item">
             <input type="checkbox" />
             <span class="custom-check"></span>
-            <p>Stop-Loss placed in system? 🛡️</p>
+            <p>
+              Stop-Loss placed in system?
+              <i class="fa-solid fa-shield-halved"></i>
+            </p>
           </label>
           <label class="check-item">
             <input type="checkbox" />
             <span class="custom-check"></span>
-            <p>Proper Position Sizing? ⚖️</p>
+            <p>
+              Proper Position Sizing?
+              <i class="fa-solid fa-weight-scale"></i>
+            </p>
           </label>
           <label class="check-item">
             <input type="checkbox" />
             <span class="custom-check"></span>
-            <p>No Overtrading today? 🚫</p>
+            <p>
+              No Overtrading today?
+              <i class="fa-solid fa-ban"></i>
+            </p>
           </label>
           <label class="check-item">
             <input type="checkbox" />
             <span class="custom-check"></span>
-            <p>Waited for my Setup? 🎯</p>
+            <p>
+              Waited for my Setup?
+              <i class="fa-solid fa-bullseye"></i>
+            </p>
           </label>
           <label class="check-item">
             <input type="checkbox" />
             <span class="custom-check"></span>
-            <p>Risk-Reward is 1:2 or more? 📊</p>
+            <p>
+              Risk-Reward is 1:2 or more?
+              <i class="fa-solid fa-chart-line"></i>
+            </p>
           </label>
           <label class="check-item">
             <input type="checkbox" />
             <span class="custom-check"></span>
-            <p>Controlled my Emotions? 🧠</p>
+            <p>
+              Controlled my Emotions?
+              <i class="fa-solid fa-brain"></i>
+            </p>
           </label>
           <label class="check-item">
             <input type="checkbox" />
             <span class="custom-check"></span>
-            <p>Exit based on Logic, not Fear? 🚪</p>
+            <p>
+              Exit based on Logic, not Fear?
+              <i class="fa-solid fa-door-open"></i>
+            </p>
           </label>
         </div>
         <div class="discipline-footer">
@@ -1812,7 +1945,8 @@
             class="submit-discipline-btn"
             onclick="submitDailyCheck()"
           >
-            Submit Daily Report 📝
+            Submit Daily Report
+            <i class="fa-solid fa-pen-to-square"></i>
           </button>
           <p
             id="success-msg"
@@ -1823,7 +1957,8 @@
               margin-top: 10px;
             "
           >
-            ✅ Report Saved! Great Job, Trader!
+            <i class="fa-solid fa-circle-check"></i>
+            Report Saved! Great Job, Trader!
           </p>
         </div>
       </div>
@@ -1843,13 +1978,27 @@
           </div>
           <div class="sentiment-value">
             Mood:
-            <span id="mood-text">Moderate Greed 📈</span>
+            <span id="mood-text">
+              Moderate Greed
+              <i class="fa-solid fa-arrow-trend-up"></i>
+            </span>
           </div>
           <div class="market-status-box">
             <div class="status-row">
-              <span class="status-pill bullish">Very Bullish 📈</span>
-              <span class="status-pill neutral">Neutral ↔️</span>
-              <span class="status-pill bearish">Very Bearish 📉</span>
+              <span class="status-pill bullish">
+                Very Bullish
+                <i class="fa-solid fa-arrow-trend-up"></i>
+              </span>
+
+              <span class="status-pill neutral">
+                Neutral
+                <i class="fa-solid fa-arrows-left-right"></i>
+              </span>
+
+              <span class="status-pill bearish">
+                Very Bearish
+                <i class="fa-solid fa-arrow-trend-down"></i>
+              </span>
             </div>
             <div class="status-info-text">
               Current Bias:
@@ -1909,7 +2058,7 @@
       <section class="journal-section">
         <h2 class="section-title" style="text-align: center; width: 100%">
           <span class="highlight">Trading Journal</span>
-          📓
+          <i class="fa-solid fa-book-journal-whills"></i>
         </h2>
         <p class="section-subtitle" style="text-align: center">
           Analyze your trades like a professional.
@@ -1972,7 +2121,10 @@
               id="trade-note"
               placeholder="What did you learn Today?"
             ></textarea>
-            <button id="saveTradeBtn" class="save-btn">Save Trade 💾</button>
+            <button id="saveTradeBtn" class="save-btn">
+              <i class="fa-solid fa-floppy-disk"></i>
+              Save Trade
+            </button>
           </div>
           <div class="journal-history">
             <div class="history-top-bar">
@@ -2091,7 +2243,10 @@
      ===================================== -->
     <section class="trading-updates">
       <div class="pl-card">
-        <h2>💹 Daily P&L</h2>
+        <h2>
+          <i class="fa-solid fa-coins"></i>
+          Daily P&L
+        </h2>
         <p>Transparency is key. Check my verified daily reports.</p>
         <div class="pl-box">
           <a
@@ -2106,7 +2261,10 @@
       </div>
       <!-- Coming Courses Section -->
       <div class="courses-card">
-        <h2>🔥 Coming Courses</h2>
+        <h2>
+          <i class="fa-solid fa-fire"></i>
+          Coming Courses
+        </h2>
         <div class="course-tags">
           <span>Scalping</span>
           <span>Price Action</span>
@@ -2120,7 +2278,10 @@
      ========================= -->
     <section class="highlights-section">
       <div class="highlights-card">
-        <h3>🎓 Course Highlights</h3>
+        <h3>
+          <i class="fa-solid fa-graduation-cap"></i>
+          Course Highlights
+        </h3>
         <div class="highlights-grid">
           <a href="pages/basictoadvance.html" class="h-item">
             <i class="fas fa-chart-line"></i>
@@ -2153,7 +2314,11 @@
         19. Footer Section & Media
      =========================== -->
     <footer class="footer-section">
-      <h3>🌐 Connect & Contact 🌐</h3>
+      <h3>
+        <i class="fa-solid fa-globe"></i>
+        Connect & Contact
+        <i class="fa-solid fa-globe"></i>
+      </h3>
       <div class="social-grid">
         <!-- 1. YouTube -->
         <a
@@ -2244,10 +2409,21 @@
             solutions.
           </p>
           <div class="social-icons">
-            <a href="https://yourwebsite.com" target="_blank">🌐</a>
-            <a href="https://instagram.com/yourusername" target="_blank">📸</a>
-            <a href="https://youtube.com/@yourchannel" target="_blank">🎥</a>
-            <a href="https://t.me/yourchannel" target="_blank">💬</a>
+            <a href="https://yourwebsite.com" target="_blank">
+              <i class="fa-solid fa-globe"></i>
+            </a>
+
+            <a href="https://instagram.com/yourusername" target="_blank">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="https://youtube.com/@yourchannel" target="_blank">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+
+            <a href="https://t.me/yourchannel" target="_blank">
+              <i class="fa-brands fa-telegram"></i>
+            </a>
           </div>
         </div>
         <!-- Quick Links -->
