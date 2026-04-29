@@ -2875,3 +2875,8 @@ p {
 .mail-link:hover::after {
   width: 100%;
 }
+
+.h-item:hover .icon {
+  color: black !important;
+  transition: 0.3s ease;
+}
