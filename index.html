@@ -93,6 +93,11 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <!-- icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
 
     <!-- ✅ CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
@@ -137,16 +142,28 @@
       {
         "@context": "https://schema.org",
         "@type": "Organization",
+        "@id": "https://my-frontend-eight-roan.vercel.app/#organization",
+
         "name": "BR30 Trader",
         "alternateName": "BR30 Trader Official",
         "url": "https://my-frontend-eight-roan.vercel.app/",
-        "logo": "https://i.ibb.co/KxnQc4gx/BR30-LOGO1.png",
 
-        "description": "Professional Trader & mentor behind BR30 Trader, focused on Price Action, SMC and Option Trading education.",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://i.ibb.co/KxnQc4gx/BR30-LOGO1.png"
+        },
+
+        "description": "Professional trader and education platform focused on Price Action, Smart Money Concepts (SMC), and Option Trading strategies.",
 
         "founder": {
           "@type": "Person",
           "name": "Mukesh Raj"
+        },
+
+        "parentOrganization": {
+          "@type": "Organization",
+          "name": "BR30 Kart",
+          "url": "https://br-30-kart.vercel.app/"
         },
 
         "contactPoint": {
@@ -260,21 +277,7 @@
           <div class="nav-right">
             <div class="notification-wrapper">
               <div class="bell-icon">
-                <!-- ✅ Light-weight SVG Bell Icon -->
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  style="cursor: pointer"
-                >
-                  <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-                  <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-                </svg>
+                <i class="fa-solid fa-bell"></i>
                 <span class="notification-badge" id="notif-count">3</span>
               </div>
             </div>
@@ -293,6 +296,13 @@
                 <a href="pages/aboutus.html">🏢 About Us</a>
                 <hr />
                 <a href="pages/learn-more.html">🔍 Learn More</a>
+                <a
+                  href="https://br-30-kart.vercel.app/"
+                  target="_blank"
+                  title="BR30 Kart Official Marketplace by BR30 Trader"
+                >
+                  🌐 BR30 Kart
+                </a>
               </div>
             </div>
           </div>
@@ -1223,356 +1233,86 @@
             </h2>
             <p>Master the markets with our curated study material.</p>
           </div>
-          <!-- PDF List 1-->
+          <!-- PDF List 1 -->
           <div class="pdf-list scrollable">
             <a
               href="./course-files/01-9EMA-15EMA-FVG-Option-Buying.txt"
               target="_blank"
               class="pdf-item"
             >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                style="color: #ff4d4d; vertical-align: middle"
-              >
-                <path
-                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                ></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="9" y1="15" x2="12" y2="15"></line>
-                <line x1="9" y1="11" x2="15" y2="11"></line>
-                <line x1="9" y1="19" x2="15" y2="19"></line>
-              </svg>
-
+              <i class="fa-solid fa-file-pdf pdf-icon"></i>
               <span>9 EMA + 15 EMA + FVG (Option Buying)</span>
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="download-icon"
-                style="vertical-align: middle"
-              >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
+              <i class="fa-solid fa-download download-icon"></i>
             </a>
-            <!-- PDF List 2-->
+            <!-- PDF List 2 -->
             <a
               href="./course-files/02-9EMA-15EMA-FVG-Option-Selling.txt"
               target="_blank"
               class="pdf-item"
             >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                style="color: #ff4d4d; vertical-align: middle"
-              >
-                <path
-                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                ></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="9" y1="15" x2="12" y2="15"></line>
-                <line x1="9" y1="11" x2="15" y2="11"></line>
-                <line x1="9" y1="19" x2="15" y2="19"></line>
-              </svg>
-
+              <i class="fa-solid fa-file-pdf pdf-icon"></i>
               <span>9 EMA + 15 EMA + FVG (Option Selling)</span>
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="download-icon"
-                style="vertical-align: middle"
-              >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
+              <i class="fa-solid fa-download download-icon"></i>
             </a>
-            <!-- PDF List 3-->
+            <!-- PDF List 3 -->
             <a
               href="./course-files/03-Option-Greeks-Mastery.txt"
               target="_blank"
               class="pdf-item"
             >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                style="color: #ff4d4d; vertical-align: middle"
-              >
-                <path
-                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                ></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="9" y1="15" x2="12" y2="15"></line>
-                <line x1="9" y1="11" x2="15" y2="11"></line>
-                <line x1="9" y1="19" x2="15" y2="19"></line>
-              </svg>
-
+              <i class="fa-solid fa-file-pdf pdf-icon"></i>
               <span>Option Greeks Mastery</span>
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="download-icon"
-                style="vertical-align: middle"
-              >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
+              <i class="fa-solid fa-download download-icon"></i>
             </a>
-            <!-- PDF List 4-->
+            <!-- PDF List 4 -->
             <a
               href="./course-files/04-Option-Selling-with-Hedging.txt"
               target="_blank"
               class="pdf-item"
             >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                style="color: #ff4d4d; vertical-align: middle"
-              >
-                <path
-                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                ></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="9" y1="15" x2="12" y2="15"></line>
-                <line x1="9" y1="11" x2="15" y2="11"></line>
-                <line x1="9" y1="19" x2="15" y2="19"></line>
-              </svg>
+              <i class="fa-solid fa-file-pdf pdf-icon"></i>
               <span>Option Selling with Hedging</span>
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="download-icon"
-                style="vertical-align: middle"
-              >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
+              <i class="fa-solid fa-download download-icon"></i>
             </a>
-            <!-- PDF List 5-->
+            <!-- PDF List 5 -->
             <a
               href="./course-files/05-RSI-Divergence-Full-Guide.txt"
               target="_blank"
               class="pdf-item"
             >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                style="color: #ff4d4d; vertical-align: middle"
-              >
-                <path
-                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                ></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="9" y1="15" x2="12" y2="15"></line>
-                <line x1="9" y1="11" x2="15" y2="11"></line>
-                <line x1="9" y1="19" x2="15" y2="19"></line>
-              </svg>
+              <i class="fa-solid fa-file-pdf pdf-icon"></i>
               <span>RSI Divergence Full Guide</span>
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="download-icon"
-                style="vertical-align: middle"
-              >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
+              <i class="fa-solid fa-download download-icon"></i>
             </a>
-            <!-- PDF List 6-->
+            <!-- PDF List 6 -->
             <a
               href="./course-files/06-Option-Basics-for-Beginners.txt"
               target="_blank"
               class="pdf-item"
             >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                style="color: #ff4d4d; vertical-align: middle"
-              >
-                <path
-                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                ></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="9" y1="15" x2="12" y2="15"></line>
-                <line x1="9" y1="11" x2="15" y2="11"></line>
-                <line x1="9" y1="19" x2="15" y2="19"></line>
-              </svg>
-
+              <i class="fa-solid fa-file-pdf pdf-icon"></i>
               <span>Option Basics for Beginners</span>
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="download-icon"
-                style="vertical-align: middle"
-              >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
+              <i class="fa-solid fa-download download-icon"></i>
             </a>
-            <!-- PDF List 7-->
+            <!-- PDF List 7 -->
             <a
               href="./course-files/07-Technical-Analysis-Mastery.txt"
               target="_blank"
               class="pdf-item"
             >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                style="color: #ff4d4d; vertical-align: middle"
-              >
-                <path
-                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                ></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="9" y1="15" x2="12" y2="15"></line>
-                <line x1="9" y1="11" x2="15" y2="11"></line>
-                <line x1="9" y1="19" x2="15" y2="19"></line>
-              </svg>
-
+              <i class="fa-solid fa-file-pdf pdf-icon"></i>
               <span>Technical Analysis Mastery</span>
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="download-icon"
-                style="vertical-align: middle"
-              >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
+              <i class="fa-solid fa-download download-icon"></i>
             </a>
-            <!-- PDF List 8-->
+            <!-- PDF List 8 -->
             <a
               href="./course-files/08-Candlestick-Patterns-Guide.txt"
               target="_blank"
               class="pdf-item"
             >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                style="color: #ff4d4d; vertical-align: middle"
-              >
-                <path
-                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                ></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="9" y1="15" x2="12" y2="15"></line>
-                <line x1="9" y1="11" x2="15" y2="11"></line>
-                <line x1="9" y1="19" x2="15" y2="19"></line>
-              </svg>
-
+              <i class="fa-solid fa-file-pdf" style="color: #ff4d4d"></i>
               <span>Candlestick Patterns Guide</span>
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="download-icon"
-                style="vertical-align: middle"
-              >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
+              <i class="fa-solid fa-download download-icon"></i>
             </a>
             <!-- PDF List 9-->
             <a
@@ -1580,43 +1320,15 @@
               target="_blank"
               class="pdf-item"
             >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+              <i
+                class="fa-solid fa-file-pdf"
                 style="color: #ff4d4d; vertical-align: middle"
-              >
-                <path
-                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                ></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="9" y1="15" x2="12" y2="15"></line>
-                <line x1="9" y1="11" x2="15" y2="11"></line>
-                <line x1="9" y1="19" x2="15" y2="19"></line>
-              </svg>
-
+              ></i>
               <span>Support & Resistance Levels</span>
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="download-icon"
+              <i
+                class="fa-solid fa-download download-icon"
                 style="vertical-align: middle"
-              >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
+              ></i>
             </a>
             <!-- PDF List 10-->
             <a
@@ -1624,43 +1336,15 @@
               target="_blank"
               class="pdf-item"
             >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+              <i
+                class="fa-solid fa-file-pdf"
                 style="color: #ff4d4d; vertical-align: middle"
-              >
-                <path
-                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                ></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="9" y1="15" x2="12" y2="15"></line>
-                <line x1="9" y1="11" x2="15" y2="11"></line>
-                <line x1="9" y1="19" x2="15" y2="19"></line>
-              </svg>
-
+              ></i>
               <span>Moving Averages Trading Logic</span>
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="download-icon"
+              <i
+                class="fa-solid fa-download download-icon"
                 style="vertical-align: middle"
-              >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
+              ></i>
             </a>
             <!-- PDF List 11-->
             <a
@@ -1668,43 +1352,15 @@
               target="_blank"
               class="pdf-item"
             >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+              <i
+                class="fa-solid fa-file-pdf"
                 style="color: #ff4d4d; vertical-align: middle"
-              >
-                <path
-                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                ></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="9" y1="15" x2="12" y2="15"></line>
-                <line x1="9" y1="11" x2="15" y2="11"></line>
-                <line x1="9" y1="19" x2="15" y2="19"></line>
-              </svg>
-
+              ></i>
               <span>RSI & Stochastic Indicators</span>
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="download-icon"
+              <i
+                class="fa-solid fa-download download-icon"
                 style="vertical-align: middle"
-              >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
+              ></i>
             </a>
             <!-- PDF List 12-->
             <a
@@ -1712,43 +1368,15 @@
               target="_blank"
               class="pdf-item"
             >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+              <i
+                class="fa-solid fa-file-pdf"
                 style="color: #ff4d4d; vertical-align: middle"
-              >
-                <path
-                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                ></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="9" y1="15" x2="12" y2="15"></line>
-                <line x1="9" y1="11" x2="15" y2="11"></line>
-                <line x1="9" y1="19" x2="15" y2="19"></line>
-              </svg>
-
+              ></i>
               <span>Fibonacci Retracement Strategy</span>
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="download-icon"
+              <i
+                class="fa-solid fa-download download-icon"
                 style="vertical-align: middle"
-              >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
+              ></i>
             </a>
             <!-- PDF List 13-->
             <a
@@ -1756,43 +1384,15 @@
               target="_blank"
               class="pdf-item"
             >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+              <i
+                class="fa-solid fa-file-pdf"
                 style="color: #ff4d4d; vertical-align: middle"
-              >
-                <path
-                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                ></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="9" y1="15" x2="12" y2="15"></line>
-                <line x1="9" y1="11" x2="15" y2="11"></line>
-                <line x1="9" y1="19" x2="15" y2="19"></line>
-              </svg>
-
+              ></i>
               <span>Bollinger Bands Trading Setup</span>
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="download-icon"
+              <i
+                class="fa-solid fa-download download-icon"
                 style="vertical-align: middle"
-              >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
+              ></i>
             </a>
             <!-- PDF List 14-->
             <a
@@ -1800,43 +1400,15 @@
               target="_blank"
               class="pdf-item"
             >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+              <i
+                class="fa-solid fa-file-pdf"
                 style="color: #ff4d4d; vertical-align: middle"
-              >
-                <path
-                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                ></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="9" y1="15" x2="12" y2="15"></line>
-                <line x1="9" y1="11" x2="15" y2="11"></line>
-                <line x1="9" y1="19" x2="15" y2="19"></line>
-              </svg>
-
+              ></i>
               <span>Volume Analysis Techniques</span>
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="download-icon"
+              <i
+                class="fa-solid fa-download download-icon"
                 style="vertical-align: middle"
-              >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
+              ></i>
             </a>
             <!-- PDF List 15-->
             <a
@@ -1844,790 +1416,245 @@
               target="_blank"
               class="pdf-item"
             >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+              <i
+                class="fa-solid fa-file-pdf"
                 style="color: #ff4d4d; vertical-align: middle"
-              >
-                <path
-                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                ></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="9" y1="15" x2="12" y2="15"></line>
-                <line x1="9" y1="11" x2="15" y2="11"></line>
-                <line x1="9" y1="19" x2="15" y2="19"></line>
-              </svg>
-
+              ></i>
               <span>MACD Indicator Explained</span>
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="download-icon"
+              <i
+                class="fa-solid fa-download download-icon"
                 style="vertical-align: middle"
-              >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
+              ></i>
             </a>
-            <!-- PDF List 16-->
+            <!-- PDF List 16 -->
             <a
               href="./course-files/16-EMA-Trading-Strategy.txt"
               target="_blank"
               class="pdf-item"
             >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+              <i
+                class="fa-solid fa-file-pdf"
                 style="color: #ff4d4d; vertical-align: middle"
-              >
-                <path
-                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                ></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="9" y1="15" x2="12" y2="15"></line>
-                <line x1="9" y1="11" x2="15" y2="11"></line>
-                <line x1="9" y1="19" x2="15" y2="19"></line>
-              </svg>
-
+              ></i>
               <span>EMA Trading Strategy</span>
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="download-icon"
+              <i
+                class="fa-solid fa-download"
                 style="vertical-align: middle"
-              >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
+              ></i>
             </a>
-            <!-- PDF List 17-->
+            <!-- PDF List 17 -->
             <a
               href="./course-files/17-Price-Action-Mastery.txt"
               target="_blank"
               class="pdf-item"
             >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+              <i
+                class="fa-solid fa-file-pdf"
                 style="color: #ff4d4d; vertical-align: middle"
-              >
-                <path
-                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                ></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="9" y1="15" x2="12" y2="15"></line>
-                <line x1="9" y1="11" x2="15" y2="11"></line>
-                <line x1="9" y1="19" x2="15" y2="19"></line>
-              </svg>
-
+              ></i>
               <span>Price Action Mastery</span>
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="download-icon"
+              <i
+                class="fa-solid fa-download"
                 style="vertical-align: middle"
-              >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
+              ></i>
             </a>
-            <!-- PDF List 18-->
+            <!-- PDF List 18 -->
             <a
               href="./course-files/18-Risk-Management-Techniques.txt"
               target="_blank"
               class="pdf-item"
             >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+              <i
+                class="fa-solid fa-file-pdf"
                 style="color: #ff4d4d; vertical-align: middle"
-              >
-                <path
-                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                ></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="9" y1="15" x2="12" y2="15"></line>
-                <line x1="9" y1="11" x2="15" y2="11"></line>
-                <line x1="9" y1="19" x2="15" y2="19"></line>
-              </svg>
-
+              ></i>
               <span>Risk Management Techniques</span>
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="download-icon"
+              <i
+                class="fa-solid fa-download"
                 style="vertical-align: middle"
-              >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
+              ></i>
             </a>
-            <!-- PDF List 19-->
+            <!-- PDF List 19 -->
             <a
               href="./course-files/19-Option-Buying-Guide.txt"
               target="_blank"
               class="pdf-item"
             >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+              <i
+                class="fa-solid fa-file-pdf"
                 style="color: #ff4d4d; vertical-align: middle"
-              >
-                <path
-                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                ></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="9" y1="15" x2="12" y2="15"></line>
-                <line x1="9" y1="11" x2="15" y2="11"></line>
-                <line x1="9" y1="19" x2="15" y2="19"></line>
-              </svg>
-
+              ></i>
               <span>Option Buying Guide</span>
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="download-icon"
+              <i
+                class="fa-solid fa-download"
                 style="vertical-align: middle"
-              >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
+              ></i>
             </a>
-            <!-- PDF List 20-->
+            <!-- PDF List 20 -->
             <a
               href="./course-files/20-Option-Selling-Guide.txt"
               target="_blank"
               class="pdf-item"
             >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+              <i
+                class="fa-solid fa-file-pdf"
                 style="color: #ff4d4d; vertical-align: middle"
-              >
-                <path
-                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                ></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="9" y1="15" x2="12" y2="15"></line>
-                <line x1="9" y1="11" x2="15" y2="11"></line>
-                <line x1="9" y1="19" x2="15" y2="19"></line>
-              </svg>
-
+              ></i>
               <span>Option Selling Guide</span>
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="download-icon"
+              <i
+                class="fa-solid fa-download"
                 style="vertical-align: middle"
-              >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
+              ></i>
             </a>
-            <!-- PDF List 21-->
+            <!-- PDF List 21 -->
             <a
               href="./course-files/21-Intraday-Trading-Techniques.txt"
               target="_blank"
               class="pdf-item"
             >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+              <i
+                class="fa-solid fa-file-pdf"
                 style="color: #ff4d4d; vertical-align: middle"
-              >
-                <path
-                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                ></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="9" y1="15" x2="12" y2="15"></line>
-                <line x1="9" y1="11" x2="15" y2="11"></line>
-                <line x1="9" y1="19" x2="15" y2="19"></line>
-              </svg>
-
+              ></i>
               <span>Intraday Trading Techniques</span>
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="download-icon"
+              <i
+                class="fa-solid fa-download"
                 style="vertical-align: middle"
-              >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
+              ></i>
             </a>
-            <!-- PDF List 22-->
+            <!-- PDF List 22 -->
             <a
               href="./course-files/22-Swing-Trading-Strategies.txt"
               target="_blank"
               class="pdf-item"
             >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+              <i
+                class="fa-solid fa-file-pdf"
                 style="color: #ff4d4d; vertical-align: middle"
-              >
-                <path
-                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                ></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="9" y1="15" x2="12" y2="15"></line>
-                <line x1="9" y1="11" x2="15" y2="11"></line>
-                <line x1="9" y1="19" x2="15" y2="19"></line>
-              </svg>
+              ></i>
               <span>Swing Trading Strategies</span>
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="download-icon"
+              <i
+                class="fa-solid fa-download"
                 style="vertical-align: middle"
-              >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
+              ></i>
             </a>
-            <!-- PDF List 23-->
+            <!-- PDF List 23 -->
             <a
               href="./course-files/23-Fair-Value-Gap-Trading.txt"
               target="_blank"
               class="pdf-item"
             >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+              <i
+                class="fa-solid fa-file-pdf"
                 style="color: #ff4d4d; vertical-align: middle"
-              >
-                <path
-                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                ></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="9" y1="15" x2="12" y2="15"></line>
-                <line x1="9" y1="11" x2="15" y2="11"></line>
-                <line x1="9" y1="19" x2="15" y2="19"></line>
-              </svg>
-
+              ></i>
               <span>Fair Value Gap (FVG) Trading</span>
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="download-icon"
+              <i
+                class="fa-solid fa-download"
                 style="vertical-align: middle"
-              >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
+              ></i>
             </a>
-            <!-- PDF List 24-->
+            <!-- PDF List 24 -->
             <a
               href="./course-files/24-Chart-Patterns-and-Signals.txt"
               target="_blank"
               class="pdf-item"
             >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+              <i
+                class="fa-solid fa-file-pdf"
                 style="color: #ff4d4d; vertical-align: middle"
-              >
-                <path
-                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                ></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="9" y1="15" x2="12" y2="15"></line>
-                <line x1="9" y1="11" x2="15" y2="11"></line>
-                <line x1="9" y1="19" x2="15" y2="19"></line>
-              </svg>
-
+              ></i>
               <span>Chart Patterns & Signals</span>
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="download-icon"
+              <i
+                class="fa-solid fa-download"
                 style="vertical-align: middle"
-              >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
+              ></i>
             </a>
-            <!-- PDF List 25-->
+            <!-- PDF List 25 -->
             <a
               href="./course-files/25-Trend-Analysis-Techniques.txt"
               target="_blank"
               class="pdf-item"
             >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+              <i
+                class="fa-solid fa-file-pdf"
                 style="color: #ff4d4d; vertical-align: middle"
-              >
-                <path
-                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                ></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="9" y1="15" x2="12" y2="15"></line>
-                <line x1="9" y1="11" x2="15" y2="11"></line>
-                <line x1="9" y1="19" x2="15" y2="19"></line>
-              </svg>
-
+              ></i>
               <span>Trend Analysis Techniques</span>
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="download-icon"
+              <i
+                class="fa-solid fa-download"
                 style="vertical-align: middle"
-              >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
+              ></i>
             </a>
-            <!-- PDF List 26-->
+            <!-- PDF List 26 -->
             <a
               href="./course-files/26-Option-Hedging-Strategies.txt"
               target="_blank"
               class="pdf-item"
             >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                style="color: #ff4d4d; vertical-align: middle"
-              >
-                <path
-                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                ></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="9" y1="15" x2="12" y2="15"></line>
-                <line x1="9" y1="11" x2="15" y2="11"></line>
-                <line x1="9" y1="19" x2="15" y2="19"></line>
-              </svg>
-
+              <i class="fa-solid fa-file-pdf" style="color: #ff4d4d"></i>
               <span>Option Hedging Strategies</span>
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="download-icon"
-                style="vertical-align: middle"
-              >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
+              <i class="fa-solid fa-download download-icon"></i>
             </a>
-            <!-- PDF List 27-->
+            <!-- PDF List 27 -->
             <a
               href="./course-files/27-Scalping-Techniques.txt"
               target="_blank"
               class="pdf-item"
             >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                style="color: #ff4d4d; vertical-align: middle"
-              >
-                <path
-                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                ></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="9" y1="15" x2="12" y2="15"></line>
-                <line x1="9" y1="11" x2="15" y2="11"></line>
-                <line x1="9" y1="19" x2="15" y2="19"></line>
-              </svg>
-
+              <i class="fa-solid fa-file-pdf" style="color: #ff4d4d"></i>
               <span>Scalping Techniques</span>
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="download-icon"
-                style="vertical-align: middle"
-              >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
+              <i class="fa-solid fa-download download-icon"></i>
             </a>
-            <!-- PDF List 28-->
+            <!-- PDF List 28 -->
             <a
               href="./course-files/28-Advanced-Options-Strategies.txt"
               target="_blank"
               class="pdf-item"
             >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                style="color: #ff4d4d; vertical-align: middle"
-              >
-                <path
-                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                ></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="9" y1="15" x2="12" y2="15"></line>
-                <line x1="9" y1="11" x2="15" y2="11"></line>
-                <line x1="9" y1="19" x2="15" y2="19"></line>
-              </svg>
-
+              <i class="fa-solid fa-file-pdf" style="color: #ff4d4d"></i>
               <span>Advanced Options Strategies</span>
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="download-icon"
-                style="vertical-align: middle"
-              >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
+              <i class="fa-solid fa-download download-icon"></i>
             </a>
-            <!-- PDF List 29-->
+            <!-- PDF List 29 -->
             <a
               href="./course-files/29-Bullish-Option-Strategies.txt"
               target="_blank"
               class="pdf-item"
             >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                style="color: #ff4d4d; vertical-align: middle"
-              >
-                <path
-                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                ></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="9" y1="15" x2="12" y2="15"></line>
-                <line x1="9" y1="11" x2="15" y2="11"></line>
-                <line x1="9" y1="19" x2="15" y2="19"></line>
-              </svg>
-
+              <i class="fa-solid fa-file-pdf" style="color: #ff4d4d"></i>
               <span>Bullish Option Strategies</span>
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="download-icon"
-                style="vertical-align: middle"
-              >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
+              <i class="fa-solid fa-download download-icon"></i>
             </a>
-            <!-- PDF List 30-->
+            <!-- PDF List 30 -->
             <a
               href="./course-files/30-Bearish-Option-Strategies.txt"
               target="_blank"
               class="pdf-item"
             >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                style="color: #ff4d4d; vertical-align: middle"
-              >
-                <path
-                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                ></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="9" y1="15" x2="12" y2="15"></line>
-                <line x1="9" y1="11" x2="15" y2="11"></line>
-                <line x1="9" y1="19" x2="15" y2="19"></line>
-              </svg>
-
+              <i class="fa-solid fa-file-pdf" style="color: #ff4d4d"></i>
               <span>Bearish Option Strategies</span>
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="download-icon"
-                style="vertical-align: middle"
-              >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
+              <i class="fa-solid fa-download download-icon"></i>
             </a>
-            <!-- PDF List 31-->
+            <!-- PDF List 31 -->
             <a
               href="./course-files/31-Neutral-Volatility-Option-Strategies.txt"
               target="_blank"
               class="pdf-item"
             >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                style="color: #ff4d4d; vertical-align: middle"
-              >
-                <path
-                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                ></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="9" y1="15" x2="12" y2="15"></line>
-                <line x1="9" y1="11" x2="15" y2="11"></line>
-                <line x1="9" y1="19" x2="15" y2="19"></line>
-              </svg>
-
+              <i class="fa-solid fa-file-pdf" style="color: #ff4d4d"></i>
               <span>Neutral / Volatility Option Strategies</span>
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="download-icon"
-                style="vertical-align: middle"
-              >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
+              <i class="fa-solid fa-download download-icon"></i>
             </a>
-            <!-- PDF List 32-->
+            <!-- PDF List 32 -->
             <a
               href="./course-files/32-Other-Option-Strategies.txt"
               target="_blank"
               class="pdf-item"
             >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                style="color: #ff4d4d; vertical-align: middle"
-              >
-                <path
-                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                ></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="9" y1="15" x2="12" y2="15"></line>
-                <line x1="9" y1="11" x2="15" y2="11"></line>
-                <line x1="9" y1="19" x2="15" y2="19"></line>
-              </svg>
-
+              <i class="fa-solid fa-file-pdf" style="color: #ff4d4d"></i>
               <span>Other Option Strategies</span>
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="download-icon"
-                style="vertical-align: middle"
-              >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
+              <i class="fa-solid fa-download download-icon"></i>
             </a>
           </div>
         </div>
@@ -3083,6 +2110,19 @@
       <!-- =========================================
          13. FOOTER REVIEW & FEEDBACK SECTION
     ========================================= -->
+      <p
+        style="
+          font-size: 13px;
+          opacity: 0.8;
+          text-align: center;
+          margin-top: 10px;
+        "
+      >
+        BR30 Trader is the official trading education platform founded by Mukesh
+        Raj, offering intraday trading, price action and option buying
+        mentorship. BR30 Kart is its official marketplace where verified trading
+        courses are available.
+      </p>
       <h3
         style="
           margin: 0 0 10px 0;
@@ -3218,99 +2258,33 @@
           <h3>🎓 Course Highlights</h3>
           <div class="highlights-grid">
             <a href="pages/basictoadvance.html" class="h-item">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#22c55e"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                style="vertical-align: middle"
-              >
-                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-              </svg>
+              <i class="fa-solid fa-chart-line" style="color: #22c55e"></i>
 
-              Basic to Advanced
+              <span>Basic to Advanced</span>
             </a>
 
             <a href="pages/livemarketanalysis.html" class="h-item">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                style="vertical-align: middle"
-              >
-                <path d="M23 7l-7 5 7 5V7z"></path>
-                <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
-              </svg>
+              <i class="fa-solid fa-video" style="color: #22c55e"></i>
 
-              Live Market Analysis
+              <span>Live Market Analysis</span>
             </a>
 
             <a href="pages/riskmanagement.html" class="h-item">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                style="vertical-align: middle; color: #3b82f6"
-              >
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-              </svg>
+              <i class="fa-solid fa-shield-halved" style="color: #3b82f6"></i>
 
-              Risk Management
+              <span>Risk Management</span>
             </a>
 
             <a href="pages/lifetimeaccess.html" class="h-item">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                style="vertical-align: middle"
-              >
-                <path
-                  d="M18.178 8c5.096 0 5.096 8 0 8-1.698 0-2.625-.791-3.56-1.742L12 11.62l-2.618 2.638C8.447 15.21 7.52 16 5.822 16c-5.096 0-5.096-8 0-8 1.698 0 2.625.791 3.56 1.742L12 12.38l2.618-2.638C15.553 8.79 16.48 8 18.178 8z"
-                ></path>
-              </svg>
+              <i class="fa-solid fa-infinity" style="color: #22c55e"></i>
 
-              Lifetime Access
+              <span>Lifetime Access</span>
             </a>
 
             <a href="pages/supportcommunity.html" class="h-item">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                style="vertical-align: middle"
-              >
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-              </svg>
+              <i class="fa-solid fa-users" style="color: #22c55e"></i>
 
-              Support Community
+              <span>Support Community</span>
             </a>
           </div>
         </div>
@@ -3329,25 +2303,8 @@
           class="s-link yt"
           aria-label="Subscribe to BR30 Trader on YouTube"
         >
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="#FF0000"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            style="vertical-align: middle"
-          >
-            <path
-              d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.42a2.78 2.78 0 0 0-1.94 2C1 8.11 1 12 1 12s0 3.89.46 5.58a2.78 2.78 0 0 0 1.94 2c1.72.42 8.6.42 8.6.42s6.88 0 8.6-.42a2.78 2.78 0 0 0 1.94-2C23 15.89 23 12 23 12s0-3.89-.46-5.58z"
-            ></path>
-            <polygon
-              points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"
-              fill="#FF0000"
-            ></polygon>
-          </svg>
+          <i class="fa-brands fa-youtube" style="color: #ff0000"></i>
+
           <span>YouTube</span>
         </a>
         <!-- 2. Instagram -->
@@ -3355,23 +2312,10 @@
           href="https://www.instagram.com/br30Traderofficial?igsh=MWN5eHBscWY5bXFvMw=="
           target="_blank"
           class="s-link ig"
-          aria-label="Visit Mukesh Raj on Instagram"
+          aria-label="Visit BR30 Trader on Instagram"
         >
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="#E4405F"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            style="vertical-align: middle"
-          >
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-          </svg>
+          <i class="fa-brands fa-instagram" style="color: #e4405f"></i>
+
           <span>Instagram</span>
         </a>
         <!-- 3. Facebook -->
@@ -3381,21 +2325,8 @@
           class="s-link fb"
           aria-label="Follow BR30 Trader on Facebook"
         >
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="#1877F2"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            style="vertical-align: middle"
-          >
-            <path
-              d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
-            ></path>
-          </svg>
+          <i class="fa-brands fa-facebook" style="color: #1877f2"></i>
+
           <span>Facebook</span>
         </a>
         <!-- 4. Telegram -->
@@ -3405,20 +2336,8 @@
           class="s-link tg"
           aria-label="Join BR30 Trader Telegram Community"
         >
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="#0088cc"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            style="vertical-align: middle"
-          >
-            <path d="m22 2-7 20-4-9-9-4Z"></path>
-            <path d="M22 2 11 13"></path>
-          </svg>
+          <i class="fa-brands fa-telegram" style="color: #0088cc"></i>
+
           <span>Telegram</span>
         </a>
         <!-- 5. Whatsapp -->
@@ -3428,46 +2347,18 @@
           class="s-link wa"
           aria-label="Connect with BR30 Support on WhatsApp"
         >
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="#25D366"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            style="vertical-align: middle"
-          >
-            <path
-              d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
-            ></path>
-          </svg>
+          <i class="fa-brands fa-whatsapp" style="color: #25d366"></i>
+
           <span>WhatsApp</span>
         </a>
         <!-- 6. Gmail -->
         <a
           href="mailto:support.br30Trader@gmail.com"
-          target="_blank"
           class="s-link gm"
           aria-label="Connect with BR30 Support on Gmail"
         >
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            style="vertical-align: middle"
-          >
-            <path
-              d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2-2-2z"
-            ></path>
-            <polyline points="22,6 12,13 2,6"></polyline>
-          </svg>
+          <i class="fa-solid fa-envelope" style="color: #ea4335"></i>
+
           <span>Gmail</span>
         </a>
       </div>

@@ -162,6 +162,19 @@ h1 {
   box-shadow: 0 0 25px var(--accent-glow);
   transform: scale(1.05);
 }
+
+.center-text {
+  display: flex;
+  justify-content: center;
+}
+
+.center-text p {
+  font-size: 14px;
+  color: #ccc;
+  max-width: 800px;
+  text-align: center;
+  margin: 10px 0 0;
+}
 /* #endregion */
 /* ==========================================================================
    ✅ UI STATUS: LIFETIME ACCESS STYLES ORGANIZED & POLISHED.

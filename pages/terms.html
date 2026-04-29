@@ -75,15 +75,28 @@
       {
         "@context": "https://schema.org",
         "@type": "WebPage",
+        "@id": "https://my-frontend-eight-roan.vercel.app/pages/terms.html#webpage",
+
         "name": "BR30 Trader Terms and Conditions",
         "url": "https://my-frontend-eight-roan.vercel.app/pages/terms.html",
         "description": "Read the official terms and conditions of BR30 Trader including usage rules, course access and platform guidelines.",
 
-        "mainEntity": {
-          "@type": "Organization",
+        "isPartOf": {
+          "@type": "WebSite",
           "name": "BR30 Trader",
-          "url": "https://my-frontend-eight-roan.vercel.app/",
-          "logo": "https://i.ibb.co/KxnQc4gx/BR30-LOGO1.png",
+          "url": "https://my-frontend-eight-roan.vercel.app/"
+        },
+
+        "about": {
+          "@type": "Organization",
+          "@id": "https://my-frontend-eight-roan.vercel.app/#organization",
+
+          "name": "BR30 Trader",
+
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://i.ibb.co/KxnQc4gx/BR30-LOGO1.png"
+          },
 
           "founder": {
             "@type": "Person",
@@ -168,6 +181,7 @@
       </p>
 
       <a href="../index.html" class="btn">Back Home</a>
+      <p>Funded & Built by Mukesh Raj | BR30 Trader</p>
     </div>
   </body>
 </html>

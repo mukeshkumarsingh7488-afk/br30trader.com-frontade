@@ -129,6 +129,19 @@ h1 {
   box-shadow: 0 8px 25px rgba(168, 85, 247, 0.5);
   letter-spacing: 1px;
 }
+
+.center-text {
+  display: flex;
+  justify-content: center;
+}
+
+.center-text p {
+  font-size: 14px;
+  color: #ccc;
+  margin-top: 10px;
+  max-width: 800px;
+  text-align: center;
+}
 /* #endregion */
 /* ==========================================================================
    ✅ UI STATUS: B2A COURSE STYLES ORGANIZED & POLISHED.
