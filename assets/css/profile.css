@@ -1,12 +1,3 @@
-/* #region ━━━━━ 👤 WELCOME DESIGNER | USER PROFILE UI STYLES ━━━━━ */
-/**
- * 👤 USER PROFILE & IDENTITY UI ARCHITECTURE
- * Logic: Avatar Layouts, Personal Metadata Grids & Account Settings Styling
- * Purpose: Styling the centralized identity hub for BRR30KART users
- * Status: 2026 UX-Optimized | MSR PRO Identity Standards
- * --------------------------------------------------------------------------
- */
-
 * {
   margin: 0;
   padding: 0;
@@ -22,10 +13,6 @@ body {
   background-color: #050505;
   padding: 20px;
 }
-
-/* =========================================
-           2. PROFILE CARD (Responsive)
-        ========================================= */
 .profile-card {
   width: 100%;
   max-width: 360px;
@@ -38,7 +25,6 @@ body {
   color: white;
 }
 
-/* Profile Pic Section */
 .photo-container {
   position: relative;
   display: inline-block;
@@ -70,8 +56,6 @@ body {
   border: 2px solid #1e293b;
   font-size: 14px;
 }
-
-/* Text & Inputs */
 h2 {
   font-size: 22px;
   font-weight: 600;
@@ -99,10 +83,6 @@ p#userEmail {
 .edit-box input:focus {
   border-color: #a020f0;
 }
-
-/* =========================================
-           3. BUTTONS & LINKS
-        ========================================= */
 .buttons {
   display: flex;
   flex-direction: column;
@@ -120,15 +100,11 @@ button {
   transition: 0.3s ease;
   font-size: 15px;
 }
-
-/* Primary Purple Buttons */
 #editBtn,
 #saveBtn {
   background: #a020f0;
   color: white;
 }
-
-/* Logout Button (Outline style) */
 #logoutBtn {
   background: transparent;
   border: 1px solid #f87171;
@@ -153,15 +129,11 @@ button:hover {
   margin-top: 15px;
   display: inline-block;
 }
-
-/* Mobile Fixes */
 @media (max-width: 480px) {
   .profile-card {
     padding: 25px 20px;
   }
 }
-
-/* 👑 VIP Golden Premium Badge (Shining Effect) */
 .vip-badge-gold {
   background: linear-gradient(
     45deg,
@@ -184,8 +156,6 @@ button:hover {
   animation: gold-shine 3s infinite linear;
   text-transform: uppercase;
 }
-
-/* 🛡️ Admin Badge (Professional Red) */
 .admin-badge {
   background: linear-gradient(45deg, #7f1d1d, #ef4444, #991b1b);
   color: #fff;
@@ -199,8 +169,6 @@ button:hover {
   box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
-
-/* ⚪ Standard Member & Upgrade Nudge */
 .standard-badge {
   margin-bottom: 15px;
   text-align: center;
@@ -234,8 +202,6 @@ button:hover {
   border-style: solid;
   transform: translateY(-2px);
 }
-
-/* ✨ Animations */
 @keyframes gold-shine {
   0% {
     filter: brightness(1);
@@ -262,11 +228,3 @@ button:hover {
     box-shadow: 0 0 0 0 rgba(168, 85, 247, 0);
   }
 }
-/* #endregion */
-/* ==========================================================================
-   ✅ UI STATUS: PROFILE STYLES ORGANIZED & POLISHED.
-   ⚡ PERFORMANCE: PROFILE METADATA & AVATAR COMPONENTS FULLY RESPONSIVE.
-   🚀 DEPLOYMENT: PROFILE CSS READY FOR LIVE IDENTITY MANAGEMENT!
-   ========================================================================== */
-
-/* 🏁 --- END OF PROFILE STYLING --- */

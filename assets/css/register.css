@@ -1,12 +1,3 @@
-/* #region ━━━━━ 📝 WELCOME DESIGNER | USER REGISTRATION STYLES ━━━━━ */
-/**
- * 📝 SIGNUP & ONBOARDING UI ARCHITECTURE
- * Logic: Multi-step Form Layouts, Input Validations & Success State Styling
- * Purpose: Styling the initial touchpoint for new BRR30KART students
- * Status: 2026 Production Ready | Optimized for High Conversion
- * --------------------------------------------------------------------------
- */
-
 * {
   margin: 0;
   padding: 0;
@@ -22,10 +13,6 @@ body {
   background-color: #050505;
   padding: 20px;
 }
-
-/* =========================================
-           REGISTRATION CONTAINER (Responsive)
-        ========================================= */
 .container {
   width: 100%;
   max-width: 380px;
@@ -77,15 +64,11 @@ label {
   padding: 10px 5px;
   font-size: 15px;
 }
-
-/* Toggle Password Button */
 .toggle-btn {
   cursor: pointer;
   color: #94a3b8;
   font-size: 18px;
 }
-
-/* Button Styling */
 button {
   width: 100%;
   padding: 12px;
@@ -122,8 +105,6 @@ button:hover {
 .links a:hover {
   text-decoration: underline;
 }
-
-/* Mobile Adjustment */
 @media (max-width: 480px) {
   .container {
     padding: 20px;
@@ -133,11 +114,3 @@ button:hover {
     font-size: 20px;
   }
 }
-/* #endregion */
-/* ==========================================================================
-   ✅ UI STATUS: REGISTER STYLES ORGANIZED & POLISHED.
-   ✨ VISUALS: ONBOARDING FORMS & CTA COMPONENTS FULLY RESPONSIVE.
-   🚀 DEPLOYMENT: REGISTER CSS READY FOR LIVE USER ACQUISITION!
-   ========================================================================== */
-
-/* 🏁 --- END OF REGISTER STYLING --- */

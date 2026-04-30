@@ -1,12 +1,3 @@
-/* #region ━━━━━ 🛠️ WELCOME DESIGNER | SERVICES SYSTEM STYLES ━━━━━ */
-/**
- * 🛠️ SERVICES UI ARCHITECTURE
- * Logic: Service Offering Grids, Feature Benefit Lists & Iconography
- * Purpose: Styling the core value propositions and solutions offered by BRR30KART
- * Status: 2026 Production Ready | Optimized for Feature Clarity
- * --------------------------------------------------------------------------
- */
-
 * {
   margin: 0;
   padding: 0;
@@ -20,8 +11,6 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
 }
-
-/* Hero Section */
 .services-hero {
   padding: 100px 20px;
   text-align: center;
@@ -47,8 +36,6 @@ body {
   color: #94a3b8;
   font-size: 1.1rem;
 }
-
-/* Services Grid */
 .services-main {
   max-width: 1200px;
   margin: 80px auto;
@@ -76,8 +63,6 @@ body {
   border-color: #a020f0;
   box-shadow: 0 20px 40px rgba(160, 32, 240, 0.2);
 }
-
-/* Glowing Icon Wrapper */
 .icon-wrapper {
   width: 90px;
   height: 90px;
@@ -110,8 +95,6 @@ body {
   color: #cbd5e1;
   margin-bottom: 25px;
 }
-
-/* Feature List Inside Card */
 .feature-list {
   list-style: none;
   text-align: left;
@@ -133,8 +116,6 @@ body {
   color: #a020f0;
   font-size: 0.7rem;
 }
-
-/* Bottom Call to Action */
 .cta-section {
   text-align: center;
   padding: 80px 20px;
@@ -178,11 +159,3 @@ body {
     font-size: 2.5rem;
   }
 }
-/* #endregion */
-/* ==========================================================================
-   ✅ UI STATUS: SERVICE STYLES ORGANIZED & POLISHED.
-   ✨ VISUALS: FEATURE CARDS & SERVICE GRIDS FULLY RESPONSIVE.
-   🚀 DEPLOYMENT: SERVICES CSS READY FOR LIVE BUSINESS SHOWCASE!
-   ========================================================================== */
-
-/* 🏁 --- END OF SERVICES STYLING --- */

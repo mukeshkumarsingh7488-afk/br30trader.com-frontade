@@ -1,12 +1,3 @@
-/* #region ━━━━━ 🔑 WELCOME DESIGNER | PASSWORD RECOVERY STYLES ━━━━━ */
-/**
- * 🔑 FORGOT PASSWORD UI ARCHITECTURE
- * Logic: Secure Input Fields, Verification UI & Recovery Flow Layouts
- * Purpose: Styling the account retrieval interface for BRR30KART users
- * Status: 2026 Production Ready | Optimized for Trust & UX
- * --------------------------------------------------------------------------
- */
-
 * {
   margin: 0;
   padding: 0;
@@ -22,10 +13,6 @@ body {
   background-color: #050505;
   padding: 20px;
 }
-
-/* =========================================
-           CONTAINER (Mobile Friendly)
-        ========================================= */
 .container {
   width: 100%;
   max-width: 360px;
@@ -42,8 +29,6 @@ h2 {
   margin-bottom: 25px;
   font-weight: 600;
 }
-
-/* Input Styling */
 input {
   width: 100%;
   padding: 12px 15px;
@@ -59,8 +44,6 @@ input {
 input:focus {
   border-color: #a020f0;
 }
-
-/* Purple Button */
 button {
   width: 100%;
   padding: 12px;
@@ -78,8 +61,6 @@ button:hover {
   background: #8b1ad4;
   transform: translateY(-2px);
 }
-
-/* Footer Links */
 .links {
   display: flex;
   justify-content: center;
@@ -96,8 +77,6 @@ button:hover {
 .links a:hover {
   text-decoration: underline;
 }
-
-/* Password Toggle Icon */
 .input-box {
   position: relative;
   width: 100%;
@@ -111,8 +90,6 @@ button:hover {
   color: #94a3b8;
   font-size: 18px;
 }
-
-/* Mobile Adjustment */
 @media (max-width: 480px) {
   .container {
     padding: 20px;
@@ -122,11 +99,3 @@ button:hover {
     font-size: 20px;
   }
 }
-/* #endregion */
-/* ==========================================================================
-   ✅ UI STATUS: FORGOT PASSWORD STYLES ORGANIZED & POLISHED.
-   🛡️ VISUALS: RECOVERY FORMS & STATUS MESSAGES FULLY RESPONSIVE.
-   🚀 DEPLOYMENT: FORGOT PASSWORD CSS READY FOR LIVE ACCESS RECOVERY!
-   ========================================================================== */
-
-/* 🏁 --- END OF FORGOT PASSWORD STYLING --- */

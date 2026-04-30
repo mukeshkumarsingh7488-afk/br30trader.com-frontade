@@ -1,12 +1,3 @@
-/* #region ━━━━━ 📈 WELCOME DESIGNER | LIVE MARKET ANALYSIS STYLES ━━━━━ */
-/**
- * 📈 LIVE MARKET ANALYSIS UI ARCHITECTURE
- * Logic: Real-time Data Visualization, Trading Charts & Market Signal Grids
- * Purpose: Styling the dynamic analysis portal for live market trends
- * Status: 2026 Production Ready | Optimized for High-Frequency Updates
- * --------------------------------------------------------------------------
- */
-
 :root {
   --bg-dark: #07070a;
   --card-bg: #12121a;
@@ -141,11 +132,3 @@ h1 {
   margin: 0;
   font-size: 14px;
 }
-/* #endregion */
-/* ==========================================================================
-   ✅ UI STATUS: LIVE ANALYSIS STYLES ORGANIZED & POLISHED.
-   📊 VISUALS: CHART CONTAINERS & DATA WIDGETS FULLY RESPONSIVE.
-   🚀 DEPLOYMENT: MARKET ANALYSIS CSS READY FOR LIVE STREAMING!
-   ========================================================================== */
-
-/* 🏁 --- END OF LIVE MARKET ANALYSIS STYLING --- */

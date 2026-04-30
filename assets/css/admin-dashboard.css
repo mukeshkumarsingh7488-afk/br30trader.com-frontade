@@ -1,12 +1,3 @@
-/* #region ━━━━━ 📈 WELCOME DESIGNER | ADMIN DASHBOARD STYLES ━━━━━ */
-/**
- * 📊 ADMIN DASHBOARD UI ARCHITECTURE
- * Logic: Grid Layouts, Metric Cards, Interactive Charts & Sidebar Navigation
- * Purpose: Centralized visual management for Platform Analytics & User Operations
- * Status: 2026 Production Ready | High-Performance Admin UI
- * --------------------------------------------------------------------------
- */
-
 .side-btn.active {
   background: rgba(0, 255, 204, 0.15) !important;
   color: #00ffcc !important;
@@ -352,15 +343,7 @@ tr:hover {
 /* मोबाइल के लिए एडजस्टमेंट */
 @media (max-width: 600px) {
   .marketing-card {
-    margin: 10px 15px; /* मोबाइल पर मार्जिन कम कर दिया ताकि स्क्रीन पर फिट आए */
+    margin: 10px 15px;
     padding: 20px;
   }
 }
-/* #endregion */
-/* ==========================================================================
-   ✅ UI STATUS: ADMIN DASHBOARD STYLES ORGANIZED & POLISHED.
-   📊 VISUALS: ANALYTIC GRIDS & MANAGEMENT TOOLS FULLY RESPONSIVE.
-   🚀 DEPLOYMENT: DASHBOARD CSS READY FOR LIVE ADMINISTRATION!
-   ========================================================================== */
-
-/* 🏁 --- END OF ADMIN DASHBOARD STYLING --- */

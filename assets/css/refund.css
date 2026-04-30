@@ -1,12 +1,3 @@
-/* #region ━━━━━ 💸 WELCOME DESIGNER | REFUND POLICY STYLES ━━━━━ */
-/**
- * 💸 REFUND & CANCELLATION UI ARCHITECTURE
- * Logic: Policy Documentation Layouts, Transparency Grids & Clear Typography
- * Purpose: Styling the financial safety and refund terms for BRR30KART
- * Status: 2026 Production Ready | Optimized for Financial Transparency
- * --------------------------------------------------------------------------
- */
-
 * {
   margin: 0;
   padding: 0;
@@ -15,59 +6,69 @@
 }
 
 body {
-  background-color: #050505;
-  color: #ffffff;
+  background: #050505;
+  color: #fff;
   display: flex;
   justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 20px;
+  padding: 40px 20px;
 }
-
-/* =========================================
-           REFUND BOX (Mobile Responsive)
-        ========================================= */
-.box {
+.policy-container {
+  max-width: 900px;
   width: 100%;
-  max-width: 600px;
-  padding: 40px;
-  text-align: center;
   background: #1e293b;
-  border-radius: 20px;
   border: 1px solid #334155;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
 }
-
-h1 {
+.policy-title h1 {
   color: #a020f0;
-  font-size: 26px;
-  margin-bottom: 25px;
-  font-weight: 600;
+  font-size: 30px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
-p {
+.policy-title .meta {
+  color: #aaa;
+  font-size: 13px;
+  text-align: center;
+  margin-bottom: 25px;
+}
+.policy-body p {
   color: #cbd5e1;
   font-size: 16px;
-  line-height: 1.7;
+  line-height: 1.8;
   margin-bottom: 15px;
+  text-align: left;
+}
+.policy-body h3 {
+  color: #ffffff;
+  font-size: 18px;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  border-left: 4px solid #a020f0;
+  padding-left: 10px;
+}
+.policy-body ul {
+  margin-left: 20px;
+  margin-bottom: 15px;
+  color: #cbd5e1;
 }
 
-b {
-  color: #a020f0;
+.policy-body ul li {
+  margin-bottom: 8px;
+  line-height: 1.6;
 }
-
-/* =========================================
-           PURPLE BUTTON STYLING
-        ========================================= */
 .btn {
   display: inline-block;
   margin-top: 25px;
-  padding: 12px 35px;
-  background-color: #a020f0;
+  padding: 12px 30px;
+  background: #a020f0;
   color: white;
   text-decoration: none;
-  font-weight: 600;
   border-radius: 10px;
+  font-weight: 600;
   transition: 0.3s ease;
   border: 1px solid #a020f0;
 }
@@ -76,28 +77,22 @@ b {
   background: transparent;
   color: #a020f0;
   transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(160, 32, 240, 0.3);
+  box-shadow: 0 10px 25px rgba(160, 32, 240, 0.3);
 }
-
-/* Mobile Adjustments (Dimensions Fix) */
-@media (max-width: 480px) {
-  .box {
-    padding: 30px 20px;
+@media (max-width: 600px) {
+  .policy-container {
+    padding: 25px 18px;
   }
 
-  h1 {
-    font-size: 22px;
+  .policy-title h1 {
+    font-size: 24px;
   }
 
-  p {
+  .policy-body p {
     font-size: 14px;
   }
-}
-/* #endregion */
-/* ==========================================================================
-   ✅ UI STATUS: REFUND STYLES ORGANIZED & POLISHED.
-   🛡️ READABILITY: POLICY TEXT & TERMS BLOCKS FULLY RESPONSIVE.
-   🚀 DEPLOYMENT: REFUND CSS READY FOR LIVE COMPLIANCE!
-   ========================================================================== */
 
-/* 🏁 --- END OF REFUND STYLING --- */
+  .policy-body h3 {
+    font-size: 16px;
+  }
+}

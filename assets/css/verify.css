@@ -1,12 +1,3 @@
-/* #region ━━━━━ 🛡️ WELCOME DESIGNER | VERIFICATION SYSTEM STYLES ━━━━━ */
-/**
- * 🛡️ ACCOUNT VERIFICATION UI ARCHITECTURE
- * Logic: OTP Input Fields, Countdown Timers & Success/Error Feedback UI
- * Purpose: Styling the critical identity verification step for BRR30KART
- * Status: 2026 Production Ready | Optimized for Security & UX
- * --------------------------------------------------------------------------
- */
-
 body {
   background: #050505;
   color: #ffffff;
@@ -31,8 +22,6 @@ h2 {
   text-transform: uppercase;
   letter-spacing: 2px;
 }
-
-/* Input & Button */
 input {
   width: 90%;
   padding: 15px;
@@ -62,8 +51,6 @@ button:hover {
   box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
   transform: scale(1.02);
 }
-
-/* 📸 Camera Section */
 #reader {
   width: 100%;
   border-radius: 15px;
@@ -71,8 +58,6 @@ button:hover {
   margin-top: 20px;
   border: 1px dashed #00ff88;
 }
-
-/* ✅ Result Section */
 #result-box {
   display: none;
   margin-top: 25px;
@@ -104,11 +89,3 @@ button:hover {
     transform: translateY(0);
   }
 }
-/* #endregion */
-/* ==========================================================================
-   ✅ UI STATUS: VERIFICATION STYLES ORGANIZED & POLISHED.
-   🔑 VISUALS: OTP SLOTS & STATUS INDICATORS FULLY RESPONSIVE.
-   🚀 DEPLOYMENT: VERIFY CSS READY FOR LIVE IDENTITY VALIDATION!
-   ========================================================================== */
-
-/* 🏁 --- END OF VERIFICATION STYLING --- */

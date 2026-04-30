@@ -1,12 +1,3 @@
-/* #region ━━━━━ 🛡️ WELCOME DESIGNER | ADMIN ALERT SYSTEM STYLES ━━━━━ */
-/**
- * 🚨 ADMIN ALERT & NOTIFICATION UI
- * Logic: High-Visibility Status Flags, Success/Error Toasts & Security Alerts
- * Purpose: Providing real-time visual feedback for critical Admin actions
- * Status: 2026 Production Ready | MSR PRO Dashboard Standards
- * --------------------------------------------------------------------------
- */
-
 body {
   background: #050505;
   color: white;
@@ -69,11 +60,3 @@ button:hover {
   color: #a020f0;
   box-shadow: 0 0 20px #a020f0;
 }
-/* #endregion */
-/* ==========================================================================
-   ✅ UI STATUS: ADMIN ALERT STYLES ORGANIZED & TESTED.
-   🔔 VISUALS: COLOR-CODED NOTIFICATIONS & ANIMATIONS ACTIVE.
-   🚀 DEPLOYMENT: ALERTS READY FOR PRODUCTION MONITORING!
-   ========================================================================== */
-
-/* 🏁 --- END OF ADMIN ALERT STYLING --- */

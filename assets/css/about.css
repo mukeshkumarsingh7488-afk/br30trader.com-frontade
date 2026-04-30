@@ -1,12 +1,3 @@
-/* #region ━━━━━ 🎨 WELCOME DESIGNER | STYLING SYSTEM INITIALIZED ━━━━━ */
-/**
- * 🖌️ GLOBAL STYLING ARCHITECTURE (V2026)
- * Logic: Design Tokens, Responsive Layouts & Visual Aesthetics
- * Purpose: Defining the 'MSR PRO' Look & Feel for BRR30KART
- * Status: UI-Optimized & Production Ready
- * --------------------------------------------------------------------------
- */
-
 /* Main Styles Start Here... */
 * {
   margin: 0;
@@ -177,12 +168,3 @@ body {
     height: 300px;
   }
 }
-
-/* #endregion */
-/* ==========================================================================
-   ✅ UI STATUS: STYLESHEET ORGANIZED & BROWSER-COMPATIBLE.
-   🎨 AESTHETICS: THEMES, ANIMATIONS & LAYOUTS FULLY SYNCED.
-   🚀 DEPLOYMENT: CSS IS READY FOR PRODUCTION RENDERING!
-   ========================================================================== */
-
-/* 🏁 --- END OF STYLING MODULE --- */

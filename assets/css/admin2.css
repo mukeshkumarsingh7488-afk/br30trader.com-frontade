@@ -1,16 +1,6 @@
-/* #region ━━━━━ 🚀 WELCOME DESIGNER | ADMIN 2.0 STYLES INITIALIZED ━━━━━ */
-/**
- * 🛠️ ADMIN 2.0 MODULE STYLING
- * Logic: Secondary Layouts, Advanced Filters, and Extended Management UI
- * Purpose: Handling additional Administrative features and Extended Data Views
- * Status: 2026 UI-Optimized | MSR PRO Extended Suite
- * --------------------------------------------------------------------------
- */
-
 body,
 html {
   overflow-x: hidden;
-  /* Page ko right-left hilne se rokega */
   width: 100%;
 }
 
@@ -100,7 +90,6 @@ td {
   height: 250px !important;
 }
 
-/* Modern Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -141,14 +130,10 @@ td {
   background: #00ff88 !important;
   color: black !important;
 }
-
-/* कैलेंडर आइकॉन को सफेद करने के लिए */
 input[type="date"]::-webkit-calendar-picker-indicator {
   filter: invert(1);
   cursor: pointer;
 }
-
-/* ⚡ Sales Scrollbar (Upar wale user panel ki tarah same to same) */
 .sales-scroll-panel {
   max-height: 380px !important;
   overflow-y: auto !important;
@@ -169,8 +154,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
 }
-
-/* 🏆 Certificate Column Premium Styling */
 .cert-btn {
   background: transparent;
   color: #00ff88;
@@ -202,11 +185,3 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 table {
   table-layout: auto;
 }
-/* #endregion */
-/* ==========================================================================
-   ✅ UI STATUS: ADMIN 2.0 STYLES ORGANIZED & REFACTORED.
-   ⚡ PERFORMANCE: EXTENDED UI COMPONENTS FULLY RESPONSIVE.
-   🚀 DEPLOYMENT: ADMIN 2 CSS READY FOR PRODUCTION RENDERING!
-   ========================================================================== */
-
-/* 🏁 --- END OF ADMIN 2 STYLING --- */

@@ -1,12 +1,3 @@
-/* #region ━━━━━ 🔄 WELCOME DESIGNER | PASSWORD RESET STYLES ━━━━━ */
-/**
- * 🔄 PASSWORD RESET UI ARCHITECTURE
- * Logic: Secure Credential Overwrite, Input Matching & Feedback UI
- * Purpose: Styling the final stage of the account recovery workflow
- * Status: 2026 Production Ready | Optimized for Security & Clarity
- * --------------------------------------------------------------------------
- */
-
 * {
   margin: 0;
   padding: 0;
@@ -22,10 +13,6 @@ body {
   background-color: #050505;
   padding: 20px;
 }
-
-/* =========================================
-           CONTAINER (Responsive & Dark)
-        ========================================= */
 .container {
   width: 100%;
   max-width: 360px;
