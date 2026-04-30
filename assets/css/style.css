@@ -2086,15 +2086,23 @@ p {
 }
 .market-clock-bar {
   position: relative !important;
-  top: 80px !important;
-  left: 0 !important;
-  z-index: 9999 !important;
-  padding: 10px 20px !important;
   width: 100% !important;
   display: flex !important;
   justify-content: center !important;
-  margin-top: 0 !important;
+  align-items: center !important;
+  /* margin-top ko header ki height ke barabar rakho */
+  margin-top: 80px !important;
+  background: #050505 !important;
+  /* Padding bilkul kam kar di taaki patla dikhe */
+  padding: 4px 0 !important;
+  z-index: 999 !important;
   box-sizing: border-box !important;
+  font-size: 13px !important; /* Text thoda chota taaki bar patla lage */
+}
+.clock-item {
+  margin: 0 10px !important;
+  display: flex;
+  align-items: center;
 }
 nav,
 .navbar,
