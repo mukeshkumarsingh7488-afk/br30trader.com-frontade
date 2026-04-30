@@ -124,6 +124,7 @@ p {
   position: sticky;
   margin-bottom: 0 !important;
   padding-bottom: 0 !important;
+  height: auto !important;
   top: 0;
   z-index: 1000;
   width: 100%;
@@ -160,10 +161,6 @@ header,
   color: #fff;
   font-size: 20px;
   margin: 0;
-}
-.logo-title {
-  padding-bottom: 0px !important;
-  margin-bottom: 0px !important;
 }
 #countNumber,
 .bell-icon:hover,
@@ -2093,14 +2090,13 @@ p {
   filter: drop-shadow(0 0 5px #ef4444);
 }
 .market-clock-bar {
-  margin-top: 0 !important;
-  padding-top: 5px !important;
+  margin-top: -10px !important;
   display: flex;
   z-index: 100;
   justify-content: center;
   gap: 25px;
   background: #050505;
-  padding: 12px 20px;
+  padding: 5px 20px 12px 20px;
   border-bottom: 2px solid #0f8;
   flex-wrap: wrap;
 }
