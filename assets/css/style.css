@@ -2875,8 +2875,39 @@ p {
 .mail-link:hover::after {
   width: 100%;
 }
-
-.h-item:hover .icon {
-  color: black !important;
+/* Icons */
+[class^="icon"] {
   transition: 0.3s ease;
+}
+
+/* Colors */
+.icon {
+  color: #22c55e !important;
+}
+.icon-blue {
+  color: #3b82f6 !important;
+}
+.icon-youtube {
+  color: #ff0000 !important;
+}
+.icon-instagram {
+  color: #e4405f !important;
+}
+.icon-facebook {
+  color: #1877f2 !important;
+}
+.icon-telegram {
+  color: #0088cc !important;
+}
+.icon-whatsapp {
+  color: #25d366 !important;
+}
+.icon-email {
+  color: #ea4335 !important;
+}
+
+/* Hover (single rule) */
+.h-item:hover [class^="icon"],
+.s-link:hover [class^="icon"] {
+  color: black !important;
 }
