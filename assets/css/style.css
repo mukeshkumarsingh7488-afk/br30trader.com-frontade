@@ -8,18 +8,6 @@ header {
 header {
   background: #000;
 }
-header {
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-  min-height: 80px !important;
-  padding: 10px 20px !important;
-  margin: 0 !important;
-  position: relative !important;
-  z-index: 1000 !important;
-  background: #000 !important;
-}
-
 .poster-card h3,
 .price,
 .section-header-box p {
@@ -315,6 +303,17 @@ span {
 .navbar {
   display: flex;
   align-items: center;
+}
+header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  min-height: 80px !important;
+  padding: 10px 20px !important;
+  margin: 0 !important;
+  position: relative !important;
+  z-index: 1000 !important;
+  background: #000 !important;
 }
 .menu-icon {
   display: flex;
@@ -2072,16 +2071,16 @@ p {
   filter: drop-shadow(0 0 5px #ef4444);
 }
 .market-clock-bar {
-  margin-top: 0 !important;
-  padding: 10px 20px !important;
-  display: flex !important;
-  justify-content: center !important;
-  gap: 20px !important;
-  background: #050505 !important;
-  border-bottom: 2px solid #0f8 !important;
-  position: relative !important;
-  z-index: 999 !important;
-  flex-wrap: wrap !important;
+  margin-top: -10px !important;
+  display: flex;
+  z-index: 100;
+  justify-content: center;
+  gap: 25px;
+  background: #050505;
+  padding: 8px 20px !important;
+  border-bottom: 2px solid #0f8;
+  flex-wrap: wrap;
+  position: relative;
 }
 nav,
 .navbar,
