@@ -22,7 +22,9 @@ header {
   position: sticky !important;
   left: 0 !important;
   margin: 0 !important;
+  z-index: 10000 !important;
   box-sizing: border-box !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 .poster-card h3,
 .price,
@@ -2076,11 +2078,13 @@ p {
   filter: drop-shadow(0 0 5px #ef4444);
 }
 .market-clock-bar {
+  position: sticky !important;
   width: 100% !important;
   display: flex !important;
   justify-content: center !important;
   margin-top: 0 !important;
   padding: 10px 0 !important;
+  z-index: 9999 !important;
   box-sizing: border-box !important;
 }
 nav,
