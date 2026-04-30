@@ -128,6 +128,16 @@ p {
   z-index: 1000;
   width: 100%;
 }
+header,
+.navbar,
+.nav-container {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  border-bottom: none !important;
+}
+* {
+  box-sizing: border-box;
+}
 .nav-container {
   display: flex;
   justify-content: space-between;
@@ -2079,7 +2089,10 @@ p {
   filter: drop-shadow(0 0 5px #ef4444);
 }
 .market-clock-bar {
+  margin-top: 0 !important;
+  padding-top: 5px !important;
   display: flex;
+  z-index: 100;
   justify-content: center;
   gap: 25px;
   background: #050505;
