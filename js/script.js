@@ -349,9 +349,11 @@ async function loadInitialCount() {
   }
 }
 
-socket.on("updateTotalReviewCount", (newCount) => {
+socket?.on("updateTotalReviewCount", (newCount) => {
   console.log("Naya review aaya! New Count:", newCount);
-  updateCountUI(newCount);
+  if (typeof updateCountUI === "function") {
+    updateCountUI(newCount);
+  }
 });
 
 // 3. UI को अपडेट करने वाला फंक्शन (एनीमेशन के साथ)
