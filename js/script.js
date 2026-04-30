@@ -972,7 +972,7 @@ async function loadNotifications() {
 document.addEventListener("DOMContentLoaded", loadNotifications);
 
 // --- 3. Real-Time Update (Backend: io.emit("admin_alert") se match) ---
-socket.on("new_alert", (data) => {
+socket?.on("new_alert", (data) => {
   console.log("🚀 Admin se real-time alert aaya:", data);
 
   const title = data.title || "📢 Admin Alert";
