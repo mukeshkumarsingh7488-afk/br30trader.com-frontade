@@ -1220,19 +1220,19 @@ textarea {
   border-color: #0f8;
 }
 .s-link.yt:hover {
-  background: red !important;
+  background: gray !important;
 }
 .s-link.ig:hover {
-  background: #ea4335 !important;
+  background: gray !important;
 }
 .s-link.fb:hover {
-  background: #1877f2 !important;
+  background: gray !important;
 }
 .s-link.tg:hover {
-  background: #08c !important;
+  background: gray !important;
 }
 .s-link.wa:hover {
-  background: #25d366 !important;
+  background: gray !important;
 }
 .s-link.gm:hover {
   background: gray !important;
@@ -2908,33 +2908,6 @@ p {
 }
 
 /* 🔥 hover pe dono black */
-.footer-section .s-link:hover,
-.footer-section .s-link:hover i {
-  color: #000 !important;
-}
-
-.footer-section .s-link i {
-  color: #ff0000; /* default YouTube red */
-  transition: 0.3s ease;
-}
-
-.footer-section .s-link.ig i {
-  color: #e4405f;
-}
-.footer-section .s-link.fb i {
-  color: #1877f2;
-}
-.footer-section .s-link.tg i {
-  color: #0088cc;
-}
-.footer-section .s-link.wa i {
-  color: #25d366;
-}
-.footer-section .s-link.gm i {
-  color: #ea4335;
-}
-
-/* 🔥 hover pe sab black */
 .footer-section .s-link:hover,
 .footer-section .s-link:hover i {
   color: #000 !important;
