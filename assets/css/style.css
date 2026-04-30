@@ -122,8 +122,7 @@ p {
 .header {
   padding: 10px 20px;
   position: sticky;
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
+  display: block;
   height: auto !important;
   top: 0;
   z-index: 1000;
@@ -2090,7 +2089,7 @@ p {
   filter: drop-shadow(0 0 5px #ef4444);
 }
 .market-clock-bar {
-  margin-top: -10px !important;
+  margin-top: -35px !important;
   display: flex;
   z-index: 100;
   justify-content: center;
