@@ -2881,67 +2881,37 @@ p {
   transition: 0.3s ease;
 }
 
-.h-item:hover .icon {
-  color: black !important;
-}
-
-.icon-blue {
-  color: #3b82f6 !important;
-  transition: 0.3s ease;
-}
-
-.h-item:hover .icon-blue {
-  color: black !important;
-}
-
+/* FORCE ORIGINAL COLORS */
 .icon-youtube {
-  color: #ff0000 !important;
-  transition: 0.3s ease;
+  color: #ff0000;
 }
-
-.s-link:hover .icon-youtube {
-  color: black !important;
-}
-
 .icon-instagram {
-  color: #e4405f !important;
-  transition: 0.3s ease;
+  color: #e4405f;
 }
-
-.s-link:hover .icon-instagram {
-  color: black !important;
-}
-
 .icon-facebook {
-  color: #1877f2 !important;
-  transition: 0.3s ease;
-}
-
-.s-link:hover .icon-facebook {
-  color: black !important;
+  color: #1877f2;
 }
 .icon-telegram {
-  color: #0088cc !important;
-  transition: 0.3s ease;
-}
-
-.s-link:hover .icon-telegram {
-  color: black !important;
+  color: #0088cc;
 }
 .icon-whatsapp {
-  color: #25d366 !important;
-  transition: 0.3s ease;
+  color: #25d366;
 }
-
-.s-link:hover .icon-whatsapp {
-  color: black !important;
-}
-
 .icon-email {
-  color: #ea4335 !important;
-  transition: 0.3s ease;
+  color: #ea4335;
 }
 
-.s-link:hover .icon-email {
-  color: black !important;
+/* SMOOTH TRANSITION */
+.icon-youtube,
+.icon-instagram,
+.icon-facebook,
+.icon-telegram,
+.icon-whatsapp,
+.icon-email {
+  transition: color 0.3s ease;
+}
+
+/* HOVER ONLY BLACK */
+.s-link:hover i {
+  color: #000 !important;
 }
