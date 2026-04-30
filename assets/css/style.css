@@ -2085,6 +2085,7 @@ p {
   filter: drop-shadow(0 0 5px #ef4444);
 }
 .market-clock-bar {
+  position: fixed !important;
   top: 80px !important;
   left: 0 !important;
   z-index: 9999 !important;
