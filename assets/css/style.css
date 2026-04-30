@@ -900,10 +900,6 @@ textarea {
   max-width: 1100px;
   margin: 0 auto;
 }
-
-.h-item:hover span {
-  color: #000 !important;
-}
 .grid-box {
   background: #000;
   border: #0f8;
@@ -1290,21 +1286,29 @@ textarea {
   align-items: center;
   gap: 10px;
   color: #a9b1c5;
+  font-weight: 500;
+  text-decoration: none;
   background: rgba(160, 32, 240, 0.1);
   padding: 12px 20px;
   border-radius: 50px;
-  border: #0f8;
+  transition: 0.3s;
   font-size: 0.9rem;
 }
+
 .h-item i {
-  color: #0f8;
+  color: #00ff88;
   font-size: 1.1rem;
 }
+
 .h-item:hover {
-  background: #0f8;
+  background: #00ff88;
   color: #000;
   transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(38, 193, 95, 0.2);
+  box-shadow: 0 8px 20px rgba(0, 255, 136, 0.2);
+}
+
+.h-item:hover i {
+  color: #000;
 }
 .trading-updates {
   display: grid;
@@ -2888,16 +2892,50 @@ p {
   width: 100%;
 }
 /* Icons */
-.footer-section .s-link span {
+.footer-section .s-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
   transition: 0.3s ease;
+}
+
+/* icon + text normal state */
+.footer-section .s-link i,
+.footer-section .s-link {
+  color: inherit;
+  transition: 0.3s ease;
+}
+
+/* 🔥 hover pe dono black */
+.footer-section .s-link:hover,
+.footer-section .s-link:hover i {
+  color: #000 !important;
 }
 
 .footer-section .s-link i {
+  color: #ff0000; /* default YouTube red */
   transition: 0.3s ease;
 }
 
-/* hover pe dono black */
-.footer-section .s-link:hover span,
+.footer-section .s-link.ig i {
+  color: #e4405f;
+}
+.footer-section .s-link.fb i {
+  color: #1877f2;
+}
+.footer-section .s-link.tg i {
+  color: #0088cc;
+}
+.footer-section .s-link.wa i {
+  color: #25d366;
+}
+.footer-section .s-link.gm i {
+  color: #ea4335;
+}
+
+/* 🔥 hover pe sab black */
+.footer-section .s-link:hover,
 .footer-section .s-link:hover i {
   color: #000 !important;
 }
