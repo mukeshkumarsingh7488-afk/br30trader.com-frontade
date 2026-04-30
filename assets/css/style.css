@@ -900,6 +900,10 @@ textarea {
   max-width: 1100px;
   margin: 0 auto;
 }
+
+.h-item:hover span {
+  color: #000 !important;
+}
 .grid-box {
   background: #000;
   border: #0f8;
@@ -924,7 +928,7 @@ textarea {
 .grid-box:hover {
   background: #0f8;
   transform: translateY(-3px);
-  color: #000 !important;
+  color: #000;
 }
 @media screen and (max-width: 1024px) {
   .grid-container {
@@ -989,6 +993,14 @@ textarea {
 .view-btn,
 .white-text {
   letter-spacing: 1px;
+}
+
+.footer-section .s-link span {
+  transition: 0.3s ease;
+}
+
+.footer-section .s-link:hover span {
+  color: #000 !important;
 }
 .tag {
   display: inline-block;
@@ -2876,16 +2888,16 @@ p {
   width: 100%;
 }
 /* Icons */
-.icon-youtube,
-.icon-instagram,
-.icon-facebook,
-.icon-telegram,
-.icon-whatsapp,
-.icon-email {
-  transition: color 0.3s ease;
+.footer-section .s-link span {
+  transition: 0.3s ease;
 }
 
-/* ONLY HOVER BLACK */
-.s-link:hover i {
+.footer-section .s-link i {
+  transition: 0.3s ease;
+}
+
+/* hover pe dono black */
+.footer-section .s-link:hover span,
+.footer-section .s-link:hover i {
   color: #000 !important;
 }
