@@ -8,18 +8,16 @@ header {
 header {
   background: #000;
 }
-header {
-  width: 100%;
-  position: sticky;
-  top: 0;
-  z-index: 10000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 15px !important;
-  min-height: 100px !important;
-  background: #000;
-  margin-bottom: 0 !important;
+header,
+.header,
+.header-container {
+  padding: 0 !important;
+  margin: 0 !important;
+  min-height: 75px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  height: auto !important;
 }
 
 .poster-card h3,
@@ -2074,24 +2072,23 @@ p {
   filter: drop-shadow(0 0 5px #ef4444);
 }
 .market-clock-bar {
-  margin-top: 5px !important;
-  display: flex;
-  z-index: 100;
-  justify-content: center;
-  gap: 25px;
-  background: #050505;
-  padding: 10px 20px !important;
-  border-bottom: 2px solid #0f8;
-  flex-wrap: wrap;
+  margin-top: 0 !important;
+  padding-top: 5px !important;
+  padding-bottom: 8px !important;
   position: relative;
+  top: -2px;
+  z-index: 999;
 }
 nav,
-.navbar,
-.logo-title {
+.navbar {
   padding: 15px 0 !important;
   display: flex;
   align-items: center;
   margin-bottom: 0 !important;
+}
+.logo-title {
+  padding: 10px 20px !important;
+  margin: 0 !important;
 }
 .market-name {
   font-size: 0.8rem;
