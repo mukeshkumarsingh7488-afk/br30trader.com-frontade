@@ -13,14 +13,6 @@ var typed = new Typed("#element", {
 /* ============================================
    Socket.io Connection Setup (admin Alart)
   ===========================================*/
-const socket = io(window.API_BASE_URL, {
-  path: "/socket.io/",
-  transports: ["websocket"],
-  closeOnBeforeunload: true,
-  reconnectionAttempts: 5,
-  timeout: 10000,
-});
-
 let socket;
 const token = localStorage.getItem("token");
 const userData = JSON.parse(localStorage.getItem("user") || "{}");
