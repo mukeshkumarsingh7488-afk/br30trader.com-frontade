@@ -8,6 +8,20 @@ header {
 header {
   background: #000;
 }
+header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 10000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  min-height: 80px;
+  background: #000;
+  margin-bottom: 0 !important;
+}
+
 .poster-card h3,
 .price,
 .section-header-box p {
@@ -60,14 +74,6 @@ html {
   width: 100%;
   overflow-x: hidden;
 }
-header {
-  width: 100%;
-  z-index: 10000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: none;
-}
 #scroll-progress {
   width: 0%;
   height: 2px;
@@ -118,15 +124,6 @@ h3,
 h4,
 p {
   color: #a9b1c5;
-}
-.header {
-  padding: 10px 20px;
-  position: sticky;
-  display: block;
-  height: auto !important;
-  top: 0;
-  z-index: 1000;
-  width: 100%;
 }
 header,
 .navbar,
@@ -299,12 +296,6 @@ span {
     display: block !important;
   }
 }
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  min-height: 60px;
-}
 .welcome.Trader {
   text-align: center;
   z-index: 10;
@@ -326,12 +317,6 @@ header {
 .navbar {
   display: flex;
   align-items: center;
-}
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 15px;
 }
 .menu-icon {
   display: flex;
@@ -2107,10 +2092,6 @@ nav,
   display: flex;
   align-items: center;
   margin-bottom: 0 !important;
-}
-header {
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
 }
 .market-name {
   font-size: 0.8rem;
