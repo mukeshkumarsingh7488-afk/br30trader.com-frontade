@@ -2088,20 +2088,25 @@ p {
   position: relative !important;
   width: 100% !important;
   display: flex !important;
-  justify-content: center !important;
+  justify-content: space-evenly !important;
   align-items: center !important;
-  margin-top: 65px !important;
+  margin-top: 55px !important;
   background: #050505 !important;
-  padding: 4px 0 !important;
+  padding: 10px 0 !important;
   z-index: 999 !important;
   box-sizing: border-box !important;
   border-bottom: 2px solid #0f8;
 }
+
 .clock-item {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+  font-size: 15px !important;
+  font-weight: 500;
+  color: #fff;
 }
+
 nav,
 .navbar,
 .logo-title {
