@@ -161,6 +161,10 @@ header,
   font-size: 20px;
   margin: 0;
 }
+.logo-title {
+  padding-bottom: 0px !important;
+  margin-bottom: 0px !important;
+}
 #countNumber,
 .bell-icon:hover,
 .footer-logo span,
