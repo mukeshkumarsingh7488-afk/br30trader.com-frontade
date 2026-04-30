@@ -2089,20 +2089,23 @@ p {
   filter: drop-shadow(0 0 5px #ef4444);
 }
 .market-clock-bar {
-  margin-top: 0 !important;
+  margin-top: -10px !important;
   display: flex;
   z-index: 100;
   justify-content: center;
   gap: 25px;
   background: #050505;
-  padding: 0px 20px 8px 20px !important;
+  padding: 8px 20px !important;
   border-bottom: 2px solid #0f8;
   flex-wrap: wrap;
+  position: relative;
 }
 nav,
 .navbar,
 .logo-title {
-  padding-bottom: 0 !important;
+  padding: 15px 0 !important;
+  display: flex;
+  align-items: center;
   margin-bottom: 0 !important;
 }
 header {
