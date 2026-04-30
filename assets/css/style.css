@@ -924,7 +924,7 @@ textarea {
 .grid-box:hover {
   background: #0f8;
   transform: translateY(-3px);
-  color: #000;
+  color: #000 !important;
 }
 @media screen and (max-width: 1024px) {
   .grid-container {
@@ -2876,25 +2876,6 @@ p {
   width: 100%;
 }
 /* Icons */
-.icon-youtube {
-  color: #ff0000;
-}
-.icon-instagram {
-  color: #e4405f;
-}
-.icon-facebook {
-  color: #1877f2;
-}
-.icon-telegram {
-  color: #0088cc;
-}
-.icon-whatsapp {
-  color: #25d366;
-}
-.icon-email {
-  color: #ea4335;
-}
-
 .icon-youtube,
 .icon-instagram,
 .icon-facebook,
