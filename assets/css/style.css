@@ -2090,19 +2090,17 @@ p {
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
-  /* margin-top ko header ki height ke barabar rakho */
-  margin-top: 80px !important;
+  margin-top: 65px !important;
   background: #050505 !important;
-  /* Padding bilkul kam kar di taaki patla dikhe */
   padding: 4px 0 !important;
   z-index: 999 !important;
   box-sizing: border-box !important;
-  font-size: 13px !important; /* Text thoda chota taaki bar patla lage */
+  border-bottom: 2px solid #0f8;
 }
 .clock-item {
-  margin: 0 10px !important;
   display: flex;
   align-items: center;
+  gap: 8px;
 }
 nav,
 .navbar,
