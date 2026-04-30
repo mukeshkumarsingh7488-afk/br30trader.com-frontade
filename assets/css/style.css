@@ -2876,12 +2876,6 @@ p {
   width: 100%;
 }
 /* Icons */
-.icon {
-  color: #22c55e !important;
-  transition: 0.3s ease;
-}
-
-/* FORCE ORIGINAL COLORS */
 .icon-youtube {
   color: #ff0000;
 }
@@ -2901,7 +2895,6 @@ p {
   color: #ea4335;
 }
 
-/* SMOOTH TRANSITION */
 .icon-youtube,
 .icon-instagram,
 .icon-facebook,
@@ -2911,7 +2904,7 @@ p {
   transition: color 0.3s ease;
 }
 
-/* HOVER ONLY BLACK */
+/* ONLY HOVER BLACK */
 .s-link:hover i {
   color: #000 !important;
 }
