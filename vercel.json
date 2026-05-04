@@ -1,5 +1,56 @@
 {
   "cleanUrls": true,
+  "rewrites": [
+    { "source": "/about", "destination": "/pages/about.html" },
+    { "source": "/about-us", "destination": "/pages/aboutus.html" },
+    { "source": "/admin-alerts", "destination": "/pages/admin-alerts.html" },
+    {
+      "source": "/admin-dashboard",
+      "destination": "/pages/admin-dashboard.html"
+    },
+    { "source": "/admin", "destination": "/pages/admin.html" },
+    { "source": "/admin2", "destination": "/pages/admin2.html" },
+    {
+      "source": "/basic-to-advance",
+      "destination": "/pages/basictoadvance.html"
+    },
+    { "source": "/contact", "destination": "/pages/contact.html" },
+    { "source": "/course-edit", "destination": "/pages/courseedit.html" },
+    { "source": "/disclaimer", "destination": "/pages/disclaimer.html" },
+    { "source": "/email", "destination": "/pages/email.html" },
+    { "source": "/forgot-password", "destination": "/pages/forgot.html" },
+    { "source": "/learn-more", "destination": "/pages/learn-more.html" },
+    {
+      "source": "/lifetime-access",
+      "destination": "/pages/lifetimeaccess.html"
+    },
+    {
+      "source": "/live-market-analysis",
+      "destination": "/pages/livemarketanalysis.html"
+    },
+    { "source": "/login", "destination": "/pages/login.html" },
+    { "source": "/my-course", "destination": "/pages/mycourse.html" },
+    { "source": "/privacy-policy", "destination": "/pages/privacy.html" },
+    { "source": "/profile", "destination": "/pages/profile.html" },
+    { "source": "/refund-policy", "destination": "/pages/refund.html" },
+    { "source": "/register", "destination": "/pages/register.html" },
+    { "source": "/reset-password", "destination": "/pages/reset.html" },
+    {
+      "source": "/risk-management",
+      "destination": "/pages/riskmanagement.html"
+    },
+    { "source": "/review", "destination": "/pages/review.html" },
+    { "source": "/services", "destination": "/pages/service.html" },
+    { "source": "/strategies", "destination": "/pages/strategies.html" },
+    {
+      "source": "/support-community",
+      "destination": "/pages/supportcommunity.html"
+    },
+    { "source": "/terms-and-conditions", "destination": "/pages/terms.html" },
+    { "source": "/verify", "destination": "/pages/verify.html" },
+    { "source": "/view-alert", "destination": "/pages/view-alart.html" },
+    { "source": "/watch", "destination": "/pages/watch.html" }
+  ],
   "headers": [
     {
       "source": "/(.*).(jpg|jpeg|png|webp|svg|css|js|ico)",
