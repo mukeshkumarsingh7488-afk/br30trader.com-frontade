@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "https://my-frontend-eight-roan.vercel.app/",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*).(jpg|jpeg|png|webp|svg|css|js|ico)",
