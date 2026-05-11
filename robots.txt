@@ -16,7 +16,7 @@ Disallow: /pages/view-alart.html
 Disallow: /pages/watch.html
 
 # Public Pages - Crawl allowed
-Allow: /pages/about.html
+Allow: /about.html
 Allow: /pages/aboutus.html
 Allow: /pages/basictoadvance.html
 Allow: /pages/contact.html
