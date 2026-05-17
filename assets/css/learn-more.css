@@ -5,7 +5,6 @@
   --card-bg: rgba(255, 255, 255, 0.03);
   --border: rgba(255, 255, 255, 0.1);
 }
-
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
@@ -14,13 +13,11 @@ body {
   line-height: 1.6;
   letter-spacing: 0.5px;
 }
-
 .container {
   max-width: 850px;
   margin: auto;
   padding: 40px 20px;
 }
-
 h1 {
   text-align: center;
   font-size: 2.8rem;
@@ -30,7 +27,6 @@ h1 {
   text-transform: uppercase;
   color: #ec4899;
 }
-
 h1 span {
   background: linear-gradient(to right, #a855f7, #ec4899);
   -webkit-background-clip: text;
@@ -38,7 +34,6 @@ h1 span {
   color: transparent;
   -webkit-text-fill-color: transparent;
 }
-
 .card {
   background: var(--card-bg);
   border: 1px solid var(--border);
@@ -49,20 +44,17 @@ h1 span {
   transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   animation: slideUp 0.8s ease-out forwards;
 }
-
 .card:hover {
   transform: translateY(-8px);
   border-color: var(--primary);
   box-shadow: 0 10px 30px rgba(168, 85, 247, 0.15);
 }
-
 .step {
   display: flex;
   align-items: center;
   gap: 15px;
   margin-bottom: 20px;
 }
-
 .badge {
   background: linear-gradient(135deg, #a855f7, #7e22ce);
   padding: 10px 18px;
@@ -71,21 +63,17 @@ h1 span {
   color: #fff;
   box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
 }
-
 h3 {
   font-size: 1.5rem;
   margin: 0;
   color: #fff;
   letter-spacing: 1px;
 }
-
 p {
   color: #94a3b8;
   font-size: 1rem;
   text-align: justify;
 }
-
-/* 📋 Listing Style for Strategies */
 .strategy-list {
   list-style: none;
   padding: 0;
@@ -94,7 +82,6 @@ p {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 12px;
 }
-
 .strategy-item {
   background: rgba(168, 85, 247, 0.08);
   padding: 12px 18px;
@@ -107,12 +94,10 @@ p {
   align-items: center;
   letter-spacing: 1px;
 }
-
 .strategy-item::before {
   content: "📈";
   margin-right: 10px;
 }
-
 .vip-box {
   background: linear-gradient(145deg, #1e1b4b, #312e81);
   border: 2px solid var(--primary);
@@ -124,7 +109,6 @@ p {
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
-
 .vip-box::after {
   content: "VIP";
   position: absolute;
@@ -135,14 +119,12 @@ p {
   opacity: 0.05;
   color: #fff;
 }
-
 .vip-box h2 {
   font-size: 2rem;
   color: var(--secondary);
   margin-bottom: 15px;
   letter-spacing: 1px;
 }
-
 .btn {
   display: inline-block;
   margin-top: 25px;
@@ -158,17 +140,14 @@ p {
   transition: 0.3s;
   box-shadow: 0 10px 20px rgba(255, 77, 77, 0.3);
 }
-
 .btn:hover {
   transform: scale(1.05) translateY(-3px);
   box-shadow: 0 15px 30px rgba(255, 77, 77, 0.5);
 }
-
 .home {
   text-align: center;
   margin-top: 40px;
 }
-
 .home a {
   color: #64748b;
   text-decoration: none;
@@ -176,12 +155,10 @@ p {
   font-weight: 600;
   transition: 0.3s;
 }
-
 .home a:hover {
   color: var(--primary);
   letter-spacing: 2px;
 }
-
 @keyframes slideUp {
   from {
     opacity: 0;
@@ -192,7 +169,6 @@ p {
     transform: translateY(0);
   }
 }
-
 @media (max-width: 600px) {
   h1 {
     font-size: 2rem;

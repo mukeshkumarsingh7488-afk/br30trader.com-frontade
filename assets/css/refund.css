@@ -4,7 +4,6 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-
 body {
   background: #050505;
   color: #fff;
@@ -27,7 +26,6 @@ body {
   margin-bottom: 10px;
   text-align: center;
 }
-
 .policy-title .meta {
   color: #aaa;
   font-size: 13px;
@@ -55,7 +53,6 @@ body {
   margin-bottom: 15px;
   color: #cbd5e1;
 }
-
 .policy-body ul li {
   margin-bottom: 8px;
   line-height: 1.6;
@@ -72,7 +69,6 @@ body {
   transition: 0.3s ease;
   border: 1px solid #a020f0;
 }
-
 .btn:hover {
   background: transparent;
   color: #a020f0;
@@ -83,15 +79,12 @@ body {
   .policy-container {
     padding: 25px 18px;
   }
-
   .policy-title h1 {
     font-size: 24px;
   }
-
   .policy-body p {
     font-size: 14px;
   }
-
   .policy-body h3 {
     font-size: 16px;
   }

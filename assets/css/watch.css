@@ -4,13 +4,11 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-
 body {
   background-color: #050505;
   color: #ffffff;
   min-height: 100vh;
 }
-
 header {
   background: #1e293b;
   padding: 15px 20px;
@@ -22,19 +20,16 @@ header {
   top: 0;
   z-index: 1000;
 }
-
 header h1 {
   font-size: 18px;
   color: #ffffff;
 }
-
 header a {
   color: #a020f0;
   text-decoration: none;
   font-weight: 600;
   font-size: 14px;
 }
-
 .watch-container {
   display: flex;
   flex-wrap: wrap;
@@ -43,7 +38,6 @@ header a {
   max-width: 1200px;
   margin: 0 auto;
 }
-
 .video-player {
   flex: 2;
   min-width: 300px;
@@ -53,20 +47,17 @@ header a {
   border: 1px solid #334155;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
-
 .iframe-container {
   position: relative;
   width: 100%;
   aspect-ratio: 16/9;
   background: #000;
 }
-
 #main-video-iframe {
   width: 100%;
   height: 100%;
   border: 0;
 }
-
 #current-video-title {
   padding: 15px;
   color: #ffffff;
@@ -76,7 +67,6 @@ header a {
   font-weight: 500;
   border-top: 1px solid #334155;
 }
-
 .video-list {
   flex: 1;
   min-width: 280px;
@@ -86,7 +76,6 @@ header a {
   height: fit-content;
   border: 1px solid #334155;
 }
-
 .video-list h3 {
   font-size: 18px;
   margin-bottom: 15px;
@@ -94,12 +83,10 @@ header a {
   border-bottom: 1px solid #334155;
   padding-bottom: 10px;
 }
-
 #playlist {
   max-height: 400px;
   overflow-y: auto;
 }
-
 .video-item {
   padding: 12px;
   border-radius: 8px;
@@ -111,15 +98,12 @@ header a {
   border: 1px solid #334155;
   color: #cbd5e1;
 }
-
 .video-item:hover {
   background: #a020f0;
   color: #fff;
   border-color: #a020f0;
   transform: translateX(5px);
 }
-
-/* 🏆 CERTIFICATE POPUP OVERLAY */
 #cert-overlay {
   display: none;
   position: fixed;
@@ -133,7 +117,6 @@ header a {
   align-items: center;
   padding: 20px;
 }
-
 .cert-card {
   background: #0a0a0a;
   border: 2px solid #00ff88;
@@ -144,7 +127,6 @@ header a {
   width: 100%;
   box-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
 }
-
 .cert-input {
   width: 100%;
   padding: 12px;
@@ -156,7 +138,6 @@ header a {
   outline: none;
   box-sizing: border-box;
 }
-
 .claim-btn {
   background: #00ff88;
   color: black;
@@ -169,12 +150,10 @@ header a {
   margin-top: 15px;
   text-transform: uppercase;
 }
-
 @media (max-width: 768px) {
   .watch-container {
     padding: 10px;
   }
-
   .video-player,
   .video-list {
     flex: 100%;

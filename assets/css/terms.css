@@ -11,7 +11,6 @@ body {
   justify-content: center;
   padding: 40px 20px;
 }
-
 .policy-container {
   max-width: 950px;
   width: 100%;
@@ -22,7 +21,6 @@ body {
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
   animation: fadeUp 0.6s ease-in-out;
 }
-/* Smooth entry animation */
 @keyframes fadeUp {
   from {
     opacity: 0;

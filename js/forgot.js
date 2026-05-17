@@ -8,18 +8,13 @@ function togglePassword() {
   btn.textContent = pass.type === "password" ? "👁️" : "🙈";
 }
 
-// 1. Request OTP Logic
 async function handleRequestOTP(e) {
   if (e) e.preventDefault();
-
   const email = document.getElementById("resetEmail").value.trim();
   const btn = document.getElementById("reqBtn");
-
   if (!email.includes("@")) return alert("Please enter valid email!");
-
   btn.innerText = "Sending...";
   btn.disabled = true;
-
   try {
     const res = await fetch(`${window.API_BASE_URL}/api/auth/forgot-password`, {
       method: "POST",
@@ -27,7 +22,6 @@ async function handleRequestOTP(e) {
       body: JSON.stringify({ email }),
     });
     const data = await res.json();
-
     if (res.ok) {
       alert("OTP Sent Successfully✅ !");
       document.getElementById("request-section").style.display = "none";
@@ -45,23 +39,17 @@ async function handleRequestOTP(e) {
   }
 }
 
-// 2. Reset Password Logic
 async function handleResetPassword(e) {
   if (e) e.preventDefault();
-
   const email = document.getElementById("resetEmail").value;
   const otp = document.getElementById("resetOtp").value;
   const newPassword = document.getElementById("newPassword").value;
   const btn = document.getElementById("resetBtn");
-
   const passRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$/;
-  if (!passRegex.test(newPassword))
-    return alert("Use 8+ chars & Special Char.");
+  if (!passRegex.test(newPassword)) return alert("Use 8+ chars & Special Char.");
   if (otp.length < 6) return alert("Enter 6-digit OTP!");
-
   btn.innerText = "Updating...";
   btn.disabled = true;
-
   try {
     const res = await fetch(`${window.API_BASE_URL}/api/auth/reset-password`, {
       method: "POST",
@@ -69,10 +57,8 @@ async function handleResetPassword(e) {
       body: JSON.stringify({ email, otp, newPassword }),
     });
     const data = await res.json();
-
     if (res.ok) {
       alert("Password Changed Successfully! 🚀");
-
       setTimeout(() => {
         window.location.href = "login.html";
       }, 800);
@@ -88,7 +74,6 @@ async function handleResetPassword(e) {
   }
 }
 
-// Timer Logic
 let timerId;
 function startTimer() {
   let timeLeft = 30;
@@ -96,7 +81,6 @@ function startTimer() {
   const timerText = document.getElementById("timerText");
   resendBtn.style.display = "none";
   timerText.style.display = "block";
-
   clearInterval(timerId);
   timerId = setInterval(() => {
     if (timeLeft <= 0) {
@@ -110,11 +94,9 @@ function startTimer() {
   }, 1000);
 }
 
-// Global Enter Support
 document.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
-    const isResetVisible =
-      document.getElementById("reset-section").style.display === "block";
+    const isResetVisible = document.getElementById("reset-section").style.display === "block";
     if (isResetVisible) document.getElementById("resetBtn").click();
     else document.getElementById("reqBtn").click();
   }

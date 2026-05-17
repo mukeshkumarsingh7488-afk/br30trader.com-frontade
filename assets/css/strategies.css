@@ -4,7 +4,6 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-
 body {
   background-color: #050505;
   color: #ffffff;
@@ -17,19 +16,16 @@ body {
   background: linear-gradient(rgba(160, 32, 240, 0.1), rgba(15, 23, 42, 1));
   border-bottom: 2px solid #a020f0;
 }
-
 .hero-strategy h1 {
   font-size: 3rem;
   margin-bottom: 20px;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
-
 .hero-strategy h1 span {
   color: #a020f0;
   text-shadow: 0 0 20px rgba(160, 32, 240, 0.5);
 }
-
 .quote-box {
   max-width: 800px;
   margin: 0 auto;
@@ -47,7 +43,6 @@ body {
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
 }
-
 .strategy-card {
   background: #1e293b;
   padding: 40px 30px;
@@ -61,26 +56,22 @@ body {
   align-items: center;
   text-align: center;
 }
-
 .strategy-card:hover {
   transform: translateY(-10px);
   border-color: #a020f0;
   box-shadow: 0 15px 40px rgba(160, 32, 240, 0.2);
 }
-
 .icon-box {
   font-size: 3rem;
   color: #a020f0;
   margin-bottom: 20px;
   text-shadow: 0 0 15px rgba(160, 32, 240, 0.3);
 }
-
 .strategy-card h2 {
   font-size: 1.4rem;
   margin-bottom: 15px;
   color: #ffffff;
 }
-
 .tags {
   display: flex;
   gap: 10px;
@@ -88,7 +79,6 @@ body {
   flex-wrap: wrap;
   justify-content: center;
 }
-
 .tag {
   font-size: 0.7rem;
   padding: 4px 12px;
@@ -98,7 +88,6 @@ body {
   color: #ffffff;
   font-weight: 600;
 }
-
 .details p {
   font-size: 0.9rem;
   color: #94a3b8;
@@ -109,13 +98,11 @@ body {
   background: rgba(30, 41, 59, 0.5);
   margin: 40px 0;
 }
-
 .center-quote h2 {
   font-size: 2rem;
   color: #ffffff;
   margin-bottom: 10px;
 }
-
 .center-quote p {
   font-size: 1.1rem;
   color: #a020f0;
@@ -134,25 +121,20 @@ body {
   font-weight: bold;
   transition: 0.3s;
 }
-
 .back-home:hover {
   background: #ffffff;
   color: #a020f0;
   box-shadow: 0 0 20px #a020f0;
 }
-
-/* Mobile View */
 @media (max-width: 900px) {
   .strategy-container {
     grid-template-columns: 1fr 1fr;
   }
 }
-
 @media (max-width: 600px) {
   .strategy-container {
     grid-template-columns: 1fr;
   }
-
   .hero-strategy h1 {
     font-size: 2rem;
   }

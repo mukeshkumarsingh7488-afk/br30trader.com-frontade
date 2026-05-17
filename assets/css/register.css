@@ -4,7 +4,6 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-
 body {
   height: 100vh;
   display: flex;
@@ -22,14 +21,12 @@ body {
   border: 1px solid #334155;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
-
 .container h2 {
   text-align: center;
   margin-bottom: 25px;
   color: #ffffff;
   font-weight: 600;
 }
-
 label {
   font-size: 13px;
   font-weight: 500;
@@ -37,8 +34,6 @@ label {
   margin-bottom: 6px;
   display: block;
 }
-
-/* Input Box Styling */
 .input-box {
   display: flex;
   align-items: center;
@@ -50,11 +45,9 @@ label {
   position: relative;
   transition: 0.3s;
 }
-
 .input-box:focus-within {
   border-color: #a020f0;
 }
-
 .input-box input {
   background: transparent;
   border: none;
@@ -82,26 +75,21 @@ button {
   font-weight: 600;
   margin-top: 10px;
 }
-
 button:hover {
   background: #8219c4;
   transform: translateY(-2px);
 }
-
-/* Footer Links */
 .links {
   display: flex;
   justify-content: center;
   margin-top: 20px;
 }
-
 .links a {
   text-decoration: none;
   color: #a020f0;
   font-size: 14px;
   font-weight: 500;
 }
-
 .links a:hover {
   text-decoration: underline;
 }
@@ -109,7 +97,6 @@ button:hover {
   .container {
     padding: 20px;
   }
-
   h2 {
     font-size: 20px;
   }

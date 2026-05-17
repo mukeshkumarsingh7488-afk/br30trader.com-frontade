@@ -4,7 +4,6 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-
 body {
   background: #050505;
   color: #fff;
@@ -22,7 +21,6 @@ body {
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
   animation: fadeUp 0.6s ease;
 }
-
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -39,7 +37,6 @@ body {
   font-size: 30px;
   margin-bottom: 5px;
 }
-
 .contact-header .meta {
   text-align: center;
   color: #aaa;
@@ -52,7 +49,6 @@ body {
   line-height: 1.8;
   margin-bottom: 15px;
 }
-
 .subtext {
   color: #9ca3af;
   font-size: 14px;
@@ -73,13 +69,11 @@ body {
   border: 1px solid #334155;
   margin-bottom: 10px;
 }
-
 .info-card p {
   color: #cbd5e1;
   margin-bottom: 8px;
   font-size: 15px;
 }
-
 .info-card b {
   color: #a020f0;
 }
@@ -87,7 +81,6 @@ ul {
   margin-left: 20px;
   color: #cbd5e1;
 }
-
 ul li {
   margin-bottom: 8px;
   font-size: 15px;
@@ -104,7 +97,6 @@ ul li {
   transition: 0.3s;
   border: 1px solid #a020f0;
 }
-
 .btn:hover {
   background: transparent;
   color: #a020f0;
@@ -115,11 +107,9 @@ ul li {
   .contact-container {
     padding: 25px 18px;
   }
-
   .contact-header h1 {
     font-size: 24px;
   }
-
   .desc {
     font-size: 14px;
   }

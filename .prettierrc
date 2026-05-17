@@ -1,4 +1,5 @@
 {
+  "printWidth": 2000,
   "htmlWhitespaceSensitivity": "ignore",
-  "prettier.enable": true
+  "singleAttributePerLine": false
 }

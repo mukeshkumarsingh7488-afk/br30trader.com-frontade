@@ -1,42 +1,23 @@
 //#region
-/* ========================================================================
-           🚀 PRO LEVEL ADMIN DASHBOARD: Full Sync with Pro Comments
-      ======================================================================== */
-
-// 🌐 1. FETCH COURSES: Database se saare courses nikaal kar grid mein dikhana
 async function fetchCourses() {
   try {
     const res = await fetch(`${window.API_BASE_URL}/api/courses`);
     const courses = await res.json();
-
     const grid = document.getElementById("course-grid");
-
     const BASE_URL = window.API_BASE_URL;
-
     grid.style.opacity = "0";
     grid.innerHTML = "";
-
     let imagesLoadedCount = 0;
     const totalImages = courses.length;
-
     if (totalImages === 0) {
-      grid.innerHTML =
-        "<p style='text-align:center; color:#64748b; width:100%;'>Abhi tak koi course nahi hai bhai!</p>";
+      grid.innerHTML = "<p style='text-align:center; color:#64748b; width:100%;'>Abhi tak koi course nahi hai bhai!</p>";
       grid.style.opacity = "1";
       return;
     }
-
     courses.forEach((c) => {
       const card = document.createElement("div");
       card.className = "course-card";
-
-      const displayImage = c.thumbnail
-        ? (c.thumbnail.startsWith("http")
-            ? c.thumbnail
-            : (BASE_URL + "/" + c.thumbnail).replace(/([^:]\/)\/+/g, "$1")) +
-          `?t=${Date.now()}`
-        : "images/BR30Trader.png";
-
+      const displayImage = c.thumbnail ? (c.thumbnail.startsWith("http") ? c.thumbnail : (BASE_URL + "/" + c.thumbnail).replace(/([^:]\/)\/+/g, "$1")) + `?t=${Date.now()}` : "images/BR30Trader.png";
       card.innerHTML = `
                 <div style="background: rgba(160, 32, 240, 0.1); border: 1px dashed #a020f0; padding: 6px; border-radius: 8px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;">
                     <span style="font-size: 10px; color: #a020f0; font-weight: bold; font-family: 'Courier New', monospace;">ID: ${c._id}</span>
@@ -44,14 +25,11 @@ async function fetchCourses() {
                         <i class="fas fa-copy"></i>
                     </button>
                 </div>
-
                 <img src="${displayImage}" class="course-img-preview" alt="course" style="border-radius: 10px; margin-bottom: 10px; width:100%; height:150px; object-fit:cover; background: #111;">
-
                 <h3 style="color:#fff; margin-bottom: 8px; font-size: 18px;">${c.title}</h3>
                 <p class="price" style="color:#00ff88; font-weight:800; font-size: 22px; margin-bottom: 15px;">
                     ₹${Number(c.price).toLocaleString("en-IN")}
                 </p>
-
                 <div class="actions" style="display:flex; gap:10px;">
                     <button class="edit-btn" style="flex:2; background:#a020f0; color:white; border:none; padding:12px; border-radius:10px; cursor:pointer; font-weight:bold;">
                         <i class="fas fa-edit"></i> EDIT FULL COURSE
@@ -61,7 +39,6 @@ async function fetchCourses() {
                     </button>
                 </div>
             `;
-
       const img = card.querySelector(".course-img-preview");
       img.onload = () => {
         imagesLoadedCount++;
@@ -70,14 +47,10 @@ async function fetchCourses() {
         }
       };
       img.onerror = img.onload;
-
-      card.querySelector(".edit-btn").onclick = () =>
-        openEdit(c._id, c.title, c.price, c.thumbnail, c.videoUrl);
+      card.querySelector(".edit-btn").onclick = () => openEdit(c._id, c.title, c.price, c.thumbnail, c.videoUrl);
       card.querySelector(".del-btn").onclick = () => deleteCourse(c._id);
-
       grid.appendChild(card);
     });
-
     setTimeout(() => {
       grid.style.opacity = "1";
     }, 2500);
@@ -87,7 +60,6 @@ async function fetchCourses() {
   }
 }
 
-// 📋 2. 1-CLICK COPY: Course ID copy karne ka feature
 window.copyID = (id) => {
   navigator.clipboard.writeText(id);
   Swal.fire({
@@ -100,7 +72,6 @@ window.copyID = (id) => {
   });
 };
 
-// ✍️ 3. EDIT POPUP: SweetAlert se course details badalna aur thumbnail upload karna
 async function openEdit(id, title, price, image, videoUrl) {
   const { value: formValues } = await Swal.fire({
     title: '<span style="color:#a020f0">Edit Full Course</span>',
@@ -130,27 +101,20 @@ async function openEdit(id, title, price, image, videoUrl) {
       imageFile: document.getElementById("sw-file").files,
     }),
   });
-
   if (formValues) {
     try {
       const formData = new FormData();
       formData.append("title", formValues.title);
       formData.append("price", formValues.price);
       formData.append("videoUrl", formValues.videoUrl);
-
       if (formValues.imageFile.length > 0) {
         formData.append("thumbnail", formValues.imageFile[0]);
       }
-
-      const res = await fetch(
-        `${window.API_BASE_URL}/api/courses/update-course/${id}`,
-        {
-          method: "PUT",
-          headers: { "x-auth-token": localStorage.getItem("token") },
-          body: formData,
-        },
-      );
-
+      const res = await fetch(`${window.API_BASE_URL}/api/courses/update-course/${id}`, {
+        method: "PUT",
+        headers: { "x-auth-token": localStorage.getItem("token") },
+        body: formData,
+      });
       const data = await res.json();
       if (data.success) {
         Swal.fire({
@@ -169,7 +133,6 @@ async function openEdit(id, title, price, image, videoUrl) {
   }
 }
 
-// 🗑️ 4. DELETE LOGIC: Course ko udaane ke liye conformation popup
 async function deleteCourse(id) {
   const check = await Swal.fire({
     title: "Delete Course?",
@@ -180,16 +143,12 @@ async function deleteCourse(id) {
     background: "#0a0a0a",
     color: "#fff",
   });
-
   if (check.isConfirmed) {
     try {
-      const res = await fetch(
-        `${window.API_BASE_URL}/api/courses/delete-course/${id}`,
-        {
-          method: "DELETE",
-          headers: { "x-auth-token": localStorage.getItem("token") },
-        },
-      );
+      const res = await fetch(`${window.API_BASE_URL}/api/courses/delete-course/${id}`, {
+        method: "DELETE",
+        headers: { "x-auth-token": localStorage.getItem("token") },
+      });
       if (res.ok) {
         Swal.fire({
           title: "Deleted!",
@@ -206,7 +165,5 @@ async function deleteCourse(id) {
     }
   }
 }
-
-// Page load par courses nikaalo
 document.addEventListener("DOMContentLoaded", fetchCourses);
 //#endregion

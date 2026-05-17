@@ -4,7 +4,6 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-
 body {
   height: 100vh;
   display: flex;
@@ -24,13 +23,11 @@ body {
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
   color: white;
 }
-
 .photo-container {
   position: relative;
   display: inline-block;
   margin-bottom: 20px;
 }
-
 .profile-pic {
   width: 110px;
   height: 110px;
@@ -39,7 +36,6 @@ body {
   object-fit: cover;
   background: #050505;
 }
-
 .upload-label {
   position: absolute;
   bottom: 5px;
@@ -61,13 +57,11 @@ h2 {
   font-weight: 600;
   margin-bottom: 5px;
 }
-
 p#userEmail {
   font-size: 14px;
   color: #94a3b8;
   margin-bottom: 25px;
 }
-
 .edit-box input {
   width: 100%;
   padding: 12px;
@@ -79,7 +73,6 @@ p#userEmail {
   color: white;
   text-align: center;
 }
-
 .edit-box input:focus {
   border-color: #a020f0;
 }
@@ -89,7 +82,6 @@ p#userEmail {
   gap: 12px;
   margin-top: 10px;
 }
-
 button {
   width: 100%;
   padding: 12px;
@@ -110,17 +102,14 @@ button {
   border: 1px solid #f87171;
   color: #f87171;
 }
-
 button:hover {
   transform: translateY(-2px);
   opacity: 0.9;
 }
-
 #logoutBtn:hover {
   background: #f87171;
   color: white;
 }
-
 .back-home {
   text-decoration: none;
   color: #a020f0;
@@ -135,14 +124,7 @@ button:hover {
   }
 }
 .vip-badge-gold {
-  background: linear-gradient(
-    45deg,
-    #bf953f,
-    #fcf6ba,
-    #b38728,
-    #fbf5b7,
-    #aa771c
-  );
+  background: linear-gradient(45deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
   color: #1a1a1a;
   padding: 6px 15px;
   border-radius: 50px;
@@ -173,7 +155,6 @@ button:hover {
   margin-bottom: 15px;
   text-align: center;
 }
-
 .status-label {
   color: #888;
   font-size: 11px;
@@ -181,7 +162,6 @@ button:hover {
   display: block;
   margin-bottom: 5px;
 }
-
 .upgrade-link {
   color: #a855f7;
   background: rgba(168, 85, 247, 0.1);
@@ -195,7 +175,6 @@ button:hover {
   display: inline-block;
   animation: pulse-purple 2s infinite;
 }
-
 .upgrade-link:hover {
   background: #a855f7;
   color: #fff;
@@ -216,7 +195,6 @@ button:hover {
     transform: scale(1);
   }
 }
-
 @keyframes pulse-purple {
   0% {
     box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.4);
