@@ -21,6 +21,8 @@ export default function AdminDashboard() {
   const storedUser = localStorage.getItem("br30_user");
   const user = storedUser ? JSON.parse(storedUser) : null;
   const role = localStorage.getItem("role") || user?.role;
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
 
   useEffect(() => {
     if (!token || role !== "admin") {
@@ -35,7 +37,9 @@ export default function AdminDashboard() {
     try {
       const token = localStorage.getItem("token") || localStorage.getItem("br30_token");
 
-      const res = await fetch(`${API}/api/auth/user-stats`, {
+      const query = startDate && endDate ? `?startDate=${startDate}&endDate=${endDate}` : "";
+
+      const res = await fetch(`${API}/api/auth/user-stats${query}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -166,7 +170,7 @@ export default function AdminDashboard() {
 
   return (
     <>
-      <style>{`.admin-page{min-height:100vh;background:#000;color:#fff;display:flex;font-family:"Segoe UI",sans-serif}.admin-sidebar{width:250px;background:#050505;border-right:1px solid #222;padding:20px;position:fixed;height:100vh;overflow-y:auto}.admin-logo{font-size:22px;font-weight:700;color:#00ffcc;margin-bottom:40px;display:flex;align-items:center;gap:10px}.admin-side-btn{width:100%;display:flex;align-items:center;gap:12px;padding:12px 15px;margin-bottom:8px;background:transparent;border:none;border-radius:8px;color:#bbb;font-size:14px;text-decoration:none;cursor:pointer;transition:.3s}.admin-side-btn:hover,.admin-side-btn.active{background:#111;color:#00ffcc;border-left:4px solid #00ffcc}.admin-home-btn{color:#ffca28!important;animation:blink 1s infinite}@keyframes blink{50%{opacity:.4}}.admin-main{flex:1;margin-left:290px;padding:30px}.admin-header{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:30px;flex-wrap:wrap}.admin-header h2{margin:0;font-size:22px}.admin-filter{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.admin-date{background:#111;border:1px solid #333;color:#00ffcc;padding:10px 12px;border-radius:8px;outline:none}.admin-date::-webkit-calendar-picker-indicator{filter:invert(1);cursor:pointer}.admin-btn{padding:10px 16px;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;transition:.3s}.admin-btn-blue{background:#007bff;color:#fff}.admin-btn-blue:hover{background:#0056b3}.admin-btn-dark{background:#222;color:#fff}.admin-btn-dark:hover{background:#333}.admin-btn-green{background:#10b981;color:#fff}.admin-btn-red{background:#dc2626;color:#fff}.admin-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:30px}.admin-card{background:#111;border:1px solid #222;padding:20px;border-radius:12px}.admin-card h3{margin:0;font-size:12px;letter-spacing:1px;color:#777}.admin-card p{margin-top:14px;font-size:24px;font-weight:700}.admin-blue p{color:#007bff}.admin-green p{color:#10b981}.admin-yellow p{color:#ffca28}.admin-red p{color:#ff4d4d}.admin-marketing{background:#0f172a;border:1px solid #334155;padding:25px;border-radius:20px;display:flex;flex-direction:column;gap:15px}.admin-marketing h4{margin:0;font-size:14px;letter-spacing:1px;color:#94a3b8}.admin-input{width:100%;background:#000;border:1px solid #334155;color:#fff;padding:15px;border-radius:12px;outline:none;font-size:14px;box-sizing:border-box}.admin-textarea{height:140px;resize:none}.admin-send-btn{width:100%;padding:16px;background:#a020f0;color:#fff;border:none;border-radius:14px;font-size:16px;font-weight:700;cursor:pointer;transition:.3s}.admin-send-btn:hover{opacity:.8}.admin-send-btn:disabled{opacity:.5;cursor:not-allowed}.admin-coupon{border-top:1px solid #334155;padding-top:20px}.admin-cancel-btn{width:100%;padding:15px;background:transparent;border:1.5px solid #f87171;color:#f87171;border-radius:14px;font-weight:700;cursor:pointer}.admin-coupon p{text-align:center;font-size:12px;color:#94a3b8;margin-top:10px}@media(max-width:900px){.admin-page{display:block}.admin-sidebar{position:relative;width:auto;height:auto}.admin-main{margin-left:0;padding:20px}.admin-stats{grid-template-columns:repeat(2,1fr)}}@media(max-width:600px){.admin-stats{grid-template-columns:1fr}.admin-header{flex-direction:column;align-items:flex-start}.admin-filter{width:100%}.admin-btn,.admin-date{width:100%}} .blink-home-btn{animation:blinkBtn 1s infinite}@keyframes blinkBtn{0%{opacity:1}50%{opacity:.3}100%{opacity:1}}`}</style>
+      <style>{`.admin-page{min-height:100vh;background:#000;color:#fff;display:flex;font-family:"Segoe UI",sans-serif}.admin-sidebar{width:250px;background:#050505;border-right:1px solid #222;padding:20px;position:fixed;height:100vh;overflow-y:auto}.admin-logo{font-size:22px;font-weight:700;color:#00ffcc;margin-bottom:40px;display:flex;align-items:center;gap:10px}.admin-side-btn{width:100%;display:flex;align-items:center;gap:12px;padding:12px 15px;margin-bottom:8px;background:transparent;border:none;border-radius:8px;color:#bbb;font-size:14px;text-decoration:none;cursor:pointer;transition:.3s}.admin-side-btn:hover,.admin-side-btn.active{background:#111;color:#00ffcc;border-left:4px solid #00ffcc}.admin-home-btn{color:#ffca28!important;animation:blinkBtn 1s linear infinite!important}@keyframes blinkBtn{0%{opacity:1}50%{opacity:.2}100%{opacity:1}}.admin-main{flex:1;margin-left:290px;padding:30px}.admin-header{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:30px;flex-wrap:wrap}.admin-header h2{margin:0;font-size:22px}.admin-filter{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.admin-date{background:#111;border:1px solid #333;color:#00ffcc;padding:10px 12px;border-radius:8px;outline:none}.admin-date::-webkit-calendar-picker-indicator{filter:invert(1);cursor:pointer}.admin-btn{padding:10px 16px;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;transition:.3s}.admin-btn-blue{background:#007bff;color:#fff}.admin-btn-blue:hover{background:#0056b3}.admin-btn-dark{background:#222;color:#fff}.admin-btn-dark:hover{background:#333}.admin-btn-green{background:#10b981;color:#fff}.admin-btn-red{background:#dc2626;color:#fff}.admin-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:30px}.admin-card{background:#111;border:1px solid #222;padding:20px;border-radius:12px}.admin-card h3{margin:0;font-size:12px;letter-spacing:1px;color:#777}.admin-card p{margin-top:14px;font-size:24px;font-weight:700}.admin-blue p{color:#007bff}.admin-green p{color:#10b981}.admin-yellow p{color:#ffca28}.admin-red p{color:#ff4d4d}.admin-marketing{background:#0f172a;border:1px solid #334155;padding:25px;border-radius:20px;display:flex;flex-direction:column;gap:15px}.admin-marketing h4{margin:0;font-size:14px;letter-spacing:1px;color:#94a3b8}.admin-input{width:100%;background:#000;border:1px solid #334155;color:#fff;padding:15px;border-radius:12px;outline:none;font-size:14px;box-sizing:border-box}.admin-textarea{height:140px;resize:none}.admin-send-btn{width:100%;padding:16px;background:#a020f0;color:#fff;border:none;border-radius:14px;font-size:16px;font-weight:700;cursor:pointer;transition:.3s}.admin-send-btn:hover{opacity:.8}.admin-send-btn:disabled{opacity:.5;cursor:not-allowed}.admin-coupon{border-top:1px solid #334155;padding-top:20px}.admin-cancel-btn{width:100%;padding:15px;background:transparent;border:1.5px solid #f87171;color:#f87171;border-radius:14px;font-weight:700;cursor:pointer}.admin-coupon p{text-align:center;font-size:12px;color:#94a3b8;margin-top:10px}@media(max-width:900px){.admin-page{display:block}.admin-sidebar{position:relative;width:auto;height:auto}.admin-main{margin-left:0;padding:20px}.admin-stats{grid-template-columns:repeat(2,1fr)}}@media(max-width:600px){.admin-stats{grid-template-columns:1fr}.admin-header{flex-direction:column;align-items:flex-start}.admin-filter{width:100%}.admin-btn,.admin-date{width:100%}}`}</style>
 
       <div className="admin-page">
         <aside className="admin-sidebar">
@@ -218,7 +222,7 @@ export default function AdminDashboard() {
 
             <hr style={{ border: "0.5px solid #222", margin: "20px 0" }} />
 
-            <Link className="admin-side-btn admin-home-btn" style={{ animation: "blink 1s infinite", color: "#facc15" }} to="/">
+            <Link className="admin-side-btn admin-home-btn" to="/" target="_blank" rel="noopener noreferrer">
               <i className="fas fa-arrow-alt-circle-left"></i>
               Back to Home
             </Link>
@@ -230,9 +234,9 @@ export default function AdminDashboard() {
             <h2>👑 Master Admin Dashboard</h2>
 
             <div className="admin-filter">
-              <input type="date" className="admin-date" />
+              <input type="date" className="admin-date" value={startDate} onChange={(e) => setStartDate(e.target.value)} />
 
-              <input type="date" className="admin-date" />
+              <input type="date" className="admin-date" value={endDate} onChange={(e) => setEndDate(e.target.value)} />
 
               <button className="admin-btn admin-btn-blue" onClick={loadStats}>
                 Apply
