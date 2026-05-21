@@ -218,7 +218,7 @@ export default function AdminDashboard() {
 
             <hr style={{ border: "0.5px solid #222", margin: "20px 0" }} />
 
-            <Link className="admin-side-btn admin-home-btn blink-home-btn" to="/">
+            <Link className="admin-side-btn admin-home-btn" style={{ animation: "blink 1s infinite", color: "#facc15" }} to="/">
               <i className="fas fa-arrow-alt-circle-left"></i>
               Back to Home
             </Link>
