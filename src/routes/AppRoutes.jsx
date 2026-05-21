@@ -25,6 +25,13 @@ import LiveMarketAnalysis from "../pages/LiveMarketAnalysis";
 import RiskManagement from "../pages/RiskManagement";
 import LifetimeAccess from "../pages/LifetimeAccess";
 import Br30SupportCommunity from "../pages/Br30SupportCommunity";
+import AdminDashboard from "../pages/AdminDashboard";
+import BR30Announcement from "../pages/BR30Announcement";
+import UserReview from "../pages/UserReview";
+import Br30CourseEdit from "../pages/Br30CourseEdit";
+import Br30UserManagement from "../pages/Br30UserManagement";
+import Br30LoadCourse from "../pages/Br30LoadCourse";
+import Br30BellNotification from "../pages/Br30BellNotification";
 
 export default function AppRoutes() {
   return (
@@ -54,6 +61,13 @@ export default function AppRoutes() {
       <Route path="/risk-management" element={<RiskManagement />} />
       <Route path="/lifetime-access" element={<LifetimeAccess />} />
       <Route path="/support-community" element={<Br30SupportCommunity />} />
+      <Route path="/admin" element={<AdminDashboard />} />
+      <Route path="/admin/announcement" element={<BR30Announcement />} />
+      <Route path="/admin/reviews" element={<UserReview />} />
+      <Route path="/admin/course-edit" element={<Br30CourseEdit />} />
+      <Route path="/admin/users" element={<Br30UserManagement />} />
+      <Route path="/admin/load-course" element={<Br30LoadCourse />} />
+      <Route path="/admin/bell-notification" element={<Br30BellNotification />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
