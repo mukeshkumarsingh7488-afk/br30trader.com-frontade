@@ -31,19 +31,24 @@ export default function Login() {
       const data = await res.json();
       if (res.ok && data.token && data.user) {
         const userRole = data.user.role || "user";
+
         localStorage.clear();
+
         localStorage.setItem("token", data.token);
         localStorage.setItem("role", userRole);
         localStorage.setItem("username", data.user.name || "User");
         localStorage.setItem("userData", JSON.stringify(data.user));
         localStorage.setItem("br30_token", data.token);
         localStorage.setItem("br30_user", JSON.stringify(data.user));
-        alert("Login Success! 🚀");
+
         if (userRole === "admin") {
+          alert("👑 Welcome Mukesh - Master Admin 🚀");
           navigate("/admin", { replace: true });
         } else {
+          alert("Login Success! 🚀");
           navigate("/", { replace: true });
         }
+
         return;
       }
       alert(data.msg || data.message || "Login Failed!");
