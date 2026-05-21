@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Volume Analysis Techniques</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: #060b13;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        line-height: 1.7;
+      }
+      body {
+        padding: 28px 14px;
+      }
+      .pdf-box {
+        width: 100%;
+        max-width: 920px;
+        margin: 0 auto;
+        background: #0b111e;
+        padding: 32px;
+        border-radius: 14px;
+        border: 1px solid #1e293b;
+      }
+      h1 {
+        color: #00ff88;
+        font-size: 30px;
+        line-height: 1.35;
+        margin: 0 0 24px;
+      }
+      h2 {
+        color: #00eaff;
+        font-size: 24px;
+        line-height: 1.35;
+        margin: 30px 0 14px;
+      }
+      h3 {
+        color: #ffffff;
+        font-size: 19px;
+        margin: 22px 0 10px;
+      }
+      p,
+      li {
+        color: #d1d5db;
+        font-size: 16px;
+      }
+      p {
+        margin: 0 0 16px;
+      }
+      ul,
+      ol {
+        padding-left: 24px;
+        margin: 0 0 18px;
+      }
+      li {
+        margin: 6px 0;
+      }
+      .table-wrap {
+        width: 100%;
+        overflow-x: auto;
+        margin-top: 20px;
+      }
+      table {
+        width: 100%;
+        min-width: 760px;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid #334155;
+        padding: 12px;
+        text-align: left;
+        vertical-align: top;
+      }
+      th {
+        background: #111827;
+        color: #00ff88;
+      }
+      td {
+        background: #0f172a;
+        color: #d1d5db;
+      }
+      b,
+      strong {
+        color: #fff;
+        font-weight: 800;
+      }
+      .note {
+        margin-top: 26px;
+        padding: 18px;
+        background: #111827;
+        border-left: 4px solid #00ff88;
+        border-radius: 8px;
+      }
+      @media (max-width: 768px) {
+        body {
+          padding: 16px 10px;
+        }
+        .pdf-box {
+          padding: 22px 16px;
+          border-radius: 12px;
+        }
+        h1 {
+          font-size: 26px;
+        }
+        h2 {
+          font-size: 21px;
+        }
+        h3 {
+          font-size: 18px;
+        }
+        p,
+        li {
+          font-size: 15px;
+        }
+        ul,
+        ol {
+          padding-left: 20px;
+        }
+      }
+      @media (max-width: 430px) {
+        body {
+          padding: 10px 8px;
+        }
+        .pdf-box {
+          padding: 18px 14px;
+        }
+        h1 {
+          font-size: 24px;
+        }
+        h2 {
+          font-size: 20px;
+        }
+        p,
+        li {
+          font-size: 14.5px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="pdf-box">
+      <h1>✅ Volume Analysis Techniques</h1>
+
+      <p>Volume price movement की strength और market sentiment समझने में सबसे important indicator है।</p>
+
+      <h2>✅ Basic Concept</h2>
+      <ul>
+        <li>Volume बताता है कि कितने लोग trade कर रहे हैं</li>
+        <li>High volume → Strong trend / Breakout</li>
+        <li>Low volume → Weak trend / Consolidation</li>
+      </ul>
+
+      <h2>✅ Key Volume Patterns</h2>
+
+      <h3>1️⃣ Volume Spike</h3>
+      <ul>
+        <li>अचानक volume बढ़ना → Market में interest बढ़ा</li>
+        <li>Implication: Trend reversal या breakout signal</li>
+      </ul>
+
+      <h3>2️⃣ Rising Volume in Uptrend</h3>
+      <ul>
+        <li>Price ऊपर जा रहा है और volume भी बढ़ रहा है → Strong trend</li>
+        <li>Action: Trend follow करें, buy/long consider करें</li>
+      </ul>
+
+      <h3>3️⃣ Falling Volume in Uptrend</h3>
+      <ul>
+        <li>Price ऊपर जा रहा है लेकिन volume घट रहा है → Weak trend</li>
+        <li>Action: Trend कमजोर हो सकता है, caution</li>
+      </ul>
+
+      <h3>4️⃣ Rising Volume in Downtrend</h3>
+      <ul>
+        <li>Price नीचे जा रहा है और volume बढ़ रहा है → Strong bearish trend</li>
+        <li>Action: Short/sell consider करें</li>
+      </ul>
+
+      <h3>5️⃣ Falling Volume in Downtrend</h3>
+      <ul>
+        <li>Price नीचे जा रहा है लेकिन volume घट रहा है → Weak trend</li>
+        <li>Action: Trend reversal का signal</li>
+      </ul>
+
+      <h2>✅ Step by Step Volume Analysis</h2>
+      <ol>
+        <li>Chart में volume indicator add करो</li>
+        <li>Price और volume relation observe करो</li>
+        <li>Spike, increase या decrease detect करो</li>
+        <li>Trend की strength और reversal signals identify करो</li>
+        <li>Confirmation के लिए candle pattern और other indicators check करो</li>
+      </ol>
+
+      <h2>✅ Notebook Example Table</h2>
+      <div class="table-wrap">
+        <table>
+          <tr>
+            <th>Price Trend</th>
+            <th>Volume Behavior</th>
+            <th>Signal / Action</th>
+          </tr>
+          <tr>
+            <td>Uptrend</td>
+            <td>Rising Volume</td>
+            <td>Strong Trend → Buy/Long</td>
+          </tr>
+          <tr>
+            <td>Uptrend</td>
+            <td>Falling Volume</td>
+            <td>Weak Trend → Caution</td>
+          </tr>
+          <tr>
+            <td>Downtrend</td>
+            <td>Rising Volume</td>
+            <td>Strong Trend → Short/Sell</td>
+          </tr>
+          <tr>
+            <td>Downtrend</td>
+            <td>Falling Volume</td>
+            <td>Weak Trend → Reversal</td>
+          </tr>
+          <tr>
+            <td>Any Trend</td>
+            <td>Volume Spike</td>
+            <td>Possible Breakout/Reversal</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="note">
+        ✅ Volume analysis हमेशा trend के साथ combine करें।
+        <br />
+        <br />
+        Spike और divergence observe करना जरूरी है।
+        <br />
+        <br />
+        Multiple timeframe volume check करें → Signals reliable।
+        <br />
+        <br />
+        Candle confirmation और support/resistance के साथ combine करें।
+      </div>
+    </div>
+  </body>
+</html>

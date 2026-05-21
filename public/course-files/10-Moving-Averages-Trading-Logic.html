@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moving Averages Trading Logic</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: #060b13;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        line-height: 1.7;
+      }
+      body {
+        padding: 28px 14px;
+      }
+      .pdf-box {
+        width: 100%;
+        max-width: 920px;
+        margin: 0 auto;
+        background: #0b111e;
+        padding: 32px;
+        border-radius: 14px;
+        border: 1px solid #1e293b;
+      }
+      h1 {
+        color: #00ff88;
+        font-size: 30px;
+        line-height: 1.35;
+        margin: 0 0 24px;
+      }
+      h2 {
+        color: #00eaff;
+        font-size: 24px;
+        line-height: 1.35;
+        margin: 30px 0 14px;
+      }
+      h3 {
+        color: #ffffff;
+        font-size: 19px;
+        margin: 22px 0 10px;
+      }
+      p,
+      li {
+        color: #d1d5db;
+        font-size: 16px;
+      }
+      p {
+        margin: 0 0 16px;
+      }
+      ul,
+      ol {
+        padding-left: 24px;
+        margin: 0 0 18px;
+      }
+      li {
+        margin: 6px 0;
+      }
+      .table-wrap {
+        width: 100%;
+        overflow-x: auto;
+        margin-top: 20px;
+      }
+      table {
+        width: 100%;
+        min-width: 760px;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid #334155;
+        padding: 12px;
+        text-align: left;
+        vertical-align: top;
+      }
+      th {
+        background: #111827;
+        color: #00ff88;
+      }
+      td {
+        background: #0f172a;
+        color: #d1d5db;
+      }
+      b,
+      strong {
+        color: #fff;
+        font-weight: 800;
+      }
+      .note {
+        margin-top: 26px;
+        padding: 18px;
+        background: #111827;
+        border-left: 4px solid #00ff88;
+        border-radius: 8px;
+      }
+      @media (max-width: 768px) {
+        body {
+          padding: 16px 10px;
+        }
+        .pdf-box {
+          padding: 22px 16px;
+          border-radius: 12px;
+        }
+        h1 {
+          font-size: 26px;
+        }
+        h2 {
+          font-size: 21px;
+        }
+        h3 {
+          font-size: 18px;
+        }
+        p,
+        li {
+          font-size: 15px;
+        }
+        ul,
+        ol {
+          padding-left: 20px;
+        }
+      }
+      @media (max-width: 430px) {
+        body {
+          padding: 10px 8px;
+        }
+        .pdf-box {
+          padding: 18px 14px;
+        }
+        h1 {
+          font-size: 24px;
+        }
+        h2 {
+          font-size: 20px;
+        }
+        p,
+        li {
+          font-size: 14.5px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="pdf-box">
+      <h1>✅ Moving Averages Trading Logic</h1>
+
+      <p>Moving Averages (MA) market trend identify करने और trading signals generate करने का सबसे simple और effective तरीका हैं।</p>
+
+      <h2>✅ Basic Concept</h2>
+      <ul>
+        <li>
+          <b>SMA (Simple Moving Average):</b>
+          पिछले N period का average price
+        </li>
+        <li>
+          <b>EMA (Exponential Moving Average):</b>
+          Recent prices को ज्यादा weight देता है
+        </li>
+        <li>MA trend direction और support/resistance identify करने में मदद करता है</li>
+      </ul>
+
+      <h2>✅ Popular MA Strategies</h2>
+
+      <h3>1️⃣ Trend Following (MA Crossover)</h3>
+      <ul>
+        <li>Short-term MA जैसे 9 EMA / 15 EMA और Long-term MA जैसे 50 EMA / 200 EMA</li>
+        <li>
+          <b>Buy Signal:</b>
+          Short-term MA ऊपर cross करे long-term MA को
+        </li>
+        <li>
+          <b>Sell Signal:</b>
+          Short-term MA नीचे cross करे long-term MA को
+        </li>
+      </ul>
+
+      <h3>2️⃣ Price vs MA</h3>
+      <ul>
+        <li>Price MA के ऊपर → Bullish trend</li>
+        <li>Price MA के नीचे → Bearish trend</li>
+        <li>MA support/resistance की तरह act करता है</li>
+      </ul>
+
+      <h3>3️⃣ EMA Ribbon Strategy</h3>
+      <ul>
+        <li>Multiple EMA layers जैसे 5, 9, 15, 21 use करो</li>
+        <li>जब सब EMAs parallel और upward हों → Strong bullish trend</li>
+        <li>जब सब EMAs parallel और downward हों → Strong bearish trend</li>
+        <li>Price EMA ribbon break करे → Trend reversal या pullback signal</li>
+      </ul>
+
+      <h2>✅ Step by Step Trading Setup</h2>
+      <ol>
+        <li>Chart पर suitable timeframe choose करो जैसे 1H, 4H, Daily</li>
+        <li>Indicators में short-term और long-term EMA/SMA लगाओ</li>
+        <li>Price position और MA crossover observe करो</li>
+        <li>Confirmation के लिए candle pattern और volume check करो</li>
+        <li>Entry और exit points decide करो</li>
+      </ol>
+
+      <h2>✅ Notebook में लिखने के लिए Example Table</h2>
+      <div class="table-wrap">
+        <table>
+          <tr>
+            <th>Strategy Type</th>
+            <th>Signal Condition</th>
+            <th>Action</th>
+          </tr>
+          <tr>
+            <td>MA Crossover</td>
+            <td>Short MA ऊपर cross करे Long MA</td>
+            <td>Buy</td>
+          </tr>
+          <tr>
+            <td>MA Crossover</td>
+            <td>Short MA नीचे cross करे Long MA</td>
+            <td>Sell</td>
+          </tr>
+          <tr>
+            <td>Price vs MA</td>
+            <td>Price MA के ऊपर</td>
+            <td>Buy</td>
+          </tr>
+          <tr>
+            <td>Price vs MA</td>
+            <td>Price MA के नीचे</td>
+            <td>Sell</td>
+          </tr>
+          <tr>
+            <td>EMA Ribbon Confirmation</td>
+            <td>EMAs Upward parallel</td>
+            <td>Strong Buy</td>
+          </tr>
+          <tr>
+            <td>EMA Ribbon Confirmation</td>
+            <td>EMAs Downward parallel</td>
+            <td>Strong Sell</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="note">
+        ✅ Trend हमेशा multiple timeframe से verify करो।
+        <br />
+        <br />
+        MA signals lag करते हैं → Candle confirmation और volume analysis साथ में use करो।
+        <br />
+        <br />
+        Risk management हमेशा follow करो जैसे Stop Loss और Target।
+        <br />
+        <br />
+        EMA short-term और SMA long-term combine करने से signals ज्यादा reliable होते हैं।
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RSI Divergence Full Guide</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: #060b13;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        line-height: 1.7;
+      }
+      body {
+        padding: 28px 14px;
+      }
+      .pdf-box {
+        width: 100%;
+        max-width: 920px;
+        margin: 0 auto;
+        background: #0b111e;
+        padding: 32px;
+        border-radius: 14px;
+        border: 1px solid #1e293b;
+      }
+      h1 {
+        color: #00ff88;
+        font-size: 30px;
+        line-height: 1.35;
+        margin: 0 0 24px;
+      }
+      h2 {
+        color: #00eaff;
+        font-size: 24px;
+        line-height: 1.35;
+        margin: 30px 0 14px;
+      }
+      h3 {
+        color: #ffffff;
+        font-size: 19px;
+        margin: 22px 0 10px;
+      }
+      p,
+      li {
+        color: #d1d5db;
+        font-size: 16px;
+      }
+      p {
+        margin: 0 0 16px;
+      }
+      ul {
+        padding-left: 24px;
+        margin: 0 0 18px;
+      }
+      li {
+        margin: 6px 0;
+      }
+      .table-wrap {
+        width: 100%;
+        overflow-x: auto;
+        margin-top: 20px;
+      }
+      table {
+        width: 100%;
+        min-width: 650px;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid #334155;
+        padding: 12px;
+        text-align: left;
+        vertical-align: top;
+      }
+      th {
+        background: #111827;
+        color: #00ff88;
+      }
+      td {
+        background: #0f172a;
+        color: #d1d5db;
+      }
+      b,
+      strong {
+        color: #fff;
+        font-weight: 800;
+      }
+      .note {
+        margin-top: 26px;
+        padding: 18px;
+        background: #111827;
+        border-left: 4px solid #00ff88;
+        border-radius: 8px;
+      }
+      @media (max-width: 768px) {
+        body {
+          padding: 16px 10px;
+        }
+        .pdf-box {
+          padding: 22px 16px;
+          border-radius: 12px;
+        }
+        h1 {
+          font-size: 26px;
+        }
+        h2 {
+          font-size: 21px;
+        }
+        h3 {
+          font-size: 18px;
+        }
+        p,
+        li {
+          font-size: 15px;
+        }
+        ul {
+          padding-left: 20px;
+        }
+      }
+      @media (max-width: 430px) {
+        body {
+          padding: 10px 8px;
+        }
+        .pdf-box {
+          padding: 18px 14px;
+        }
+        h1 {
+          font-size: 24px;
+        }
+        h2 {
+          font-size: 20px;
+        }
+        p,
+        li {
+          font-size: 14.5px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="pdf-box">
+      <h1>✅ RSI Divergence Full Guide</h1>
+
+      <p>
+        RSI Divergence trading me ek powerful signal hai jo
+        <b>trend reversal ya weakness</b>
+        identify karta hai.
+      </p>
+
+      <h2>✅ Basic Concept</h2>
+      <ul>
+        <li>RSI = Relative Strength Index (momentum indicator)</li>
+        <li>Divergence = Price aur RSI opposite direction me move karte hain</li>
+        <li>Objective: Trend reversal, trade timing improvement</li>
+      </ul>
+
+      <h2>✅ Types of RSI Divergence</h2>
+
+      <h3>1️⃣ Bullish Divergence (Buy Signal)</h3>
+      <ul>
+        <li>Price: Lower Low</li>
+        <li>RSI: Higher Low</li>
+        <li>👉 Matlab: Price neeche ja raha hai, lekin momentum strength dikha raha hai → reversal ka signal</li>
+      </ul>
+
+      <h3>2️⃣ Bearish Divergence (Sell Signal)</h3>
+      <ul>
+        <li>Price: Higher High</li>
+        <li>RSI: Lower High</li>
+        <li>👉 Matlab: Price upar ja raha hai, lekin momentum weak → potential downtrend</li>
+      </ul>
+
+      <h2>✅ Step by Step Identification</h2>
+      <ul>
+        <li>Chart me RSI indicator lagaye (Default: 14-period)</li>
+        <li>Price ka High/Low aur RSI ka High/Low dekho</li>
+        <li>Opposite movement → divergence signal</li>
+        <li>Support/Resistance ke paas divergence → strong signal</li>
+      </ul>
+
+      <h2>✅ Notebook Example Table</h2>
+      <div class="table-wrap">
+        <table>
+          <tr>
+            <th>Type</th>
+            <th>Price Movement</th>
+            <th>RSI Movement</th>
+            <th>Signal</th>
+          </tr>
+          <tr>
+            <td>Bullish Divergence</td>
+            <td>Lower Low</td>
+            <td>Higher Low</td>
+            <td>Buy / Reversal</td>
+          </tr>
+          <tr>
+            <td>Bearish Divergence</td>
+            <td>Higher High</td>
+            <td>Lower High</td>
+            <td>Sell / Reversal</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="note">
+        ✅ RSI Divergence ko standalone signal mat lo.
+        <br />
+        <br />
+        Candle confirmation, volume confirmation bhi check karo.
+        <br />
+        <br />
+        Higher timeframe (15-min, 1H) me signal zyada reliable.
+        <br />
+        <br />
+        Stop Loss & Risk Management hamesha set karo.
+      </div>
+    </div>
+  </body>
+</html>

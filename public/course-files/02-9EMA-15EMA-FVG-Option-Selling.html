@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Option Selling Strategy</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: #060b13;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        line-height: 1.7;
+      }
+      body {
+        padding: 28px 14px;
+      }
+      .pdf-box {
+        width: 100%;
+        max-width: 920px;
+        margin: 0 auto;
+        background: #0b111e;
+        padding: 32px;
+        border-radius: 14px;
+        border: 1px solid #1e293b;
+      }
+      h1 {
+        color: #00ff88;
+        font-size: 30px;
+        line-height: 1.35;
+        margin: 0 0 24px;
+      }
+      h2 {
+        color: #00eaff;
+        font-size: 24px;
+        line-height: 1.35;
+        margin: 30px 0 14px;
+      }
+      h3 {
+        color: #fff;
+        font-size: 19px;
+        margin: 22px 0 10px;
+      }
+      p,
+      li {
+        color: #d1d5db;
+        font-size: 16px;
+      }
+      p {
+        margin: 0 0 16px;
+      }
+      ul {
+        padding-left: 24px;
+        margin: 0 0 18px;
+      }
+      li {
+        margin: 6px 0;
+      }
+      .table-wrap {
+        width: 100%;
+        overflow-x: auto;
+        margin-top: 20px;
+      }
+      table {
+        width: 100%;
+        min-width: 650px;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid #334155;
+        padding: 12px;
+        text-align: left;
+        vertical-align: top;
+      }
+      th {
+        background: #111827;
+        color: #00ff88;
+      }
+      td {
+        background: #0f172a;
+        color: #d1d5db;
+      }
+      .note {
+        margin-top: 25px;
+        padding: 18px;
+        background: #111827;
+        border-left: 4px solid #00ff88;
+        border-radius: 8px;
+        color: #d1d5db;
+      }
+      b,
+      strong {
+        color: #fff;
+        font-weight: 800;
+      }
+
+      @media (max-width: 768px) {
+        body {
+          padding: 16px 10px;
+        }
+        .pdf-box {
+          padding: 22px 16px;
+          border-radius: 12px;
+        }
+        h1 {
+          font-size: 26px;
+        }
+        h2 {
+          font-size: 21px;
+        }
+        h3 {
+          font-size: 18px;
+        }
+        p,
+        li {
+          font-size: 15px;
+        }
+        ul {
+          padding-left: 20px;
+        }
+        .note {
+          padding: 15px;
+          font-size: 15px;
+        }
+      }
+
+      @media (max-width: 430px) {
+        body {
+          padding: 10px 8px;
+        }
+        .pdf-box {
+          padding: 18px 14px;
+        }
+        h1 {
+          font-size: 24px;
+        }
+        h2 {
+          font-size: 20px;
+        }
+        p,
+        li {
+          font-size: 14.5px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="pdf-box">
+      <h1>✅ 9 EMA + 15 EMA + FVG (Option Selling) Strategy</h1>
+
+      <p>
+        Ye strategy
+        <b>short-term option selling ke liye EMA cross aur Fair Value Gap (FVG) ka combination</b>
+        use karti hai.
+      </p>
+
+      <h2>✅ Basic Concept</h2>
+      <ul>
+        <li>EMA = Exponential Moving Average</li>
+        <li>FVG = Fair Value Gap → Price imbalance ka zone</li>
+        <li>Objective: Trend-following + High probability short trades</li>
+      </ul>
+
+      <h2>✅ Step by Step Setup</h2>
+
+      <h3>1️⃣ Chart Setup</h3>
+      <ul>
+        <li>Timeframe: 5-min / 15-min charts</li>
+        <li>Indicators: 9 EMA (Fast), 15 EMA (Slow)</li>
+        <li>Identify FVG: Last candle ka gap/jump jo price skip karta hai</li>
+      </ul>
+
+      <h3>2️⃣ Entry Rules (Option Selling)</h3>
+      <p><b>Bearish Entry (Sell Call/Buy Put):</b></p>
+      <ul>
+        <li>9 EMA crosses below 15 EMA</li>
+        <li>Price retraces to FVG resistance</li>
+        <li>Sell Call Option near strike close to current price</li>
+      </ul>
+
+      <p><b>Bullish Entry (Sell Put/Buy Call):</b></p>
+      <ul>
+        <li>9 EMA crosses above 15 EMA</li>
+        <li>Price retraces to FVG support</li>
+        <li>Sell Put Option near strike close to current price</li>
+      </ul>
+
+      <h2>✅ Exit Rules</h2>
+      <ul>
+        <li>Target: Next significant swing high/low</li>
+        <li>Stop Loss: Beyond FVG zone (for protection)</li>
+        <li>Risk management: Max 1-2% of capital per trade</li>
+      </ul>
+
+      <h2>✅ Notebook Example Table</h2>
+      <div class="table-wrap">
+        <table>
+          <tr>
+            <th>Condition</th>
+            <th>EMA Setup</th>
+            <th>FVG Location</th>
+            <th>Option Type</th>
+            <th>Notes</th>
+          </tr>
+          <tr>
+            <td>Bearish Trend</td>
+            <td>9 EMA &lt; 15 EMA</td>
+            <td>FVG resistance zone</td>
+            <td>Sell Call / Buy Put</td>
+            <td>Entry on pullback</td>
+          </tr>
+          <tr>
+            <td>Bullish Trend</td>
+            <td>9 EMA &gt; 15 EMA</td>
+            <td>FVG support zone</td>
+            <td>Sell Put / Buy Call</td>
+            <td>Entry on pullback</td>
+          </tr>
+        </table>
+      </div>
+
+      <h2>✅ Important Notes</h2>
+      <ul>
+        <li>Confirm trend before entry using volume and candle pattern</li>
+        <li>EMA cross ke saath FVG zone ka confluence entry high probability banata hai</li>
+        <li>Risk/reward ka dhyan rakho, stop loss hamesha set kare</li>
+        <li>Multiple timeframes check karo (1H, 15-min) for confirmation</li>
+      </ul>
+    </div>
+  </body>
+</html>

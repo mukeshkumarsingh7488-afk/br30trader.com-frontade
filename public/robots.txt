@@ -1,0 +1,42 @@
+User-agent: *
+
+# Private / User Pages
+Disallow: /login
+Disallow: /register
+Disallow: /forgot-password
+Disallow: /reset
+Disallow: /myprofile
+Disallow: /mycourse
+Disallow: /view-alert
+Disallow: /watch
+
+# Admin / Private Panels
+Disallow: /admin
+Disallow: /admin-dashboard
+Disallow: /user-management
+Disallow: /load-course
+Disallow: /course-edit
+Disallow: /bell-notification
+Disallow: /announcement
+Disallow: /user-review
+
+# Public Pages
+Allow: /
+Allow: /about
+Allow: /aboutus
+Allow: /verify
+Allow: /disclaimer
+Allow: /vip-access
+Allow: /contact
+Allow: /privacy
+Allow: /terms
+Allow: /refund
+Allow: /strategies
+Allow: /service
+Allow: /basic-to-advance
+Allow: /live-market-analysis
+Allow: /risk-management
+Allow: /lifetime-access
+Allow: /support-community
+
+Sitemap: https://my-frontend-eight-roan.vercel.app/sitemap.xml
