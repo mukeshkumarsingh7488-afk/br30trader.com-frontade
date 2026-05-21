@@ -260,9 +260,9 @@ export default function Br30VipAccess() {
             <h2>Unlock VIP Learning 🚀</h2>
             <p>Join BR30 Trader VIP and start learning professional trading with proper structure, support, and practical market understanding.</p>
 
-            <a href="/#coursesection" className="vip-btn">
+            <Link to="/?scroll=coursesection" className="vip-btn">
               Get VIP Access
-            </a>
+            </Link>
           </section>
 
           <div className="vip-home">

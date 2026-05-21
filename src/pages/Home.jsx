@@ -99,6 +99,20 @@ export default function Home() {
     initFirebaseFCM();
   }, []);
 
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const scrollTo = params.get("scroll");
+
+    if (scrollTo) {
+      setTimeout(() => {
+        document.getElementById(scrollTo)?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }, 500);
+    }
+  }, []);
+
   return (
     <div style={{ width: "100%", background: "#060b13", display: "flex", flexDirection: "column" }}>
       {/* 🎬 सेक्शन १: आपका लाइव वीडियो और इंट्रो टेक्स्ट ब्लॉक */}
