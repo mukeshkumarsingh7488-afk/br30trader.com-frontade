@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 export default function FooterSection() {
   return (
     <>
@@ -32,7 +32,7 @@ export default function FooterSection() {
             WhatsApp
           </a>
 
-          <a href="mailto:support.br30trader@gmail.com" className="s-link">
+          <a href="mailto:support.br30trader@gmail.com" target="_blank" rel="noopener noreferrer" className="s-link">
             <i className="fa-solid fa-envelope" style={{ color: "#ea4335" }}></i>
             Gmail
           </a>
@@ -43,15 +43,15 @@ export default function FooterSection() {
 
       <div className="footer-policy-links">
         <div className="policy-wrapper">
-          <a href="/aboutus">About Us</a>
+          <Link to="/aboutus">About Us</Link>
           <span className="divider">|</span>
-          <a href="/contact">Contact Us</a>
+          <Link to="/contact">Contact Us</Link>
           <span className="divider">|</span>
-          <a href="/privacy">Privacy Policy</a>
+          <Link to="/privacy">Privacy Policy</Link>
           <span className="divider">|</span>
-          <a href="/terms">Terms & Conditions</a>
+          <Link to="/terms">Terms & Conditions</Link>
           <span className="divider">|</span>
-          <a href="/refund">Refund Policy</a>
+          <Link to="/refund">Refund Policy</Link>
         </div>
       </div>
 
@@ -87,16 +87,16 @@ export default function FooterSection() {
             <h3>Quick Links</h3>
             <ul>
               <li>
-                <a href="/">Home</a>
+                <Link to="/">Home</Link>
               </li>
               <li>
-                <a href="/strategies">Strategies</a>
+                <Link to="/strategies">Strategies</Link>
               </li>
               <li>
-                <a href="/service">Services</a>
+                <Link to="/service">Services</Link>
               </li>
               <li>
-                <a href="/about">About Founder</a>
+                <Link to="/about">About Founder</Link>
               </li>
             </ul>
           </div>

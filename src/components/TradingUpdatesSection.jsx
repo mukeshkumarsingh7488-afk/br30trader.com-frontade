@@ -14,7 +14,7 @@ export default function TradingUpdatesSection() {
         <div className="pl-button-box">
           <a href="https://drive.google.com/drive/folders/1KyYhGtuJX9J8jssCV5r9amUmwWYsqR6R?usp=sharing" target="_blank" rel="noopener noreferrer">
             <i className="fa-solid fa-folder-open"></i>
-            <span>View P&L Drive</span>
+            <span>View Crypto & Forex P&L</span>
           </a>
         </div>
       </div>

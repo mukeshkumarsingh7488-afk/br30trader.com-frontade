@@ -47,7 +47,7 @@ export default function LifetimeAccess() {
     },
   ];
 
-  const users = ["Rahul Sharma", "Amit Verma", "Sneha Patel", "Vikram Singh", "Priya Das", "Sunny Raj", "Arjun Mehta"];
+  const users = ["Rahul Sharma", "Amit Verma", "Sneha Patel", "Vikram Singh", "Priya Das", "Sunny Raj", "Arjun Mehta", "Rohit Kumar", "Anjali Gupta", "Karan Malhotra", "Neha Singh", "& Many Others"];
 
   const CheckIcon = () => (
     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">

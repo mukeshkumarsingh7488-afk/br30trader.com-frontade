@@ -153,10 +153,11 @@ export default function Leaderboard() {
         </div>
 
         <div className="leaderboard-footer">
-          <Link to="/courses" className="vip-btn">
+          <Link to="/#coursesection" className="vip-btn">
             <span>BROWSE COURSES</span>
-            <span>🚀</span>
+            <span>↗</span>
           </Link>
+
           <p className="footer-note">Join VIP to see your name here!</p>
         </div>
       </div>
