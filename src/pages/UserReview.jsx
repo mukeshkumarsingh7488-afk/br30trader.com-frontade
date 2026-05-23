@@ -16,6 +16,12 @@ export default function UserReview() {
     fetchReviews();
   }, []);
 
+  const chunkArray = (arr, size = 500) => {
+    const chunks = [];
+    for (let i = 0; i < arr.length; i += size) chunks.push(arr.slice(i, i + size));
+    return chunks;
+  };
+
   const fetchReviews = async () => {
     try {
       setLoading(true);
@@ -24,7 +30,6 @@ export default function UserReview() {
       const data = await res.json();
       setReviews(Array.isArray(data) ? data : []);
     } catch (err) {
-      console.error(err);
       Swal.fire({ title: "❌ Error", text: "Database connection failed.", icon: "error", background: "#0a0a0a", color: "#fff", confirmButtonColor: "#ef4444" });
     } finally {
       setLoading(false);
@@ -39,62 +44,6 @@ export default function UserReview() {
     fetchReviews();
   };
 
-  const toggleStatus = async (id, currentStatus) => {
-    const nextAction = currentStatus === "approved" ? "Hide" : "Show";
-    const confirm = await Swal.fire({ title: `${nextAction} Review?`, text: `Bhai, is review ko ${nextAction.toLowerCase()} karna hai?`, icon: "question", showCancelButton: true, confirmButtonText: `Yes, ${nextAction}`, cancelButtonText: "Cancel", background: "#0a0a0a", color: "#fff", confirmButtonColor: currentStatus === "approved" ? "#f59e0b" : "#00ffa3", cancelButtonColor: "#334155" });
-    if (!confirm.isConfirmed) return;
-    try {
-      const res = await fetch(`${API}/api/reviews/status/${id}`, { method: "PATCH" });
-      const data = await res.json().catch(() => ({}));
-      if (res.ok) {
-        await Swal.fire({ title: "✅ Updated", text: data.msg || data.message || `Review ${nextAction.toLowerCase()} ho gaya.`, icon: "success", background: "#0a0a0a", color: "#fff", confirmButtonColor: "#00ffa3", timer: 1400, showConfirmButton: false });
-        fetchReviews();
-      } else {
-        Swal.fire({ title: "❌ Error", text: data.msg || data.message || "Backend route not working!", icon: "error", background: "#0a0a0a", color: "#fff", confirmButtonColor: "#ef4444" });
-      }
-    } catch (err) {
-      Swal.fire({ title: "❌ Server Error", text: "Server connection failed!", icon: "error", background: "#0a0a0a", color: "#fff", confirmButtonColor: "#ef4444" });
-    }
-  };
-
-  const deleteReview = async (id) => {
-    const confirm = await Swal.fire({ title: "Delete Review?", text: "Pakka delete karna hai bhai? Ye wapas nahi aayega!", icon: "warning", showCancelButton: true, confirmButtonText: "Delete", cancelButtonText: "Cancel", background: "#0a0a0a", color: "#fff", confirmButtonColor: "#ef4444", cancelButtonColor: "#334155" });
-    if (!confirm.isConfirmed) return;
-    try {
-      const res = await fetch(`${API}/api/reviews/delete/${id}`, { method: "DELETE" });
-      const data = await res.json().catch(() => ({}));
-      if (res.ok) {
-        await Swal.fire({ title: "🗑️ Deleted", text: data.msg || data.message || "Review delete ho gaya.", icon: "success", background: "#0a0a0a", color: "#fff", confirmButtonColor: "#00ffa3", timer: 1400, showConfirmButton: false });
-        setSelectedReviews((prev) => prev.filter((item) => item !== id));
-        fetchReviews();
-      } else {
-        Swal.fire({ title: "❌ Error", text: data.msg || data.message || "Delete failed!", icon: "error", background: "#0a0a0a", color: "#fff", confirmButtonColor: "#ef4444" });
-      }
-    } catch (err) {
-      Swal.fire({ title: "❌ Error", text: "Delete failed!", icon: "error", background: "#0a0a0a", color: "#fff", confirmButtonColor: "#ef4444" });
-    }
-  };
-
-  const submitReply = async (id) => {
-    if (!replyText.trim()) return Swal.fire({ title: "⚠️ Empty Reply", text: "Bhai kuch likho to!", icon: "warning", background: "#0a0a0a", color: "#fff", confirmButtonColor: "#f59e0b" });
-    const confirm = await Swal.fire({ title: "Send Reply?", text: "Admin reply save karna hai?", icon: "question", showCancelButton: true, confirmButtonText: "Send Reply", cancelButtonText: "Cancel", background: "#0a0a0a", color: "#fff", confirmButtonColor: "#00ffa3", cancelButtonColor: "#334155" });
-    if (!confirm.isConfirmed) return;
-    try {
-      const res = await fetch(`${API}/api/reviews/update/${id}`, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ adminReply: replyText.trim() }) });
-      const data = await res.json().catch(() => ({}));
-      if (res.ok) {
-        await Swal.fire({ title: "✅ Saved", text: data.msg || data.message || "Reply Saved!", icon: "success", background: "#0a0a0a", color: "#fff", confirmButtonColor: "#00ffa3", timer: 1400, showConfirmButton: false });
-        setOpenReply(null);
-        setReplyText("");
-        fetchReviews();
-      } else {
-        Swal.fire({ title: "❌ Error", text: data.msg || data.message || "Reply failed!", icon: "error", background: "#0a0a0a", color: "#fff", confirmButtonColor: "#ef4444" });
-      }
-    } catch (err) {
-      Swal.fire({ title: "❌ Error", text: "Reply failed!", icon: "error", background: "#0a0a0a", color: "#fff", confirmButtonColor: "#ef4444" });
-    }
-  };
-
   const toggleSelectReview = (id) => {
     setSelectedReviews((prev) => (prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]));
   };
@@ -106,8 +55,21 @@ export default function UserReview() {
     Swal.fire({ title: "✅ Selected", text: `${ids.length} reviews selected.`, icon: "success", background: "#0a0a0a", color: "#fff", timer: 1200, showConfirmButton: false });
   };
 
-  const clearSelection = () => {
-    setSelectedReviews([]);
+  const clearSelection = () => setSelectedReviews([]);
+
+  const processChunks = async ({ url, method, makeBody, title }) => {
+    const chunks = chunkArray(selectedReviews, 500);
+    let done = 0;
+
+    Swal.fire({ title, html: `Processing 0 / ${selectedReviews.length}`, allowOutsideClick: false, showConfirmButton: false, background: "#0a0a0a", color: "#fff", didOpen: () => Swal.showLoading() });
+
+    for (const chunk of chunks) {
+      const res = await fetch(url, { method, headers: { "Content-Type": "application/json" }, body: JSON.stringify(makeBody(chunk)) });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data.message || data.error || "Bulk action failed!");
+      done += chunk.length;
+      Swal.update({ html: `Processing ${done} / ${selectedReviews.length}` });
+    }
   };
 
   const bulkStatusUpdate = async (status) => {
@@ -117,10 +79,8 @@ export default function UserReview() {
     if (!confirm.isConfirmed) return;
 
     try {
-      const res = await fetch(`${API}/api/reviews/bulk-status`, { method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ids: selectedReviews, status }) });
-      const data = await res.json().catch(() => ({}));
-      if (!res.ok) throw new Error(data.message || data.error || "Bulk update failed!");
-      await Swal.fire({ title: "✅ Success", text: data.message || "Bulk update ho gaya!", icon: "success", background: "#0a0a0a", color: "#fff", confirmButtonColor: "#00ffa3", timer: 1500, showConfirmButton: false });
+      await processChunks({ url: `${API}/api/reviews/bulk-status`, method: "PATCH", title: "Bulk Update Running...", makeBody: (chunk) => ({ ids: chunk, status }) });
+      await Swal.fire({ title: "✅ Done", text: `${selectedReviews.length} reviews update ho gaye!`, icon: "success", background: "#0a0a0a", color: "#fff", confirmButtonColor: "#00ffa3", timer: 1600, showConfirmButton: false });
       setSelectedReviews([]);
       fetchReviews();
     } catch (err) {
@@ -135,10 +95,8 @@ export default function UserReview() {
     if (!confirm.isConfirmed) return;
 
     try {
-      const res = await fetch(`${API}/api/reviews/bulk-delete`, { method: "DELETE", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ids: selectedReviews }) });
-      const data = await res.json().catch(() => ({}));
-      if (!res.ok) throw new Error(data.message || data.error || "Bulk delete failed!");
-      await Swal.fire({ title: "🗑️ Deleted", text: data.message || "Selected reviews delete ho gaye!", icon: "success", background: "#0a0a0a", color: "#fff", confirmButtonColor: "#00ffa3", timer: 1500, showConfirmButton: false });
+      await processChunks({ url: `${API}/api/reviews/bulk-delete`, method: "DELETE", title: "Bulk Delete Running...", makeBody: (chunk) => ({ ids: chunk }) });
+      await Swal.fire({ title: "🗑️ Deleted", text: `${selectedReviews.length} reviews delete ho gaye!`, icon: "success", background: "#0a0a0a", color: "#fff", confirmButtonColor: "#00ffa3", timer: 1600, showConfirmButton: false });
       setSelectedReviews([]);
       fetchReviews();
     } catch (err) {
@@ -153,14 +111,58 @@ export default function UserReview() {
     if (!adminReply) return;
 
     try {
-      const res = await fetch(`${API}/api/reviews/bulk-reply`, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ids: selectedReviews, adminReply }) });
-      const data = await res.json().catch(() => ({}));
-      if (!res.ok) throw new Error(data.message || data.error || "Bulk reply failed!");
-      await Swal.fire({ title: "✅ Reply Saved", text: data.message || "Bulk reply save ho gaya!", icon: "success", background: "#0a0a0a", color: "#fff", confirmButtonColor: "#00ffa3", timer: 1500, showConfirmButton: false });
+      await processChunks({ url: `${API}/api/reviews/bulk-reply`, method: "PUT", title: "Bulk Reply Running...", makeBody: (chunk) => ({ ids: chunk, adminReply }) });
+      await Swal.fire({ title: "✅ Reply Saved", text: `${selectedReviews.length} reviews me reply save ho gaya!`, icon: "success", background: "#0a0a0a", color: "#fff", confirmButtonColor: "#00ffa3", timer: 1600, showConfirmButton: false });
       setSelectedReviews([]);
       fetchReviews();
     } catch (err) {
       Swal.fire({ title: "❌ Error", text: err.message || "Bulk reply failed!", icon: "error", background: "#0a0a0a", color: "#fff", confirmButtonColor: "#ef4444" });
+    }
+  };
+
+  const toggleStatus = async (id, currentStatus) => {
+    const nextAction = currentStatus === "approved" ? "Hide" : "Show";
+    const confirm = await Swal.fire({ title: `${nextAction} Review?`, text: `Bhai, is review ko ${nextAction.toLowerCase()} karna hai?`, icon: "question", showCancelButton: true, confirmButtonText: `Yes, ${nextAction}`, cancelButtonText: "Cancel", background: "#0a0a0a", color: "#fff", confirmButtonColor: currentStatus === "approved" ? "#f59e0b" : "#00ffa3", cancelButtonColor: "#334155" });
+    if (!confirm.isConfirmed) return;
+    try {
+      const res = await fetch(`${API}/api/reviews/status/${id}`, { method: "PATCH" });
+      const data = await res.json().catch(() => ({}));
+      if (res.ok) {
+        await Swal.fire({ title: "✅ Updated", text: data.msg || data.message || `Review ${nextAction.toLowerCase()} ho gaya.`, icon: "success", background: "#0a0a0a", color: "#fff", confirmButtonColor: "#00ffa3", timer: 1400, showConfirmButton: false });
+        fetchReviews();
+      }
+    } catch (err) {
+      Swal.fire({ title: "❌ Server Error", text: "Server connection failed!", icon: "error", background: "#0a0a0a", color: "#fff", confirmButtonColor: "#ef4444" });
+    }
+  };
+
+  const deleteReview = async (id) => {
+    const confirm = await Swal.fire({ title: "Delete Review?", text: "Pakka delete karna hai bhai? Ye wapas nahi aayega!", icon: "warning", showCancelButton: true, confirmButtonText: "Delete", cancelButtonText: "Cancel", background: "#0a0a0a", color: "#fff", confirmButtonColor: "#ef4444", cancelButtonColor: "#334155" });
+    if (!confirm.isConfirmed) return;
+    try {
+      const res = await fetch(`${API}/api/reviews/delete/${id}`, { method: "DELETE" });
+      if (res.ok) {
+        await Swal.fire({ title: "🗑️ Deleted", text: "Review delete ho gaya.", icon: "success", background: "#0a0a0a", color: "#fff", confirmButtonColor: "#00ffa3", timer: 1400, showConfirmButton: false });
+        setSelectedReviews((prev) => prev.filter((item) => item !== id));
+        fetchReviews();
+      }
+    } catch (err) {
+      Swal.fire({ title: "❌ Error", text: "Delete failed!", icon: "error", background: "#0a0a0a", color: "#fff", confirmButtonColor: "#ef4444" });
+    }
+  };
+
+  const submitReply = async (id) => {
+    if (!replyText.trim()) return Swal.fire({ title: "⚠️ Empty Reply", text: "Bhai kuch likho to!", icon: "warning", background: "#0a0a0a", color: "#fff", confirmButtonColor: "#f59e0b" });
+    try {
+      const res = await fetch(`${API}/api/reviews/update/${id}`, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ adminReply: replyText.trim() }) });
+      if (res.ok) {
+        await Swal.fire({ title: "✅ Saved", text: "Reply Saved!", icon: "success", background: "#0a0a0a", color: "#fff", confirmButtonColor: "#00ffa3", timer: 1400, showConfirmButton: false });
+        setOpenReply(null);
+        setReplyText("");
+        fetchReviews();
+      }
+    } catch (err) {
+      Swal.fire({ title: "❌ Error", text: "Reply failed!", icon: "error", background: "#0a0a0a", color: "#fff", confirmButtonColor: "#ef4444" });
     }
   };
 
@@ -171,7 +173,6 @@ export default function UserReview() {
         <div className="review-topbar" onClick={(e) => e.stopPropagation()}>
           <div className="review-top-inner">
             <h2 className="review-title">Review Management Panel</h2>
-
             <div className="review-bulk-panel">
               <input type="number" min="1" className="review-bulk-input" value={bulkCount} onChange={(e) => setBulkCount(e.target.value)} placeholder="1000" />
               <button className="review-btn review-btn-bulk-select" onClick={selectFirstNReviews}>
@@ -194,7 +195,6 @@ export default function UserReview() {
               </button>
               <span className="review-bulk-chip">Selected: {selectedReviews.length.toLocaleString("en-IN")}</span>
             </div>
-
             <div className="review-stat-box">
               <small>Total Reviews</small>
               <span>{reviews.length.toLocaleString("en-IN")}</span>
