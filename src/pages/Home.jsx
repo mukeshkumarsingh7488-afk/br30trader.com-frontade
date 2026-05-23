@@ -17,7 +17,6 @@ import TradingJournalSection from "../components/TradingJournalSection";
 import ReviewSection from "../components/ReviewSection";
 import TradingUpdatesSection from "../components/TradingUpdatesSection";
 import CourseHighlightsSection from "../components/CourseHighlightsSection";
-import FooterSection from "../components/FooterSection";
 
 const firebaseConfig = {
   apiKey: "AIzaSyA4wnSAZ3VLlAMyHhPt5WjULihejoKuLoY",
@@ -91,9 +90,7 @@ export default function Home() {
             }
           }
         }
-      } catch (err) {
-        // Local development fallback - error suppressed to keep console clean
-      }
+      } catch (err) {}
     };
 
     initFirebaseFCM();
@@ -115,7 +112,6 @@ export default function Home() {
 
   return (
     <div style={{ width: "100%", background: "#060b13", display: "flex", flexDirection: "column" }}>
-      {/* 🎬 सेक्शन १: आपका लाइव वीडियो और इंट्रो टेक्स्ट ब्लॉक */}
       <div
         style={{
           height: isMobile ? "50vh" : "85vh",
@@ -196,8 +192,6 @@ export default function Home() {
           </a>
         </div>
       </div>
-
-      <FooterSection />
     </div>
   );
 }
