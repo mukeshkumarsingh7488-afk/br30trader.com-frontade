@@ -87,7 +87,11 @@ export default function CoursesSection() {
         <h2>
           🎓 Our <span>Premium Courses</span> 🎓
         </h2>
-        <p>Master the Markets with Professional Strategies</p>
+
+        <p>
+          Join the BR30 Trader ecosystem with <span>Lifetime Course Updates</span>,<span> VIP Community Access</span>, real market experience,
+          <span> Professional Certification</span>, and yearly strategy upgrades based on live market conditions — you're not just buying a course, you're becoming a part of the BR30 family for life. 🚀
+        </p>
       </div>
       <div className="poster-grid">
         {courses.map((course, i) => {
