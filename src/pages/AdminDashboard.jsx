@@ -65,6 +65,9 @@ export default function AdminDashboard() {
   };
 
   const sendBulkMail = async () => {
+    const data = await res.json();
+    console.log("SEND OFFERS STATUS:", res.status);
+    console.log("SEND OFFERS RESPONSE:", data);
     if (!subject || !htmlContent) {
       return Swal.fire({
         title: "⚠️ Missing Field",
