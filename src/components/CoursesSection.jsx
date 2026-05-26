@@ -56,12 +56,40 @@ export default function CoursesSection() {
   const checkout = async (courseId) => {
     const token = localStorage.getItem("token");
     if (!token) return alert("Please login first!");
+
     const ok = await loadRazorpay();
     if (!ok) return alert("Payment system failed to load! Try again later.");
+
     try {
-      const res = await fetch(`${API_URL}/api/payment/order`, { method: "POST", headers: { "Content-Type": "application/json", "x-auth-token": token }, body: JSON.stringify({ courseId, couponCode: applied[courseId] && coupon ? coupon.code : "" }) });
+      const res = await fetch(`${API_URL}/api/payment/order`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "x-auth-token": token },
+        body: JSON.stringify({
+          courseId,
+          couponCode: applied[courseId] && coupon ? coupon.code : "",
+        }),
+      });
+
       const data = await res.json();
       if (!res.ok) throw new Error(data.msg || "Order failed");
+
+      const notifyPaymentFailed = async (reason = "Payment cancelled or failed") => {
+        try {
+          await fetch(`${API_URL}/api/payment/payment-failed`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json", "x-auth-token": token },
+            body: JSON.stringify({
+              courseId,
+              reason,
+              amount: data?.order?.amount ? data.order.amount / 100 : 0,
+              orderId: data?.order?.id || "",
+            }),
+          });
+        } catch (e) {
+          console.log("Payment failure mail API error:", e.message);
+        }
+      };
+
       const rzp = new window.Razorpay({
         key: data.key,
         amount: data.order.amount,
@@ -70,11 +98,33 @@ export default function CoursesSection() {
         description: "VIP Enrollment",
         order_id: data.order.id,
         theme: { color: "#00ff88" },
+
+        modal: {
+          ondismiss: async () => {
+            await notifyPaymentFailed("User closed Razorpay checkout without completing payment");
+          },
+        },
+
         handler: async (response) => {
-          const verify = await fetch(`${API_URL}/api/payment/verify`, { method: "POST", headers: { "Content-Type": "application/json", "x-auth-token": token }, body: JSON.stringify({ ...response, courseId, amount: data.order.amount / 100 }) });
+          const verify = await fetch(`${API_URL}/api/payment/verify`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json", "x-auth-token": token },
+            body: JSON.stringify({
+              ...response,
+              courseId,
+              amount: data.order.amount / 100,
+            }),
+          });
+
           if (verify.ok) alert("Congratulations! Course Unlock ho gaya.");
         },
       });
+
+      rzp.on("payment.failed", async (response) => {
+        await notifyPaymentFailed(response?.error?.description || response?.error?.reason || "Razorpay payment failed");
+        alert("Payment failed. Our support team has been notified.");
+      });
+
       rzp.open();
     } catch (err) {
       alert(err.message);
