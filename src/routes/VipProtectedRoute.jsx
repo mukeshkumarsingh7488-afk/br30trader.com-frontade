@@ -1,9 +1,18 @@
 import { Navigate } from "react-router-dom";
 
-export default function VipProtectedRoute({ children }) {
-  const user = JSON.parse(localStorage.getItem("user"));
+const getStoredUser = () => {
+  try {
+    return JSON.parse(localStorage.getItem("userData")) || JSON.parse(localStorage.getItem("br30_user")) || null;
+  } catch {
+    return null;
+  }
+};
 
-  if (!user || user?.badge !== "vip") {
+export default function VipProtectedRoute({ children }) {
+  const user = getStoredUser();
+  const isVipUser = user?.badge?.toLowerCase() === "vip";
+
+  if (!isVipUser) {
     return <Navigate to="/vip-access" replace />;
   }
 

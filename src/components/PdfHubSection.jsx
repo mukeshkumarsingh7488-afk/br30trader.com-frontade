@@ -38,7 +38,7 @@ export default function PdfHubSection() {
     ["Other Option Strategies", "/other-option-strategies"],
   ];
 
-  const user = JSON.parse(localStorage.getItem("user")) || JSON.parse(localStorage.getItem("br30User")) || null;
+  const user = JSON.parse(localStorage.getItem("userData")) || JSON.parse(localStorage.getItem("br30_user")) || null;
   const isVipUser = user?.badge?.toLowerCase() === "vip";
 
   const handlePdfClick = (e, file) => {
