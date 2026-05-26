@@ -1,0 +1,131 @@
+export default function OptionHedgingStrategies() {
+  return (
+    <>
+      <style>{`*{box-sizing:border-box;}html,body{margin:0;padding:0;background:#060b13;color:#fff;font-family:Arial,sans-serif;line-height:1.7;}body{padding:28px 14px;}.pdf-box{width:100%;max-width:920px;margin:0 auto;background:#0b111e;padding:32px;border-radius:14px;border:1px solid #1e293b;}.pdf-box h1{color:#00ff88;font-size:30px;line-height:1.35;margin:0 0 24px;}.pdf-box h2{color:#00eaff;font-size:24px;line-height:1.35;margin:30px 0 14px;}.pdf-box h3{color:#ffffff;font-size:19px;margin:22px 0 10px;}.pdf-box p,.pdf-box li{color:#d1d5db;font-size:16px;}.pdf-box p{margin:0 0 16px;}.pdf-box ul,.pdf-box ol{padding-left:24px;margin:0 0 18px;}.pdf-box li{margin:6px 0;}.table-wrap{width:100%;overflow-x:auto;margin-top:20px;}.pdf-box table{width:100%;min-width:860px;border-collapse:collapse;}.pdf-box th,.pdf-box td{border:1px solid #334155;padding:12px;text-align:left;vertical-align:top;}.pdf-box th{background:#111827;color:#00ff88;}.pdf-box td{background:#0f172a;color:#d1d5db;}.pdf-box b,.pdf-box strong{color:#fff;font-weight:800;}.note{margin-top:26px;padding:18px;background:#111827;border-left:4px solid #00ff88;border-radius:8px;color:#d1d5db;}@media(max-width:768px){body{padding:16px 10px;}.pdf-box{padding:22px 16px;border-radius:12px;}.pdf-box h1{font-size:26px;}.pdf-box h2{font-size:21px;}.pdf-box h3{font-size:18px;}.pdf-box p,.pdf-box li{font-size:15px;}.pdf-box ul,.pdf-box ol{padding-left:20px;}}@media(max-width:430px){body{padding:10px 8px;}.pdf-box{padding:18px 14px;}.pdf-box h1{font-size:24px;}.pdf-box h2{font-size:20px;}.pdf-box p,.pdf-box li{font-size:14.5px;}}`}</style>
+
+      <div className="pdf-box">
+        <h1>✅ Option Hedging Strategies</h1>
+
+        <p>
+          Option Hedging ka maksad <b>existing positions ka risk kam karna</b> aur market ke adverse moves se protection lena hai. Ye professional traders aur institutions me commonly use hota hai.
+        </p>
+
+        <h2>✅ Basic Concept</h2>
+
+        <ul>
+          <li>Hedging = Risk management technique</li>
+          <li>Objective: Profit ko protect karna ya loss ko minimize karna</li>
+          <li>Instruments: Options (Calls, Puts), Futures</li>
+        </ul>
+
+        <h2>✅ Common Hedging Techniques</h2>
+
+        <h3>1️⃣ Protective Put</h3>
+
+        <ul>
+          <li>Hold underlying stock / asset</li>
+          <li>Buy put option → downside protection</li>
+          <li>Loss limited to premium paid for put</li>
+        </ul>
+
+        <h3>2️⃣ Covered Call</h3>
+
+        <ul>
+          <li>Hold underlying stock</li>
+          <li>Sell call option → extra premium income</li>
+          <li>Upside capped, downside unhedged</li>
+        </ul>
+
+        <h3>3️⃣ Collar Strategy</h3>
+
+        <ul>
+          <li>Hold stock</li>
+          <li>Buy protective put + Sell call</li>
+          <li>Loss limited + Premium partially offsets put cost</li>
+        </ul>
+
+        <h3>4️⃣ Straddle Hedge</h3>
+
+        <ul>
+          <li>Buy call & put at same strike (long straddle)</li>
+          <li>Hedge against volatility in either direction</li>
+          <li>Best for uncertain market events</li>
+        </ul>
+
+        <h3>5️⃣ Spread Strategies</h3>
+
+        <ul>
+          <li>Bull Call Spread → Buy lower strike call, sell higher strike call</li>
+          <li>Bear Put Spread → Buy higher strike put, sell lower strike put</li>
+          <li>Limited risk + limited reward</li>
+        </ul>
+
+        <h2>✅ Notebook Example Table</h2>
+
+        <div className="table-wrap">
+          <table>
+            <tbody>
+              <tr>
+                <th>Hedging Strategy</th>
+                <th>Position Type</th>
+                <th>Objective</th>
+                <th>Key Notes</th>
+              </tr>
+
+              <tr>
+                <td>Protective Put</td>
+                <td>Long Stock + Long Put</td>
+                <td>Downside protection</td>
+                <td>Loss limited, premium paid</td>
+              </tr>
+
+              <tr>
+                <td>Covered Call</td>
+                <td>Long Stock + Short Call</td>
+                <td>Generate income, limited upside</td>
+                <td>Upside capped, risk remains</td>
+              </tr>
+
+              <tr>
+                <td>Collar</td>
+                <td>Long Stock + Put + Call</td>
+                <td>Limited risk + offset cost</td>
+                <td>Requires premium management</td>
+              </tr>
+
+              <tr>
+                <td>Long Straddle</td>
+                <td>Call + Put</td>
+                <td>Hedge against volatility</td>
+                <td>Costly, use near major events</td>
+              </tr>
+
+              <tr>
+                <td>Bull/Bear Spreads</td>
+                <td>Call / Put Spread</td>
+                <td>Limited risk + limited reward</td>
+                <td>Defined risk & reward structure</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div className="note">
+          ✅ Hedging me <b>premium cost</b> aur <b>expiry date</b> consider karo.
+          <br />
+          <br />
+          Volatility ka impact samajhna zaruri hai.
+          <br />
+          <br />
+          Hedging se profit limit ho sakta hai, lekin risk majorly reduce hota hai.
+          <br />
+          <br />
+          Multiple legs ko samajh kar hi trade karo.
+          <br />
+          <br />
+          Hamesha market conditions aur trend check karo before hedging.
+        </div>
+      </div>
+    </>
+  );
+}

@@ -32,6 +32,38 @@ import Br30CourseEdit from "../pages/Br30CourseEdit";
 import Br30UserManagement from "../pages/Br30UserManagement";
 import Br30LoadCourse from "../pages/Br30LoadCourse";
 import Br30BellNotification from "../pages/Br30BellNotification";
+import EMAFVGOptionBuying from "../pages/EMAFVGOptionBuying";
+import EMAFVGOptionSelling from "../pages/EMAFVGOptionSelling";
+import OptionGreeksMastery from "../pages/OptionGreeksMastery";
+import OptionSellingWithHedging from "../pages/OptionSellingWithHedging";
+import RSIDivergenceFullGuide from "../pages/RSIDivergenceFullGuide";
+import OptionsBasicsForBeginners from "../pages/OptionsBasicsForBeginners";
+import TechnicalAnalysisMastery from "../pages/TechnicalAnalysisMastery";
+import CandlestickPatternsGuide from "../pages/CandlestickPatternsGuide";
+import SupportResistanceLevels from "../pages/SupportResistanceLevels";
+import MovingAveragesTradingLogic from "../pages/MovingAveragesTradingLogic";
+import RSIStochasticIndicators from "../pages/RSIStochasticIndicators";
+import FibonacciRetracementStrategy from "../pages/FibonacciRetracementStrategy";
+import BollingerBandsTradingSetup from "../pages/BollingerBandsTradingSetup";
+import VolumeAnalysisTechniques from "../pages/VolumeAnalysisTechniques";
+import MACDIndicatorExplained from "../pages/MACDIndicatorExplained";
+import EMATradingStrategy from "../pages/EMATradingStrategy";
+import PriceActionMastery from "../pages/PriceActionMastery";
+import RiskManagementTechniques from "../pages/RiskManagementTechniques";
+import OptionBuyingGuide from "../pages/OptionBuyingGuide";
+import OptionSellingGuide from "../pages/OptionSellingGuide";
+import IntradayTradingTechniques from "../pages/IntradayTradingTechniques";
+import SwingTradingStrategies from "../pages/SwingTradingStrategies";
+import FairValueGapTrading from "../pages/FairValueGapTrading";
+import ChartPatternsSignals from "../pages/ChartPatternsSignals";
+import TrendAnalysisTechniques from "../pages/TrendAnalysisTechniques";
+import OptionHedgingStrategies from "../pages/OptionHedgingStrategies";
+import ScalpingTechniques from "../pages/ScalpingTechniques";
+import AdvancedOptionsStrategies from "../pages/AdvancedOptionsStrategies";
+import BullishOptionStrategies from "../pages/BullishOptionStrategies";
+import BearishOptionStrategies from "../pages/BearishOptionStrategies";
+import NeutralVolatilityOptionStrategies from "../pages/NeutralVolatilityOptionStrategies";
+import OtherOptionStrategies from "../pages/OtherOptionStrategies";
 
 export default function AppRoutes() {
   return (
@@ -68,6 +100,38 @@ export default function AppRoutes() {
       <Route path="/admin/users" element={<Br30UserManagement />} />
       <Route path="/admin/load-course" element={<Br30LoadCourse />} />
       <Route path="/admin/bell-notification" element={<Br30BellNotification />} />
+      <Route path="/ema-fvg-option-buying" element={<EMAFVGOptionBuying />} />
+      <Route path="/ema-fvg-option-selling" element={<EMAFVGOptionSelling />} />
+      <Route path="/option-greeks-mastery" element={<OptionGreeksMastery />} />
+      <Route path="/option-selling-with-hedging" element={<OptionSellingWithHedging />} />
+      <Route path="/rsi-divergence-full-guide" element={<RSIDivergenceFullGuide />} />
+      <Route path="/options-basics-for-beginners" element={<OptionsBasicsForBeginners />} />
+      <Route path="/technical-analysis-mastery" element={<TechnicalAnalysisMastery />} />
+      <Route path="/candlestick-patterns-guide" element={<CandlestickPatternsGuide />} />
+      <Route path="/support-resistance-levels" element={<SupportResistanceLevels />} />
+      <Route path="/moving-averages-trading-logic" element={<MovingAveragesTradingLogic />} />
+      <Route path="/rsi-stochastic-indicators" element={<RSIStochasticIndicators />} />
+      <Route path="/fibonacci-retracement-strategy" element={<FibonacciRetracementStrategy />} />
+      <Route path="/bollinger-bands-trading-setup" element={<BollingerBandsTradingSetup />} />
+      <Route path="/volume-analysis-techniques" element={<VolumeAnalysisTechniques />} />
+      <Route path="/macd-indicator-explained" element={<MACDIndicatorExplained />} />
+      <Route path="/ema-trading-strategy" element={<EMATradingStrategy />} />
+      <Route path="/price-action-mastery" element={<PriceActionMastery />} />
+      <Route path="/risk-management-techniques" element={<RiskManagementTechniques />} />
+      <Route path="/option-buying-guide" element={<OptionBuyingGuide />} />
+      <Route path="/option-selling-guide" element={<OptionSellingGuide />} />
+      <Route path="/intraday-trading-techniques" element={<IntradayTradingTechniques />} />
+      <Route path="/swing-trading-strategies" element={<SwingTradingStrategies />} />
+      <Route path="/fair-value-gap-trading" element={<FairValueGapTrading />} />
+      <Route path="/chart-patterns-signals" element={<ChartPatternsSignals />} />
+      <Route path="/trend-analysis-techniques" element={<TrendAnalysisTechniques />} />
+      <Route path="/option-hedging-strategies" element={<OptionHedgingStrategies />} />
+      <Route path="/scalping-techniques" element={<ScalpingTechniques />} />
+      <Route path="/advanced-options-strategies" element={<AdvancedOptionsStrategies />} />
+      <Route path="/bullish-option-strategies" element={<BullishOptionStrategies />} />
+      <Route path="/bearish-option-strategies" element={<BearishOptionStrategies />} />
+      <Route path="/neutral-volatility-option-strategies" element={<NeutralVolatilityOptionStrategies />} />
+      <Route path="/other-option-strategies" element={<OtherOptionStrategies />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );

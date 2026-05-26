@@ -1,123 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <url>
-    <loc>https://my-frontend-eight-roan.vercel.app/</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
+<url><loc>https://my-frontend-eight-roan.vercel.app/</loc><lastmod>2026-05-21</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
 
-  <url>
-    <loc>https://my-frontend-eight-roan.vercel.app/about</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
+<url><loc>https://my-frontend-eight-roan.vercel.app/about</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
 
-  <url>
-    <loc>https://my-frontend-eight-roan.vercel.app/aboutus</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+<url><loc>https://my-frontend-eight-roan.vercel.app/aboutus</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
-  <url>
-    <loc>https://my-frontend-eight-roan.vercel.app/basic-to-advance</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
+<url><loc>https://my-frontend-eight-roan.vercel.app/basic-to-advance</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
 
-  <url>
-    <loc>https://my-frontend-eight-roan.vercel.app/vip-access</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
+<url><loc>https://my-frontend-eight-roan.vercel.app/vip-access</loc><lastmod>2026-05-21</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
 
-  <url>
-    <loc>https://my-frontend-eight-roan.vercel.app/lifetime-access</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
+<url><loc>https://my-frontend-eight-roan.vercel.app/lifetime-access</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
 
-  <url>
-    <loc>https://my-frontend-eight-roan.vercel.app/live-market-analysis</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
+<url><loc>https://my-frontend-eight-roan.vercel.app/live-market-analysis</loc><lastmod>2026-05-21</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
 
-  <url>
-    <loc>https://my-frontend-eight-roan.vercel.app/risk-management</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+<url><loc>https://my-frontend-eight-roan.vercel.app/risk-management</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
-  <url>
-    <loc>https://my-frontend-eight-roan.vercel.app/strategies</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+<url><loc>https://my-frontend-eight-roan.vercel.app/strategies</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
-  <url>
-    <loc>https://my-frontend-eight-roan.vercel.app/service</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+<url><loc>https://my-frontend-eight-roan.vercel.app/service</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
-  <url>
-    <loc>https://my-frontend-eight-roan.vercel.app/support-community</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+<url><loc>https://my-frontend-eight-roan.vercel.app/support-community</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
-  <url>
-    <loc>https://my-frontend-eight-roan.vercel.app/contact</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+<url><loc>https://my-frontend-eight-roan.vercel.app/contact</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
-  <url>
-    <loc>https://my-frontend-eight-roan.vercel.app/verify</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+<url><loc>https://my-frontend-eight-roan.vercel.app/verify</loc><lastmod>2026-05-21</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 
-  <url>
-    <loc>https://my-frontend-eight-roan.vercel.app/disclaimer</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
+<url><loc>https://my-frontend-eight-roan.vercel.app/disclaimer</loc><lastmod>2026-05-21</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
 
-  <url>
-    <loc>https://my-frontend-eight-roan.vercel.app/privacy</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
+<url><loc>https://my-frontend-eight-roan.vercel.app/privacy</loc><lastmod>2026-05-21</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
 
-  <url>
-    <loc>https://my-frontend-eight-roan.vercel.app/terms</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
+<url><loc>https://my-frontend-eight-roan.vercel.app/terms</loc><lastmod>2026-05-21</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
 
-  <url>
-    <loc>https://my-frontend-eight-roan.vercel.app/refund</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
+<url><loc>https://my-frontend-eight-roan.vercel.app/refund</loc><lastmod>2026-05-21</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+
+<url><loc>https://my-frontend-eight-roan.vercel.app/ema-fvg-option-buying</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+
+<url><loc>https://my-frontend-eight-roan.vercel.app/ema-fvg-option-selling</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+
+<url><loc>https://my-frontend-eight-roan.vercel.app/option-greeks-mastery</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+
+<url><loc>https://my-frontend-eight-roan.vercel.app/option-selling-with-hedging</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+
+<url><loc>https://my-frontend-eight-roan.vercel.app/rsi-divergence-full-guide</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+
+<url><loc>https://my-frontend-eight-roan.vercel.app/options-basics-for-beginners</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+
+<url><loc>https://my-frontend-eight-roan.vercel.app/technical-analysis-mastery</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+
+<url><loc>https://my-frontend-eight-roan.vercel.app/candlestick-patterns-guide</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+
+<url><loc>https://my-frontend-eight-roan.vercel.app/support-resistance-levels</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+
+<url><loc>https://my-frontend-eight-roan.vercel.app/moving-averages-trading-logic</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+
+<url><loc>https://my-frontend-eight-roan.vercel.app/rsi-stochastic-indicators</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+
+<url><loc>https://my-frontend-eight-roan.vercel.app/fibonacci-retracement-strategy</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+
+<url><loc>https://my-frontend-eight-roan.vercel.app/bollinger-bands-trading-setup</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+
+<url><loc>https://my-frontend-eight-roan.vercel.app/volume-analysis-techniques</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+
+<url><loc>https://my-frontend-eight-roan.vercel.app/macd-indicator-explained</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+
+<url><loc>https://my-frontend-eight-roan.vercel.app/ema-trading-strategy</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+
+<url><loc>https://my-frontend-eight-roan.vercel.app/price-action-mastery</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+
+<url><loc>https://my-frontend-eight-roan.vercel.app/risk-management-techniques</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+
+<url><loc>https://my-frontend-eight-roan.vercel.app/option-buying-guide</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+
+<url><loc>https://my-frontend-eight-roan.vercel.app/option-selling-guide</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+
+<url><loc>https://my-frontend-eight-roan.vercel.app/intraday-trading-techniques</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+
+<url><loc>https://my-frontend-eight-roan.vercel.app/swing-trading-strategies</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+
+<url><loc>https://my-frontend-eight-roan.vercel.app/fair-value-gap-trading</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+
+<url><loc>https://my-frontend-eight-roan.vercel.app/chart-patterns-signals</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+
+<url><loc>https://my-frontend-eight-roan.vercel.app/trend-analysis-techniques</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+
+<url><loc>https://my-frontend-eight-roan.vercel.app/option-hedging-strategies</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+
+<url><loc>https://my-frontend-eight-roan.vercel.app/scalping-techniques</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+
+<url><loc>https://my-frontend-eight-roan.vercel.app/advanced-options-strategies</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+
+<url><loc>https://my-frontend-eight-roan.vercel.app/bullish-option-strategies</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+
+<url><loc>https://my-frontend-eight-roan.vercel.app/bearish-option-strategies</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+
+<url><loc>https://my-frontend-eight-roan.vercel.app/neutral-volatility-option-strategies</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+
+<url><loc>https://my-frontend-eight-roan.vercel.app/other-option-strategies</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
 
 </urlset>

@@ -1,0 +1,144 @@
+export default function TrendAnalysisTechniques() {
+  return (
+    <>
+      <style>{`*{box-sizing:border-box;}html,body{margin:0;padding:0;background:#060b13;color:#fff;font-family:Arial,sans-serif;line-height:1.7;}body{padding:28px 14px;}.pdf-box{width:100%;max-width:920px;margin:0 auto;background:#0b111e;padding:32px;border-radius:14px;border:1px solid #1e293b;}.pdf-box h1{color:#00ff88;font-size:30px;line-height:1.35;margin:0 0 24px;}.pdf-box h2{color:#00eaff;font-size:24px;line-height:1.35;margin:30px 0 14px;}.pdf-box h3{color:#ffffff;font-size:19px;margin:22px 0 10px;}.pdf-box p,.pdf-box li{color:#d1d5db;font-size:16px;}.pdf-box p{margin:0 0 16px;}.pdf-box ul,.pdf-box ol{padding-left:24px;margin:0 0 18px;}.pdf-box li{margin:6px 0;}.table-wrap{width:100%;overflow-x:auto;margin-top:20px;}.pdf-box table{width:100%;min-width:860px;border-collapse:collapse;}.pdf-box th,.pdf-box td{border:1px solid #334155;padding:12px;text-align:left;vertical-align:top;}.pdf-box th{background:#111827;color:#00ff88;}.pdf-box td{background:#0f172a;color:#d1d5db;}.pdf-box b,.pdf-box strong{color:#fff;font-weight:800;}.note{margin-top:26px;padding:18px;background:#111827;border-left:4px solid #00ff88;border-radius:8px;color:#d1d5db;}@media(max-width:768px){body{padding:16px 10px;}.pdf-box{padding:22px 16px;border-radius:12px;}.pdf-box h1{font-size:26px;}.pdf-box h2{font-size:21px;}.pdf-box h3{font-size:18px;}.pdf-box p,.pdf-box li{font-size:15px;}.pdf-box ul,.pdf-box ol{padding-left:20px;}}@media(max-width:430px){body{padding:10px 8px;}.pdf-box{padding:18px 14px;}.pdf-box h1{font-size:24px;}.pdf-box h2{font-size:20px;}.pdf-box p,.pdf-box li{font-size:14.5px;}}`}</style>
+
+      <div className="pdf-box">
+        <h1>✅ Trend Analysis Techniques</h1>
+
+        <p>
+          Trend analysis trading ka core concept hai. Market me <b>trend follow karna aur trend reversal detect karna</b> successful trading ke liye zaruri hai.
+        </p>
+
+        <h2>✅ Basic Concept</h2>
+
+        <ul>
+          <li>Trend = Market ka direction (Uptrend / Downtrend / Sideways)</li>
+          <li>
+            Trend identify karke <b>entry aur exit points</b> optimize kiye ja sakte hain
+          </li>
+          <li>Timeframes: Multiple timeframes jaise 5 min, 15 min, 1H, Daily me trend analyze karo</li>
+        </ul>
+
+        <h2>✅ Key Trend Analysis Techniques</h2>
+
+        <h3>1️⃣ Moving Averages (MA)</h3>
+
+        <ul>
+          <li>Simple Moving Average (SMA), Exponential Moving Average (EMA)</li>
+          <li>Trend direction:</li>
+          <li>Price &gt; MA → Uptrend</li>
+          <li>Price &lt; MA → Downtrend</li>
+          <li>Crossovers:</li>
+          <li>Bullish crossover → Buy signal</li>
+          <li>Bearish crossover → Sell signal</li>
+        </ul>
+
+        <h3>2️⃣ Trendlines</h3>
+
+        <ul>
+          <li>Connect highs and lows to identify trend</li>
+          <li>Uptrend → Higher lows</li>
+          <li>Downtrend → Lower highs</li>
+          <li>Break of trendline → Potential reversal</li>
+        </ul>
+
+        <h3>3️⃣ Support & Resistance</h3>
+
+        <ul>
+          <li>Trend direction confirm karne ke liye levels use karo</li>
+          <li>Price breakout above resistance → Uptrend continuation</li>
+          <li>Price breakdown below support → Downtrend continuation</li>
+        </ul>
+
+        <h3>4️⃣ Price Action Patterns</h3>
+
+        <ul>
+          <li>Higher Highs (HH) aur Higher Lows (HL) → Uptrend</li>
+          <li>Lower Highs (LH) aur Lower Lows (LL) → Downtrend</li>
+          <li>Consolidation → Sideways trend</li>
+        </ul>
+
+        <h3>5️⃣ Indicators for Trend Confirmation</h3>
+
+        <ul>
+          <li>MACD → Trend direction aur strength</li>
+          <li>ADX → Trend ki strength measure</li>
+          <li>RSI → Overbought / Oversold confirmation</li>
+        </ul>
+
+        <h2>✅ Notebook Example Table</h2>
+
+        <div className="table-wrap">
+          <table>
+            <tbody>
+              <tr>
+                <th>Technique</th>
+                <th>Trend Type</th>
+                <th>Entry Condition</th>
+                <th>Exit / Target</th>
+                <th>Tools / Indicators</th>
+              </tr>
+
+              <tr>
+                <td>Moving Averages</td>
+                <td>Uptrend / Downtrend</td>
+                <td>Price above/below MA, crossover</td>
+                <td>Next MA level or swing target</td>
+                <td>SMA, EMA</td>
+              </tr>
+
+              <tr>
+                <td>Trendlines</td>
+                <td>Uptrend / Downtrend</td>
+                <td>Break of trendline</td>
+                <td>Next swing high/low</td>
+                <td>Trendline drawing</td>
+              </tr>
+
+              <tr>
+                <td>Support & Resistance</td>
+                <td>Continuation</td>
+                <td>Breakout above resistance / support</td>
+                <td>Next level</td>
+                <td>Price charts, Volume</td>
+              </tr>
+
+              <tr>
+                <td>Price Action Patterns</td>
+                <td>Uptrend / Downtrend</td>
+                <td>HH & HL / LH & LL</td>
+                <td>Swing targets</td>
+                <td>Candlestick observation</td>
+              </tr>
+
+              <tr>
+                <td>Indicators</td>
+                <td>Trend strength</td>
+                <td>MACD, ADX confirmation</td>
+                <td>Trend reversal / exit</td>
+                <td>MACD, ADX, RSI</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div className="note">
+          ✅ Hamesha <b>multi-timeframe analysis</b> karo.
+          <br />
+          <br />
+          Trend ki strength aur volume ko consider karo.
+          <br />
+          <br />
+          Stop loss aur risk management mandatory hai.
+          <br />
+          <br />
+          Trend ke saath trade karna hamesha zyada safe hota hai.
+          <br />
+          <br />
+          Market me sideways phase me chhoti trades ya wait karo.
+        </div>
+      </div>
+    </>
+  );
+}
