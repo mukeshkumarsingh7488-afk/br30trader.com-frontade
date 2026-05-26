@@ -55,9 +55,9 @@ export default function CoursesSection() {
 
   const checkout = async (courseId) => {
     const token = localStorage.getItem("token");
-    if (!token) return alert("Bhai, pehle login kar lo!");
+    if (!token) return alert("Please login first!");
     const ok = await loadRazorpay();
-    if (!ok) return alert("Payment system load nahi hua.");
+    if (!ok) return alert("Payment system failed to load! Try again later.");
     try {
       const res = await fetch(`${API_URL}/api/payment/order`, { method: "POST", headers: { "Content-Type": "application/json", "x-auth-token": token }, body: JSON.stringify({ courseId, couponCode: applied[courseId] && coupon ? coupon.code : "" }) });
       const data = await res.json();
