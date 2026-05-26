@@ -66,25 +66,6 @@ import BearishOptionStrategies from "../pages/BearishOptionStrategies";
 import NeutralVolatilityOptionStrategies from "../pages/NeutralVolatilityOptionStrategies";
 import OtherOptionStrategies from "../pages/OtherOptionStrategies";
 
-const getStoredUser = () => {
-  try {
-    return JSON.parse(localStorage.getItem("user")) || JSON.parse(localStorage.getItem("br30User")) || null;
-  } catch {
-    return null;
-  }
-};
-
-function VipProtectedRoute({ children }) {
-  const user = getStoredUser();
-  const isVipUser = user?.badge?.toLowerCase() === "vip";
-
-  if (!isVipUser) {
-    return <Navigate to="/vip-access" replace />;
-  }
-
-  return children;
-}
-
 export default function AppRoutes() {
   return (
     <Routes>
