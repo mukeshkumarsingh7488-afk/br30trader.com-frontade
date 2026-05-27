@@ -80,7 +80,7 @@ export default function Home() {
               const storedUser = localStorage.getItem("br30_user");
               if (storedUser) {
                 const userData = JSON.parse(storedUser);
-                const API_URL = import.meta.env.VITE_API_URL || "https://onrender.com";
+                const API_URL = import.meta.env.VITE_API_URL || "https://my-backend-1-avpd.onrender.com";
                 await axios.post(`${API_URL}/api/save-fcm-token`, {
                   userId: userData._id,
                   token: fcmToken,
