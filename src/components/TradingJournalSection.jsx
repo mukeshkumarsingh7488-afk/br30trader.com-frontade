@@ -9,7 +9,7 @@ export default function TradingJournalSection() {
   const [trades, setTrades] = useState([]);
   const [filterDate, setFilterDate] = useState("");
 
-  const apiBase = window.API_BASE_URL || import.meta.env.VITE_API_BASE_URL;
+  const apiBase = window.API_BASE_URL || import.meta.env.VITE_API_BASE_URL || "https://my-backend-1-avpd.onrender.com";
 
   const filteredTrades = useMemo(() => {
     if (!filterDate) return trades;
