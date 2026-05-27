@@ -139,8 +139,7 @@ export default function CoursesSection() {
         </h2>
 
         <p>
-          Join the BR30 Trader ecosystem with <span>Lifetime Course Updates</span>,<span> VIP Community Access</span>, real market experience,
-          <span> Professional Certification</span>, and yearly strategy upgrades based on live market conditions — you're not just buying a course, you're becoming a part of the BR30 family for life. 🚀
+          Join the BR30 Trader ecosystem with <span>Lifetime Course Updates</span>,<span> VIP Community Access</span>, premium <span>VIP PDF Study Materials</span>, real market experience, <span> Professional Certification</span>, structured trading education, and yearly strategy upgrades based on live market conditions — you're not just buying a course, you're becoming a part of the BR30 family for life. 🚀
         </p>
       </div>
       <div className="poster-grid">

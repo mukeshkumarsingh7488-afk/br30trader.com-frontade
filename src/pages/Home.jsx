@@ -20,9 +20,9 @@ import CourseHighlightsSection from "../components/CourseHighlightsSection";
 
 const firebaseConfig = {
   apiKey: "AIzaSyA4wnSAZ3VLlAMyHhPt5WjULihejoKuLoY",
-  authDomain: "://firebaseapp.com",
-  projectId: "br30Trader",
-  storageBucket: "br30Trader.firebasestorage.app",
+  authDomain: "br30trader.firebaseapp.com",
+  projectId: "br30trader",
+  storageBucket: "br30trader.firebasestorage.app",
   messagingSenderId: "32865565434",
   appId: "1:32865565434:web:4d620d3cb41a19c5582743",
 };
