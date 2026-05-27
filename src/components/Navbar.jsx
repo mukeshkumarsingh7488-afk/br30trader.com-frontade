@@ -15,6 +15,7 @@ export default function Navbar() {
   const notifRef = useRef(null);
 
   const storedUser = JSON.parse(localStorage.getItem("br30_user") || localStorage.getItem("userData") || "null");
+  const userRole = localStorage.getItem("role") || storedUser?.role || "";
   const userFirstName = user?.name?.split(" ")[0] || storedUser?.name?.split(" ")[0] || null;
 
   const [marketTimes, setMarketTimes] = useState({
@@ -246,6 +247,12 @@ export default function Navbar() {
                 <a href="https://br-30-kart.vercel.app/" target="_blank" rel="noopener noreferrer">
                   🌐 BR30 Kart
                 </a>
+
+                {userRole.toLowerCase() === "admin" && (
+                  <Link to="/admin" onClick={() => setActiveMenu(null)}>
+                    👑 Admin Dashboard
+                  </Link>
+                )}
 
                 {userFirstName && (
                   <>

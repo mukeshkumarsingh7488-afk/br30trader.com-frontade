@@ -55,7 +55,19 @@ export default function TradingJournalSection() {
       const res = await fetch(`${apiBase}/api/trades/add`, {
         method: "POST",
         headers: { "Content-Type": "application/json", "x-auth-token": token },
-        body: JSON.stringify({ name: tradeName.trim(), type: tradeType, status, pnl: amount, note: note.trim(), brokerage: 45 }),
+        body: JSON.stringify({
+          tradeName: tradeName.trim(),
+          name: tradeName.trim(),
+          action: tradeType,
+          type: tradeType,
+          result: status,
+          status,
+          amount,
+          pnl: amount,
+          lesson: note.trim(),
+          note: note.trim(),
+          brokerage: 45,
+        }),
       });
 
       const data = await res.json().catch(() => ({}));
@@ -69,10 +81,38 @@ export default function TradingJournalSection() {
         setNote("");
         fetchUserTrades();
       } else {
-        alert("❌ Error: " + (data.msg || "Trade not saved"));
+        alert("❌ Error: " + (data.msg || data.message || data.error || JSON.stringify(data) || "Trade not saved"));
+        console.log("TRADE SAVE ERROR:", data);
       }
     } catch (err) {
       console.error("Backend Connection Error:", err);
+      alert("❌ Backend connection error");
+    }
+  };
+
+  const deleteTrade = async (id) => {
+    const token = localStorage.getItem("token");
+
+    if (!window.confirm("Delete this trade?")) return;
+
+    try {
+      const res = await fetch(`${apiBase}/api/trades/${id}`, {
+        method: "DELETE",
+        headers: {
+          "x-auth-token": token,
+        },
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        alert("✅ Trade deleted");
+        fetchUserTrades();
+      } else {
+        alert(data.msg || "Delete failed");
+      }
+    } catch (err) {
+      console.error(err);
       alert("❌ Backend connection error");
     }
   };
@@ -155,6 +195,9 @@ export default function TradingJournalSection() {
                   <strong className={t.status === "Loss" ? "loss" : "profit"}>
                     {t.status === "Loss" ? "-" : "+"}₹{Number(t.pnl || 0).toLocaleString("en-IN")}
                   </strong>
+                  <button className="delete-btn" onClick={() => deleteTrade(t._id)}>
+                    🗑️
+                  </button>
                 </div>
               ))
             )}
@@ -188,6 +231,8 @@ export default function TradingJournalSection() {
 .trade-item b{color:#fff;display:block}.trade-item span{color:#9ca3af;font-size:12px}.profit{color:#00ff95}.loss{color:#ef4444}
 @media(max-width:1000px){.journal-container{grid-template-columns:1fr}.analytics-row{grid-template-columns:1fr}}
 @media(max-width:600px){.journal-section{padding:60px 18px}.journal-title{font-size:32px}.journal-form,.journal-history{padding:18px}.history-top-bar{flex-direction:column;align-items:flex-start}.date-filter-group{width:100%}}
+.delete-btn{background:#ef4444;border:none;color:#fff;width:34px;height:34px;border-radius:8px;cursor:pointer;font-size:14px;font-weight:700}
+.delete-btn:hover{opacity:.85}
       `}</style>
     </section>
   );
