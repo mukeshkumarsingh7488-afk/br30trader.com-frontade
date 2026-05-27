@@ -76,17 +76,26 @@ export default function Home() {
 
           if (fcmToken) {
             const oldToken = localStorage.getItem("last_fcm_token");
+
             if (oldToken !== fcmToken) {
-              const storedUser = localStorage.getItem("br30_user");
-              if (storedUser) {
-                const userData = JSON.parse(storedUser);
-                const API_URL = import.meta.env.VITE_API_URL || "https://my-backend-1-avpd.onrender.com";
-                await axios.post(`${API_URL}/api/save-fcm-token`, {
-                  userId: userData._id,
-                  token: fcmToken,
-                });
-                localStorage.setItem("last_fcm_token", fcmToken);
-              }
+              const storedUser = localStorage.getItem("br30_user") || localStorage.getItem("userData");
+
+              if (!storedUser) return;
+
+              const userData = JSON.parse(storedUser);
+              const userId = userData?._id || userData?.id;
+
+              if (!userId) return;
+
+              const API_URL = import.meta.env.VITE_API_URL || "https://my-backend-1-avpd.onrender.com";
+
+              await axios.post(`${API_URL}/api/save-fcm-token`, {
+                userId,
+                token: fcmToken,
+                fcmToken,
+              });
+
+              localStorage.setItem("last_fcm_token", fcmToken);
             }
           }
         }
