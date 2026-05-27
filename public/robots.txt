@@ -22,6 +22,8 @@ Disallow: /user-review
 
 # Public Pages
 Allow: /
+Allow: /robots.txt
+Allow: /sitemap.xml
 Allow: /about
 Allow: /aboutus
 Allow: /verify
