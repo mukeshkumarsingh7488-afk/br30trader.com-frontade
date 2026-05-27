@@ -44,17 +44,23 @@ export default function TradingJournalSection() {
 
   const saveTrade = async (e) => {
     e.preventDefault();
+    console.log("🔥 SAVE BUTTON CLICKED");
 
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("br30_token") || localStorage.getItem("token");
     const amount = Number(pnl);
 
-    if (!token) return alert("⚠️ Please Login first to save trades!");
+    if (!token) return alert("⚠️ Please login first to save trades!");
+    if (!apiBase) return alert("❌ API URL missing!");
     if (!tradeName.trim() || !amount || amount <= 0) return alert("⚠️ Please enter a valid name and amount.");
 
     try {
       const res = await fetch(`${apiBase}/api/trades/add`, {
         method: "POST",
-        headers: { "Content-Type": "application/json", "x-auth-token": token },
+        headers: {
+          "Content-Type": "application/json",
+          "x-auth-token": token,
+          Authorization: `Bearer ${token}`,
+        },
         body: JSON.stringify({
           tradeName: tradeName.trim(),
           name: tradeName.trim(),
@@ -70,7 +76,17 @@ export default function TradingJournalSection() {
         }),
       });
 
-      const data = await res.json().catch(() => ({}));
+      const raw = await res.text();
+
+      let data = {};
+      try {
+        data = raw ? JSON.parse(raw) : {};
+      } catch {
+        data = { msg: raw };
+      }
+
+      console.log("SAVE TRADE STATUS:", res.status);
+      console.log("SAVE TRADE RESPONSE:", data);
 
       if (res.ok) {
         alert(`✅ Saved: ${tradeName}`);
@@ -81,8 +97,7 @@ export default function TradingJournalSection() {
         setNote("");
         fetchUserTrades();
       } else {
-        alert("❌ Error: " + (data.msg || data.message || JSON.stringify(data.error) || "Trade not saved"));
-        console.log("TRADE SAVE ERROR:", data);
+        alert("❌ Error: " + (data.msg || data.message || data.error || "Trade not saved"));
       }
     } catch (err) {
       console.error("Backend Connection Error:", err);
@@ -164,7 +179,7 @@ export default function TradingJournalSection() {
           <label>Trade Lesson</label>
           <textarea placeholder="What did you learn Today?" value={note} onChange={(e) => setNote(e.target.value)} />
 
-          <button className="save-btn" type="submit">
+          <button className="save-btn" type="submit" onClick={() => console.log("🟢 BUTTON CLICK")}>
             Save Trade 💾
           </button>
         </form>
