@@ -249,7 +249,7 @@ export default function Navbar() {
                 </a>
 
                 {userRole.toLowerCase() === "admin" && (
-                  <Link to="/admin" onClick={() => setActiveMenu(null)}>
+                  <Link to="/admin" target="_blank" rel="noopener noreferrer" onClick={() => setActiveMenu(null)}>
                     👑 Admin Dashboard
                   </Link>
                 )}

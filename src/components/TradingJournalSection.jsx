@@ -81,7 +81,7 @@ export default function TradingJournalSection() {
         setNote("");
         fetchUserTrades();
       } else {
-        alert("❌ Error: " + (data.msg || data.message || data.error || JSON.stringify(data) || "Trade not saved"));
+        alert("❌ Error: " + (data.msg || data.message || JSON.stringify(data.error) || "Trade not saved"));
         console.log("TRADE SAVE ERROR:", data);
       }
     } catch (err) {
