@@ -199,7 +199,7 @@ export default function CoursesSection() {
         .price{color:#fff;font-size:22px;font-weight:900;margin:0 0 18px}
         .price span{text-decoration:line-through;color:#94a3b8;font-size:14px;margin-right:8px}
         .price b{color:#4ade80;font-size:22px}
-        .card-tag{position:absolute;top:15px;right:18px;background:#00ff88;color:#000;padding:8px 14px;border-radius:20px;font-size:12px;font-weight:900;z-index:3}
+.poster-card{position:relative;background:#020202;border-radius:18px;padding:40px 24px 26px;border:1px solid rgba(0,255,136,.08);box-shadow:0 0 30px rgba(0,0,0,.8);text-align:center;overflow:visible}
         .card-tag.gold{background:#fbbf24}
         .coupon-display-box{display:flex;flex-direction:column;align-items:center;justify-content:center;margin:15px 0;border:1px dashed rgba(160,32,240,.5);padding:12px;border-radius:12px;background:rgba(160,32,240,.05)}
         .coupon-display-box p{color:#4ade80;font-size:11px;margin:0;text-transform:uppercase;letter-spacing:1px;font-weight:700}
