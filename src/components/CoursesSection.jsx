@@ -196,7 +196,7 @@ export default function CoursesSection() {
         .poster-card:hover{transform:translateY(-4px);box-shadow:0 0 26px rgba(0,255,136,.18)}
         .course-img{width:100%;height:185px;object-fit:cover;border-radius:12px;display:block;margin-bottom:18px}
         .course-title{color:#00ff88;font-size:21px;font-weight:900;margin:0 0 10px}
-        .price{color:#fff;font-size:22px;font-weight:900;margin:0 0 18px}
+        .price{color:#fff;font-size:10px;font-weight:900;margin:0 0 18px}
         .price span{text-decoration:line-through;color:#94a3b8;font-size:14px;margin-right:8px}
         .price b{color:#4ade80;font-size:22px}
         .card-tag{position:absolute;top:21px;right:18px;background:#00ff88;color:#000;padding:8px 14px;border-radius:20px;font-size:12px;font-weight:900;z-index:3}
