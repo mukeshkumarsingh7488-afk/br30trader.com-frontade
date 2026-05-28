@@ -104,7 +104,7 @@ export default function FooterSection() {
           <div className="footer-box contact-details">
             <h3>Get In Touch</h3>
 
-            <a className="footer-mail-link" href="mailto:support.br30trader@gmail.com?subject=Web%20Service%20Inquiry&body=Hello%20BR30%20Trader%20Team%2C%0A%0AMujhe%20aapki%20services%20ke%20baare%20me%20details%20chahiye.%0A%0AThanks">
+            <a className="footer-mail-link" href="https://mail.google.com/mail/?view=cm&fs=1&to=support.br30trader@gmail.com&su=Web%20Service%20Inquiry&body=Hello%20BR30%20Trader%20Team,%0A%0AMujhe%20aapki%20services%20ke%20baare%20me%20details%20chahiye.%0A%0AThanks" target="_blank" rel="noopener noreferrer">
               support.br30trader@gmail.com
             </a>
 

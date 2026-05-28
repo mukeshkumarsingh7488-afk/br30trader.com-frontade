@@ -244,6 +244,7 @@ export default function TradingJournalSection() {
 .empty-history{color:#9ca3af;text-align:center;margin-top:60px}
 .trade-item{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#07110e;border:1px solid rgba(0,255,149,.2);border-radius:10px;padding:12px;margin-bottom:10px}
 .trade-item b{color:#fff;display:block}.trade-item span{color:#9ca3af;font-size:12px}.profit{color:#00ff95}.loss{color:#ef4444}
+.date-filter-group input::-webkit-calendar-picker-indicator{filter:invert(1) brightness(3) drop-shadow(0 0 2px #00ff95);cursor:pointer;}
 @media(max-width:1000px){.journal-container{grid-template-columns:1fr}.analytics-row{grid-template-columns:1fr}}
 @media(max-width:600px){.journal-section{padding:60px 18px}.journal-title{font-size:32px}.journal-form,.journal-history{padding:18px}.history-top-bar{flex-direction:column;align-items:flex-start}.date-filter-group{width:100%}}
 .delete-btn{background:#ef4444;border:none;color:#fff;width:34px;height:34px;border-radius:8px;cursor:pointer;font-size:14px;font-weight:700}
