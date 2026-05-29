@@ -77,7 +77,7 @@ export default function FooterSection() {
                 <i className="fa-brands fa-x-twitter"></i>
               </a>
 
-              <a href="https://www.linkedin.com/in/mukesh-raj-b75a65253?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/mukeshraj-br30/" target="_blank" rel="noopener noreferrer">
                 <i className="fa-brands fa-linkedin"></i>
               </a>
             </div>
