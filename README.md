@@ -308,35 +308,12 @@ Founder — **BR30 Group**
 
 ## 📬 Connect With Me
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Mukesh_Raj-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mukeshraj-br30/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Mukesh_Raj-0A66C2?style=for-the-badge\&logo=linkedin\&logoColor=white)](https://www.linkedin.com/in/mukeshraj-br30/) [![GitHub](https://img.shields.io/badge/GitHub-mukeshkumarsingh7488--afk-181717?style=for-the-badge\&logo=github\&logoColor=white)](https://github.com/mukeshkumarsingh7488-afk) [![Instagram](https://img.shields.io/badge/Instagram-BR30TraderOfficial-E4405F?style=for-the-badge\&logo=instagram\&logoColor=white)](https://www.instagram.com/br30Traderofficial) [![YouTube](https://img.shields.io/badge/YouTube-BR30TraderOfficial-FF0000?style=for-the-badge\&logo=youtube\&logoColor=white)](https://www.youtube.com/@br30traderofficial) [![Telegram](https://img.shields.io/badge/Telegram-BR30_Community-26A5E4?style=for-the-badge\&logo=telegram\&logoColor=white)](https://t.me/+hBAT4kWo63A4ZWY1)
 
-[![GitHub](https://img.shields.io/badge/GitHub-mukeshkumarsingh7488--afk-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/mukeshkumarsingh7488-afk)
+[![WhatsApp](https://img.shields.io/badge/WhatsApp-BR30_Community-128C7E?style=for-the-badge\&logo=whatsapp\&logoColor=white)](https://chat.whatsapp.com/B4t82SWBcgOIZTeQXp1wDI) [![Facebook](https://img.shields.io/badge/Facebook-BR30-1877F2?style=for-the-badge\&logo=facebook\&logoColor=white)](https://www.facebook.com/share/1DDJYGYYDf/) [![X](https://img.shields.io/badge/X-@MukeshKuma48159-000000?style=for-the-badge\&logo=x\&logoColor=white)](https://x.com/MukeshKuma48159) [![Threads](https://img.shields.io/badge/Threads-BR30TraderOfficial-000000?style=for-the-badge\&logo=threads\&logoColor=white)](https://www.threads.com/@br30traderofficial)
 
-[![Instagram](https://img.shields.io/badge/Instagram-BR30TraderOfficial-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/br30Traderofficial)
+[![BR30 Trader](https://img.shields.io/badge/BR30_Trader-Visit_Website-00ff88?style=for-the-badge\&logo=googlechrome\&logoColor=black)](https://my-frontend-eight-roan.vercel.app/) [![BR30 Group](https://img.shields.io/badge/BR30_Group-Visit_Website-0A0A0A?style=for-the-badge\&logo=googlechrome\&logoColor=00FF88)](https://br-30-group-com.vercel.app/) [![BR30 Kart](https://img.shields.io/badge/BR30_Kart-Visit_Website-FF9800?style=for-the-badge\&logo=googlechrome\&logoColor=white)](https://br-30-kart.vercel.app/) [![BR30 Founder](https://img.shields.io/badge/BR30_Founder-Visit_Website-9C27B0?style=for-the-badge\&logo=googlechrome\&logoColor=white)](https://br30-com.vercel.app/) [![BR30 Algo](https://img.shields.io/badge/BR30_Algo-Visit_Website-2196F3?style=for-the-badge\&logo=googlechrome\&logoColor=white)](https://br30algo-com.vercel.app/) [![BR30 Market Scanner](https://img.shields.io/badge/BR30_Market_Scanner-Visit_Website-00E676?style=for-the-badge\&logo=tradingview\&logoColor=black)](https://br30marketscanner-com-frontade.vercel.app/)
 
-[![YouTube](https://img.shields.io/badge/YouTube-BR30TraderOfficial-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@br30traderofficial)
-
-[![Telegram](https://img.shields.io/badge/Telegram-BR30_Community-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/+hBAT4kWo63A4ZWY1)
-
-[![WhatsApp](https://img.shields.io/badge/WhatsApp-BR30_Community-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/B4t82SWBcgOIZTeQXp1wDI)
-
-[![Facebook](https://img.shields.io/badge/Facebook-BR30-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://www.facebook.com/share/1DDJYGYYDf/)
-
-[![X](https://img.shields.io/badge/X-@MukeshKuma48159-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/MukeshKuma48159)
-
-[![Threads](https://img.shields.io/badge/Threads-BR30TraderOfficial-000000?style=for-the-badge&logo=threads&logoColor=white)](https://www.threads.com/@br30traderofficial)
-
-[![BR30 Trader](https://img.shields.io/badge/BR30_Trader-Visit_Website-00ff88?style=for-the-badge&logo=googlechrome&logoColor=black)](https://my-frontend-eight-roan.vercel.app/)
-
-[![BR30 Group](https://img.shields.io/badge/BR30_Group-Visit_Website-00C853?style=for-the-badge&logo=googlechrome&logoColor=white)](https://br-30-group-com.vercel.app/)
-
-[![BR30 Kart](https://img.shields.io/badge/BR30_Kart-Visit_Website-FF9800?style=for-the-badge&logo=googlechrome&logoColor=white)](https://br-30-kart.vercel.app/)
-
-[![BR30 Founder](https://img.shields.io/badge/BR30_Founder-Visit_Website-9C27B0?style=for-the-badge&logo=googlechrome&logoColor=white)](https://br30-com.vercel.app/)
-
-[![BR30 Algo](https://img.shields.io/badge/BR30_Algo-Visit_Website-2196F3?style=for-the-badge&logo=googlechrome&logoColor=white)](https://br30algo-com.vercel.app/)
-
-[![BR30 Market Scanner](https://img.shields.io/badge/BR30_Market_Scanner-Visit_Website-00E676?style=for-the-badge&logo=tradingview&logoColor=black)](https://br30marketscanner-com-frontade.vercel.app/)
 
 ---
 
