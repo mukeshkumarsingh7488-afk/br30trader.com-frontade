@@ -65,9 +65,6 @@ export default function AdminDashboard() {
   };
 
   const sendBulkMail = async () => {
-    const data = await res.json();
-    console.log("SEND OFFERS STATUS:", res.status);
-    console.log("SEND OFFERS RESPONSE:", data);
     if (!subject || !htmlContent) {
       return Swal.fire({
         title: "⚠️ Missing Field",
@@ -97,6 +94,9 @@ export default function AdminDashboard() {
 
       const data = await res.json();
 
+      console.log("SEND OFFERS STATUS:", res.status);
+      console.log("SEND OFFERS RESPONSE:", data);
+
       if (res.ok) {
         Swal.fire({
           title: "🚀 Coupon Launch Success",
@@ -120,6 +120,8 @@ export default function AdminDashboard() {
         });
       }
     } catch (err) {
+      console.error("SEND OFFERS ERROR:", err);
+
       Swal.fire({
         title: "🔥 Server Error",
         text: "Backend connection failed",
