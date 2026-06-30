@@ -34,8 +34,7 @@ export default function MyProfile() {
   const logout = () => {
     if (confirm("Confirm Logout?")) {
       clearAuth();
-      navigate("/login", { replace: true });
-      window.location.reload();
+      window.location.replace("/");
     }
   };
 
@@ -44,7 +43,7 @@ export default function MyProfile() {
 
     if (!token) {
       alert("Please, Login First!");
-      navigate("/login", { replace: true });
+      navigate("/", { replace: true });
       return;
     }
 
