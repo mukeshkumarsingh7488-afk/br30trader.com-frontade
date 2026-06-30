@@ -190,7 +190,7 @@ export default function BellViewAlert() {
         <div className="alert-container">
           <h2 className="alert-title">
             <span>Live Market Alerts ⚡</span>
-            <Link to="/" className="back-btn">
+            <Link to="/dashboard/" className="back-btn">
               ← Home
             </Link>
           </h2>

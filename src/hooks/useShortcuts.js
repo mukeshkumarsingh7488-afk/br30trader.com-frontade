@@ -14,11 +14,11 @@ export default function useShortcuts() {
 
       if (e.altKey && key === "h") {
         e.preventDefault();
-        navigate("/");
+        navigate("/dashboard");
       }
       if (e.altKey && key === "c") {
         e.preventDefault();
-        navigate("/courses");
+        navigate("/dashboardcourses");
       }
       if (e.altKey && key === "l") {
         e.preventDefault();

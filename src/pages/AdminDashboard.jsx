@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import BackHomeButton from "../components/BackHomeButton";
 
 export default function AdminDashboard() {
   const navigate = useNavigate();
@@ -190,32 +191,32 @@ export default function AdminDashboard() {
               Overview
             </button>
 
-            <Link className="admin-side-btn" to="/admin/users">
+            <Link className="admin-side-btn" to="/dashboard/admin/users">
               <i className="fas fa-users"></i>
               User Management
             </Link>
 
-            <Link className="admin-side-btn" to="/admin/reviews">
+            <Link className="admin-side-btn" to="/dashboard/admin/reviews">
               <i className="fas fa-history"></i>
               Review Management
             </Link>
 
-            <Link className="admin-side-btn" to="/admin/course-edit">
+            <Link className="admin-side-btn" to="/dashboard/admin/course-edit">
               <i className="fas fa-pen"></i>
               Course Edit
             </Link>
 
-            <Link className="admin-side-btn" to="/admin/load-course">
+            <Link className="admin-side-btn" to="/dashboard/admin/load-course">
               <i className="fas fa-book"></i>
               Load Course
             </Link>
 
-            <Link className="admin-side-btn" to="/admin/bell-notification">
+            <Link className="admin-side-btn" to="/dashboard/admin/bell-notification">
               <i className="fas fa-bell"></i>
               Admin Alert
             </Link>
 
-            <Link className="admin-side-btn" to="/admin/announcement">
+            <Link className="admin-side-btn" to="/dashboard/admin/announcement">
               <i className="fas fa-bullhorn"></i>
               Announcement
             </Link>
@@ -227,10 +228,10 @@ export default function AdminDashboard() {
 
             <hr style={{ border: "0.5px solid #222", margin: "20px 0" }} />
 
-            <Link className="admin-side-btn admin-home-btn" to="/" target="_blank" rel="noopener noreferrer">
+            <BackHomeButton className="admin-side-btn admin-home-btn" target="_blank" rel="noopener noreferrer">
               <i className="fas fa-arrow-alt-circle-left"></i>
               Back to Home
-            </Link>
+            </BackHomeButton>
           </nav>
         </aside>
 

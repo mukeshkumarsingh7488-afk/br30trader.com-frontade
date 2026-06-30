@@ -73,7 +73,7 @@ export default function PdfHubSection() {
 
             <p>This PDF Hub is locked for non-VIP users. Join VIP to unlock all trading PDFs, premium notes, and advanced course resources.</p>
 
-            <a href="/vip-access" className="vip-join-btn">
+            <a href="/dashboard/vip-access" className="vip-join-btn">
               🚀 Join VIP Now
             </a>
           </div>

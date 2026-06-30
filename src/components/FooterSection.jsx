@@ -43,15 +43,15 @@ export default function FooterSection() {
 
       <div className="footer-policy-links">
         <div className="policy-wrapper">
-          <Link to="/aboutus">About Us</Link>
+          <Link to="/dashboard/aboutus">About Us</Link>
           <span className="divider">|</span>
-          <Link to="/contact">Contact Us</Link>
+          <Link to="/dashboard/contact">Contact Us</Link>
           <span className="divider">|</span>
-          <Link to="/privacy">Privacy Policy</Link>
+          <Link to="/dashboard/privacy">Privacy Policy</Link>
           <span className="divider">|</span>
-          <Link to="/terms">Terms & Conditions</Link>
+          <Link to="/dashboard/terms">Terms & Conditions</Link>
           <span className="divider">|</span>
-          <Link to="/refund">Refund Policy</Link>
+          <Link to="/dashboard/refund">Refund Policy</Link>
         </div>
       </div>
 
@@ -87,16 +87,16 @@ export default function FooterSection() {
             <h3>Quick Links</h3>
             <ul>
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/dashboard/">Home</Link>
               </li>
               <li>
-                <Link to="/strategies">Strategies</Link>
+                <Link to="/dashboard/strategies">Strategies</Link>
               </li>
               <li>
-                <Link to="/service">Services</Link>
+                <Link to="/dashboard/service">Services</Link>
               </li>
               <li>
-                <Link to="/about">About Founder</Link>
+                <Link to="/dashboard/about">About Founder</Link>
               </li>
             </ul>
           </div>

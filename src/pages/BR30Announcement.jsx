@@ -113,7 +113,7 @@ export default function BR30Announcement() {
           <div className="status-msg">{status}</div>
 
           <div style={{ marginTop: "15px" }}>
-            <Link to="/admin" className="dashboard-link">
+            <Link to="/dashboard/admin" className="dashboard-link">
               BACK TO DASHBOARD
             </Link>
           </div>

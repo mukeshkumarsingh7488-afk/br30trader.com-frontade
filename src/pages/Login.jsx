@@ -43,10 +43,10 @@ export default function Login() {
 
         if (userRole === "admin") {
           alert("👑 Welcome Mukesh - Master Admin 🚀");
-          navigate("/admin", { replace: true });
+          navigate("/dashboard/admin", { replace: true });
         } else {
           alert("Login Success! 🚀");
-          navigate("/", { replace: true });
+          navigate("/dashboard", { replace: true });
         }
 
         return;

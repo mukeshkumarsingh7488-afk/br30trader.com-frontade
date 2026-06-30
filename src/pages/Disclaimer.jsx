@@ -165,7 +165,7 @@ export default function Disclaimer() {
             </div>
           </div>
 
-          <Link to="/" className="home-link">
+          <Link to="/dashboard/" className="home-link">
             Back Home
           </Link>
         </div>

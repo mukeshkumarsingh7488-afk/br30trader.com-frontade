@@ -1,11 +1,13 @@
 import React from "react";
 import VipProtectedRoute from "./VipProtectedRoute";
 import { Routes, Route, Navigate } from "react-router-dom";
+
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import ForgotPassword from "../pages/ForgotPassword";
 import Reset from "../pages/Reset";
+
 import MyProfile from "../pages/MyProfile";
 import MyCourse from "../pages/MyCourse";
 import CertificateVerify from "../pages/CertificateVerify";
@@ -26,6 +28,7 @@ import LiveMarketAnalysis from "../pages/LiveMarketAnalysis";
 import RiskManagement from "../pages/RiskManagement";
 import LifetimeAccess from "../pages/LifetimeAccess";
 import Br30SupportCommunity from "../pages/Br30SupportCommunity";
+
 import AdminDashboard from "../pages/AdminDashboard";
 import BR30Announcement from "../pages/BR30Announcement";
 import UserReview from "../pages/UserReview";
@@ -33,6 +36,7 @@ import Br30CourseEdit from "../pages/Br30CourseEdit";
 import Br30UserManagement from "../pages/Br30UserManagement";
 import Br30LoadCourse from "../pages/Br30LoadCourse";
 import Br30BellNotification from "../pages/Br30BellNotification";
+
 import EMAFVGOptionBuying from "../pages/EMAFVGOptionBuying";
 import EMAFVGOptionSelling from "../pages/EMAFVGOptionSelling";
 import OptionGreeksMastery from "../pages/OptionGreeksMastery";
@@ -70,39 +74,74 @@ export default function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/reset" element={<Reset />} />
-      <Route path="/myprofile" element={<MyProfile />} />
-      <Route path="/mycourse" element={<MyCourse />} />
-      <Route path="/verify" element={<CertificateVerify />} />
-      <Route path="/disclaimer" element={<Disclaimer />} />
-      <Route path="/aboutus" element={<Br30AboutUs />} />
-      <Route path="/vip-access" element={<Br30VipAccess />} />
-      <Route path="/contact" element={<Br30Contact />} />
-      <Route path="/privacy" element={<Br30UserPrivacy />} />
-      <Route path="/terms" element={<Br30TermsCondition />} />
-      <Route path="/refund" element={<Br30RefundPolocy />} />
-      <Route path="/strategies" element={<Br30Strategies />} />
-      <Route path="/service" element={<Br30WebService />} />
-      <Route path="/about" element={<Br30FounderAbout />} />
-      <Route path="/view-alert" element={<BellViewAlert />} />
-      <Route path="/watch" element={<CourseWatch />} />
-      <Route path="/basic-to-advance" element={<BasicToAdvance />} />
-      <Route path="/live-market-analysis" element={<LiveMarketAnalysis />} />
-      <Route path="/risk-management" element={<RiskManagement />} />
-      <Route path="/lifetime-access" element={<LifetimeAccess />} />
-      <Route path="/support-community" element={<Br30SupportCommunity />} />
-      <Route path="/admin" element={<AdminDashboard />} />
-      <Route path="/admin/announcement" element={<BR30Announcement />} />
-      <Route path="/admin/reviews" element={<UserReview />} />
-      <Route path="/admin/course-edit" element={<Br30CourseEdit />} />
-      <Route path="/admin/users" element={<Br30UserManagement />} />
-      <Route path="/admin/load-course" element={<Br30LoadCourse />} />
-      <Route path="/admin/bell-notification" element={<Br30BellNotification />} />
+
+      <Route path="/dashboard" element={<Navigate to="/dashboard/profile" replace />} />
+      <Route path="/dashboard/profile" element={<MyProfile />} />
+      <Route path="/dashboard/myprofile" element={<Navigate to="/dashboard/profile" replace />} />
+      <Route path="/dashboard/my-course" element={<MyCourse />} />
+      <Route path="/dashboard/mycourse" element={<Navigate to="/dashboard/my-course" replace />} />
+      <Route path="/dashboard/watch" element={<CourseWatch />} />
+      <Route path="/dashboard/verify" element={<CertificateVerify />} />
+      <Route path="/dashboard/disclaimer" element={<Disclaimer />} />
+      <Route path="/dashboard/aboutus" element={<Br30AboutUs />} />
+      <Route path="/dashboard/vip-access" element={<Br30VipAccess />} />
+      <Route path="/dashboard/contact" element={<Br30Contact />} />
+      <Route path="/dashboard/privacy" element={<Br30UserPrivacy />} />
+      <Route path="/dashboard/terms" element={<Br30TermsCondition />} />
+      <Route path="/dashboard/refund" element={<Br30RefundPolocy />} />
+      <Route path="/dashboard/strategies" element={<Br30Strategies />} />
+      <Route path="/dashboard/service" element={<Br30WebService />} />
+      <Route path="/dashboard/about" element={<Br30FounderAbout />} />
+      <Route path="/dashboard/view-alert" element={<BellViewAlert />} />
+      <Route path="/dashboard/basic-to-advance" element={<BasicToAdvance />} />
+      <Route path="/dashboard/live-market-analysis" element={<LiveMarketAnalysis />} />
+      <Route path="/dashboard/risk-management" element={<RiskManagement />} />
+      <Route path="/dashboard/lifetime-access" element={<LifetimeAccess />} />
+      <Route path="/dashboard/support-community" element={<Br30SupportCommunity />} />
+
+      <Route path="/dashboard/admin" element={<AdminDashboard />} />
+      <Route path="/dashboard/admin/announcement" element={<BR30Announcement />} />
+      <Route path="/dashboard/admin/reviews" element={<UserReview />} />
+      <Route path="/dashboard/admin/course-edit" element={<Br30CourseEdit />} />
+      <Route path="/dashboard/admin/users" element={<Br30UserManagement />} />
+      <Route path="/dashboard/admin/load-course" element={<Br30LoadCourse />} />
+      <Route path="/dashboard/admin/bell-notification" element={<Br30BellNotification />} />
+
+      <Route path="/myprofile" element={<Navigate to="/dashboard/profile" replace />} />
+      <Route path="/mycourse" element={<Navigate to="/dashboard/my-course" replace />} />
+      <Route path="/watch" element={<Navigate to="/dashboard/watch" replace />} />
+      <Route path="/verify" element={<Navigate to="/dashboard/verify" replace />} />
+      <Route path="/disclaimer" element={<Navigate to="/dashboard/disclaimer" replace />} />
+      <Route path="/aboutus" element={<Navigate to="/dashboard/aboutus" replace />} />
+      <Route path="/vip-access" element={<Navigate to="/dashboard/vip-access" replace />} />
+      <Route path="/contact" element={<Navigate to="/dashboard/contact" replace />} />
+      <Route path="/privacy" element={<Navigate to="/dashboard/privacy" replace />} />
+      <Route path="/terms" element={<Navigate to="/dashboard/terms" replace />} />
+      <Route path="/refund" element={<Navigate to="/dashboard/refund" replace />} />
+      <Route path="/strategies" element={<Navigate to="/dashboard/strategies" replace />} />
+      <Route path="/service" element={<Navigate to="/dashboard/service" replace />} />
+      <Route path="/about" element={<Navigate to="/dashboard/about" replace />} />
+      <Route path="/view-alert" element={<Navigate to="/dashboard/view-alert" replace />} />
+      <Route path="/basic-to-advance" element={<Navigate to="/dashboard/basic-to-advance" replace />} />
+      <Route path="/live-market-analysis" element={<Navigate to="/dashboard/live-market-analysis" replace />} />
+      <Route path="/risk-management" element={<Navigate to="/dashboard/risk-management" replace />} />
+      <Route path="/lifetime-access" element={<Navigate to="/dashboard/lifetime-access" replace />} />
+      <Route path="/support-community" element={<Navigate to="/dashboard/support-community" replace />} />
+      <Route path="/admin" element={<Navigate to="/dashboard/admin" replace />} />
+      <Route path="/admin/announcement" element={<Navigate to="/dashboard/admin/announcement" replace />} />
+      <Route path="/admin/reviews" element={<Navigate to="/dashboard/admin/reviews" replace />} />
+      <Route path="/admin/course-edit" element={<Navigate to="/dashboard/admin/course-edit" replace />} />
+      <Route path="/admin/users" element={<Navigate to="/dashboard/admin/users" replace />} />
+      <Route path="/admin/load-course" element={<Navigate to="/dashboard/admin/load-course" replace />} />
+      <Route path="/admin/bell-notification" element={<Navigate to="/dashboard/admin/bell-notification" replace />} />
+
       <Route
-        path="/ema-fvg-option-buying"
+        path="/dashboard/ema-fvg-option-buying"
         element={
           <VipProtectedRoute>
             <EMAFVGOptionBuying />
@@ -110,7 +149,7 @@ export default function AppRoutes() {
         }
       />
       <Route
-        path="/ema-fvg-option-selling"
+        path="/dashboard/ema-fvg-option-selling"
         element={
           <VipProtectedRoute>
             <EMAFVGOptionSelling />
@@ -118,7 +157,7 @@ export default function AppRoutes() {
         }
       />
       <Route
-        path="/option-greeks-mastery"
+        path="/dashboard/option-greeks-mastery"
         element={
           <VipProtectedRoute>
             <OptionGreeksMastery />
@@ -126,7 +165,7 @@ export default function AppRoutes() {
         }
       />
       <Route
-        path="/option-selling-with-hedging"
+        path="/dashboard/option-selling-with-hedging"
         element={
           <VipProtectedRoute>
             <OptionSellingWithHedging />
@@ -134,7 +173,7 @@ export default function AppRoutes() {
         }
       />
       <Route
-        path="/rsi-divergence-full-guide"
+        path="/dashboard/rsi-divergence-full-guide"
         element={
           <VipProtectedRoute>
             <RSIDivergenceFullGuide />
@@ -142,7 +181,7 @@ export default function AppRoutes() {
         }
       />
       <Route
-        path="/options-basics-for-beginners"
+        path="/dashboard/options-basics-for-beginners"
         element={
           <VipProtectedRoute>
             <OptionsBasicsForBeginners />
@@ -150,7 +189,7 @@ export default function AppRoutes() {
         }
       />
       <Route
-        path="/technical-analysis-mastery"
+        path="/dashboard/technical-analysis-mastery"
         element={
           <VipProtectedRoute>
             <TechnicalAnalysisMastery />
@@ -158,7 +197,7 @@ export default function AppRoutes() {
         }
       />
       <Route
-        path="/candlestick-patterns-guide"
+        path="/dashboard/candlestick-patterns-guide"
         element={
           <VipProtectedRoute>
             <CandlestickPatternsGuide />
@@ -166,7 +205,7 @@ export default function AppRoutes() {
         }
       />
       <Route
-        path="/support-resistance-levels"
+        path="/dashboard/support-resistance-levels"
         element={
           <VipProtectedRoute>
             <SupportResistanceLevels />
@@ -174,7 +213,7 @@ export default function AppRoutes() {
         }
       />
       <Route
-        path="/moving-averages-trading-logic"
+        path="/dashboard/moving-averages-trading-logic"
         element={
           <VipProtectedRoute>
             <MovingAveragesTradingLogic />
@@ -182,7 +221,7 @@ export default function AppRoutes() {
         }
       />
       <Route
-        path="/rsi-stochastic-indicators"
+        path="/dashboard/rsi-stochastic-indicators"
         element={
           <VipProtectedRoute>
             <RSIStochasticIndicators />
@@ -190,7 +229,7 @@ export default function AppRoutes() {
         }
       />
       <Route
-        path="/fibonacci-retracement-strategy"
+        path="/dashboard/fibonacci-retracement-strategy"
         element={
           <VipProtectedRoute>
             <FibonacciRetracementStrategy />
@@ -198,7 +237,7 @@ export default function AppRoutes() {
         }
       />
       <Route
-        path="/bollinger-bands-trading-setup"
+        path="/dashboard/bollinger-bands-trading-setup"
         element={
           <VipProtectedRoute>
             <BollingerBandsTradingSetup />
@@ -206,7 +245,7 @@ export default function AppRoutes() {
         }
       />
       <Route
-        path="/volume-analysis-techniques"
+        path="/dashboard/volume-analysis-techniques"
         element={
           <VipProtectedRoute>
             <VolumeAnalysisTechniques />
@@ -214,7 +253,7 @@ export default function AppRoutes() {
         }
       />
       <Route
-        path="/macd-indicator-explained"
+        path="/dashboard/macd-indicator-explained"
         element={
           <VipProtectedRoute>
             <MACDIndicatorExplained />
@@ -222,7 +261,7 @@ export default function AppRoutes() {
         }
       />
       <Route
-        path="/ema-trading-strategy"
+        path="/dashboard/ema-trading-strategy"
         element={
           <VipProtectedRoute>
             <EMATradingStrategy />
@@ -230,7 +269,7 @@ export default function AppRoutes() {
         }
       />
       <Route
-        path="/price-action-mastery"
+        path="/dashboard/price-action-mastery"
         element={
           <VipProtectedRoute>
             <PriceActionMastery />
@@ -238,7 +277,7 @@ export default function AppRoutes() {
         }
       />
       <Route
-        path="/risk-management-techniques"
+        path="/dashboard/risk-management-techniques"
         element={
           <VipProtectedRoute>
             <RiskManagementTechniques />
@@ -246,7 +285,7 @@ export default function AppRoutes() {
         }
       />
       <Route
-        path="/option-buying-guide"
+        path="/dashboard/option-buying-guide"
         element={
           <VipProtectedRoute>
             <OptionBuyingGuide />
@@ -254,7 +293,7 @@ export default function AppRoutes() {
         }
       />
       <Route
-        path="/option-selling-guide"
+        path="/dashboard/option-selling-guide"
         element={
           <VipProtectedRoute>
             <OptionSellingGuide />
@@ -262,7 +301,7 @@ export default function AppRoutes() {
         }
       />
       <Route
-        path="/intraday-trading-techniques"
+        path="/dashboard/intraday-trading-techniques"
         element={
           <VipProtectedRoute>
             <IntradayTradingTechniques />
@@ -270,7 +309,7 @@ export default function AppRoutes() {
         }
       />
       <Route
-        path="/swing-trading-strategies"
+        path="/dashboard/swing-trading-strategies"
         element={
           <VipProtectedRoute>
             <SwingTradingStrategies />
@@ -278,7 +317,7 @@ export default function AppRoutes() {
         }
       />
       <Route
-        path="/fair-value-gap-trading"
+        path="/dashboard/fair-value-gap-trading"
         element={
           <VipProtectedRoute>
             <FairValueGapTrading />
@@ -286,7 +325,7 @@ export default function AppRoutes() {
         }
       />
       <Route
-        path="/chart-patterns-signals"
+        path="/dashboard/chart-patterns-signals"
         element={
           <VipProtectedRoute>
             <ChartPatternsSignals />
@@ -294,7 +333,7 @@ export default function AppRoutes() {
         }
       />
       <Route
-        path="/trend-analysis-techniques"
+        path="/dashboard/trend-analysis-techniques"
         element={
           <VipProtectedRoute>
             <TrendAnalysisTechniques />
@@ -302,7 +341,7 @@ export default function AppRoutes() {
         }
       />
       <Route
-        path="/option-hedging-strategies"
+        path="/dashboard/option-hedging-strategies"
         element={
           <VipProtectedRoute>
             <OptionHedgingStrategies />
@@ -310,7 +349,7 @@ export default function AppRoutes() {
         }
       />
       <Route
-        path="/scalping-techniques"
+        path="/dashboard/scalping-techniques"
         element={
           <VipProtectedRoute>
             <ScalpingTechniques />
@@ -318,7 +357,7 @@ export default function AppRoutes() {
         }
       />
       <Route
-        path="/advanced-options-strategies"
+        path="/dashboard/advanced-options-strategies"
         element={
           <VipProtectedRoute>
             <AdvancedOptionsStrategies />
@@ -326,7 +365,7 @@ export default function AppRoutes() {
         }
       />
       <Route
-        path="/bullish-option-strategies"
+        path="/dashboard/bullish-option-strategies"
         element={
           <VipProtectedRoute>
             <BullishOptionStrategies />
@@ -334,7 +373,7 @@ export default function AppRoutes() {
         }
       />
       <Route
-        path="/bearish-option-strategies"
+        path="/dashboard/bearish-option-strategies"
         element={
           <VipProtectedRoute>
             <BearishOptionStrategies />
@@ -342,7 +381,7 @@ export default function AppRoutes() {
         }
       />
       <Route
-        path="/neutral-volatility-option-strategies"
+        path="/dashboard/neutral-volatility-option-strategies"
         element={
           <VipProtectedRoute>
             <NeutralVolatilityOptionStrategies />
@@ -350,13 +389,47 @@ export default function AppRoutes() {
         }
       />
       <Route
-        path="/other-option-strategies"
+        path="/dashboard/other-option-strategies"
         element={
           <VipProtectedRoute>
             <OtherOptionStrategies />
           </VipProtectedRoute>
         }
       />
+
+      <Route path="/ema-fvg-option-buying" element={<Navigate to="/dashboard/ema-fvg-option-buying" replace />} />
+      <Route path="/ema-fvg-option-selling" element={<Navigate to="/dashboard/ema-fvg-option-selling" replace />} />
+      <Route path="/option-greeks-mastery" element={<Navigate to="/dashboard/option-greeks-mastery" replace />} />
+      <Route path="/option-selling-with-hedging" element={<Navigate to="/dashboard/option-selling-with-hedging" replace />} />
+      <Route path="/rsi-divergence-full-guide" element={<Navigate to="/dashboard/rsi-divergence-full-guide" replace />} />
+      <Route path="/options-basics-for-beginners" element={<Navigate to="/dashboard/options-basics-for-beginners" replace />} />
+      <Route path="/technical-analysis-mastery" element={<Navigate to="/dashboard/technical-analysis-mastery" replace />} />
+      <Route path="/candlestick-patterns-guide" element={<Navigate to="/dashboard/candlestick-patterns-guide" replace />} />
+      <Route path="/support-resistance-levels" element={<Navigate to="/dashboard/support-resistance-levels" replace />} />
+      <Route path="/moving-averages-trading-logic" element={<Navigate to="/dashboard/moving-averages-trading-logic" replace />} />
+      <Route path="/rsi-stochastic-indicators" element={<Navigate to="/dashboard/rsi-stochastic-indicators" replace />} />
+      <Route path="/fibonacci-retracement-strategy" element={<Navigate to="/dashboard/fibonacci-retracement-strategy" replace />} />
+      <Route path="/bollinger-bands-trading-setup" element={<Navigate to="/dashboard/bollinger-bands-trading-setup" replace />} />
+      <Route path="/volume-analysis-techniques" element={<Navigate to="/dashboard/volume-analysis-techniques" replace />} />
+      <Route path="/macd-indicator-explained" element={<Navigate to="/dashboard/macd-indicator-explained" replace />} />
+      <Route path="/ema-trading-strategy" element={<Navigate to="/dashboard/ema-trading-strategy" replace />} />
+      <Route path="/price-action-mastery" element={<Navigate to="/dashboard/price-action-mastery" replace />} />
+      <Route path="/risk-management-techniques" element={<Navigate to="/dashboard/risk-management-techniques" replace />} />
+      <Route path="/option-buying-guide" element={<Navigate to="/dashboard/option-buying-guide" replace />} />
+      <Route path="/option-selling-guide" element={<Navigate to="/dashboard/option-selling-guide" replace />} />
+      <Route path="/intraday-trading-techniques" element={<Navigate to="/dashboard/intraday-trading-techniques" replace />} />
+      <Route path="/swing-trading-strategies" element={<Navigate to="/dashboard/swing-trading-strategies" replace />} />
+      <Route path="/fair-value-gap-trading" element={<Navigate to="/dashboard/fair-value-gap-trading" replace />} />
+      <Route path="/chart-patterns-signals" element={<Navigate to="/dashboard/chart-patterns-signals" replace />} />
+      <Route path="/trend-analysis-techniques" element={<Navigate to="/dashboard/trend-analysis-techniques" replace />} />
+      <Route path="/option-hedging-strategies" element={<Navigate to="/dashboard/option-hedging-strategies" replace />} />
+      <Route path="/scalping-techniques" element={<Navigate to="/dashboard/scalping-techniques" replace />} />
+      <Route path="/advanced-options-strategies" element={<Navigate to="/dashboard/advanced-options-strategies" replace />} />
+      <Route path="/bullish-option-strategies" element={<Navigate to="/dashboard/bullish-option-strategies" replace />} />
+      <Route path="/bearish-option-strategies" element={<Navigate to="/dashboard/bearish-option-strategies" replace />} />
+      <Route path="/neutral-volatility-option-strategies" element={<Navigate to="/dashboard/neutral-volatility-option-strategies" replace />} />
+      <Route path="/other-option-strategies" element={<Navigate to="/dashboard/other-option-strategies" replace />} />
+
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );

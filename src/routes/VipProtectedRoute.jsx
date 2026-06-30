@@ -13,7 +13,7 @@ export default function VipProtectedRoute({ children }) {
   const isVipUser = user?.badge?.toLowerCase() === "vip";
 
   if (!isVipUser) {
-    return <Navigate to="/vip-access" replace />;
+    return <Navigate to="/dashboard/vip-access" replace />;
   }
 
   return children;

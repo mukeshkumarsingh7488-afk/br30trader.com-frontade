@@ -218,7 +218,7 @@ export default function Br30UserManagement() {
             </table>
           </div>
           <br />
-          <Link to="/admin" className="dashboard-back">
+          <Link to="/dashboard/admin" className="dashboard-back">
             <i className="fas fa-arrow-left"></i> Back to Dashboard
           </Link>
         </div>

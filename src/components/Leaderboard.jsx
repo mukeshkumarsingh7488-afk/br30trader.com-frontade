@@ -129,7 +129,7 @@ export default function Leaderboard() {
           <h2 className="leaderboard-title">
             Top <span className="highlight-green">👑 VIP Traders</span>
           </h2>
-          <p className="leaderboard-subtitle">In Last One Month</p>
+          <p className="leaderboard-subtitle">In Last Six Month</p>
         </div>
 
         <div className="Traders-list-container" style={{ opacity: fade ? 1 : 0 }}>
@@ -153,7 +153,7 @@ export default function Leaderboard() {
         </div>
 
         <div className="leaderboard-footer">
-          <Link to="/#coursesection" className="vip-btn">
+          <Link to="/dashboard/#coursesection" className="vip-btn">
             <span>BROWSE COURSES</span>
             <span>↗</span>
           </Link>

@@ -129,7 +129,7 @@ export default function Br30LoadCourse() {
             <h1>
               🚀 <span>Admin</span> Panel
             </h1>
-            <Link to="/admin" className="load-back-btn">
+            <Link to="/dashboard/admin" className="load-back-btn">
               ← Back to Dashboard
             </Link>
           </div>

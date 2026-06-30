@@ -86,7 +86,7 @@ export default function Br30CourseEdit() {
               <h1>Course Management</h1>
               <p className="course-edit-subtitle">Update Prices & Details Instantly</p>
             </div>
-            <Link to="/admin" className="course-edit-back-btn">
+            <Link to="/dashboard/admin" className="course-edit-back-btn">
               <i className="fas fa-arrow-left"></i>Back to Dashboard
             </Link>
           </div>

@@ -89,7 +89,10 @@ br30trader.com-f
 ├── src/
 │   │
 │   ├── assets/
+│   │   ├── BR30-B4BA65.png
 │   │   ├── hero.png
+│   │   ├── logo-dark-Green.png
+│   │   ├── Vip-lederboard.png
 │   │   ├── react.svg
 │   │   └── vite.svg
 │   │
@@ -110,7 +113,26 @@ br30trader.com-f
 │   │   ├── TradingMindsetSection.jsx
 │   │   ├── TradingToolsSection.jsx
 │   │   ├── TradingJournalSection.jsx
-│   │   └── TradingUpdatesSection.jsx
+│   │   ├── TradingUpdatesSection.jsx
+│   │   │
+│   │   └── landing/
+│   │       ├── BackHomeButton.jsx
+│   │       ├── Button.jsx
+│   │       ├── CertificateSection.jsx
+│   │       ├── CourseShowcase.jsx
+│   │       ├── CTA.jsx
+│   │       ├── DashboardPreview.jsx
+│   │       ├── FAQ.jsx
+│   │       ├── Footer.jsx
+│   │       ├── Hero.jsx
+│   │       ├── LiveReviews.jsx
+│   │       ├── Navbar.jsx
+│   │       ├── PlatformFeatures.jsx
+│   │       ├── Roadmap.jsx
+│   │       ├── SectionTitle.jsx
+│   │       ├── Stats.jsx
+│   │       ├── VipLeaderboard.jsx
+│   │       └── WhyTrader.jsx
 │   │
 │   ├── context/
 │   │   └── AuthContext.jsx
@@ -205,6 +227,7 @@ br30trader.com-f
 ├── vercel.json
 └── README.md
 ```
+
 ---
 
 ## 📸 Screenshots
@@ -310,15 +333,15 @@ Founder — **BR30 Group**
 
 ### 🌐 Professional Network
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Mukesh_Raj-0A66C2?style=for-the-badge\&logo=linkedin\&logoColor=white)](https://www.linkedin.com/in/mukeshraj-br30/) [![GitHub](https://img.shields.io/badge/GitHub-mukeshkumarsingh7488--afk-181717?style=for-the-badge\&logo=github\&logoColor=white)](https://github.com/mukeshkumarsingh7488-afk)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Mukesh_Raj-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mukeshraj-br30/) [![GitHub](https://img.shields.io/badge/GitHub-mukeshkumarsingh7488--afk-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/mukeshkumarsingh7488-afk)
 
 ### 📱 Social Media
 
-[![Instagram](https://img.shields.io/badge/Instagram-BR30TraderOfficial-E4405F?style=for-the-badge\&logo=instagram\&logoColor=white)](https://www.instagram.com/br30Traderofficial) [![YouTube](https://img.shields.io/badge/YouTube-BR30TraderOfficial-FF0000?style=for-the-badge\&logo=youtube\&logoColor=white)](https://www.youtube.com/@br30traderofficial) [![Facebook](https://img.shields.io/badge/Facebook-BR30-1877F2?style=for-the-badge\&logo=facebook\&logoColor=white)](https://www.facebook.com/share/1DDJYGYYDf/) [![X](https://img.shields.io/badge/X-@MukeshKuma48159-000000?style=for-the-badge\&logo=x\&logoColor=white)](https://x.com/MukeshKuma48159) [![Threads](https://img.shields.io/badge/Threads-BR30TraderOfficial-111111?style=for-the-badge\&logo=threads\&logoColor=white)](https://www.threads.com/@br30traderofficial)
+[![Instagram](https://img.shields.io/badge/Instagram-BR30TraderOfficial-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/br30Traderofficial) [![YouTube](https://img.shields.io/badge/YouTube-BR30TraderOfficial-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@br30traderofficial) [![Facebook](https://img.shields.io/badge/Facebook-BR30-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://www.facebook.com/share/1DDJYGYYDf/) [![X](https://img.shields.io/badge/X-@MukeshKuma48159-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/MukeshKuma48159) [![Threads](https://img.shields.io/badge/Threads-BR30TraderOfficial-111111?style=for-the-badge&logo=threads&logoColor=white)](https://www.threads.com/@br30traderofficial)
 
 ### 💬 Community
 
-[![Telegram](https://img.shields.io/badge/Telegram-BR30_Community-26A5E4?style=for-the-badge\&logo=telegram\&logoColor=white)](https://t.me/+hBAT4kWo63A4ZWY1) [![WhatsApp](https://img.shields.io/badge/WhatsApp-BR30_Community-128C7E?style=for-the-badge\&logo=whatsapp\&logoColor=white)](https://chat.whatsapp.com/B4t82SWBcgOIZTeQXp1wDI)
+[![Telegram](https://img.shields.io/badge/Telegram-BR30_Community-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/+hBAT4kWo63A4ZWY1) [![WhatsApp](https://img.shields.io/badge/WhatsApp-BR30_Community-128C7E?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/B4t82SWBcgOIZTeQXp1wDI)
 
 ### 📧 Contact
 
@@ -328,19 +351,17 @@ Founder — **BR30 Group**
 
 ### 🚀 BR30 Ecosystem
 
-[![BR30 Trader](https://img.shields.io/badge/BR30_Trader-Official_Website-2962FF?style=for-the-badge\&logo=googlechrome\&logoColor=white)](https://my-frontend-eight-roan.vercel.app/)
+[![BR30 Trader](https://img.shields.io/badge/BR30_Trader-Official_Website-2962FF?style=for-the-badge&logo=googlechrome&logoColor=white)](https://my-frontend-eight-roan.vercel.app/)
 
-[![BR30 Group](https://img.shields.io/badge/BR30_Group-Official_Website-6A1B9A?style=for-the-badge\&logo=googlechrome\&logoColor=white)](https://br-30-group-com.vercel.app/)
+[![BR30 Group](https://img.shields.io/badge/BR30_Group-Official_Website-6A1B9A?style=for-the-badge&logo=googlechrome&logoColor=white)](https://br-30-group-com.vercel.app/)
 
-[![BR30 Kart](https://img.shields.io/badge/BR30_Kart-Official_Website-F57C00?style=for-the-badge\&logo=googlechrome\&logoColor=white)](https://br-30-kart.vercel.app/)
+[![BR30 Kart](https://img.shields.io/badge/BR30_Kart-Official_Website-F57C00?style=for-the-badge&logo=googlechrome&logoColor=white)](https://br-30-kart.vercel.app/)
 
-[![BR30 Founder](https://img.shields.io/badge/BR30_Founder-Official_Website-8E24AA?style=for-the-badge\&logo=googlechrome\&logoColor=white)](https://br30-com.vercel.app/)
+[![BR30 Founder](https://img.shields.io/badge/BR30_Founder-Official_Website-8E24AA?style=for-the-badge&logo=googlechrome&logoColor=white)](https://br30-com.vercel.app/)
 
-[![BR30 Algo](https://img.shields.io/badge/BR30_Algo-Official_Website-1565C0?style=for-the-badge\&logo=googlechrome\&logoColor=white)](https://br30algo-com.vercel.app/)
+[![BR30 Algo](https://img.shields.io/badge/BR30_Algo-Official_Website-1565C0?style=for-the-badge&logo=googlechrome&logoColor=white)](https://br30algo-com.vercel.app/)
 
-[![BR30\_Market\_Scanner](https://img.shields.io/badge/BR30_Market_Scanner-Official_Website-455A64?style=for-the-badge\&logo=tradingview\&logoColor=white)](https://br30marketscanner-com-frontade.vercel.app/)
-
-
+[![BR30_Market_Scanner](https://img.shields.io/badge/BR30_Market_Scanner-Official_Website-455A64?style=for-the-badge&logo=tradingview&logoColor=white)](https://br30marketscanner-com-frontade.vercel.app/)
 
 ---
 
@@ -351,4 +372,3 @@ This project is actively maintained and improved with new features, SEO updates,
 ---
 
 ### Build • Learn • Trade • Grow 🚀
-

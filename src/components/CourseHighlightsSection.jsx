@@ -9,27 +9,27 @@ export default function CourseHighlightsSection() {
           <h3>🎓 Course Highlights</h3>
 
           <div className="highlights-grid">
-            <Link to="/basic-to-advance" className="h-item" title="Basic to Advanced Trading Course">
+            <Link to="/dashboard/basic-to-advance" className="h-item" title="Basic to Advanced Trading Course">
               <i className="fa-solid fa-chart-line icon"></i>
               Basic to Advanced
             </Link>
 
-            <Link to="/live-market-analysis" className="h-item" title="Live Market Analysis Sessions">
+            <Link to="/dashboard/live-market-analysis" className="h-item" title="Live Market Analysis Sessions">
               <i className="fa-solid fa-video icon"></i>
               Live Market Analysis
             </Link>
 
-            <Link to="/risk-management" className="h-item" title="Trading Risk Management Guide">
+            <Link to="/dashboard/risk-management" className="h-item" title="Trading Risk Management Guide">
               <i className="fa-solid fa-shield-halved icon"></i>
               Risk Management
             </Link>
 
-            <Link to="/lifetime-access" className="h-item" title="Lifetime Access Trading Content">
+            <Link to="/dashboard/lifetime-access" className="h-item" title="Lifetime Access Trading Content">
               <i className="fa-solid fa-infinity icon"></i>
               Lifetime Access
             </Link>
 
-            <Link to="/support-community" className="h-item" title="Trading Support Community">
+            <Link to="/dashboard/support-community" className="h-item" title="Trading Support Community">
               <i className="fa-solid fa-users icon"></i>
               Support Community
             </Link>

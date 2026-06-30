@@ -199,7 +199,7 @@ export default function UserReview() {
               <small>Total Reviews</small>
               <span>{reviews.length.toLocaleString("en-IN")}</span>
             </div>
-            <Link to="/admin" className="review-dashboard-link">
+            <Link to="/dashboard/admin" className="review-dashboard-link">
               DASHBOARD
             </Link>
           </div>

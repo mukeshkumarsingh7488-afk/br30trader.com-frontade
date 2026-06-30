@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import BackHomeButton from "../components/BackHomeButton";
 
 export default function Br30FounderAbout() {
   useEffect(() => {
@@ -262,9 +263,7 @@ export default function Br30FounderAbout() {
             </div>
 
             <div className="home-center">
-              <Link to="/" className="btn-home" title="Back to BR30 Kart Home" aria-label="Go back to the homepage">
-                ⬅ Back to Home
-              </Link>
+              <BackHomeButton className="back-home-btn">← Back to Home</BackHomeButton>
             </div>
           </div>
         </div>

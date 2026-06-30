@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import BackHomeButton from "../components/BackHomeButton";
 
 const API_BASE_URL = window.API_BASE_URL || import.meta.env.VITE_API_BASE_URL || "https://my-backend-1-avpd.onrender.com";
 
@@ -186,7 +187,7 @@ export default function MyProfile() {
               ) : (
                 <div className="standard-badge">
                   <span className="status-label">Standard Member</span>
-                  <Link to="/vip-access" className="upgrade-link">
+                  <Link to="/dashboard/vip-access" className="upgrade-link">
                     Upgrade to VIP <i className="fas fa-arrow-right"></i>
                   </Link>
                 </div>
@@ -230,9 +231,7 @@ export default function MyProfile() {
               Logout
             </button>
 
-            <Link to="/" className="back-home">
-              Back to Home
-            </Link>
+            <BackHomeButton className="back-home-btn">← Back to Home</BackHomeButton>
           </div>
         </div>
       </div>

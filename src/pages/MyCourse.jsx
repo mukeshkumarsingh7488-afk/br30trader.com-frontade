@@ -90,7 +90,7 @@ export default function MyCourse() {
             <div className="empty-box">
               <h2>No Courses Found 🔒</h2>
               <p>Aapne abhi tak koi course purchase nahi kiya hai.</p>
-              <Link to="/?scroll=coursesection" className="browse-btn">
+              <Link to="/dashboard/?scroll=coursesection" className="browse-btn">
                 Browse Courses
               </Link>
             </div>

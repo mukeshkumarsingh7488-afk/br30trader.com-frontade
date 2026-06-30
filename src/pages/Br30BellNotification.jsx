@@ -72,7 +72,7 @@ export default function Br30BellNotification() {
           </button>
           {success && <p className="alert-status">✅ Alert & Push Sent Successfully!</p>}
           <div className="alert-back-wrap">
-            <Link to="/admin" className="alert-back-btn">
+            <Link to="/dashboard/admin" className="alert-back-btn">
               BACK TO DASHBOARD
             </Link>
           </div>

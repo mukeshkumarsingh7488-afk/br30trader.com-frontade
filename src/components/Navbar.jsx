@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import logoDarkGreen from "../assets/logo-dark-Green.png";
 
 export default function Navbar() {
   const navigate = useNavigate();
@@ -152,8 +153,8 @@ export default function Navbar() {
 
       <header className="br30-header">
         <div>
-          <Link to="/" className="brand-link">
-            <img src="https://i.ibb.co/KxnQc4gx/BR30-LOGO1.png" alt="BR30 Logo" className="brand-logo" />
+          <Link to="/dashboard" className="brand-link">
+            <img src={logoDarkGreen} alt="BR30 Trader Logo" className="brand-logo" />
             <h1 className="brand-title">
               <span>BR30</span> Trader
             </h1>
@@ -198,7 +199,7 @@ export default function Navbar() {
                 </div>
 
                 <div className="dropdown-footer">
-                  <Link to={userFirstName ? "/view-alert" : "/login"} onClick={() => setActiveMenu(null)}>
+                  <Link to={userFirstName ? "/dashboard/view-alert" : "/login"} onClick={() => setActiveMenu(null)}>
                     {userFirstName ? "View All Alerts" : "Login First"}
                   </Link>
                 </div>
@@ -213,7 +214,7 @@ export default function Navbar() {
 
             {activeMenu === "account" && (
               <div className="dropdown-box account-dropdown">
-                <Link to="/" onClick={() => setActiveMenu(null)}>
+                <Link to="/dashboard" onClick={() => setActiveMenu(null)}>
                   🏠 Home
                 </Link>
 
@@ -223,25 +224,25 @@ export default function Navbar() {
                   </Link>
                 )}
 
-                <Link to="/myprofile" onClick={() => setActiveMenu(null)}>
+                <Link to="/dashboard/myprofile" onClick={() => setActiveMenu(null)}>
                   👤 My Profile
                 </Link>
-                <Link to="/mycourse" onClick={() => setActiveMenu(null)}>
+                <Link to="/dashboard/mycourse" onClick={() => setActiveMenu(null)}>
                   🛍️ My Course
                 </Link>
-                <Link to="/verify" onClick={() => setActiveMenu(null)}>
+                <Link to="/dashboard/verify" onClick={() => setActiveMenu(null)}>
                   📜 Certificate
                 </Link>
-                <Link to="/disclaimer" onClick={() => setActiveMenu(null)}>
+                <Link to="/dashboard/disclaimer" onClick={() => setActiveMenu(null)}>
                   ⚠️ Disclaimer
                 </Link>
-                <Link to="/about" onClick={() => setActiveMenu(null)}>
+                <Link to="/dashboard/about" onClick={() => setActiveMenu(null)}>
                   🏢 About Us
                 </Link>
 
                 <hr />
 
-                <Link to="/vip-access" onClick={() => setActiveMenu(null)} className="vip-link">
+                <Link to="/dashboard/vip-access" onClick={() => setActiveMenu(null)} className="vip-link">
                   ✨ VIP Access
                 </Link>
                 <a href="https://br-30-kart.vercel.app/" target="_blank" rel="noopener noreferrer">
@@ -249,7 +250,7 @@ export default function Navbar() {
                 </a>
 
                 {userRole.toLowerCase() === "admin" && (
-                  <Link to="/admin" target="_blank" rel="noopener noreferrer" onClick={() => setActiveMenu(null)}>
+                  <Link to="/dashboard/admin" target="_blank" rel="noopener noreferrer" onClick={() => setActiveMenu(null)}>
                     👑 Admin Dashboard
                   </Link>
                 )}
@@ -284,7 +285,7 @@ export default function Navbar() {
 .br30-header{position:fixed;top:4px;left:0;right:0;z-index:100000;width:100%;display:flex;justify-content:space-between;align-items:center;padding:${isMobile ? "12px 16px" : "16px 60px"};background:#000;border-bottom:1px solid #1e293b;box-sizing:border-box}
 .header-space{height:${isMobile ? "78px" : "84px"}}
 .brand-link{display:flex;align-items:center;text-decoration:none}
-.brand-logo{width:40px;height:40px;border-radius:8px;display:block}
+.brand-logo{width:48px;height:48px;object-fit:contain;display:block;}
 .brand-title{padding-left:14px;color:#fff;font-size:${isMobile ? "1.2rem" : "1.5rem"};font-weight:700;margin:0;font-family:sans-serif;white-space:nowrap}
 .brand-title span{color:#a020f0}
 .welcome-text{margin:0;font-size:1.3rem;color:#fbbf24;font-weight:700;font-family:sans-serif}
