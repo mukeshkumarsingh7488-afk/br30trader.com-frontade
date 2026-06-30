@@ -61,189 +61,30 @@ export default function Br30WebService() {
   ];
 
   const styles = `
-    .web-service-page {
-      background-color: #050505;
-      color: #ffffff;
-      line-height: 1.6;
-      overflow-x: hidden;
-      min-height: 100vh;
-      font-family: "Poppins", sans-serif;
-    }
-
-    .services-hero {
-      padding: 100px 20px;
-      text-align: center;
-      background: linear-gradient(rgba(160, 32, 240, 0.05), rgba(15, 23, 42, 1));
-      border-bottom: 2px solid #a020f0;
-    }
-
-    .services-hero h1 {
-      font-size: 3.5rem;
-      margin-bottom: 15px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-
-    .services-hero h1 span {
-      color: #a020f0;
-      text-shadow: 0 0 20px rgba(160, 32, 240, 0.6);
-    }
-
-    .services-hero p {
-      max-width: 700px;
-      margin: 0 auto 8px;
-      color: #94a3b8;
-      font-size: 1.1rem;
-    }
-
-    .services-main {
-      max-width: 1200px;
-      margin: 80px auto;
-      padding: 0 20px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 40px;
-    }
-
-    .service-box {
-      background: #1e293b;
-      padding: 50px 30px;
-      border-radius: 30px;
-      border: 1px solid rgba(160, 32, 240, 0.15);
-      text-align: center;
-      transition: all 0.4s ease;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .service-box:hover {
-      transform: translateY(-15px);
-      border-color: #a020f0;
-      box-shadow: 0 20px 40px rgba(160, 32, 240, 0.2);
-    }
-
-    .icon-wrapper {
-      width: 90px;
-      height: 90px;
-      background: rgba(160, 32, 240, 0.1);
-      border: 1px solid rgba(160, 32, 240, 0.3);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.5rem;
-      color: #a020f0;
-      margin-bottom: 25px;
-      transition: 0.3s;
-    }
-
-    .service-box:hover .icon-wrapper {
-      background: #a020f0;
-      color: #ffffff;
-      box-shadow: 0 0 25px #a020f0;
-    }
-
-    .service-box h2 {
-      font-size: 1.5rem;
-      margin-bottom: 15px;
-      color: #ffffff;
-    }
-
-    .service-box p {
-      font-size: 0.95rem;
-      color: #cbd5e1;
-      margin-bottom: 25px;
-    }
-
-    .feature-list {
-      list-style: none;
-      text-align: left;
-      width: 100%;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-      padding-top: 20px;
-      margin: 0;
-    }
-
-    .feature-list li {
-      font-size: 0.85rem;
-      color: #94a3b8;
-      margin-bottom: 8px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .feature-list li i {
-      color: #a020f0;
-      font-size: 0.7rem;
-    }
-
-    .cta-section {
-      text-align: center;
-      padding: 80px 20px;
-      background: rgba(30, 41, 59, 0.5);
-      border-top: 1px solid rgba(160, 32, 240, 0.2);
-    }
-
-    .cta-section h2 {
-      color: #ffffff;
-      font-size: 2rem;
-    }
-
-    .btn-contact {
-      display: inline-block;
-      padding: 15px 40px;
-      background: #a020f0;
-      color: white;
-      text-decoration: none;
-      border-radius: 50px;
-      font-weight: bold;
-      font-size: 1.1rem;
-      transition: 0.3s;
-      box-shadow: 0 10px 20px rgba(160, 32, 240, 0.3);
-      margin-top: 25px;
-    }
-
-    .btn-contact:hover {
-      background: #ffffff;
-      color: #a020f0;
-      transform: scale(1.05);
-      box-shadow: 0 15px 30px rgba(160, 32, 240, 0.5);
-    }
-
-    .back-home-link {
-      color: #94a3b8;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 22px;
-    }
-
-    .back-home-link:hover {
-      color: #a020f0;
-    }
-
-    @media (max-width: 1024px) {
-      .services-main {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .services-main {
-        grid-template-columns: 1fr;
-      }
-
-      .services-hero h1 {
-        font-size: 2.5rem;
-      }
-
-      .cta-section h2 {
-        font-size: 1.5rem;
-      }
-    }
-  `;
+.web-service-page{background-color:#050505;color:#fff;line-height:1.6;overflow-x:hidden;min-height:100vh;font-family:"Poppins",sans-serif;}
+.services-hero{padding:20px 20px 80px;margin-top:0;min-height:calc(100vh - 86px);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:linear-gradient(rgba(160,32,240,.05),rgba(15,23,42,1));border-bottom:2px solid #a020f0;}
+.services-hero h1{font-size:3.5rem;margin-bottom:15px;text-transform:uppercase;letter-spacing:2px;}
+.services-hero h1 span{color:#a020f0;text-shadow:0 0 20px rgba(160,32,240,.6);}
+.services-hero p{max-width:700px;margin:0 auto 8px;color:#94a3b8;font-size:1.1rem;}
+.services-main{max-width:1200px;margin:80px auto;padding:0 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:40px;}
+.service-box{background:#1e293b;padding:50px 30px;border-radius:30px;border:1px solid rgba(160,32,240,.15);text-align:center;transition:.4s;position:relative;display:flex;flex-direction:column;align-items:center;}
+.service-box:hover{transform:translateY(-15px);border-color:#a020f0;box-shadow:0 20px 40px rgba(160,32,240,.2);}
+.icon-wrapper{width:90px;height:90px;background:rgba(160,32,240,.1);border:1px solid rgba(160,32,240,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2.5rem;color:#a020f0;margin-bottom:25px;transition:.3s;}
+.service-box:hover .icon-wrapper{background:#a020f0;color:#fff;box-shadow:0 0 25px #a020f0;}
+.service-box h2{font-size:1.5rem;margin-bottom:15px;color:#fff;}
+.service-box p{font-size:.95rem;color:#cbd5e1;margin-bottom:25px;}
+.feature-list{list-style:none;text-align:left;width:100%;border-top:1px solid rgba(255,255,255,.05);padding-top:20px;margin:0;}
+.feature-list li{font-size:.85rem;color:#94a3b8;margin-bottom:8px;display:flex;align-items:center;gap:10px;}
+.feature-list li i{color:#a020f0;font-size:.7rem;}
+.cta-section{text-align:center;padding:80px 20px;background:rgba(30,41,59,.5);border-top:1px solid rgba(160,32,240,.2);}
+.cta-section h2{color:#fff;font-size:2rem;}
+.btn-contact{display:inline-block;padding:15px 40px;background:#a020f0;color:#fff;text-decoration:none;border-radius:50px;font-weight:700;font-size:1.1rem;transition:.3s;box-shadow:0 10px 20px rgba(160,32,240,.3);margin-top:25px;}
+.btn-contact:hover{background:#fff;color:#a020f0;transform:scale(1.05);box-shadow:0 15px 30px rgba(160,32,240,.5);}
+.back-home-link{color:#94a3b8;text-decoration:none;display:inline-block;margin-top:22px;}
+.back-home-link:hover{color:#a020f0;}
+@media(max-width:1024px){.services-main{grid-template-columns:1fr 1fr;}}
+@media(max-width:768px){.services-main{grid-template-columns:1fr;}.services-hero{min-height:auto;padding:30px 20px 60px;}.services-hero h1{font-size:2.5rem;}.cta-section h2{font-size:1.5rem;}}
+`;
 
   return (
     <>
@@ -282,8 +123,7 @@ export default function Br30WebService() {
 
         <section className="cta-section">
           <h2>Ready to build something amazing?</h2>
-
-          <a href="mailto:br30service.contact@gmail.com?subject=Web%20Service%20Quote%20Request&body=Hello%20Support%20Team%2C%0A%0AI%20am%20interested%20in%20your%20web%20services.%0A%0APlease%20share%20pricing%20and%20details.%0A%0AName%3A%20_____%0ARequirement%3A%20_____%0A%0AThanks" className="btn-contact" target="_blank" rel="noreferrer">
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=br30service.contact@gmail.com&su=Web%20Service%20Quote%20Request&body=Hello%20Support%20Team,%0A%0AI%20am%20interested%20in%20your%20web%20services.%0A%0APlease%20share%20pricing%20and%20details.%0A%0AName:%20_____%0ARequirement:%20_____%0A%0AThanks" className="btn-contact" target="_blank" rel="noopener noreferrer">
             Get a Quote Now 🚀
           </a>
 

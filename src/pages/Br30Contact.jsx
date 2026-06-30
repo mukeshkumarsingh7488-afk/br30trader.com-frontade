@@ -31,15 +31,7 @@ export default function Br30Contact() {
   };
 
   const styles = `
-    .contact-page {
-      background: #050505;
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      padding: 40px 20px;
-      min-height: 100vh;
-      font-family: "Poppins", sans-serif;
-    }
+.contact-page{background:#050505;color:#fff;display:flex;justify-content:center;align-items:flex-start;padding:0 20px 40px;margin-top:0;min-height:100vh;font-family:"Poppins",sans-serif;}
 
     .contact-container {
       max-width: 850px;

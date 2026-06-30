@@ -27,18 +27,7 @@ export default function Br30AboutUs() {
       min-height: 100vh;
     }
 
-    .about-hero {
-      min-height: 430px;
-      background: radial-gradient(circle at top, rgba(160, 32, 240, 0.25), transparent 35%),
-        linear-gradient(135deg, #050505 0%, #1e293b 100%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      border-bottom: 2px solid #a020f0;
-      padding: 40px 20px;
-    }
+ .about-hero{min-height:430px;background:radial-gradient(circle at top,rgba(160,32,240,.25),transparent 35%),linear-gradient(135deg,#050505 0%,#1e293b 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border-bottom:2px solid #a020f0;padding:0 20px 40px;margin-top:0;}
 
     .about-hero h1 {
       font-size: 3rem;

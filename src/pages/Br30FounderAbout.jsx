@@ -31,24 +31,9 @@ export default function Br30FounderAbout() {
       font-family: "Poppins", sans-serif;
     }
 
-    .profile-hero {
-      height: 400px;
-      background: linear-gradient(135deg, #050505 0%, #1e293b 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      border-bottom: 2px solid #a020f0;
-      position: relative;
-      padding: 0 20px;
-    }
+.profile-hero{height:400px;background:linear-gradient(135deg,#050505 0%,#1e293b 100%);display:flex;align-items:center;justify-content:center;text-align:center;border-bottom:2px solid #a020f0;position:relative;padding:0 20px;margin-top:0;padding-top:0;}
 
-    .profile-hero h1 {
-      font-size: 3.5rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      max-width: 1100px;
-    }
+.profile-hero h1{font-size:3.5rem;letter-spacing:2px;text-transform:uppercase;max-width:1100px;margin:0;padding-top:20px;}
 
     .profile-hero h1 span {
       color: #a020f0;
