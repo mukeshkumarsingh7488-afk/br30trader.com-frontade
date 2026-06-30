@@ -134,9 +134,10 @@ export default function Navbar() {
     localStorage.removeItem("userData");
     localStorage.removeItem("username");
     localStorage.removeItem("role");
+
     logout?.();
-    navigate("/login", { replace: true });
-    window.location.reload();
+
+    window.location.replace("/");
   };
 
   const marketItem = (label, data) => (
