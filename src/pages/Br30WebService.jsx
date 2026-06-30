@@ -289,7 +289,7 @@ export default function Br30WebService() {
 
           <br />
 
-          <BackHomeButton className="back-home-btn">← Back to Home</BackHomeButton>
+          <BackHomeButton>← Back to Home</BackHomeButton>
         </section>
       </main>
     </>

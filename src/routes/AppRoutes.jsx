@@ -8,6 +8,7 @@ import Register from "../pages/Register";
 import ForgotPassword from "../pages/ForgotPassword";
 import Reset from "../pages/Reset";
 
+import Dashboard from "../pages/Dashboard";
 import MyProfile from "../pages/MyProfile";
 import MyCourse from "../pages/MyCourse";
 import CertificateVerify from "../pages/CertificateVerify";
@@ -80,7 +81,7 @@ export default function AppRoutes() {
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/reset" element={<Reset />} />
 
-      <Route path="/dashboard" element={<Navigate to="/dashboard" replace />} />
+      <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/dashboard/profile" element={<MyProfile />} />
       <Route path="/dashboard/myprofile" element={<Navigate to="/dashboard/profile" replace />} />
       <Route path="/dashboard/my-course" element={<MyCourse />} />

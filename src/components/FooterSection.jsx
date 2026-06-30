@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logoDarkGreen from "../assets/logo-dark-Green.png";
 export default function FooterSection() {
   return (
     <>
@@ -58,9 +59,13 @@ export default function FooterSection() {
       <footer className="main-footer">
         <div className="footer-container">
           <div className="footer-about">
-            <h2 className="footer-logo">
-              BR30 <span>Trader</span>
-            </h2>
+            <div className="footer-brand">
+              <img src={logoDarkGreen} alt="BR30 Trader" />
+
+              <h2 className="footer-logo">
+                BR30 <span>Trader</span>
+              </h2>
+            </div>
 
             <p>Empowering Traders with logic, psychology, and high-performance web solutions.</p>
 
@@ -113,7 +118,7 @@ export default function FooterSection() {
             </p>
 
             <p className="built-by">
-              Built with ❤️ by <span>Mukesh Raj</span>
+              Built with ❤️ by <span>BR30 Group</span>
             </p>
           </div>
         </div>
@@ -125,7 +130,7 @@ export default function FooterSection() {
         </div>
       </footer>
 
-      <style>{`.footer-section{padding:60px 20px 35px;text-align:center;border-top:2px solid #00ffaa;background:#071127}.footer-section h3{font-size:2rem;margin-bottom:35px;color:#f5f5f5}.social-grid{display:flex;justify-content:center;flex-wrap:wrap;gap:18px}.s-link{display:flex;align-items:center;justify-content:center;gap:10px;padding:14px 24px;border-radius:14px;background:#000;color:#ddd;text-decoration:none!important;font-weight:600;border:1px solid transparent;transition:.25s ease}.s-link:hover{color:#fff;box-shadow:0 0 0 1px #00ffaa,0 0 18px rgba(0,255,170,.25)}.s-link i{font-size:20px}.copyright{margin-top:40px;color:#aaa;font-size:14px}.footer-policy-links{border-top:1px solid rgba(255,255,255,.08);padding:22px 15px;background:#071127}.policy-wrapper{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:14px}.policy-wrapper a{color:#aaa;text-decoration:none;transition:color .25s ease}.policy-wrapper a:hover{color:#00ffaa}.divider{color:#444}.main-footer{background:#071127;border-top:2px solid #00ffaa;padding:60px 20px 20px;overflow:hidden}.footer-container{max-width:1300px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:40px;align-items:flex-start}.footer-logo{font-size:2.1rem;margin-bottom:18px;color:#fff}.footer-logo span{color:#00ffaa}.footer-about p,.contact-details p{color:#b7b7b7;line-height:1.7;margin-bottom:25px}.social-icons{display:flex;gap:16px;flex-wrap:wrap}.social-icons a{width:48px;height:48px;border-radius:50%;background:#000;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;text-decoration:none!important;transition:.25s ease}.social-icons a:hover{color:#00ffaa;box-shadow:0 0 0 1px #00ffaa,0 0 18px rgba(0,255,170,.25)}.footer-links h3,.contact-details h3{margin-bottom:18px;font-size:1.7rem;color:#fff}.footer-links ul{list-style:none;padding:0;margin:0}.footer-links li{margin-bottom:14px}.footer-links a{color:#bbb;text-decoration:none;transition:color .25s ease}.footer-links a:hover{color:#00ffaa}.footer-mail-link{display:inline-block;color:#cbd5e1;text-decoration:none!important;word-break:break-word;margin-bottom:18px}.footer-mail-link:hover{color:#00ffaa}.built-by span{color:#00ffaa;font-weight:700}.footer-bottom{border-top:1px solid rgba(255,255,255,.08);margin-top:45px;padding-top:20px;text-align:center}.footer-bottom p{color:#999}.footer-bottom span{color:#ff4d4d}@media(max-width:768px){.footer-section h3{font-size:1.5rem}.s-link{width:100%}.footer-container{text-align:center}.social-icons{justify-content:center}.footer-logo{font-size:1.8rem}}`}</style>
+      <style>{`.footer-section{padding:60px 20px 35px;text-align:center;border-top:2px solid #00ffaa;background:#071127}.footer-brand{display:flex;align-items:center;gap:14px;margin-bottom:18px;}.footer-brand img{width:56px;height:56px;border-radius:16px;object-fit:cover;box-shadow:0 0 20px rgba(0,255,136,.25);}.footer-logo{margin:0;}.footer-section h3{font-size:2rem;margin-bottom:35px;color:#f5f5f5}.social-grid{display:flex;justify-content:center;flex-wrap:wrap;gap:18px}.s-link{display:flex;align-items:center;justify-content:center;gap:10px;padding:14px 24px;border-radius:14px;background:#000;color:#ddd;text-decoration:none!important;font-weight:600;border:1px solid transparent;transition:.25s ease}.s-link:hover{color:#fff;box-shadow:0 0 0 1px #00ffaa,0 0 18px rgba(0,255,170,.25)}.s-link i{font-size:20px}.copyright{margin-top:40px;color:#aaa;font-size:14px}.footer-policy-links{border-top:1px solid rgba(255,255,255,.08);padding:22px 15px;background:#071127}.policy-wrapper{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:14px}.policy-wrapper a{color:#aaa;text-decoration:none;transition:color .25s ease}.policy-wrapper a:hover{color:#00ffaa}.divider{color:#444}.main-footer{background:#071127;border-top:2px solid #00ffaa;padding:60px 20px 20px;overflow:hidden}.footer-container{max-width:1300px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:40px;align-items:flex-start}.footer-logo{font-size:2.1rem;margin-bottom:18px;color:#fff}.footer-logo span{color:#00ffaa}.footer-about p,.contact-details p{color:#b7b7b7;line-height:1.7;margin-bottom:25px}.social-icons{display:flex;gap:16px;flex-wrap:wrap}.social-icons a{width:48px;height:48px;border-radius:50%;background:#000;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;text-decoration:none!important;transition:.25s ease}.social-icons a:hover{color:#00ffaa;box-shadow:0 0 0 1px #00ffaa,0 0 18px rgba(0,255,170,.25)}.footer-links h3,.contact-details h3{margin-bottom:18px;font-size:1.7rem;color:#fff}.footer-links ul{list-style:none;padding:0;margin:0}.footer-links li{margin-bottom:14px}.footer-links a{color:#bbb;text-decoration:none;transition:color .25s ease}.footer-links a:hover{color:#00ffaa}.footer-mail-link{display:inline-block;color:#cbd5e1;text-decoration:none!important;word-break:break-word;margin-bottom:18px}.footer-mail-link:hover{color:#00ffaa}.built-by span{color:#00ffaa;font-weight:700}.footer-bottom{border-top:1px solid rgba(255,255,255,.08);margin-top:45px;padding-top:20px;text-align:center}.footer-bottom p{color:#999}.footer-bottom span{color:#ff4d4d}@media(max-width:768px){.footer-section h3{font-size:1.5rem}.s-link{width:100%}.footer-container{text-align:center}.social-icons{justify-content:center}.footer-logo{font-size:1.8rem}}`}</style>
     </>
   );
 }

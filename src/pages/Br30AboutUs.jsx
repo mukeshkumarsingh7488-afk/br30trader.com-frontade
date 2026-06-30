@@ -299,7 +299,7 @@ export default function Br30AboutUs() {
 
           <br />
 
-          <BackHomeButton className="back-home-btn">← Back to Home</BackHomeButton>
+          <BackHomeButton>← Back to Home</BackHomeButton>
         </section>
       </main>
     </>

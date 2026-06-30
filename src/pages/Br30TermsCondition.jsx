@@ -231,7 +231,7 @@ export default function Br30TermsCondition() {
 
             <p>Funded & Built by Mukesh Raj | BR30 Trader</p>
 
-            <BackHomeButton className="back-home-btn">← Back to Home</BackHomeButton>
+            <BackHomeButton>← Back to Home</BackHomeButton>
           </div>
         </div>
       </main>

@@ -275,7 +275,7 @@ export default function Br30Strategies() {
           <p>Master your mind, master the market. 📈</p>
         </div>
 
-        <BackHomeButton className="back-home-btn">← Back to Home</BackHomeButton>
+        <BackHomeButton>← Back to Home</BackHomeButton>
       </main>
     </>
   );

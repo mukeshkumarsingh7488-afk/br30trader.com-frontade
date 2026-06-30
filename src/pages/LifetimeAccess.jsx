@@ -312,7 +312,7 @@ export default function LifetimeAccess() {
           </section>
 
           <div className="back-btn-container">
-            <BackHomeButton className="back-home-btn">← Back to Home</BackHomeButton>
+            <BackHomeButton>← Back to Home</BackHomeButton>
           </div>
         </div>
       </main>

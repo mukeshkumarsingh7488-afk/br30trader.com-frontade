@@ -206,7 +206,7 @@ export default function BellViewAlert() {
               <p className="muted-text">Koi alert record nahi mila.</p>
             ) : (
               alerts.map((data, index) => {
-                const name = data.senderName || "Admin Mukesh Raj Raj";
+                const name = data.senderName || "Admin Mukesh Raj";
                 const date = formatDate(data.date);
 
                 return (

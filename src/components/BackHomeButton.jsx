@@ -6,7 +6,7 @@ export default function BackHomeButton({ className = "", children, target, rel }
   if (!isLoggedIn) return null;
 
   return (
-    <Link to="/dashboard" className={className} target={target} rel={rel}>
+    <Link to="/dashboard" className={`back-home-btn ${className}`} target={target} rel={rel}>
       {children}
     </Link>
   );

@@ -231,7 +231,7 @@ export default function MyProfile() {
               Logout
             </button>
 
-            <BackHomeButton className="back-home-btn">← Back to Home</BackHomeButton>
+            <BackHomeButton>← Back to Home</BackHomeButton>
           </div>
         </div>
       </div>
