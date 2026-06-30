@@ -153,7 +153,15 @@ export default function Leaderboard() {
         </div>
 
         <div className="leaderboard-footer">
-          <Link to="/dashboard#coursesection" className="vip-btn">
+          <Link
+            to="/dashboard"
+            className="vip-btn"
+            onClick={() => {
+              setTimeout(() => {
+                document.getElementById("coursesection")?.scrollIntoView({ behavior: "smooth", block: "start" });
+              }, 100);
+            }}
+          >
             <span>BROWSE COURSES</span>
             <span>↗</span>
           </Link>
