@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import BackHomeButton from "../components/BackHomeButton";
 
 export default function Disclaimer() {
   const styles = `
