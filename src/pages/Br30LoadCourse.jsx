@@ -23,7 +23,7 @@ export default function Br30LoadCourse() {
     const token = localStorage.getItem("token");
     if (!token) {
       Swal.fire("Security Alert", "Admin login required! 🔑", "warning");
-      navigate("/login");
+      navigate("/");
       return;
     }
     loadCourses();
@@ -52,7 +52,7 @@ export default function Br30LoadCourse() {
     const token = localStorage.getItem("token");
     if (!token) {
       Swal.fire("Token Missing", "Pehle admin login karo", "error");
-      navigate("/login");
+      navigate("/");
       return;
     }
     const title = titleRef.current.value.trim();
@@ -91,7 +91,7 @@ export default function Br30LoadCourse() {
     const token = localStorage.getItem("token");
     if (!token) {
       Swal.fire("Token Missing", "Pehle admin login karo", "error");
-      navigate("/login");
+      navigate("/");
       return;
     }
     const courseId = selectedCourse;

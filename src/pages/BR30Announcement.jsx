@@ -22,7 +22,7 @@ export default function BR30Announcement() {
 
     if (!authToken) {
       Swal.fire("Token Missing", "Pehle login karo 🔑", "error");
-      navigate("/login");
+      navigate("/");
       return;
     }
 

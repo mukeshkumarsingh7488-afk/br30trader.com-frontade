@@ -28,7 +28,7 @@ export default function AdminDashboard() {
   useEffect(() => {
     if (!token || role !== "admin") {
       Swal.fire("Access Denied", "Bhai, ye sirf Admin ke liye hai!", "warning");
-      navigate("/login");
+      navigate("/");
       return;
     }
     loadStats();
@@ -171,7 +171,7 @@ export default function AdminDashboard() {
 
   const logout = () => {
     localStorage.clear();
-    navigate("/login");
+    navigate("/");
   };
 
   return (

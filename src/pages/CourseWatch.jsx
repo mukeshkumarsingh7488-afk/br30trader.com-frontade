@@ -95,12 +95,12 @@ export default function CourseWatch() {
     const token = getToken();
 
     if (!token) {
-      window.location.href = "/login";
+      window.location.href = "/";
       return;
     }
 
     if (!courseId) {
-      window.location.href = "/mycourse";
+      window.location.href = "/dashboard/mycourse";
       return;
     }
 
