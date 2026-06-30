@@ -80,7 +80,7 @@ export default function AppRoutes() {
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/reset" element={<Reset />} />
 
-      <Route path="/dashboard" element={<Navigate to="/dashboard/profile" replace />} />
+      <Route path="/dashboard" element={<Navigate to="/dashboard" replace />} />
       <Route path="/dashboard/profile" element={<MyProfile />} />
       <Route path="/dashboard/myprofile" element={<Navigate to="/dashboard/profile" replace />} />
       <Route path="/dashboard/my-course" element={<MyCourse />} />
