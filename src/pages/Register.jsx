@@ -181,10 +181,14 @@ export default function Register() {
                 ,{" "}
                 <Link to="/dashboard/privacy" target="_blank" rel="noopener noreferrer">
                   Privacy Policy
-                </Link>{" "}
-                and{" "}
+                </Link>
+                ,{" "}
                 <Link to="/dashboard/refund" target="_blank" rel="noopener noreferrer">
                   Refund Policy
+                </Link>{" "}
+                and{" "}
+                <Link to="/dashboard/disclaimer" target="_blank" rel="noopener noreferrer">
+                  Disclaimer
                 </Link>
                 .
               </span>
