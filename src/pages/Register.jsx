@@ -7,15 +7,19 @@ export default function Register() {
 
   const apiBase = window.API_BASE_URL || import.meta.env.VITE_API_BASE_URL || "https://my-backend-1-avpd.onrender.com";
 
+  const TERMS_VERSION = "BR30 Trader Terms v1 - 2026";
+  const PRIVACY_VERSION = "BR30 Trader Privacy v1 - 2026";
+
   const [step, setStep] = useState("register");
   const [showPass, setShowPass] = useState(false);
-  const [agreeTerms, setAgreeTerms] = useState(false);
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const [otp, setOtp] = useState("");
+  const [acceptTerms, setAcceptTerms] = useState(false);
+
   const [timer, setTimer] = useState(30);
   const [canResend, setCanResend] = useState(false);
   const [regLoading, setRegLoading] = useState(false);
@@ -28,7 +32,7 @@ export default function Register() {
     if (fullName.length < 3) return "Name too short!";
     if (!emailRegex.test(userEmail)) return "Invalid Email!";
     if (!passRegex.test(pass)) return "Use 8+ chars with 1 Special Character!";
-    if (!agreeTerms) return "Please accept Terms & Conditions and Privacy Policy.";
+    if (!acceptTerms) return "Please accept Terms & Conditions and Privacy Policy.";
     return null;
   };
 
@@ -52,13 +56,8 @@ export default function Register() {
   const handleRegister = async (e) => {
     if (e) e.preventDefault();
 
-    if (!acceptTerms) {
-      alert("Please accept the Terms & Conditions and Privacy Policy.");
-      return;
-    }
-
     const cleanName = name.trim();
-    const cleanEmail = email.trim();
+    const cleanEmail = email.trim().toLowerCase();
     const error = validateInput(cleanName, cleanEmail, password);
 
     if (error) {
@@ -72,7 +71,15 @@ export default function Register() {
       const res = await fetch(`${apiBase}/api/auth/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: cleanName, email: cleanEmail, password }),
+        body: JSON.stringify({
+          name: cleanName,
+          email: cleanEmail,
+          password,
+          acceptedTerms: true,
+          acceptedTermsAt: new Date().toISOString(),
+          acceptedTermsVersion: TERMS_VERSION,
+          acceptedPrivacyVersion: PRIVACY_VERSION,
+        }),
       });
 
       const data = await res.json();
@@ -85,6 +92,7 @@ export default function Register() {
         alert(data.msg || "Registration Failed!");
       }
     } catch (err) {
+      console.error("Register Error:", err);
       alert("Server Error!");
     } finally {
       setRegLoading(false);
@@ -95,7 +103,7 @@ export default function Register() {
     if (e) e.preventDefault();
 
     const cleanOtp = otp.trim();
-    const cleanEmail = email.trim();
+    const cleanEmail = email.trim().toLowerCase();
 
     if (cleanOtp.length < 6) {
       alert("Enter 6-digit OTP!");
@@ -164,7 +172,6 @@ export default function Register() {
 
             <label className="terms-checkbox">
               <input type="checkbox" checked={acceptTerms} onChange={(e) => setAcceptTerms(e.target.checked)} />
-
               <span>
                 I agree to the{" "}
                 <Link to="/dashboard/terms" target="_blank" rel="noopener noreferrer">
@@ -225,13 +232,11 @@ export default function Register() {
 .input-box:focus-within{border-color:#a020f0;box-shadow:0 0 8px rgba(160,32,240,.2)}
 .input-box input{background:transparent;border:none;outline:none;color:#fff;flex:1;padding:10px 5px;font-size:15px;min-width:0}
 .toggle-btn{cursor:pointer;color:#94a3b8;font-size:18px;user-select:none}
-
-.terms-box{display:flex!important;align-items:flex-start;gap:10px;background:rgba(5,5,5,.55);border:1px solid #334155;border-radius:12px;padding:12px;margin:2px 0 15px!important;color:#cbd5e1!important;line-height:1.55}
-.terms-box input{width:16px;height:16px;margin-top:3px;accent-color:#a020f0;cursor:pointer;flex:0 0 auto}
-.terms-box span{font-size:12.5px;color:#cbd5e1}
-.terms-box a{color:#c084fc;text-decoration:none;font-weight:700}
-.terms-box a:hover{text-decoration:underline;color:#d8b4fe}
-
+.terms-checkbox{display:flex!important;align-items:flex-start;gap:10px;background:rgba(5,5,5,.55);border:1px solid #334155;border-radius:12px;padding:12px;margin:2px 0 15px!important;color:#cbd5e1!important;line-height:1.55}
+.terms-checkbox input{width:16px;height:16px;margin-top:3px;accent-color:#a020f0;cursor:pointer;flex:0 0 auto}
+.terms-checkbox span{font-size:12.5px;color:#cbd5e1}
+.terms-checkbox a{color:#c084fc;text-decoration:none;font-weight:700}
+.terms-checkbox a:hover{text-decoration:underline;color:#d8b4fe}
 .register-container button{width:100%;padding:12px;border:none;border-radius:10px;background:#a020f0;color:#fff;font-size:16px;cursor:pointer;transition:.3s ease;font-weight:600;margin-top:10px}
 .register-container button:hover:not(:disabled){background:#8219c4;transform:translateY(-2px);box-shadow:0 5px 15px rgba(160,32,240,.3)}
 .register-container button:disabled{opacity:.7;cursor:not-allowed}
