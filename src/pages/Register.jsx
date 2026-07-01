@@ -172,14 +172,19 @@ export default function Register() {
 
             <label className="terms-checkbox">
               <input type="checkbox" checked={acceptTerms} onChange={(e) => setAcceptTerms(e.target.checked)} />
+
               <span>
                 I agree to the{" "}
                 <Link to="/dashboard/terms" target="_blank" rel="noopener noreferrer">
                   Terms & Conditions
-                </Link>{" "}
-                and{" "}
+                </Link>
+                ,{" "}
                 <Link to="/dashboard/privacy" target="_blank" rel="noopener noreferrer">
                   Privacy Policy
+                </Link>{" "}
+                and{" "}
+                <Link to="/dashboard/refund" target="_blank" rel="noopener noreferrer">
+                  Refund Policy
                 </Link>
                 .
               </span>
