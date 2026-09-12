@@ -26,12 +26,12 @@ export default function CourseShowcase() {
               <p>This flagship course is designed for beginners as well as experienced traders who want a structured learning system instead of random YouTube videos.</p>
 
               <div className="course-tags">
-                <span>Technical Analysis</span>
-                <span>Price Action</span>
-                <span>Risk Management</span>
-                <span>Option Buying</span>
-                <span>Option Selling</span>
-                <span>Trading Psychology</span>
+                <span>Advance Option Buying</span>
+                <span>Advance Option Selling</span>
+                <span>Advance BTST Mastery</span>
+                <span>Crypto & Forex Pro</span>
+                <span>One Side Momentum</span>
+                <span>Scalping Strategy Pro</span>
               </div>
 
               <div className="course-buttons">
