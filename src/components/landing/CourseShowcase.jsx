@@ -7,7 +7,7 @@ export default function CourseShowcase() {
       <section className="course-section" id="courses">
         <div className="br30-trader-container">
           <div className="course-head">
-            <span>FEATURED COURSE</span>
+            <span>OUR COURSES</span>
 
             <h2>Trading Mastery Center</h2>
 
@@ -54,17 +54,17 @@ export default function CourseShowcase() {
                 </div>
 
                 <div className="preview-content">
-                  <div className="preview-module active">Technical Analysis</div>
+                  <div className="preview-module active">Advance Option Buying</div>
 
-                  <div className="preview-module">Price Action</div>
+                  <div className="preview-module">Advance Option Selling</div>
 
-                  <div className="preview-module">Option Buying</div>
+                  <div className="preview-module">Advance BTST Mastery</div>
 
-                  <div className="preview-module">Option Selling</div>
+                  <div className="preview-module">Crypto & Forex Pro</div>
 
-                  <div className="preview-module">Risk Management</div>
+                  <div className="preview-module">One Side Momentum</div>
 
-                  <div className="preview-module">Trading Psychology</div>
+                  <div className="preview-module">Scalping Strategy Pro</div>
                 </div>
               </div>
             </div>
