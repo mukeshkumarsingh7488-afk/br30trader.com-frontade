@@ -32,6 +32,8 @@ export default function Br30FounderAbout() {
 .info-box h2{color:#a020f0;margin-bottom:20px;font-size:1.8rem;border-bottom:2px solid rgba(160,32,240,.2);display:inline-block;padding-bottom:5px;}
 .info-box p{color:#cbd5e1;margin-bottom:15px;font-size:1.05rem;}
 .intro-box{text-align:center;margin-bottom:40px;}
+.profile-support-link{color:inherit;text-decoration:none;}
+.profile-support-link:hover{color:inherit;text-decoration:underline;}
 .intro-main{font-size:1.3rem!important;color:#fff!important;}
 .intro-sub{font-size:1rem!important;color:#ccc!important;margin-top:10px;}
 .badges-container{display:flex;gap:15px;flex-wrap:wrap;margin-top:20px;}
@@ -116,7 +118,12 @@ export default function Br30FounderAbout() {
         </div>
 
         <footer className="profile-footer">
-          <p>© 2026 BR30Trader | mukeshkumarsingh7488@gmail.com</p>
+          <p>
+            © 2026 BR30Trader |{" "}
+            <a href="https://br30crm-com-f.vercel.app/public/forms/6ac4a4ce8ab8658ebe3748f7/br30-trader-support-request?utm_source=br30-trader-web&utm_medium=website&lead_source=br30-trader-web&form_id=6ac733c86780cbc6335f9b49&source_id=6ac733f46780cbc6335f9b52" target="_blank" rel="noopener noreferrer" className="profile-support-link">
+              Support
+            </a>
+          </p>
         </footer>
       </main>
     </>

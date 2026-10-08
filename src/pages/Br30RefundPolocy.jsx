@@ -137,6 +137,9 @@ export default function Br30RefundPolocy() {
         font-size:16px;
       }
     }
+      .privacy-support-text{color:var(--text-color,#ffffff);}
+.privacy-support-link{color:var(--text-color,#ffffff);text-decoration:none;}
+.privacy-support-link:hover{color:var(--text-color,#ffffff);text-decoration:underline;}
   `;
 
   return (
@@ -184,8 +187,11 @@ export default function Br30RefundPolocy() {
 
             <p>To request a refund, contact our support team with your payment details and issue description.</p>
 
-            <p>
-              Email: <b>support.br30trader@gmail.com</b>
+            <p className="privacy-support-text">
+              Support:{" "}
+              <a href="https://br30crm-com-f.vercel.app/public/forms/6ac4a4ce8ab8658ebe3748f7/br30-trader-support-request?utm_source=br30-trader-web&utm_medium=website&lead_source=br30-trader-web&form_id=6ac733c86780cbc6335f9b49&source_id=6ac733f46780cbc6335f9b52" target="_blank" rel="noopener noreferrer" className="privacy-support-link">
+                Submit a Support Request
+              </a>
             </p>
 
             <h3>5. Refund Processing Time</h3>

@@ -59,8 +59,8 @@ export default function Footer() {
 
           <div className="footer-col footer-contact">
             <h3>Support</h3>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=support.br30trader@gmail.com&su=Support%20Request%20-%20BR30%20Trader&body=Hello%20BR30%20Trader%20Support%20Team,%0A%0AI%20need%20assistance%20regarding%20your%20platform.%20Please%20find%20my%20details%20below:%0A%0AName:%20%0AEmail:%20%0AIssue:%20%0A%0AThank%20you." target="_blank" rel="noopener noreferrer">
-              support.br30trader@gmail.com
+            <a href="https://br30crm-com-f.vercel.app/public/forms/6ac4a4ce8ab8658ebe3748f7/br30-trader-support-request?utm_source=br30-trader-web&utm_medium=website&lead_source=br30-trader-web&form_id=6ac733c86780cbc6335f9b49&source_id=6ac733f46780cbc6335f9b52" target="_blank" rel="noopener noreferrer">
+              Submit a Support Request
             </a>
             <span>Based in India 🇮🇳</span>
             <p>

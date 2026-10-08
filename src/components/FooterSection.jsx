@@ -32,10 +32,9 @@ export default function FooterSection() {
             <i className="fa-brands fa-whatsapp" style={{ color: "#25d366" }}></i>
             WhatsApp
           </a>
-
-          <a href="mailto:support.br30trader@gmail.com" target="_blank" rel="noopener noreferrer" className="s-link">
-            <i className="fa-solid fa-envelope" style={{ color: "#ea4335" }}></i>
-            Gmail
+          <a href="https://br30crm-com-f.vercel.app/public/forms/6ac4a4ce8ab8658ebe3748f7/br30-trader-support-request?utm_source=br30-trader-web&utm_medium=website&lead_source=br30-trader-web&form_id=6ac733c86780cbc6335f9b49&source_id=6ac733f46780cbc6335f9b52" target="_blank" rel="noopener noreferrer" className="s-link">
+            <i className="fa-solid fa-headset" style={{ color: "#ea4335" }}></i>
+            Support Request
           </a>
         </div>
 
@@ -116,8 +115,8 @@ export default function FooterSection() {
           <div className="footer-box contact-details">
             <h3>Get In Touch</h3>
 
-            <a className="footer-mail-link" href="https://mail.google.com/mail/?view=cm&fs=1&to=support.br30trader@gmail.com&su=Web%20Service%20Inquiry&body=Hello%20BR30%20Trader%20Team,%0A%0AMujhe%20aapki%20services%20ke%20baare%20me%20details%20chahiye.%0A%0AThanks" target="_blank" rel="noopener noreferrer">
-              support.br30trader@gmail.com
+            <a className="footer-mail-link" href="https://br30crm-com-f.vercel.app/public/forms/6ac4a4ce8ab8658ebe3748f7/br30-trader-support-request?utm_source=br30-trader-web&utm_medium=website&lead_source=br30-trader-web&form_id=6ac733c86780cbc6335f9b49&source_id=6ac733f46780cbc6335f9b52" target="_blank" rel="noopener noreferrer">
+              Submit a Support Request
             </a>
 
             <p>

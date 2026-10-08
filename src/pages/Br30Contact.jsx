@@ -20,16 +20,6 @@ export default function Br30Contact() {
     setMeta("keywords", "contact BR30 Trader, trading support, course help, trading mentor India, BR30 support");
   }, []);
 
-  const handlePhoneClick = (e) => {
-    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-
-    if (!isMobile) {
-      e.preventDefault();
-      const message = encodeURIComponent("Hello BR30 Support Team, mujhe help chahiye...");
-      window.open(`https://wa.me/916200986380?text=${message}`, "_blank");
-    }
-  };
-
   const styles = `
 .contact-page{background:#050505;color:#fff;display:flex;justify-content:center;align-items:flex-start;padding:0 20px 40px;margin-top:0;min-height:100vh;font-family:"Poppins",sans-serif;}
 
@@ -201,28 +191,10 @@ export default function Br30Contact() {
 
             <div className="info-card">
               <p>
-                <b>Email:</b>{" "}
-                <a href="mailto:support.br30trader@gmail.com?subject=Support%20Request&body=Hello%20BR30%20Support%20Team,%0A%0AMujhe%20help%20chahiye%20regarding%20..." className="contact-link">
-                  support.br30trader@gmail.com
+                <b>Support:</b>{" "}
+                <a href="https://br30crm-com-f.vercel.app/public/forms/6ac4a4ce8ab8658ebe3748f7/br30-trader-support-request?utm_source=br30-trader-web&utm_medium=website&lead_source=br30-trader-web&form_id=6ac733c86780cbc6335f9b49&source_id=6ac733f46780cbc6335f9b52" target="_blank" rel="noopener noreferrer" className="contact-link">
+                  Submit a Support Request
                 </a>
-              </p>
-
-              <p>
-                <b>Phone:</b>{" "}
-                <a href="tel:+916200986380" onClick={handlePhoneClick} className="contact-link">
-                  +91 6200986380
-                </a>
-              </p>
-
-              <p>
-                <b>WhatsApp:</b>{" "}
-                <a href="https://wa.me/916200986380?text=Hello%20BR30%20Support%20Team%2C%20mujhe%20help%20chahiye..." target="_blank" rel="noreferrer" className="contact-link whatsapp-hover">
-                  Chat on WhatsApp
-                </a>
-              </p>
-
-              <p>
-                <b>Address:</b> Whitefield, Bangalore 560066, India
               </p>
             </div>
 

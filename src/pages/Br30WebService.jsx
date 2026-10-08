@@ -123,7 +123,7 @@ export default function Br30WebService() {
 
         <section className="cta-section">
           <h2>Ready to build something amazing?</h2>
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=br30service.contact@gmail.com&su=Web%20Service%20Quote%20Request&body=Hello%20Support%20Team,%0A%0AI%20am%20interested%20in%20your%20web%20services.%0A%0APlease%20share%20pricing%20and%20details.%0A%0AName:%20_____%0ARequirement:%20_____%0A%0AThanks" className="btn-contact" target="_blank" rel="noopener noreferrer">
+          <a href="https://br30crm-com-f.vercel.app/public/forms/6ac4a4ce8ab8658ebe3748f7/br30-trader-support-request?utm_source=br30-trader-web&utm_medium=website&lead_source=br30-trader-web&form_id=6ac733c86780cbc6335f9b49&source_id=6ac733f46780cbc6335f9b52" className="btn-contact" target="_blank" rel="noopener noreferrer">
             Get a Quote Now 🚀
           </a>
 

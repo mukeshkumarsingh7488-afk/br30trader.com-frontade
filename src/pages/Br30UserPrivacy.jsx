@@ -133,6 +133,9 @@ export default function Br30UserPrivacy() {
         font-size: 16px;
       }
     }
+      .privacy-support-text{color:var(--text-color,#ffffff);}
+.privacy-support-link{color:var(--text-color,#ffffff);text-decoration:none;}
+.privacy-support-link:hover{color:var(--text-color,#ffffff);text-decoration:underline;}
   `;
 
   return (
@@ -225,8 +228,11 @@ export default function Br30UserPrivacy() {
               <li>Withdraw consent anytime</li>
             </ul>
 
-            <p>
-              To exercise rights, contact: <b>support.br30trader@gmail.com</b>
+            <p className="privacy-support-text">
+              To exercise rights, submit a support request:{" "}
+              <a href="https://br30crm-com-f.vercel.app/public/forms/6ac4a4ce8ab8658ebe3748f7/br30-trader-support-request?utm_source=br30-trader-web&utm_medium=website&lead_source=br30-trader-web&form_id=6ac733c86780cbc6335f9b49&source_id=6ac733f46780cbc6335f9b52" target="_blank" rel="noopener noreferrer" className="privacy-support-link">
+                Submit a Support Request
+              </a>
             </p>
 
             <h3>8. Data Breach Policy</h3>

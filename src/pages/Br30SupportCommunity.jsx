@@ -21,18 +21,6 @@ export default function Br30SupportCommunity() {
     setMeta("robots", "index, follow");
   }, []);
 
-  const handleContactClick = (e) => {
-    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-
-    if (!isMobile) {
-      e.preventDefault();
-
-      const message = encodeURIComponent("Hello BR30 Support Team, mujhe help chahiye...");
-
-      window.open(`https://wa.me/916200986380?text=${message}`, "_blank");
-    }
-  };
-
   const styles = `
     .support-page {
       --bg-dark: #07070a;
@@ -232,10 +220,10 @@ export default function Br30SupportCommunity() {
               </div>
 
               <h2>User Help & OTP</h2>
-              <p>Registration, OTP Issues और General Help के लिए यहाँ मेल करें।</p>
+              <p>Registration, OTP Issues और General Help के लिए यहाँ support request submit करें।</p>
 
-              <a href="mailto:support.br30trader@gmail.com" className="contact-link">
-                support.br30trader@gmail.com
+              <a href="https://br30crm-com-f.vercel.app/public/forms/6ac4a4ce8ab8658ebe3748f7/br30-trader-support-request?utm_source=br30-trader-web&utm_medium=website&lead_source=br30-trader-web&form_id=6ac733c86780cbc6335f9b49&source_id=6ac733f46780cbc6335f9b52" target="_blank" rel="noopener noreferrer" className="contact-link">
+                Submit a Support Request
               </a>
             </div>
 
@@ -262,23 +250,12 @@ export default function Br30SupportCommunity() {
               </div>
 
               <h2>WhatsApp Support</h2>
-              <p>सिर्फ मैसेज करें। तुरंत रिप्लाई के लिए अपना Query लिखकर भेजें।</p>
+              <h2>BR30 Trader Support</h2>
+              <p>Support, course access, payment, account या technical issue के लिए support request submit करें।</p>
 
-              <a href="https://wa.me/916200986380?text=Hello%20BR30%20Support%20Team%2C%20mujhe%20help%20chahiye..." className="whatsapp-btn" target="_blank" rel="noopener noreferrer">
-                💬 Chat on WhatsApp
+              <a href="https://br30crm-com-f.vercel.app/public/forms/6ac4a4ce8ab8658ebe3748f7/br30-trader-support-request?utm_source=br30-trader-web&utm_medium=website&lead_source=br30-trader-web&form_id=6ac733c86780cbc6335f9b49&source_id=6ac733f46780cbc6335f9b52" className="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+                🎫 Create Support Request
               </a>
-
-              <p
-                style={{
-                  marginTop: "10px",
-                  fontWeight: "bold",
-                  color: "var(--white)",
-                }}
-              >
-                <a href="tel:+916200986380" onClick={handleContactClick} className="phone-link">
-                  📞 +91 6200986380
-                </a>
-              </p>
             </div>
 
             <div className="notice-board">
